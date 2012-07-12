@@ -1,0 +1,226 @@
+\chapter{Trigonometry}
+
+
+\section{Trigonometric Identities}\index{trigonometric identities}
+\begin{figure}[h]
+  \begin{center}
+      \includegraphics[width=0.7\textwidth]{photos/pythagoras.jpg}
+    \end{center}
+    \caption{/emph{Busto di Pitagora. Copia romana di originale greco. Musei Capitolini, Roma}.
+    Original uploader was \emph{Galilea} at \url{http://de.wikipedia.org}.
+    File used under the terms of the Creative Commons Attribution-Share Alike 3.0 Unported license.}
+  \label{fig:bustofpythagoras}
+\end{figure}
+\begin{figure}[h]
+  \begin{tikzpicture}[scale=5.3,cap=round,>=latex]
+  % draw the coordinates
+    \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
+    \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
+
+  % draw the unit circle
+    \draw[thick] (0cm,0cm) circle(1cm);
+
+    \foreach \x in {0,30,...,360} {
+          % lines from center to point
+      \draw[gray] (0cm,0cm) -- (\x:1cm);
+          % dots at each point
+      \filldraw[black] (\x:1cm) circle(0.4pt);
+          % draw each angle in degrees
+      \draw (\x:0.6cm) node[fill=white] {$\x^\circ$};
+    }
+
+  % draw each angle in radians
+    \foreach \x/\xtext in {
+      30/\frac{\pi}{6},
+      45/\frac{\pi}{4},
+      60/\frac{\pi}{3},
+      90/\frac{\pi}{2},
+      120/\frac{2\pi}{3},
+      135/\frac{3\pi}{4},
+      150/\frac{5\pi}{6},
+      180/\pi,
+      210/\frac{7\pi}{6},
+      225/\frac{5\pi}{4},
+      240/\frac{4\pi}{3},
+      270/\frac{3\pi}{2},
+      300/\frac{5\pi}{3},
+      315/\frac{7\pi}{4},
+      330/\frac{11\pi}{6},
+    360/2\pi}
+    \draw (\x:0.85cm) node[fill=white] {$\xtext$};
+
+    \foreach \x/\xtext/\y in {
+      % the coordinates for the first quadrant
+      30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+      45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+      60/\frac{1}{2}/\frac{\sqrt{3}}{2},
+      % the coordinates for the second quadrant
+      150/-\frac{\sqrt{3}}{2}/\frac{1}{2},
+      135/-\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+      120/-\frac{1}{2}/\frac{\sqrt{3}}{2},
+      % the coordinate on s for the third quadrant
+      210/-\frac{\sqrt{3}}{2}/-\frac{1}{2},
+      225/-\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+      240/-\frac{1}{2}/-\frac{\sqrt{3}}{2},
+      % the coordinates for the fourth quadrant
+      330/\frac{\sqrt{3}}{2}/-\frac{1}{2},
+      315/\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+      300/\frac{1}{2}/-\frac{\sqrt{3}}{2}}
+      \draw (\x:1.25cm) node[fill=white] {$\left(\xtext,\y\right)$};
+
+  % draw the horizontal and vertical coordinates
+  % the placement is better this way
+      \draw (-1.25cm,0cm) node[above=1pt] {$(-1,0)$}
+      (1.25cm,0cm)  node[above=1pt] {$(1,0)$}
+      (0cm,-1.25cm) node[fill=white] {$(0,-1)$}
+      (0cm,1.25cm)  node[fill=white] {$(0,1)$};
+  \end{tikzpicture}
+  \caption{The unit circle.\cite{tikzunitcirc}\label{fig:tikzunitcirc}}
+\end{figure}
+
+Our first pythagorean identity is just derived from the pythagorean theorem.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics{continuous/functions/pyth.eps}
+  \end{center}
+  \caption{The Pythagorean Theorem states that the sum of the areas square $a$ and square $b$ is equal to the area of square $c$.}
+  \label{fig:pyth}
+\end{figure}
+\begin{equation}
+  \sin^2x+\cos^2x=1
+  \label{eq:pythtrig}
+\end{equation}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{continuous/functions/unitcirc.eps}
+  \end{center}
+  \caption{The equation for a unit circle is $a^2+b^2=1$. This creates a circle with a radius of $1$.}
+  \label{fig:basicuniticircle}
+\end{figure}
+The other ones, we either have to memorize or learn to derive (described in Section \ref{sec:trigderiv}).
+\begin{equation}
+  \sin{(x+y)} = \sin x \cos y + \sin y \cos x
+\end{equation}
+\begin{equation}
+  \sin{(x-y)} = \sin x \cos y - \sin y \cos x
+\end{equation}
+\begin{equation}
+  \cos(x+y)=\cos x \cos y - \sin x \sin y
+  \label{eq:cosxpy}
+\end{equation}
+\begin{equation}
+  \cos(x-y)=\cos x \cos y + \sin x \sin y
+\end{equation}
+\begin{equation}
+  \sin{-x}=-\sin x
+\end{equation}
+\begin{equation}
+  \sin{-x}=-\sin x
+\end{equation}
+\begin{equation}
+  \sin{2x}=2 \big( \sin x \cos x \big)
+\end{equation}
+\begin{equation}
+  \cos{2x}=\cos^2x-\sin^2x
+\end{equation}
+
+\subsection{Deriving Trigonometric Identities}\index{deriving trigonometric identities}\label{sec:trigderiv}
+
+Using the pythagorean theorem and a triangle with a hypotenuse of length $1$, we can obtain our first trigonometric identity:
+\begin{equation}
+	\sin^2x+\cos^2x=1
+  \label{eq:pyth}
+\end{equation}
+Dividing by $\sin^2x$ gives us:
+\begin{align}
+\frac{\sin^2x}{\sin^2x}+\frac{\cos^2x}{\sin^2x}&=\frac{1}{\sin^2x} \nonumber \\
+	1+\cot^2x&=\csc^2x
+\end{align}
+Dividing by $\cos^2x$ produces:
+\begin{align}
+  \frac{\sin^2x}{\cos^2x}+\frac{\cos^2x}{\cos^2x}+=&\frac{1}{\cos^2x} \nonumber \\
+	\tan^2x+1=&\sec^2x
+\end{align}
+
+We should also memorize the following two identities:
+\begin{equation}
+  \sin{a+b}=\sin a \cos a + \sin b \cos b
+  \label{eq:sinab}
+\end{equation}
+\begin{equation}
+  \cos{a+b}=\cos a \cos b + \sin a \sin b
+  \label{eq:cosab}
+\end{equation}
+From equation \eqref{eq:sinab} we can infer that
+\begin{equation}
+  \sin{2\theta}=2 \sin \theta \cos \theta
+  \label{eq:sin2q}
+\end{equation}
+and from equation \eqref{eq:cosab} we can infer that
+\begin{equation}
+  \cos{2\theta}=\cos^2 \theta - \sin^2\theta
+  \label{eq:cos2q}
+\end{equation}
+
+By rearranging \eqref{eq:cos2q} and substituting from \eqref{eq:pyth} we can derive power reduction identities for $\cos^2 \theta$
+\begin{align}
+  \cos{2\theta} &= \cos^2 \theta - \sin^2\theta \nonumber \\
+  \cos{2\theta} + \sin^2\theta &= \cos^2\theta \nonumber \\
+  \cos{2\theta} + (1-\cos^2 \theta) &=\cos^2\theta \nonumber \\
+  \cos{2\theta} + 1 &= \cos^2\theta + \cos^2\theta \nonumber \\
+  \cos{2\theta}+1 &= 2 \cos^2\theta \nonumber \\
+  \cos^2\theta &= \frac{\cos{2\theta}+1}{2}
+  \label{eq:cossqq}
+\end{align}
+and for $\sin^2 \theta$
+\begin{align}
+  \cos{2\theta} &= \cos^2 \theta - \sin^2\theta \nonumber \\
+  \sin^2 \theta &= \cos^2 \theta - \cos{2 \theta} \nonumber \\
+  \sin^2 \theta &= (1-\sin^2 \theta) - \cos{2 \theta} \nonumber \\
+  2 \sin^2 \theta &= 1-\cos{2\theta} \nonumber \\
+  \sin^2 \theta &= \frac{1-\cos{2\theta}}{2}
+  \label{eq:sinsqq}
+\end{align}
+
+
+\subsection{Examples}
+
+\begin{ex}
+  Find the value of
+  \[ \cos{\frac{11 \pi}{12}} \text{.}\]
+  \begin{sol}
+    We first rewrite the problem to fit one of our trigonometric identities,
+    then use equation \eqref{eq:cosxpy} to break apart \(\cos{\frac{11 \pi}{12}}\).
+    \begin{align*}
+      \cos{\frac{11 \pi}{12}}
+      =&\cos{\frac{\pi}{4}+\frac{2 \pi}{3}}
+      =\cos{\frac{\pi}{4}} \cos{\frac{2\pi}{3}}
+        -\sin\frac{\pi}{4} \sin\frac{2\pi}{3} \\
+      \intertext{Unlike in the original problem, we can easily simplify our new expression.}
+      \cos{\frac{\pi}{4}} \cos{\frac{2\pi}{3}}
+        - \sin{\frac{\pi}{4}} \sin{\frac{2\pi}{3}}
+      =& \frac{\sqrt 2}{2} \frac{-1}{2}
+        -\frac{\sqrt 2}{2} \frac{\sqrt 3}{2}
+      =\frac{-\sqrt 2}{4}
+        - \frac{\sqrt{6}}{4} \\
+      = &\frac{-\sqrt 2}{4}(1+\sqrt 3)
+    \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  Prove the following trigonometric identity:
+  \[ \frac{1-\cos x}{\sin x}=\frac{\sin x}{1+\cos x} \]
+  \begin{proof}
+    We first cross-multiply:
+    \begin{align*}
+      \ (1-\cos x)(1+\cos x) &= sin^2 x \\
+      \intertext{then, using equation \eqref{eq:pythtrig}, we realize that we can replace \(\sin^2 x\) with \(1-\cos^2 x\).}
+       (1-\cos x)(1+\cos x) &= 1-\cos^2x\\
+      \intertext{Now we simplify.}
+      1-\cos x + \cos x -\cos^2 &= 1-\cos^2x \\
+      1-\cos^2x &= 1-\cos^2x \qedhere
+    \end{align*}
+  \end{proof}
+\end{ex}
+
+

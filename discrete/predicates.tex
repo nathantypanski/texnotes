@@ -1,0 +1,105 @@
+\chapter{Predicates and Quantifiers}
+
+Propositional logic is too simple for us to make many types of conclusions.
+Instead, we use \textbf{predicate logic}, which allows us to make general
+statements about objects and their properties.
+
+A \textbf{propositional function}\index{propositonal function}, $P(x)$, is a
+type of \textbf{predicate}\index{predicate} in
+predicate logic. The important thing about propositional functions is that their
+truth value depends on the value of a variable, $x$. A propositional function
+becomes a proposition when a value is assigned to $x$.
+
+\section{Universal Quantification}
+
+If we wish to state that a given propositional function is true for all possible
+values in a domain, we use the \emph{universal quantification} of that function.
+Just as values for a variable must be stated in order for a propositional
+function to have a truth value, a \textbf{domain of discourse}\index{domain of
+discourse} must be specified
+in addition to the universal quantification. This is often referred to as just
+the \emph{domain}.
+
+\begin{defn}
+  The \textbf{universal quantification}\index{universal quantification} of $P(x)$ is the statement
+  \begin{quote}
+    ``$P(x)$ for all values of $x$ in the domain.''
+  \end{quote}
+  The notation $\forall x P(x)$ denotes the universal quantification of
+  $P(x)$.\cite[p.~40]{rosen}
+\end{defn}
+
+To show that the universal quantification of $P(x)$ is false for a domain, find
+an $x$ for which $P(x)$ is false.
+
+\section{Existential Quantification}\index{existential quantification}
+
+If we wish to state that an element exists in a domain, we use the
+\emph{existential quantification} of a propositional function.
+
+\begin{defn}
+  The \textbf{existential quantificaiton}\index{existential quantification} of $P(x)$ is the proposition
+  \begin{quote}
+    ``There exists an element $x$ in the domain such that $P(x)$''
+  \end{quote}
+  We use the notation $\exists P(x)$ for the existential quantification of
+  $P(x)$.\cite[p.~42]{rosen}
+\end{defn}
+
+In order to show that the existential quantification of $P(x)$ is false, we must
+show that $P(x)$ is false for every possible value of $x$ in the domain.
+
+A specific case of existential quantification is defined by the
+\textbf{uniqueness quantifier}\index{uniqueness quantifier}, $\exists!$ or $\exists_1$. The notation
+\[ \exists! x P(x) \]
+is the statement ``There exists a unique $x$ such that $P(x)$ is true.'' The
+downside to the uniqueness quantifier is that the rules of inference for
+existential quantification cannot be used on it. Since propositional logic can
+be used to express uniqueness already, we should try to avoid use of uniqueness
+quantification.
+
+\section{Logical Equivalence of Quantified Propositions}\index{logical
+equivalence}
+
+The following is a quote from Rosen's \emph{Discrete Mathematics and its Applications} on the issue:
+
+\begin{quote}
+  Statements involving predicates and quantifiers are \textbf{logically
+  equivalent} if and only if they have the same truth value no matter what
+  predicates are substituted into these tatements and which the domain of
+  discourse is used for the variables in these propositional functions. We use the
+  notation $S \equiv T$ to indicate that two statements $S$ and $T$ involving
+  predicates and quantifiers are logically equivalent.
+
+  \hfill\cite[p.~45]{rosen}
+\end{quote}
+
+\section{DeMorgan's Laws for Quantifiers}\index{DeMorgan's laws for quantifiers}
+
+\begin{equation}
+  \neg \exists x P(x) \equiv \forall x \neg P(x)
+\end{equation}
+\begin{equation}
+  \neg \forall x P(x) \equiv \exists x \neg P(x)
+\end{equation}
+
+\section{Order of Quantifiers}\index{quantifiers, order of}
+
+The quantificaiton
+\begin{equation}
+  \exists y \forall x Q(x, y)
+\end{equation}
+denotes the propositon
+\begin{quote}
+  ``There is a real number $y$ such that for every real number $x$, $Q(x, y)$.''
+\end{quote}
+
+The quantificaiton
+\begin{equation}
+  \forall x \exists y Q(x, y)
+\end{equation}
+denotes the propositon
+\begin{quote}
+  ``For every real number $x$ there is a real number $y$ such that $Q(x, y)$.''
+\end{quote}
+

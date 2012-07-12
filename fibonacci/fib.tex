@@ -1,0 +1,139 @@
+\setstretch{1.618}
+
+
+\section{The Fibonacci Sequence}
+
+\begin{figure}[h]
+  \begin{center}
+    \input{fibonacci/fibgraph1}
+  \end{center}
+  \caption{A plot of equation \ref{eq:nint}.}
+\end{figure}
+The \emph{Fibonacci Sequence} is the first recursive number sequence known in Europe. Its first 10 numbers are
+
+\[ 1, 1, 2, 3, 5, 8, 13, 21, 34, 55\dots \quad \text{.} \]
+
+A Fibonacci sequence, in general, is any sequence of numbers in which each number is the sum of the two preceeding numbers.\cite{britannica12}
+
+
+\subsection{History}
+
+French mathematician Edouard Lucas coined the term ``Fibonacci sequence'' in the 19th century.
+The sequence is found throughout nature, as in the spirals of sunflower heads, pine cones, snail shells, and animal horns.\cite{britannica12}
+Because of this natural prevalence, patterns based on the Fibonacci sequence are considered aesthetically pleasing.
+The sequence can be found in Mozart and Beethoven's works as well as in classical art and architecture. \cite[p.~94]{design10}
+
+
+\subsection{Mathematics}
+
+\begin{defn}The \emph{Fibonacci numbers} are the sequence of numbers \(\{F_n\}^\infty_{n=1}\) defined by the linear recurrence equation
+\begin{equation}
+  F_n=F_{n-1}+F_{n-2} \text{.}
+\end{equation}
+Often, we will see them defined with \(F_0=0\).
+\end{defn}
+
+This can be represented in the \emph{closed form}
+\begin{equation}
+  F_n=\left[ \frac{\Phi^n}{\sqrt{5}}\right]
+  \label{eq:nint}
+\end{equation}
+where \([x]\) is the \emph{nearest integer function}. \cite{mwfib}
+
+
+\section{The Golden Ratio}
+
+\begin{figure}[ht]
+  \begin{center}
+  \includegraphics{fibonacci/vitruvian.jpg}
+  %\includegraphics[width=0.225\textwidth]{vitruvian.jpg}
+  \end{center}
+  \caption{The Vitruvian Man, said to depict ideal human proportions, bases its proportions on the golden ratio.\cite[p.~115]{design10}}
+  %\footnote{\url{http://en.wikipedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour.jpg}
+\end{figure}
+
+
+The Fibonacci sequence and the golden ratio are closely related.
+
+\begin{defn}
+  The \emph{golden ratio}, denoted \( \Phi \), is given by the positive solution to the equation
+\begin{equation}
+  \Phi^2 - \Phi - 1 = 0
+\end{equation}
+\end{defn}
+
+Using the quadratic equation
+(\ref{app:eq:quadratic})
+we can find that
+\begin{align*}
+  \Phi =& \frac{1 \pm \sqrt{1^2-4(1)(-1)}}{2} \\
+  =& \frac{1 \pm \sqrt{1+4}}{2} \\
+  =& \frac{1 \pm \sqrt{5}}{2} \\
+  \intertext{and taking the positive root}
+  \Phi =& \frac{1 + \sqrt{5}}{2} \\
+  =& 1.6180339887498948\dots
+\end{align*}
+\cite{mwgolden}
+
+We will notice that many closed-form representations of the Fibonacci sequence use the golden ratio.
+For example, \emph{Binet's Formula}
+\begin{equation}
+  F_n=\frac{\Phi^n-(-\Phi)^{-n}}{\sqrt{5}}
+  \label{eq:binet}
+\end{equation}
+derived\footnote{Though not for the first time.} by Binet in 1843 and equation \ref{eq:nint} both write \(F_n\) in terms of \( \Phi \).\cite{mwbinet}
+
+The ratio of consecutive terms in the Fibonacci sequence approximate the golden ratio:
+\begin{align*}
+  \frac{1}{1} &= 1 \\
+  \frac{2}{1} &= 2 \\
+  \frac{3}{2} &= 1.5 \\
+  \frac{5}{3} &= 1.\overline{6}\dots \\
+  \frac{8}{5} &= 1.6 \\
+  \frac{13}{8} &= 1.625 \\
+  \frac{21}{13} &\approx 1.6153846
+\end{align*}
+Through this, we can conclude that
+\begin{equation}
+  \lim_{n\to \infty} \frac{F_n}{F_{n-1}}=\Phi
+  \label{eq:limphi}
+\end{equation}
+\cite{mwfib}
+
+\begin{figure}[h]
+  \begin{center}
+    \input{fibonacci/grat}
+  \end{center}
+  \caption{Equation \ref{eq:limphi} converges to \( \Phi \).}
+\end{figure}
+
+
+\section{Culture}
+
+\subsection{Lateralus}
+
+The song ``\emph{Lateralus}'' by the American rock band Tool counts out the Fibonacci sequence in its syllables:\footnote{\url{http://en.wikipedia.org/w/index.php?title=Lateralus\%20(song)&oldid=479876017}}
+\begin{figure}[H]
+\begin{tabular}{r|l}
+1 & Black,                 \\
+1 & then,                  \\
+2 & white are,             \\
+3 & all I see,             \\
+5 & in my infancy,       \\
+8 & red and yellow then came to be,             \\
+5 & reaching out to me,   \\
+3 & lets me see.           \\
+2 & There is,              \\
+1 & so,                    \\
+1 & much,                  \\
+2 & more and               \\
+3 & beckons me,           \\
+5 & to look through to these,                    \\
+8 & infinite possibilities.                \\
+13 & As below so above and beyond I imagine,\\
+8 & drawn beyond the lines of reason.\\
+5 & Push the envelope. \\
+3 & Watch it bend. \\
+\end{tabular}
+\caption{ Maynard James Keenan's vocals.}
+\end{figure}

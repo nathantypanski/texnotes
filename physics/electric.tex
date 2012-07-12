@@ -1,0 +1,141 @@
+\chapter{Electric Fields}
+
+
+\section{Electric Charge}
+
+There are two kinds of electric charges, named \textbf{positive} and
+\textbf{negative} by Benjamin Franklin (1706-1790)\cite[p.~643]{serway}.
+
+Electric charge is quantized and always conserved in an isolated system.
+
+Electrical \textbf{conductors}\index{conductors} are materials in which some of the electrons are
+free electrons that are not bound to atoms and can move relatively freely
+through the material; electrical \textbf{insulators}\index{insulators} are materials in which all
+electrons are bound to atoms and cannot move freely through the
+material.\cite[p.~644]{serway}
+
+
+\section{Coulomb's Law}
+
+\textbf{Coulomb's law}\index{Coulomb's law} describes the properties of the electric force between two
+stationary charged particles. These stationary charged particles are modeled as
+\textbf{point charges}\index{point charge}, theoretical charged particles of zero size. Coulomb's
+law shows us that the force between two charged objects varies in
+proportion with the charge $q$ placed on the objects and inversely with the
+square of the distance between them.
+\begin{equation}
+  \label{eq:coulombslaw}
+  |\vec{F}_q|=k_e\frac{q_1q_2}{r^2}
+\end{equation}
+Where $k_e$ is a constant called the \textbf{Coulomb constant}\index{Coulomb
+constant}. In SI units, $k_e$ has the value
+\begin{equation}
+  \label{coulombconstant}
+  k_e = 8.9876 \times 10^9 N \cdot m^2 / C^2 
+\end{equation}
+Often, we write the Coulomb constant in terms of the \textbf{permittivity of
+free space}, $\varepsilon_0$
+\begin{equation}
+  k_e = \frac{1}{4 \pi \varepsilon_0}
+\end{equation}
+Where $\varepsilon_0$ has the value
+\begin{equation}
+  8.8542 \times 10^{-12} C^2 / N \cdot m^2
+\end{equation}
+
+
+\section{Electric Field}
+
+The \textbf{electric field}\index{electric field} produced by a point charge is given by 
+\begin{equation}
+  \label{eq:electricfield}
+  \vec{E} \equiv \frac{\vec{F_e}}{q_0}
+\end{equation}
+Where $q_0$ is a test charge, which we take by convention to be a point charge
+of positive value. \textbf{An electric field exists at a point if a test charge
+at that point experiences an electric force}.
+
+Electric fields can be visualized by drawing \textbf{electric field lines},
+first conceived by Faraday. The electric field vector $\vec{E}$ is tangent to
+the electric field line at each point and with direction the same as the
+electric field vector. The number of lines per unit area on a surface
+perpendicular to the lines is proportional to the magnitude of the electric
+field inthat region. The density of the field lines, therefore, represents
+strength of $\vec{E}$.
+
+
+\section{Motion of a Charged Particle in a Uniform Electric Field}
+
+To get the motion of a charged particle in a uniform electrif field, simply use
+$\vec{F}=ma$ to find that
+\[ \vec{F_e} = q\vec{E} = m\vec{a} \]
+and rearrange this to get
+\begin{equation}
+  \vec{a} = \frac{q\vec{E}}{m}.
+\end{equation}
+
+
+\section{Gauss's Law}\index{Gauss's law}
+
+
+\textbf{Electric flux}\index{electric flux} is defined as the product of the
+magnitude of the electric field $E$ and the surface area $A$ perpendicular to
+the field.
+\begin{equation}
+  \Phi_E = EA
+\end{equation}
+Electric flux is proportional to the number of electric field lines penetrating
+some surface.
+
+In order to calculate it, we take the surface integral of $\vec E \cdot \ud \vec
+A$. We are often interested in evaluating this integral across a closed surface,
+where the flux would be given by
+\begin{equation}
+  \label{eq:electricflux}
+  \Phi_E = \oint \vec E \cdot \ud \vec A = \oint E_n \ud A
+\end{equation}
+
+Gauss came up with a way to simplify this integral for \emph{closed surfaces},
+often called \emph{gaussian surfaces}:
+\begin{equation}
+  \label{eq:gausslaw}
+  \Phi_E = \oint \vec E \cdot \ud A = \frac{q_{in}}{\varepsilon_0}
+\end{equation}
+
+For a \textbf{conductor in electrostatic equilibrium}, Gauss's law tells us that
+there must be zero field within it otherwise the motion of electrons would
+contradict the notion of equilibrium. Immediately outside the conductor, Gauss's
+law tells us
+\begin{equation}
+  E = \frac{\sigma}{\varepsilon_0}
+\end{equation}
+
+\section{Electric Potential}
+
+In order to talk about potential energy in an electric field, we need to jump
+through a few hoops to get there. First, remember our definition of
+work\index{work}:
+\[ W = \vec{F} \cdot \ud \vec s \]
+In order for work to occur, we must be actually moving something. So we move a
+theoretical test charge, $q_0$, from one point $a$ to another point $b$ in an
+electric field, and then suddenly we are doing work. That is, we are producing a
+change in potential energy for the system. This change in potential energy
+$\Delta U = U_b - U_a$ is given by the integral of the work from $a$ to $b$.
+
+So what's our force? By rearranging equation \eqref{eq:electricfield} we can
+  find that $\vec{F_e} = q_0 \vec{E}$. Since this force is conservative,
+Where $\Delta U$ is given by
+\begin{equation}
+  \Delta U = -q_0 \int_{a}^{b} \vec{E} \cdot \ud \vec{s}
+\end{equation}
+
+The \textbf{potential difference} $\Delta V$ describes a change in potential
+energy. Between two points $a$ and $b$, $\Delta V = V_b - V_a$. To calculate
+this value, we must take a test charge and move it from $a$ to $b$, summing the
+change in potential energy in the system. The inverse of this value would give
+us its potential difference.
+\begin{equation}
+  \label{eq:potentialdifference}
+  \Delta V = \frac{\Delta U}{q_0} = -\int_{a}^{b} \vec{E} \cdot \ud \vec{s} 
+\end{equation}
+

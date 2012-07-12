@@ -1,0 +1,105 @@
+\chapter{Newton's Laws of Motion}
+
+The following is an excerpt from \cite[p.~20]{newton}, written by Sir Isaac Newton himself:
+
+\begin{itemize}
+  \item[\textbf{Law I.} ]
+      \emph{
+        Every body perserveres in its state of rest, or of uniform motion in a right
+        line, unless it is compelled to change that state by forces impres'd thereon.
+      }
+
+      Projectiles persevere in their motions, so far as they are not retarded by
+      the resiliance of air, or impell'd downwards by the force of gravity. A
+      top, whole parts by their cohesion are preptually drown aside from
+      rectilinear motions, does not cease its rotation, otherwise than it is
+      retarded by air. The greater bodies of the Planets and Comets, meeting
+      with less resistance in more free spaces, preserve their motions both
+      progressive and circular for a much longer time.
+      %\hfill\cite[p.~19]{newton}
+  \item[\textbf{Law II.} ]
+      \emph{
+        The alteration of motion is ever proportional to the motive force
+        impres'd; and is made in the direction of the right line in which that
+        force is impres'd.
+      }
+
+      If any force generates a motion, a double force will generate double
+      motion, a triple force triple the motion, whether that force be impres'd
+      altogether and at once, or gradually and successively. And this motion
+      (being always directed the same way with the generating force) if the body
+      moved before, is added to or subducted from the former motion, according
+      as they directly conspire with or are directly contrary to each other; or
+      obliquely joyned, when they are oblique, so as to produce a new motion
+      compounded from the determination of both.
+      %\hfill\cite[p.~20]{newton}
+  \item[\textbf{Law III.} ]
+      \emph{
+        To every Action there is always opposed an equal Reaction: or the mutual
+        actions of two bodies upon each other are always equal, and directed to
+        contrary parts.
+      }
+
+      Whatever draws or presses another is as much drawn or pressed by that
+      other. If you press a stone with oyr finger, the finger is also pressed by
+      the stone. If a horse draws a stone tyed to a rope, the horse (if I may so
+      say) will be equally drawn back toward the stone: for the distended rope,
+      by the same endeavour to relax or unbend it self, will draw the horse as
+      much towards the stone, and will obstruct the progress of the stone as
+      much as it advances that of the other. If a body impinge upon another, and
+      by its force change the motion of the other; that body also (because of
+      the equality of the mutual pressure) will undergo an equal change, in its
+      own motion, towards the contrary part. The changes made by these actions
+      are qual, not in the velocities, but in the motions of bodies; that is to
+      say, if the bodies are not hinder'd by any other impediments. For because
+      the motions are equally changed, the changes of the velocities made towars
+      contrary parts, are reciprocally proportional to the bodies. This Law
+      takes place also in Attractions, as will be proved in the next Scholium.
+\end{itemize}
+% \section{Kinematic Equations}
+%
+% \textbf{Average acceleration} is defined as the \emph{change in velocity} over
+% divided by the \emph{change in time} during which the change in velocity occurs.
+% Average acceleration is not normally accurate enough for our purposes, however,
+% so we will speak more frequently about the \textbf{Instantaneous acceleration},
+% given by
+% \begin{equation}
+%   \label{eq:acceleration}
+%   \vec a(t) = \frac{\ud \vec v}{\ud t}
+% \end{equation}
+% as a function of time.
+%
+% For one direction, $\hat x$, we can use simple calculus to derive our basic
+% kinematic equations. We can then generalize this to apply to all of kinematics.
+%
+% Take equation \eqref{eq:acceleration} and rewrite it for just the $\hat x$
+% direction.
+% \[ a_x = \frac{\ud v_x}{\ud t} \]
+% Rewrite this as $\ud v_x = a_x \ud t$ and take the integral of both sides from
+% $0$ to $t$, our final time.
+% \[ \int \ud v_x = \int^t_0 a_x \ud t \]
+% Assume acceleration is constant, giving us
+% \begin{align}
+%   \nonumber v_x \bigg|^t_0 &= a \int^t_0 \ud t \\
+%   v_{xf} - v_{xi} &= a_x(t-0) = a_x t \\
+%   \intertext{We can get an equation for velocity if we add $v_{xi}$ to each
+% side:}
+%   v_{xf} &= a_x t + v_{xi} \label{eq:finalvelocity}
+% \end{align}
+%
+% Now we take the definition for \textbf{instantaneous
+% velocity}\index{instantaneous velocity}
+% \[ v_x = \frac{\ud x}{\ud t} \]
+% and rearrange it and write it as an integral, just as we did for acceleration:
+% \[ x_f - x_i = \int^t_0 v_x \ud t \]
+% Now we substitute equation \ref{eq:finalvelocity} into this integral as $v_x$
+% to get
+% \begin{align}
+%   \nonumber
+%   x_f - x_i &= \int^t_0 (v_{xi} + a_x t) \ud t \\
+%   \intertext{Because an integral of a sum is a sum of integrals, we can say}
+%   \nonumber &= \int^t_0 v_{xi} \ud t + a_x \int^t_0 t \ud t \\
+%   \nonumber &= v_{xi}(t-0)+a_x \left( \frac{t^2}{2}-0 \right) \\
+%   x_f - x_i &= v_{xi} t + \frac{1}{2}a_x t^2\\
+%   x_f &= \frac{1}{2}a_x t^2 + v_{xi} t + x_i
+% \end{align}

@@ -1,0 +1,87 @@
+\part{Physics}
+\setcounter{section}{0}
+\section*{\emph{Syst\'eme International} Prefixes}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{llr}
+    \textbf{Power} & \textbf{Prefix} & \textbf{Abbreviation} \\ \hline
+    $10^{-24}$ & yocto & y \\
+    $10^{-21}$ & zepto & z \\
+    $10^{-18}$ & atto & a \\
+    $10^{-15}$ & femto & f \\
+    $10^{-12}$ & pico & p \\
+    $10^{-9}$ & nano & n \\
+    $10^{-6}$ & micro & $\upmu$ \\
+    $10^{-3}$ & milli & m \\
+    $10^{-2}$ & centi & c \\
+    $10^{-1}$ & deci & d \\
+    $10^{3}$ & kilo & k \\
+    $10^{6}$ & mega & M \\
+    $10^{9}$ & giga & G \\
+    $10^{12}$ & tera & T \\
+    $10^{15}$ & peta & P \\
+    $10^{18}$ & exa & E \\
+    $10^{21}$ & zeta & Z \\
+    $10^{24}$ & yotta & Y \\ \hline
+  \end{tabular}
+  \caption{Prefixes for powers of ten.}
+  \label{tab:si_prefixes}
+\end{table}
+
+\section*{Significant Figures}
+
+When computing results from measured numbers, pay careful attention to the
+number of \textbf{significant figures}\index{significant figures}. When
+multiplying or dividing, the number of significant digits in the answer is the
+same as that of the factor with the least significant figures. When adding or
+subtracting, the number of decimal places should equal the least number of
+decimal places of any term.
+
+\section*{Coordinate Systems}
+
+In two dimensions, we place our mathematical description of an object's motion
+within a \textbf{Cartesian coordinate system}\index{Cartesian coordinates}, also
+called \emph{rectangular coordinates}.
+
+Other times, we establish a coordinate system using \textbf{plane polar
+coordinates}\index{polar coordinates}\index{plane polar coordinates}, given in
+the form $(r,\theta)$. Here, $r$ is the distance from the origin to the point
+with cartesian coordinates $(x, y)$ and $\theta$ is the angle between a fixed
+axis and a line drawn from the origin to that point. By convention, we usually
+choose the fixed axis to be positive $\hat x$ and measure $\theta$ counterclockwise
+from that axis. This lets us easily switch between the two systems using
+\begin{equation}
+  \label{eq:xcos}
+  x = r \cos \theta
+\end{equation}
+\begin{equation}
+  \label{eq:ysin}
+  y = r \sin \theta
+\end{equation}
+From here, we can find that
+\begin{equation}
+  \label{eq:tantheta}
+  \tan \theta = \frac{y}{x}
+\end{equation}
+\begin{equation}
+  \label{eq:rpyth}
+  r = \sqrt{x^2 + y^2}
+\end{equation}
+
+\section*{Vector and Scalar Quantities}
+
+A \textbf{scalar quantity}\index{scalar quantity} is completely specified by a single value with an
+appropriate unit and has no direction.
+
+A \textbf{vector quantity}\index{vector quantity} is completely specified by a number and appropriate
+units plus a direction.
+
+\section*{Unit Vectors}
+
+A \textbf{unit vector}\index{unit vector} is a dimensionless vector having a
+magnitude of exactly $1$. The unit vectors
+
+\input{physics/newton}
+%\input{physics/electric}
+\input{physics/circuits}
+

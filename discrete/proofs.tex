@@ -1,0 +1,312 @@
+\chapter{Proofs}\index{proofs}
+
+Proofs are arguments that establish the truth of mathematical statements.
+
+Most mathematical proofs for humans are \textbf{indirect proofs}\index{indirect
+proofs}, where more
+than one rule of inference may be used in each step, steps may be skipped, and
+the axioms and rules of inference being used are not explicitly
+state.\cite[p.~81]{rosen}
+
+However, we may wish to teach a computer how to create proofs. In order to do
+so, we must be extremely precise in our language. Likewise, in order to present
+mathematically precise proofs, we must know how to write \emph{formal
+proofs}\index{formal proofs}.
+
+\begin{defn}
+  A \textbf{fact} or \textbf{result} is a statement that can be shown to be
+  true, but is not as important as a theorem.
+\end{defn}
+\begin{defn}
+  A \textbf{lemma} is a less important theorem that is helpful in the proof of
+  other theorems.
+\end{defn}
+\begin{defn}
+  A \textbf{theorem} is a statement that can be shown to be true, associated
+  with a degree of importance.
+\end{defn}
+\begin{defn}
+  A \textbf{corollary} is a theorem that can be established directly from a
+  theorem that has been provided.
+\end{defn}
+\begin{defn}
+  A \textbf{conjecture} is a statement that is proposed to be true, but has not
+  been proven to be true.
+\end{defn}
+
+%\section{Direct Proof}\index{direct proofs}
+%
+%A \textbf{direct proof} starts with the premises and follows directly to the
+%conclusion.
+%
+%\begin{ex}
+%  Give a direct proof of the theorem
+%  \begin{quote}
+%    ``If $n+1$ is an odd integer, then $n+3$ is an odd integer.''
+%  \end{quote}
+%  %\[ n+1 = 2k + 1 \]
+%%   \begin{sol}
+%%     \begin{proof}
+%%       \begin{align*}
+%%         n+1 &= 2k+1 & 2k+1 \text{ is odd.} \\
+%%         n+3 &= 2k+1+3 & \text{Add }2\text{ to each side.} \\
+%%         n+3 &= 2k+4 &\text{Simplify.}
+%%       \end{align*}
+%%     \end{proof}
+%%   \end{sol}
+%\end{ex}
+%
+%\section{Indirect Proof}\index{indirect proofs}
+%
+%An \textbf{indirect proof} is any proof that does not start with the premises
+%and end with the conclusion. A \textbf{proof by contraposition} is a specific
+%instance of indirect proof that starts with the contrapositive of the initial
+%position and demonstrates its truth. Since the contrapositive of a statement is
+%logically equivalent to the statement itself, this can be used to almost
+%directly demonstrate the proof of the original statement.
+%
+%\begin{ex}
+%  A perfect number\footnote{
+%  	A \emph{perfect number} is one which is the sum of all its divisors except
+%    itself. For example, 6 is perfect because $1+2+3=6$.
+%  }is not a prime\footnote{A \emph{prime number} is a number whose only divisors
+%are $1$ and itself.}.
+%
+%  \begin{proof}
+%    First, we assume the number $p$ is prime $\to$ $p$ is not perfect.
+%
+%    Because the only divisors of a prime are $1$ and itself, the sum of the
+%    divisors less than $p$ is $1$.
+%
+%    The sum of all divisors less than $1$, excluding $1$, is zero.
+%
+%    $p$ cannot be perfect.
+%  \end{proof}
+%\end{ex}
+%\begin{ex}
+%	``If $3n+2$ is odd, then $n$ is odd.''
+%	\begin{proof}
+%	If $3n+2$ is odd $\to$ $n$ is odd.
+%	If $n$ is even $\to$ $3n+2$ is even.
+%
+%	Assume $n$ is even and $\to$ $n=2k$
+%
+%	$3n+2=3 \cdot 2k +2 = \underbrace{2(3k+1)}_{k'}=2k'$
+%
+%	$3n+2$ is even.
+%	\end{proof}
+%\end{ex}
+%
+%\section{Proof by Contradiction}\index{proof by contradiction}
+%
+%To prove $P$ is true, assume the conclusion $P$ is false. Derive a contradiction, usually of the form $R \wedge \neg R$ which establishes $\neg P \to 0$. The contrapositive of this assertion is $1 \to P$ from which it follows that $P$ must be true.
+%
+%\begin{equation}
+%  \neg P \to \underbrace{(R \wedge \neg R)}_{\text{False.}}
+%\end{equation}
+%
+%\begin{ex}
+%	  There is no largest odd number.
+%	\begin{proof}
+%      $P$: There is no largest odd number. \\
+%      $\neg P$: There is a largest odd number $x$. \\
+%      $2x+1$ is odd, and $2x+1 > x \to \neg R$. \\
+%      $\neg P \to (R \wedge \neg R)$ \\
+%      $P$ is true.
+%	\end{proof}
+%\end{ex}
+%\begin{ex}
+%	  If $3n+2$ is odd, then $n$ is odd.
+%    \[ P_1 \to P_2 = \neg P_1 \vee P_2 \]
+%	  \[ \neg P = \neg(\neg P_1 \vee P_2) = \neg \neg P_1 \wedge \neg P_2 = P_1
+%    \wedge \neg P_2 \]
+%	\begin{proof}
+%	    $P$: $3n+2$ is odd $\to$ $n$ is odd. \\
+%      $P_1$: $3n+2$ is odd. \\
+%      $P_2$ $n$ is odd. \\
+%      $\neg P$: {$3n+2$ is odd}, and $n$ is not odd. \\
+%      $n$ is even, $n=2k$ \\
+%      $3n+2=3 \cdot 2k+2=2(3k+1)$ is {even}. \\
+%      $\neg P$ is false. \\
+%      $P$ is true.
+%	\end{proof}
+%\end{ex}
+%\begin{ex}
+%Suppose you wish to give a proof by contradiction of this result for
+%\begin{center}
+%  If $x$ and $y$ are odd, then $3x+2y$ is odd.
+%\end{center}
+%What do you begin by assuming?
+%
+%You assume that $P$ and $\neg Q$.
+%\end{ex}
+%
+%
+%\section{Proof by Cases}\index{proof by cases}
+%
+%To prove:
+%  \[(P_1 \vee P_2 \vee \dots \vee P_n) \to Q \]
+%Prove:
+%  \[(P_1 \to Q) \wedge (P_2 \to Q) \wedge \dots \wedge (P_n \to Q) \]
+%
+%\begin{ex}
+%	Prove that for $n \in N$, $n^3+3$ is even.
+%	\begin{proof}
+%	$n$ is even, $n=2k$. \\
+%	$n^3+n=(2k)^3+2k=8k^3+2k=2(4k^3+k)$
+%	$n$ is odd. $n=2k+1$.\\
+%	$n^3+n=(2k+1)^3+(2k+1)=(2k+1)((2k+1)^2+1)$ \\
+%	$=(2k+1)(4k^2+4k+2)$ \\
+%	$=(2k+1)(2)(2k^2+2k+1)$ \\
+%	$=2\underbrace{(\dots)(\dots)}_{k'}$
+%	$n^3+n$ is even.
+%  \end{proof}
+%\end{ex}
+%
+%\section{Biconditional Statements}\index{biconditional statements}
+%
+%To prove a theorem that is a biconditional statement (a statement of the form $p \iff q$), we show that $p \to q$ and $q \to p$.
+%
+%\begin{ex}
+%  ``$n$ is an odd integer iff $n^2$ is odd.''
+%  \begin{proof}\footnote{Direct proof.}
+%    $P$: $n$ is odd. \\
+%    $Q$: $n^2$ is odd. \\
+%    $P \to Q$: $n$ is odd, $n^2$ is odd. \\
+%    Assume $n$ is odd, $n = 2k+1$ \\
+%    $n^2$=$(2k+1)^2=4k^2+4k+1$ \\
+%    $=2(2k^2+2k)+1$ \\
+%    $n^2$ is odd.
+%  \end{proof}
+%  \begin{proof}\footnote{Indirect method of proof.}
+%    $Q \to P$ \\
+%    Assume $n$ is even, $n=2k$ \\
+%    $n^2=(2k)^2=4k^2$ \\
+%    $ 2(2k^2)$ \\
+%    $n^2$ is even.
+%    $P \iff Q$
+%  \end{proof}
+%\end{ex}
+%\begin{homework}[Section 5.1]
+%  pg. 329 3, 4, 7, 21
+%
+%
+%  Chapter 1.6, 1.7, and 5.1 even due next Tuesday, March 20ish.
+%  Quiz Thursday, March 13.
+%\end{homework}
+%
+%
+%
+%
+%\section{Mathematical Induction}\index{mathematical induction}
+%
+%\begin{defn}[Well-ordered]
+%  A set $S$ is \emph{well-ordered} if every subset has a least element.
+%  Integers and real numbers are not well-ordered sets. They do not contain a least element.
+%\end{defn}
+%
+%Let $P(x)$ be a predicate over a well-ordered set S. The problem is to prove
+%
+%\[ \forall x P(x) \]
+%
+%We will prove this using the first principle of mathematical induction.
+%
+%\begin{remark}
+%  From \emph{modus ponens},
+%  \begin{align*}
+%    &p
+%    &p \to q
+%    &
+%  \end{align*}
+%\end{remark}
+%
+%We might also derive triple \emph{modus ponens}, quadruple \emph{modus ponens}, etc. Thus, we have no trouble proving assertions about arbitrarily large integers.
+%
+%\begin{proof}
+%\begin{align*}
+%  &P(0) \\
+%  &P(n) \to P(n+1) \\
+%  &\forall x P(x) \\
+%\end{align*}
+%\end{proof}
+%
+%In this example, $P(O)$ forms \emph{the basis step}. The next part is called \emph{the induction}.
+%
+%We first prove the predicate is true for the smallest element of $S$, then apply \emph{modus ponens} an infinite number of times.
+%
+%To prove the basis step, merely verify that it is true for the sole case provided. To prove the induction, we normally use a \emph{direct proof}.
+%
+%\begin{proof}
+%  Prove a classic:
+%
+%  \begin{tabular}{ll}
+%    $\sum ^n_{i=0}i\frac{n(n+1)}{2} $ & Identify $P(n)$. \\
+%    $\sum ^0_{i=0}i\frac{0(0+1)}{2}$ & Prove this to prove the basis step. \\
+%    $\sum ^{n+1}_{i=0}i\frac{(n+1)((n+1 )+1)}{2} $ & Prove this using a direct proof.
+%  \end{tabular}
+%  \begin{align*}
+%    P(n+1)=& 0+1+2+3+\dots+n+(n+1) \\
+%    P(n+1)=&\frac{(n+1)\left( n+1 \right)+1}{2} \\
+%    =&\frac{n(n+1)}{2}+(n+1) \\
+%    =&\frac{(n+1)(n+2)}{n}
+%  \end{align*}
+%
+%\end{proof}
+%\begin{remark}
+%  This is not a circular proof, because we are proving only that the conclusion follows from the hypotheses.
+%\end{remark}
+%
+%\begin{ex}
+%  Prove the sum of the first $n$ odd positive integers is $n^2 \forall (n>=1)$.
+%
+%  \begin{align*}
+%    1+1=&1^2 \\
+%    1+3=&2^2 \\
+%    1+5=& 3^2 \\
+%  \end{align*}
+%
+%  To prove this, first prove that $1=1^2$ then prove $P(n+1)$.
+%
+%  \begin{tabular}{ll}
+%    $P(n+1)=1+3+5+\cdots+(2n-1)+(2n+1)$ & \\
+%    $P(n)=1+3+5+\cdots+(2n-1)$ & $\to n^2+2n+1=(n+1)^2$\\
+%  \end{tabular}
+%
+%\end{ex}
+%
+%\begin{ex}
+%  Prove
+%  \[ 2^n < n! \text{ for all positive integers } n >= 4 \]
+%
+%  \begin{tabular}{ll}
+%    $p(n) : \forall n (n > 4 \to 2^n < n!)$ & \\
+%    $p(4) : 2^4 < 4!$ & $16<24$ \\
+%    $p(n+1) : 2^{n+1} < (n+1)!$ & Prove this as follows: \\
+%    &$p(n+1):2^{n+1}=2\cdot2^n < 2\cdot n!$ \\
+%    &Now we try to prove $2n! < (n+1)!$.\footnote{ noting that $(n+1)!=(n+1)n!$.} \\
+%    & $2n! < (n+1)! = (n+1)n! \to$\\
+%    &$2<n+1 \to$\\
+%    &$1<n $ ?\\
+%  \end{tabular}
+%\end{ex}
+%
+%\begin{ex}
+%  Prove that
+%    \[ 2^{2n}-1 \text{ for } n>1 \text{ is divisible by } 3 \]
+%  \begin{tabular}{lll}
+%    $P(1):2^{2 \cdot 1} -1=3$& Basis.&Prove this is true. \\
+%    $2^{2(n+1)}-1$ is divisible by $3$ & Induction. & Prove this. \\
+%    && $2^{2n}-1=3 \cdot m \quad (m \in N)$ \\
+%    && $2^{2(n+1)}=2^{2n+2}-1$ \\
+%    && $ 2^{2(n+1)}=2^{2n}\cdot 4 -1 $ \\
+%    && $2^{2(n+1)}=2^{2n}+3\cdot2^{2n}-1 $ \\
+%    && $(2^{2(n+1)}=2^{2n}-1)+3 \cdot 2^{2n} $ \\
+%    && Now we prove that both $2^{2n}-1$ and $3 \cdot 2^{2n}$ are divisible by 3. \\
+%    && $(2^{2(n+1)}=3m+3\cdot2^{2n}$\\
+%    && $ 3(m+2^{2n}$ \\
+%    $2^{2(n+1)}-1$ & Induction conclusion. & \\
+%  \end{tabular}
+%\end{ex}
+%
+%
+%

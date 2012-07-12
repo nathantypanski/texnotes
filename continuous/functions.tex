@@ -1,0 +1,316 @@
+\chapter{Basics of Functions}
+\section{Definition of a Function}
+
+\begin{defn}
+  A \textbf{function} \(f\) from a set \(D\) to a set \(Y\) is a rule that assigns a \emph{unique} (single) element \(f(x) \in Y\) to each element \(x \in D\).
+  \index{function}
+\end{defn}
+
+\begin{defn}
+  The \textbf{vertical line test} for a function is based on the idea that if \(a\) is in the domain of the function \(f\) then the vertical line \(x=a\) will intersect the graph of \(f\) at a single point \( \big(a,f(a)\big)\).
+  \index{vertical line test}
+\end{defn}
+
+% One technique that can help us understand functions is by describing them with words, including mathematical language.
+% We can discuss the behavior of a function in general, describing its properties, or we can discuss its behavior in more specific terms, like when we evaluate a function at a certain value.
+%
+% We can also talk about functions using visual language, as in graphs, arrow diagrams, and tables.
+% There are, of course, many ways to visually represent a function, but for our purposes these will prove the most useful.
+% This includes some numerical displays of functions, like with a table of values.
+% We can consider tables to be a visual description of a function because they combines visual formatting with descriptive data to produce a figural representation of a function's properties.
+
+We will find graphs, in conjunction with the respective mathematical language, to be the most cohesive way to represent functions.
+We should therefore attempt to be able to graph our functions whenever we wish to achieve the best possible understanding of them.
+
+We will combine these techniques in an effort to paint a complete picture of its behavior.
+
+\section{Properties of Functions}
+
+
+\subsection{Domain and Range}
+
+\begin{defn}
+  The set \(D\) of all possible input values is called the \textbf{domain} of the function.
+  \index{domain}
+\end{defn}
+
+\begin{defn}
+  The set of all values \(f(x)\) as \(x\) varies throughout \(D\) is called the \textbf{range} of the function, representing the output value of \(f\) at \(x\).
+  \index{range}
+\end{defn}
+
+\begin{defn}
+   The \textbf{natural domain} of a function is the largest set of real \(x\)-values for which a function returns real \(y\)-values.
+   \begin{remark}
+     When we define a funciton \(y=f(x)\) with a formula and the domain is not stated explicitly or restricted by context, \(D \to \mathbb{N}\).
+   \end{remark}
+   \index{natural domain}
+\end{defn}
+
+\begin{defn}
+  A function is said to be \textbf{real-valued} when \(D \equiv \mathbb{R}\). That is, the domain is equivalent to the set of real numbers.
+  \index{real-valued}
+\end{defn}
+
+
+\subsection{Dependent and Independent Variables}
+\begin{defn}
+  The letter \(x\) in the notation \(y=f(x)\) is called the \textbf{independent variable} of the function, representing the input value of \(f\).
+  \index{independent variable}
+\end{defn}
+\begin{defn}
+  The letter \(y\) in the notation \(y=f(x)\) is called the \textbf{dependent variable}.
+  It varies with respect to change in the dependent variable of the function.
+  \index{dependent variable}
+\end{defn}
+
+\subsection{Even and Odd Functions}
+
+For a function $y=f(x)$, we describe its type of symmetry by calling the function \textbf{even}\index{even functions} or \textbf{odd}\index{odd functions}.
+
+\begin{defn}
+  An \textbf{even function} means $f(-x)=f(x)$. An example of this is the function $f(x)=x^2$.
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[
+            ylabel={\(f(x)=x^2\)},
+            axis x line=bottom,
+            axis y line=center,
+            tick align=outside,
+            yticklabels={,,}
+            xticklabels={,,}
+            xtickmax=10,
+          ]
+          \addplot[smooth,red]{x^2};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+\end{defn}
+\begin{defn}
+  An \textbf{odd function} means $f(-x)=-f(x)$. An example of this is the function $f(x)=x^3$.
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[
+            ylabel={\(f(x)=x^3\)},
+            axis x line=bottom,
+            axis y line=center,
+            tick align=outside,
+            yticklabels={,,}
+            xticklabels={,,}
+            xtickmax=10,
+          ]
+          \addplot[smooth,red]{x^3};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+\end{defn}
+\subsection{Surjective, Injective, and Bijective Functions}
+
+\begin{defn}
+  \index{one-to-one}
+  \index{injective}
+  \( f: A \to B \) is \textbf{injective} (or \emph{one-to-one})
+  \(
+    \forall{(x_1 \wedge x_2 \in A)}
+    \bigg[f(x_1)=f(x_2)
+    \to x_1=x_2\bigg]
+    \text{,}
+  \)
+  which also means that for injective functions,
+  \( x_1 \neq x_2 \to f(x_1) \neq f(x_2)\).
+\end{defn}
+\begin{figure}[H]
+    \begin{center}
+        \subfigure[The function \(f(x)=x^2\) is not \emph{one-to-one} because there are two possible \(x\)-values that can produce any given \(y\)-value.]
+        {
+          \begin{tikzpicture}
+            \begin{axis}[
+                ylabel={\(f(x)=x^2\)},
+                axis x line=bottom,
+                axis y line=center,
+                tick align=outside,
+                yticklabels={,,}
+                xticklabels={,,}
+                xtickmax=10,
+              ]
+              \addplot[smooth,red]{x^2};
+            \end{axis}
+          \end{tikzpicture}
+        }
+        \hspace{0.2in}%
+        \subfigure[The function \(f(x)=x^3\) is \emph{one-to-one} because any given \(y\)-value is mapped from a unique \(x\)-value.]
+        {
+          \begin{tikzpicture}
+            \begin{axis}[
+                ylabel={\(f(x)=x^3\)},
+                axis x line=bottom,
+                axis y line=center,
+                tick align=outside,
+                yticklabels={,,}
+                xticklabels={,,}
+                xtickmax=10,
+              ]
+              \addplot[smooth,blue]{x^3};
+            \end{axis}
+          \end{tikzpicture}
+        }
+    \end{center}
+  \end{figure}
+  \begin{remark}
+    A function \(y=f(x)\) is one-to-one iff its graph intersects each horizontal line at most once.\index{horizontal line test}
+  \end{remark}
+\begin{defn}
+  \index{onto}
+  \index{surjective}
+  \(f: A \to B \) is \textbf{surjective} (or onto) iff
+    \(\forall{\left( b \in B \right)} \exists {\left( a \in A \right)} \big(f(a)=b\big) \).
+\end{defn}
+\begin{figure}[H]
+    \begin{center}
+        \subfigure[The function \(f(x)=x^2\) is not \emph{surjective} because the values \((-\infty, 0)\) are never reached in its range.]
+        {
+          \begin{tikzpicture}
+            \begin{axis}[
+                ylabel={\(f(x)=x^2\)},
+                axis x line=bottom,
+                axis y line=center,
+                tick align=outside,
+                yticklabels={,,}
+                xticklabels={,,}
+                xtickmax=10,
+              ]
+              \addplot[smooth,red]{x^2};
+            \end{axis}
+          \end{tikzpicture}
+        }
+        \hspace{0.2in}%
+        \subfigure[The function \(f(x)=x^3\) is \emph{one-to-one} because all \(y\) values from \(-\infty, \infty)\) have corresponding \(x\)-values.]
+        {
+          \begin{tikzpicture}
+            \begin{axis}[
+                ylabel={\(f(x)=x^3\)},
+                axis x line=bottom,
+                axis y line=center,
+                tick align=outside,
+                yticklabels={,,}
+                xticklabels={,,}
+                xtickmax=10,
+              ]
+              \addplot[smooth,blue]{x^3};
+            \end{axis}
+          \end{tikzpicture}
+        }
+    \end{center}
+  \end{figure}
+
+  \begin{defn}
+    \index{bijective}
+    A function \(f:A \to B\) is \textbf{bijective} iff it is \emph{both injective and surjective}.
+  \end{defn}
+\begin{figure}[H]
+    \begin{center}
+        \subfigure[The function \(f(x)=x^2\) is not bijective.]
+        {
+          \begin{tikzpicture}
+            \begin{axis}[
+                ylabel={\(f(x)=x^2\)},
+                xlabel={\(x\)},
+                axis x line=bottom,
+                axis y line=center,
+                tick align=outside,
+                yticklabels={,,}
+                xticklabels={,,}
+                xtickmax=10,
+              ]
+              \addplot[smooth,red]{x^2};
+            \end{axis}
+          \end{tikzpicture}
+        }
+        \hspace{0.2in}%
+        \subfigure[The function \(f(x)=x^3\) is bijective.]
+        {
+          \begin{tikzpicture}
+            \begin{axis}[
+                ylabel={\(f(x)=x^3\)},
+                xlabel={\(x\)},
+                axis x line=bottom,
+                axis y line=center,
+                tick align=outside,
+                yticklabels={,,}
+                xticklabels={,,}
+                xtickmax=10,
+              ]
+              \addplot[smooth,blue]{x^3};
+            \end{axis}
+          \end{tikzpicture}
+        }
+    \end{center}
+  \end{figure}
+
+
+\subsection{Graphs} \index{graphs}
+
+\begin{defn}
+  \index{graph}
+  If \(f\) is a function with a domain \(D\), then its \textbf{graph} is
+  \[ \Big\{ \big( x,f(x) \big) \Big | x \in D \Big\}\text{.}\]
+\end{defn}
+
+If \( (x,y) \) is a point on \(f\), then \(y=f(x)\) is the height of the graph above point \(x\).
+This height might be positive or negative, depending on the sign of \(f(x)\).
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+          \begin{axis}[
+              ylabel={\(f(x)\)},
+              xlabel={\(x\)},
+              axis x line=bottom,
+              axis y line=center,
+              tick align=outside,
+              yticklabels={,,}
+              xticklabels={,,}
+              xtickmax=10,
+            ]
+            \addplot[smooth,red]{x+2};
+          \end{axis}
+        \end{tikzpicture}
+      \caption{A graph of the function \(f(x)=x+2\)}
+    \end{center}
+  \end{figure}
+
+\section{Composition of Functions}
+
+\begin{defn}
+  If \(f\) and \(g\) are functions, then the \textbf{composite} function \(f \circ g\) (``\(f\) composed with \(g\)'') is defined by
+  \[ (f \circ g)(x)=f\bigl(g(x)\bigr) \text{.} \]
+  \begin{remark}
+    The domain of \( f \circ g \) consists of the numbers \(x\) in the domain of \(g\) for which \(g(x)\) lies in the domain of \(f\).
+  \end{remark}
+  \index{composition}
+\end{defn}
+\begin{ex}
+  If
+  \(f(x)=x^2\)
+  and
+  \(g(x)=1-\sqrt{x}\text{,}\)
+  find \( (f \circ g)(x) \) and \( (g \circ f)(x)\).
+  \begin{sol}
+    \begin{align*}
+      (f \circ g)(x)
+      &=f\big(g(x)\big)
+      &&&
+      (g \circ f)(x)
+      &=g\big(f(x)\big)=1-\sqrt{x^2}
+      \\
+      &=(1-\sqrt{x})^2
+      &&&
+      &= 1-|x|
+    \end{align*}
+  \end{sol}
+\end{ex}
+
+

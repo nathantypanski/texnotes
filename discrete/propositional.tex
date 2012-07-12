@@ -1,0 +1,333 @@
+\chapter{Propositional Logic}
+\epigraph{This is your last chance. After this, there is no turning back. You
+take the blue pill - the story ends, you wake up in your bed and believe
+whatever you want to believe. You take the red pill - you stay in Wonderland and
+I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
+
+\section{Introduction to Propositional Logic}
+
+\begin{defn}\index{proposition}
+  A \textbf{proposition} is a declarative sentence. It declares a fact that can be either true or false, but not both.
+\end{defn}
+
+\begin{ex}
+  \begin{enumerate}
+    \item What time is it?
+    \item Toronto is the capital of Canada.
+    \item \(2+2=3\)
+    \item Read this carefully.
+    \item \(x+y=z\)
+    \item 1+1=2
+  \end{enumerate}
+  Statements 1 and 4 are not prpositions.
+  The others are, even if they are false (2 and 3) or we do not know the truth value (5).
+\end{ex}
+
+\begin{defn}\index{propositional calculus}
+  \textbf{Propositional calculus} (or \emph{propositional logic}) assigns propositions \emph{propositional variables}
+  (e.g. \(p, q, r, s, \cdots\) and deals with their logic and \emph{truth value}.
+\end{defn}
+\begin{defn}\index{negation}
+  Let \(p\) be a proposition. The \textbf{negation} of \(p\), denoted by \(\neg p\), is the statement
+  ``it is not the case that \(p\).''
+  The truth value of \(\neg p\) is the opposite of the truth value of \(p\).
+\end{defn}
+\begin{defn}\index{conjunction}
+  Let \(p\) and \(q\) be propositions. The \textbf{conjunction} of \(p\) and \(q\), denoted by \( p \wedge q \), is the proposition
+  ``\(p\) and \(q\).'' It is true when both \(p\) and \(q\) are true and false otherwise.
+\end{defn}
+\begin{defn}\index{disjunction}
+  Let \(p\) and \(q\) be propositions. The \textbf{disjunction} of \(p\) and \(q\), denoted by \( p \vee q \), is the proposition
+  ``\(p\) and \(q\).'' It is true when either \(p\) or \(q\) are true and false otherwise.
+\end{defn}
+\begin{defn}\index{exclusive or}
+  The \textbf{exclusive or} of \(p\) and \(q\), denoted by \(p \oplus q\), is true when exactly one of \(p\) and \(q\) is true and false otherwise.
+\end{defn}
+\begin{defn}\index{conditional statement}
+  The \textbf{conditional statement} \(p \to q\) is the propsition ``if p, then q.''
+  The conditional statement \(p \to q\) is false when \(p\) is true and \(q\) is false, and true otherwise.
+  Other ways of writing the conditional statement can be found in table \ref{tab:conditionals}
+\end{defn}
+\begin{defn} \index{hypothesis}\index{antecedent}\index{premise}
+  In the conditional statement \(p \to q\), \(p\) is called the \textbf{hypothesis} (or antecedent or premise).
+\end{defn}
+\begin{defn} \index{conclusion}\index{consequence}
+  In the conditional statement \(p \to q\), \(q\) is called the \textbf{conclusion} (or consequence).
+\end{defn}
+\begin{table}[h]
+  \centering
+  \boxed{
+    \begin{tabular}{p{2in} p{2in}}
+      ``if \(p\), then \(q\)'' & ``\(p\) implies \(q\)'' \\
+      ``if \(p\), \(q\)'' & \(p\) only if \(q\)`` \\
+      ''\(p\) is sufficient for \(q\)`` & ''a sufficient condition for \(q\) is \(p\)`` \\
+      ''\(q\) if \(p\)`` & ''\(q\) whenever \(p\)`` \\
+      ''\(q\) when \(p\) & ``\(q\) is necessary for \(p\)'' \\
+      ``a necessary condition for \(p\) is \(q\)'' & ``\(q\) follows from \(p\)'' \\
+      ``\(q\) unless \(p\)''
+    \end{tabular}
+  }
+  \caption{Other ways of writing the conditional statement \(p \to q\).}
+  \label{tab:conditionals}
+\end{table}
+\begin{defn} \index{converse}
+  The \textbf{converse} of \(p \to q\) is \(q \to p\).
+\end{defn}
+\begin{defn} \index{contrapositive}\label{def:contrapositive}
+  The \textbf{contrapositive} of \(p \to q\) is \(\neg q \to \neg p\). It is
+  \emph{logically equivalent} to \(p \to q\).
+
+  This is detailed further in \ref{app:def:contrapositive}.
+\end{defn}
+\begin{defn} \index{inverse}
+  The \textbf{inverse} of \(p \to q\) is \(\neg p \to \neg q\).
+\end{defn}
+\begin{defn} \index{biconditional statement}
+  The \textbf{biconditional statement} (also called \emph{bi-implication}) \(p \leftrightarrow q\) is the statement
+  ``\(p\) if and only if \(q\).''
+  It is true when both \(p\) and \(q\) have the same truth value, and false otherwise.
+\end{defn}
+\begin{table}[h]
+  \centering
+  \boxed{
+    \begin{tabular}{l}
+      ``\(p\) is necessary and sufficient for \(q\)'' \\
+      ``if \(p\), then \(q\), conversely'' \\
+      ``p iff q''
+    \end{tabular}
+  }
+  \caption{Other ways of writing the biconditional statement \(p \leftrightarrow q\).}
+  \label{tab:biconditionals}
+\end{table}
+
+\section{Logical Equivalence}
+
+\[ p \leftrightarrow q \] is logically equivalent to \[ (p \to q) \wedge (q \to p)\text{.}\]
+\begin{table}[h]
+  \centering
+  \boxed{
+    \begin{tabular}{>{\(}l<{\)} >{\(}r<{\)}|>{\(}c<{\)}|>\(c<\)|>\(c<\)|>\(c<\)}
+      p & q & \neg q & p \lor \neg q & p \land q & (p \lor \neg q) \to (p \land q) \\ \hline
+      1 & 1 & 0 & 1 & 1 & 1 \\
+      1 & 0 & 1 & 1 & 0 & 0 \\
+      0 & 1 & 0 & 0 & 0 & 1 \\
+      0 & 0 & 1 & 1 & 0 & 0
+    \end{tabular}
+  }
+  \caption{The truth table for \(p \lor \neg q) \to (p \land q)\)}
+\end{table}
+\section{Precedence}
+
+The \emph{not} operator takes the highest precedence.
+Then conjunction, followed by disjunction. That is,
+\[ p \land q \lor r \equiv (p \land q) \lor r \text{.}\]
+Then conditional, and finally bi-conditional operators.
+\begin{table}[H]
+  \centering
+  \boxed{
+    \begin{tabular}{l|c}
+      1 & $\neg$ \\
+      2 & $\land$ \\
+      3 & $\lor$ \\
+      4 & $\to$ \\
+      5 & $\iff$
+    \end{tabular}
+  }
+  \caption{Logical operator precedence.}
+\end{table}
+\begin{defn}\index{tautology}
+  A \textbf{tautology} is a compound proposition that is always true, regardless of the truth values of the variables that occur in it.
+\end{defn}
+\begin{defn}\index{contradiction}
+  A \textbf{contradiciton} is a compound proposition that is always false.
+\end{defn}
+\begin{defn}\index{contingency}
+  A \textbf{contingency} is a compound proposition that is nither a tautology nor a contradiction.
+\end{defn}
+\begin{defn}\index{logical equivalence}
+  The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \leftrightarrow q\) is a tautology.
+  The notion \(p \equiv q\) denotes that \(p\) and \(q\) are logically equivalent.
+  \begin{remark}
+    The symbol \(\equiv\) is not a logical connection, and \(p\equiv q\) is not a compound proposition,
+    but rather it is the statement that \(p \leftrightarrow q\) is a tautology.
+    The symbol \(\iff\) is osmetimes used instead of \(\equiv\) to denote logical equivalence.
+  \end{remark}
+\end{defn}
+
+\section{DeMorgan's Laws}
+
+\begin{equation}
+  \neg (p \land q) \equiv \neg p \lor \neg q
+\end{equation}
+\begin{equation}
+  \neg(p \lor q) \equiv \neg p \land \neg q
+\end{equation}
+These can be proven using a truth table.
+\begin{table}[H]
+  \centering
+  \boxed{
+    \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
+      p & q & \neg(p \land q) & \neg p \lor \neg q \\ \hline
+      1 & 1 & 0 & 0 \\
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 1 \\
+    \end{tabular}
+  }
+  \caption{A proof of DeMorgan's first law.}
+\end{table}
+
+Extending DeMorgan's laws by the association laws for disjunction and conjunction, they become:
+\begin{equation}
+ \neg\left(\bigvee^n_{n=1} p_n\right)=\bigwedge^n_{n=1} \neg p_n
+\end{equation}
+\begin{equation}
+ \neg\left(\bigwedge^n_{n=1} p_n\right)=\bigvee^n_{n=1} \neg p_n
+\end{equation}
+
+Using DeMorgan's Laws, we can \emph{negate conjunctions and disjunctions}.
+
+\begin{ex}
+  Negate the following statement:
+  ``Miguel has a cellphone and he has a laptop.''
+  \begin{sol}
+    Let \(p\) be ``Miguel has a cell phone.''
+    Let \(q\) be ``Miguel has a laptop.''
+    \[ \neg(p \land q) \equiv \neg p \lor \neg q \]
+    ``Miguel does not have a cell phone or he does not have a laptop.''
+  \end{sol}
+\end{ex}
+
+\section{Useful Logical Equivalences}
+
+\begin{equation}
+  p \to q \equiv \neg p \lor q
+\end{equation}
+\begin{table}[H]
+  \centering
+  \boxed{
+    \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
+      p & q & p \to q & \neg p \lor q \\ \hline
+      1 & 1 & 1 & 1 \\
+      1 & 0 & 0 & 1 \\
+      0 & 1 & 1 & 1 \\
+      0 & 0 & 1 & 1 \\
+    \end{tabular}
+  }
+  \caption{A proof of \(p \to q\).}
+\end{table}
+\begin{table}
+  \centering
+  \boxed{
+    \begin{tabular}{>\(l<\) r}
+      p \land T \equiv p & \multirow{2}{*}{identity} \\
+      p \lor f \equiv p \\
+      p \lor T \equiv T & \multirow{2}{*}{domination} \\
+      p \land F \equiv F \\
+      p \lor p \equiv p & \multirow{2}{*}{idempotent} \\
+      p \land p \equiv p \\
+      \neg (\neg p) & double negation \\
+      p \lor q \equiv q \lor p & \multirow{2}{*}{commutative} \\
+      p \land q \equiv q \land p \\
+      (p \lor q) \lor r \equiv p \lor (q \lor r) & \multirow{2}{*}{associative} \\
+      (p \land q) \land r \equiv p \land (q \land r) \\
+      p \land (q \lor r) \equiv (p \land q) \lor (p \land r) & \multirow{2}{*}{distributive} \\
+      p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \\
+      \neg (p \lor q) \equiv \neg p \lor \neg q & \multirow{2}{*}{DeMorgan} \\
+      \neg (p \lor q) \equiv \neg p \land \neg q \\
+      p \lor (p \land q) \equiv p & \multirow{2}{*}{absorbtion} \\
+      p \land (p \lor q) \equiv p \\
+      p \lor \neg p \equiv T & \multirow{2}{*}{negation} \\
+      p \land \neg p \equiv F
+    \end{tabular}
+  }
+  \caption{Useful logical equivalences}
+\end{table}
+
+
+\section{Proving Logical Equivalences}
+
+Proving logical equivalences can be achieved using the rules we already have.
+\begin{ex}
+  Show that \(\neg (p \to q)\) and \( p \land \neg q\) are logically equivalent.
+  \begin{sol}
+    \[
+      \begin{fitch}
+        \fb \neg (p \to q) \equiv \neg (p \to q) \\
+        \fa \neg(p \to q) \equiv \neg(\neg p \lor q) & \(p \to q \equiv \neg p \lor q\) \\
+        \fa \neg(p \to q) \equiv \neg(\neg p) \land \neg q & \text{DeMorgan's Law} \\
+        \fa \neg(p \to q) \equiv p \land \neg q & \text{Double negation}
+      \end{fitch}
+    \]
+  \end{sol}
+\end{ex}
+
+\section{Bit Operations}
+
+These logical operators can also be performed on \textbf{bits} (0 is false, 1 is true).
+These are called \textbf{bit operations}, and can even be performed on \textbf{bit strings}, sequences of zero or more bits.
+The \textbf{length} of a bit string is the number of bits in the string.
+\begin{ex}
+  Perform bitwise OR, AND, and XOR operations on the following bit strings.
+  \begin{align*}
+    01 \, 1011 \, 0100 & \\
+    11 \, 0001 \, 1101 &
+  \end{align*}
+  \begin{sol}
+    \begin{align*}
+      01 \, 1011 \, 0100 & \\
+      11 \, 0001 \, 1101 &
+      \\ \\
+      11 \, 1011 \, 1111 & \quad \text{bitwise OR} \\
+      01 \, 0001 \, 0100 & \quad \text{bitwise AND} \\
+      10 \, 1010 \, 1011 & \quad \text{bitwise XOR}
+    \end{align*}
+  \end{sol}
+\end{ex}
+
+\section{Examples}
+
+\begin{ex}\cite[p.~14]{rosen}
+  Determine whether each of these conditional statements is true or false.
+  \begin{itemize}
+    \item[a) ] if \(1+1=2\), then \(2+2=5\)
+    \item[b) ] if \(1+1=3\), then \(2+2=4\)
+    \item[c) ] if \(1+1=3\), then \(2+2=5\)
+    \item[d) ] if monkeys can fly, then \(1+1=3\)
+  \end{itemize}
+  \begin{sol}
+    In each case, we simply determine the truth value of the hypothesis and the conclusion, then use the definition of the truth value of conditional statements to get our answer.
+    \begin{itemize}
+      \item[a) ] The hypothesis is true, and the conclusion is false, so the statement is false.
+      \item[b) ] Since the hypothesis is false and the conclusion is true, the statement is true.
+      \item[c) ] Since the hypothesis is false, regardless of the conclusion the conditional statement must be true.
+      \item[d) ] Since the hypothesis is false, the conditional is true.
+    \end{itemize}
+  \end{sol}
+\end{ex}
+
+\section{Propositional Satisfiability}
+
+A compound proposition is \textbf{satisfiable} if there is an assignment of truth values to its variables that make it true.
+When no such assignments exists, it is \textbf{unsatisfiable}.
+A particular assignment of truth values that shows a compound proposition satisfiable is a \textbf{solution}.
+
+To show a compound proposition is satisfiable, we need only demonstrate one possible solution.
+However, to demonstrate it unsatisfiable, we would need to show every possible assignment of truth values and show why they make it false.
+Thus, reasoning is often more useful than truth tables in showing a compound proposition is unsatisfiable.
+
+\begin{ex}
+  Determine whether each of the following is satisfiable.
+  \begin{itemize}
+    \item[a) ] \( (p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \)
+    \item[b) ]  \((p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r) \)
+    \item[c) ]  \( (p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \land (p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r)\)
+  \end{itemize}
+  \begin{sol}
+    (a) is true when \(p\), \(q\) and \(r\) have the same truth value.
+    (b) is true when at least one of \(p\), \(q\), or \(r\) is false and one is true.
+    So (c), a combination of (a) and (b), is unsatisfiable.
+  \end{sol}
+\end{ex}
+
+

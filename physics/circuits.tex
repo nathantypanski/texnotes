@@ -1,0 +1,244 @@
+\chapter{Circuits}\index{circuits}
+
+\section{Capcacitors}
+
+A \textbf{capacitor}\index{capacitor} is a device used for \emph{storing charge.} It's different
+from a battery in that it does not produce charge, only holds it.
+
+In order to describe things like these capacitors and batteries, we are going to
+use \textbf{circuit diagrams} to represent them visually in a way that provides
+logical connection between the objects.
+
+\begin{figure}[h]
+  \begin{center}
+    \subfigure[A capacitor.]{\boxed{
+      \begin{circuitikz}
+        \draw (0,0) to[C] (2,0);
+      \end{circuitikz}
+    }}
+    \subfigure[A battery.]{\boxed{
+      \begin{circuitikz}
+        \draw (0,0) to[battery, i^>=$I$, l^=$-$ $+$] (2,0);
+      \end{circuitikz}
+    }}
+    \subfigure[A resistor.]{\boxed{
+      \begin{circuitikz}
+        \draw (0,0) to[R, l^=$\Omega$] (2,0);
+      \end{circuitikz}
+    }}
+  \end{center}
+  \caption{Elements that make up a circuit diagram.}
+  \label{fig:batterycapacitor}
+\end{figure}
+On a battery\index{battery}, the \emph{positive} terminal is at the \emph{higher potential} and
+is represented by the \emph{longer line}.
+
+The idea behind your most basic capacitor is that you have two plates with an
+equal area, $a$, and some distance, $d$, between them. The plates are charged
+with an equal but opposite charge, $Q$ and $-Q$, respectively. The air between
+them serves as an insulator. Thus, there is a potential difference, $\Delta V$,
+between the two plates.
+
+We describe capacitors as having \textbf{capacitance}\index{capacitance}, the ability to store
+charge. This capacitance is given by
+\begin{equation}
+  \label{eq:capacitance}
+  C=\frac{Q}{|\Delta V|}
+\end{equation}
+and its units are in \textbf{Farads}\index{Farad} (F), named after Michael Faraday.
+\begin{figure}[h]
+  \begin{center}
+  \begin{circuitikz}[scale=2.0]\draw
+    (0,0) to [C, i^<=$I$, l_=$-Q$ $+Q$] (2, 0)
+    (0,0) -- (0,1)
+    (2,0) -- (2,1)
+    (0,1) to [battery, i^>=$I$] (2,1)
+    ;\end{circuitikz}
+  \end{center}
+  \caption{Current flow to a capacitor.}
+  \label{ckt:currenttocap}
+\end{figure}
+
+It is worth noting that when analyzing circuits, current flows in the opposite
+direction of the actual electron movement (shown in Figure
+\ref{ckt:currenttocap}). This is purely a result of
+convention; flow of positive charge would have the same effect on a circuit
+as negative flow of negative charge, so this ``coordinate system'' must be
+established for circuits just like we establish one for everything else.
+
+On metals, only the electrons may move charge through a ``wire.'' However, other materials allow the
+\textbf{charge carrier} to be \emph{protons} instead of electrons\footnote{or
+both protons and electrons, in either direction at once!}, and if these
+protons are moving in the positive direction then the current vector would point
+in the same direction of the movement of charge carriers. \index{current, direction of}
+
+For capacitors in a parallel circuit, the individual potential differences
+(voltages) are equal. This is because of the layout of the physical objects:
+physically (i.e. on a circuit board), a battery has opposite poles on each end.
+Capacitors, by contrast, have both poles on one side. So on a parallel circuit,
+the negative terminals on the capacitors are both on the same side as the
+negative terminal of the battery. \emph{Ergo}, they have the same voltages.
+\begin{equation}
+  \Delta V_1 = \Delta V_2 = \Delta V
+  \label{eq:potentialcapacitor}
+\end{equation}
+\begin{figure}[h]
+  \begin{center}
+    \subfigure[The voltages on the capacitors are the same.]{
+      \begin{circuitikz}[scale=1.3]\draw
+        (0,0) to [C, v^<=$\Delta V$] (2, 0)
+        (0,0) -- (0,4)
+        (2,0) -- (2,4)
+        (0,2) to [C, v^<=$\Delta V$] (2,2)
+        (0,4) to [battery, v^>=$\Delta V$] (2,4)
+        ;\end{circuitikz}
+      }
+      \subfigure[The charges on the capacitors differ.]{
+      \begin{circuitikz}[scale=1.3]\draw
+        (0,0) to [C, l^=$Q_2$] (2, 0)
+        (0,0) -- (0,4)
+        (2,0) -- (2,4)
+        (0,2) to [C, l^=$Q_1$] (2,2)
+        (0,4) to [battery, v^>=$\Delta V$] (2,4)
+        ;\end{circuitikz}
+      }
+  \end{center}
+  \label{ckt:parcap}
+\end{figure}
+The \textbf{total charge on capacitors connected in parallel is the sum of the
+charges on the individual capacitors}\cite[p.~728]{serway}.
+\begin{equation}
+  Q_{tot}=Q_1+Q_2
+  \label{eq:capparcharge}
+\end{equation}
+
+\subsection{Equivalent Capacitors in Parallel}\index{capacitors in parallel}
+
+Assume that in, say, Figure \ref{ckt:parcap} we want to replace $C_1$ and $C_2$
+by one equivalent capacitor, $C_{eq}$. We found out in Equation
+\ref{eq:potentialcapacitor} that the voltage is equal for each capacitor.
+Therefore, for the equivalent capacitor,
+\begin{align*}
+  &Q_{tot}=C_{eq} \Delta V \\
+  \intertext{Using equation \ref{eq:capparcharge}, we know that
+  $Q_{tot}=Q_1+Q_2$.}
+  &Q_1+Q_2=C_{eq} \Delta V \\
+  \intertext{From out definition for capacitance, equation \ref{eq:capacitance},
+we find that $Q_n = C_n | \Delta V_n |$.}
+  &C_1 | \Delta V_1 | + C_2 | \Delta V_2 |  = C_{eq} \Delta V\\
+  \intertext{But since $\Delta V$ is equivalent across all the capacitors,}
+  &C_{eq}=C_1 + C_2
+\end{align*}
+We can generalize this for capacitors in parallel:
+\begin{equation}
+  C_{eq} = C_1 + C_2 + C_3 + \cdots
+  \label{eq:eqcappar}
+\end{equation}
+This equivalent capacitance of a parallel combination of capacitors is the
+algebraic sum of the individual capacitances and greater than any of the
+individual capacitances.\cite[p.~728]{serway}
+
+\subsection{Equivalent Capacitors in Series}\index{capacitors in series}
+
+In series, \textbf{the charges on capacitors connected in series are the same:}
+\begin{equation}
+  \label{eq:eqcapcharser}
+  Q_1 = Q_2 = Q
+\end{equation}
+Voltage, therefore, would be
+\begin{equation}
+  \label{eq:eqcapvoltser}
+  \Delta V_{tot}=\Delta V_1 + \Delta V_2
+\end{equation}
+The \textbf{total potential difference across any number of capacitors connected
+in series is the sum of the potential differences across the individual
+capacitors}.\cite[p.~729]{serway}
+\begin{figure}[h]
+  \begin{center}
+    \subfigure[The voltages on the capacitors vary.]{
+      \begin{circuitikz}[scale=1.3]\draw
+        (0,0) to [C, v^<=$\Delta V_2$] (4,0)
+        (0,2) to [C, v^<=$\Delta V_1$] (4,2)
+        (4,0) to [battery, v^>=$\Delta V$] (4,2)
+        (0,0) -- (0,2)
+        ;\end{circuitikz}
+    }
+    \subfigure[The charges on the capacitors are the same.]{
+      \begin{circuitikz}[scale=1.3]\draw
+        (0,0) to [C, l^=$Q$] (4,0)
+        (0,2) to [C, l^=$Q$] (4,2)
+        (4,0) to [battery, v^>=$\Delta V$] (4,2)
+        (0,0) -- (0,2)
+        ;\end{circuitikz}
+    }
+    \end{center}
+  \label{ckt:sercap}
+\end{figure}
+If we recognize that \[\Delta V_{tot}=\frac{Q}{C{eq}} \] we can apply this to
+our series circuit to find that
+\[\frac{Q}{C_{eq}}=\frac{Q}{C_1}+ \frac{Q}{C_2}\]
+Which we can generalize to find that \textbf{the inverse of the equivalent
+capacitance is the algebraic sum of the inverses of the individual capacitances
+and the equivalent capacitance of a series is always less than any individual
+capacitance in the combination}.\cite[p.~730]{serway}
+
+% \subsection{Spherical Capcaitors}\index{spherical capacitor}
+%
+% A spherical capacitor puts a charge, say $Q$, on an internal sphere and another
+% equal but opposite charge, $-Q$, on the outside sphere. The electric potential,
+% $\Delta V$, is given by
+%
+% \begin{align*}
+%   \Delta V &= \int_a^b \vec{E} \cdot \ud \vec{S} \\
+%   \intertext{Where $\ud \vec{S}$ is a very small chunk of the sphere. We don't
+%   know how to integrate this. But we can change it into something we know how to
+%   integrate by replacing $\vec{E}$ with $\vec{E}$ as a function of the radius,
+%   $r$.}
+%   \Delta V &= - \int_{r_1}^{r_2} \vec{E}(r) \ud r \\
+%   \Delta V &= - \int_{r_1}^{r_2} \frac{k_e Q}{r^2} \ud r \\
+%   \intertext{Constants can be removed from the integral:}
+%   \Delta V &= -k_e Q \int_{r_1}^{r_2} \frac{\ud r}{r^2} \\
+%   \Delta V &= -k_e Q \left( \frac{1}{r_2}-\frac{1}{r_1}\right) \\
+%   \intertext{Now, replacing this $\Delta V$ into equation \eqref{eq:capacitance}, we
+% find that}
+% C&=\frac{Q}{k_e Q\left( \frac{1}{r_2}-\frac{1}{r_1}\right)}
+% \end{align*}
+% Where $k_e$ is the \textbf{Coulomb constant}\index{Coulomb constant}, given by
+% \[ k_e = \frac{1}{4 \pi \varepsilon_0} \approx 8.987551 \times 10^{19} N \cdot
+% m^2 / C^2 \]
+% Thus, we find that the capacitance of a spherical conductor is given by:
+% \begin{equation}
+%   C_{sphere}=\frac{4 \pi \varepsilon_0}{(\frac{1}{r_1}-\frac{1}{r_2})}
+%   \label{eq:spherecapacitance}
+% \end{equation}
+% Where $r_1$ is the radius of the inner sphere, and $r_2$ is the radius of the
+% outer sphere.
+%
+% % \begin{ex}
+% %   Say we would like to treat the Earth as a capacitor. What would its
+% %   capacitance be?
+% %   \begin{sol}
+% %     Use equation \eqref{eq:spherecapacitance}. Since outer space essentially
+% %     serves as the outer limit for our capacitor, $b\to\infty$ and our
+% %     capacitance becomes
+% %     \[ C_{\text{earth}}=\frac{4 \pi \varepsilon_0}{\frac{1}{r_{\text{earth}}}}=4 \pi
+% %       \varepsilon_0 r_{\text{earth}} \]
+% %     Which is approximately only
+% %     \[ 0.7 mF \]
+% %     Farads are \emph{very} large.
+% %   \end{sol}
+% % \end{ex}
+% % dr gore
+% %\begin{ex}
+% %  Consider a conductor formed by an inner cylinder with a radius $r_1$ and an
+% %  outer cylinder with radius $r_2$. Its length, $l$, is much greather than $r_1$
+% %  and $r_2$, which allows us to neglect end behavior. This describes a standard coaxial cable.
+% %  %From Gauss's Law, we know that our electric field at any point is given by $E
+% %  %= 2 k_e \lambda / r$, and thus our electric potential would be found by
+% %  % \[\Delta V = -2 k_e \lambda \ln{|r_2/r_1|} \]
+% %  % To find the capacitance, substitute the absolute value of $\Delta V$ into
+% %  % equation \eqref{eq:capacitance}:
+% %  % \[ C=\frac{Q}{\Delta V} = \frac{Q}{|V_2-V_1|} = \frac{r_1r_2}{k_e(r_2-r_1)} \]
+% %\end{ex}
+%
+% \appendix

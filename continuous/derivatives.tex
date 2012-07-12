@@ -1,0 +1,261 @@
+\chapter{Derivatives}
+
+\section{Slopes}
+
+The entire idea of a derivative is based on the idea behind the slope of a graph. You probably remember the equation for the slope of a line from algebra,
+\begin{equation}
+  \label{eq:slope}
+  m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}
+\end{equation}
+which is usually associated with the general form of a linear equation
+\begin{equation}
+  y=mx+b
+\end{equation}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/lineform.eps}
+  \end{center}
+  \caption{The general form equation for a line.}
+\end{figure}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/lineform_slope.eps}
+  \end{center}
+  \caption{How we determine ``rise over run'' in a graph.}
+\end{figure}
+\begin{remark}
+  $\Delta$ is a common symbol in calculus, and it basically means ``change in.''
+\end{remark}
+
+Where $m$ is the slope of the graph, $x$ is your input value, and $b$ is the \emph{y-intercept}, or initial $y$ value, for the function.
+
+Slope is also often seen with the point-slope formula, where given a point $(x_1, y_1)$ and a slope $m$, you can solve for $y$ to get a linear function.
+\begin{equation}
+  \label{eq:pointslope}
+  y-y_1=m(x-x_1)
+\end{equation}
+
+In early mathematics courses, slope is often described as the ``rise'' over ``run'' of a graph. While this is accurate, it doesn't provide the complete picture. What a \emph{slope} really describes is how much a given function $f(x)$ is altering each of its input values $x$, often heard as ``change in $y$ over change in $x$.'' You'll notice that this is independent of any initial value $b$ selected for a linear function.\footnote{Which is why all constants disappear when you take the derivative of a function.}
+
+To figure out the slope of a linear function $f(x)=mx+b$, all you need to do is
+divide the difference between two output ($y$) values by the difference between
+their two input ($x$) values. This is where equation \eqref{eq:slope} comes from:
+\begin{equation*}
+  m=\frac{f(x_2)-f(x_1)}{x_2-x_1}
+\end{equation*}
+And because the function is linear, the slope $m$ is constant all the way through and any two points can be used to find it.
+
+\section{The Difference Quotient}
+
+The \emph{difference quotient} is the same exact thing as the slope formula, with the only distinction being you know how far apart your two $x$ values are and you treat that distance as a variable. So $\Delta x=x_2-x_1$, and $x=x_1$.
+\begin{equation}
+  \frac{\Delta f(x)}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}
+\end{equation}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/diffquot.eps}
+  \end{center}
+  \caption{A visual representation of the difference quotient on a line.}
+\end{figure}
+You'll often see the difference quotient written with $\Delta x \to h$ as
+\begin{equation}
+  \frac{\Delta f(x)}{\Delta x}=\frac{f(x+h)-f(x)}{h}
+\end{equation}
+
+\section{Derivatives}
+
+\subsection{Limit Definition}
+
+The difference quotient is used in the limit definition of the derivative, which is
+\begin{equation}
+  \label{eq:limitdef}
+  \frac{\ud f(x)}{\ud x}=\lim_{h \to 0} \frac{f(x+h)-f(x)}{h}
+\end{equation}
+Notice that the only distinction between this equation and the difference quotient/slope equation from earlier is the introduction of a limit. The idea behind that limit is that you're calculating the slope of a function as the distance between your $x_2$ and $x_1$ values becomes infinitely small ($h\to 0$). We call this distance an \emph{infinitesimal}: a distance smaller than any feasible measurement, but not zero in size.
+
+So what a derivative of a function is going to tell us is how the function behaves (its slope) at a particular ``infinitely small'' portion of the graph, which might as well be a point.
+
+For linear functions, the function behaves the same no matter where you look at it, so their derivatives are always constant and equal to the slope of the function.
+
+For nonlinear functions, like $f(x)=x^2$, the derivative will yield a function (in this case, just $f'(x)=2x$), because the function is changing its input values differently depending on where you are looking. Near the origin, where $x=0$, the derivative is zero and any $x$ value will give $y$ values not too far from the original input. But as you move further from the origin, the ratio of $y/x$ gets larger and larger, and the derivative in turn gets bigger and bigger.
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=0.9\textwidth]{continuous/derivatives/xsquared.eps}
+      \caption{A graph of $f(x)=x^2$ and $f'(x)=2x$.}
+    \end{center}
+  \end{figure}
+
+\subsection{Notation}
+
+There are a number of ways to denote the derivative of a function $y=f(x)$. The most common notation early on in calculus classes is the ``prime'' notation $y'$ and $f'$ because it is the simplest. Later on, you often see $\ud/\ud x$ style notation, because it is more specific. It tells us not only which function we are differentiating, but with respect to which variable. There is another important characteristic of this ``d'' notation: it is eerily similar to the definition of slope:
+\begin{align*}
+  &\underbrace{m=\frac{\Delta y}{\Delta x}=\frac{\Delta f(x)}{\Delta x}}_{\text{slope}} &\underbrace{y'=\frac{\ud y}{\ud x}=\frac{\ud f(x)}{\ud x}}_{\text{derivative}}
+\end{align*}
+In the case of slope, we're talking about specific $y$ and $x$ values, but in the case of a derivative, we're talking about \emph{infinitesimals}, and that particular distinction allows us to discuss the behavior of functions that aren't linear, but change their behavior over time.
+
+\subsection{Tangent Lines}
+
+The \emph{tangent line} to a graph at a point is just a line that acts like the function is linear and behaves exactly as the graph does at that point. This is useful for visualizing the derivative, and showing us how the behavior of a function can change depending on its $(x,y)$ location.
+
+To calculate the equation for a tangent line at a point, simply find the
+derivative of the function at that point and treat that as the slope of the
+tangent line. Then, use the $(x, y)$ values of the point to produce a function
+using equation \eqref{eq:pointslope}.
+
+\subsection{Derivative Rules}
+
+Derivative rules are just shorthands for working things out manually using the
+limit definition in equation \eqref{eq:limitdef}. They all come from equation \eqref{eq:limitdef}, but they serve as generalizations to greatly simplify the work we have to do in calculating derivatives.
+
+\subsubsection{Power Rule}
+
+The power rule states that
+\begin{equation}
+  \ddx x^n=nx^{n-1}
+\end{equation}
+
+\subsubsection{Product Rule}
+
+The product rule states that
+\begin{equation}
+  \ddx (uv)=u \frac{\ud v}{\ud x}+v\frac{\ud u}{\ud x}
+\end{equation}
+
+\subsubsection{Quotient Rule}
+
+The quotient rule states that
+\begin{equation}
+  \frac{\ud}{\ud x}\left(\frac{u}{v}\right)=\frac{v\frac{\ud u}{\ud x}-u\frac{\ud v}{\ud x}}{v^2}
+\end{equation}
+
+\subsubsection{Chain Rule}
+
+The chain rule states that if $y=f(u)$ and $u=g(x)$, then
+\begin{equation}
+  \frac{\ud y}{\ud x}=\frac{\ud y}{\ud u} \cdot \frac{\ud u}{\ud x}
+\end{equation}
+
+The chain rule is used to differentiate composite functions, which look like $(f \circ g)(x)$ and mean $f(g(x))$. You'll want to develop an intuitive understanding for when to use the chain rule.
+\begin{ex}
+  Find the derivative of $f(x)$, where
+  \[ f(x)=\frac{1}{x^3} \]
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics{continuous/derivatives/chainrule_1.eps}
+    \end{center}
+    \caption{A plot of $f(x)=\frac{1}{x^3}$.}
+  \end{figure}
+  \begin{sol}
+    This is not a chain rule problem. Although you could think of it as one with $f(x)=1/x$ and $g(x)=x^3$, it is easier to remember that factors can be moved from the numerator to the denominator simply by multiplying their exponents by $-1$.
+    \begin{align*}
+      f(x)&=\frac{1}{x^3}\\&=x^{-3} \\
+      \ddx f(x)&=-3x^{-4}
+    \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  Find the derivative of $f(x)$, where
+  $$ f(x)=\left(\frac{1}{\sqrt{x}}\right)^5 $$
+  This is a chain rule problem. We use
+  \begin{align*}
+    & g(x)=\frac{1}{\sqrt{x}}
+    & & f(x)={(g(x))^5}
+  \end{align*}
+  \begin{align*}
+    \ddx f(x)&=\ddx \left(\frac{1}{\sqrt{x}}\right)^5 \\
+      &= \ddx {(g(x))^5} \\
+      &= 5g(x)^4 \cdot \ddx g(x)
+  \end{align*}
+  Now we find $ \ddx g(x) $
+  \begin{align*}
+    \ddx g(x) &= \ddx \frac{1}{\sqrt{x}} =\ddx \frac{1}{x^{1/2}} =\ddx x^{-1/2} \\
+      &=\frac{-1}{2}x^{-3/2} =\frac{-1}{2x^{3/2}} \\
+      &=\frac{-1}{2\sqrt{x^3}}
+  \end{align*}
+  and plug that back into our original derivative, along with $g(x)=\frac{1}{\sqrt{x}}$
+  \begin{align*}
+    \ddx f(x)&=5g(x)^4 \cdot \ddx g(x) \\
+      &=5\left(\frac{1}{\sqrt{x}}\right)^4\cdot \frac{-1}{2\sqrt{x^3}}
+  \end{align*}
+  and simplify
+  \begin{align*}
+    \ddx f(x)&=5\left(\frac{1}{\sqrt{x}}\right)^4\cdot \frac{-1}{2\sqrt{x^3}} =5\left[\frac{1^4}{\left(\sqrt{x}\right)^4}\right] \cdot \frac{-1}{2\sqrt{x^3}} \\
+    &=5\left[\frac{1}{\left(x^{1/2}\right)^4}\right] \cdot \frac{-1}{2\sqrt{x^3}}=5\left[\frac{1}{x^{4/2}}\right] \cdot \frac{-1}{2\sqrt{x^3}} \\
+    &=5\left[\frac{1}{x^2}\right] \cdot \frac{-1}{2\sqrt{x^3}}=\frac{5}{x^2} \cdot \frac{-1}{2\sqrt{x^3}} \\
+    &=\frac{-5}{2x^2\sqrt{x^3}} =\frac{-5}{2x^2\cdot x^{3/2}} \\
+    &=\frac{-5}{2x^{4/2}\cdot x^{3/2}}\\
+    &=\frac{-5}{2x^{7/2}} \\
+  \end{align*}
+\end{ex}
+\subsection{Differentiability}
+  A function $f(x)$ is differentiable at a point $x_0$ if a tangent line to its curve exists at that point and is not vertical. Functions are not differentiable at breaks, immediate bends, cusps, or places with vertical tangents.
+
+\subsection{Graphing Functions}
+To graph a function:
+  \begin{enumerate}
+   \item Find all \textbf{critical values}. Critical values are locations where $\frac{\ud y}{\ud x}=0$ or is undefined.\footnote{At locations where $\frac{\ud y}{\ud x}=0$, the tangent line is horizontal.}
+   \item Find all \textbf{points of inflection}. These are locations where the second derivative ($\frac{\ud^2y}{\ud x}$) is zero or undefined.
+   \item Determine where $\frac{\ud y}{\ud x}$ is \emph{positive} to find where $f(x)$ is \emph{increasing}. Remember that a derivative signifies the slope of a graph, so a positive derivative implies that the graph is increasing. This can be achieved either by testing values on each side of a \emph{critical value}, or by intuitive understanding. For example, $\frac{\ud y}{\ud x}=3x^2$ is positive everywhere except at $x=0$, so $f(x)=y$ is increasing everywhere except for at its horizontal tangent at $x=0$.\footnote{$x^2$ can never produce a negative number, because a negative times a negative or a positive times a positive is always positive}
+   \item Determine where $\frac{\ud y}{\ud x}$ is \emph{negative} to find where $f(x)$ is \emph{decreasing}.
+   \item Determine the sign of $\frac{\ud^2y}{\ud x}$ on both sides of all \emph{points of inflection}. The graph is \emph{concave up} where $\frac{\ud^2y}{\ud x}$ is positive, and \emph{concave down} where $\frac{\ud^2y}{\ud x}$ is negative.
+  \end{enumerate}
+\section{l'Hospital's Rule}\index{l'Hospital's Rule}
+
+\textbf{l'Hospital's Rule} uses derivatives to calculate limits/index{limits} of fractions whose numerators and denominators both approach zero or $\infty$. Limits involving transcendental functions/index{transcendental functions} often require some use of the rule for their calculation.
+
+\begin{theorem}[L'Hospital's Rule]\label{th:lhospital}
+  Suppose that $f(a)=g(a)=0$, that $f$ and $g$ are differentiable on an open interval $I$ containing $a$, and that $g'(x) \neq 0$ on $I$ if $x \neq a$. Then
+  \[ \lim_{x \to a} \frac {f(x)}{g(x)} \=H \lim_{x \to a} \frac{f'(x)}{g'(x)} \]
+  assuming that the limit on the right side of this equation exists.
+\end{theorem}
+\begin{remark}
+  L'Hopital's Rule does not apply when either the numerator or the denominator has a finite nonzero limit.
+\end{remark}
+\begin{proof}
+  We first establish the limit equation for the case $x \to a^+$. The method needs almost no change to apply to $x \to a^{-}$, and the combination of these two cases establishes the result.
+
+  Suppose that $x$ lies to the right of $a$. Then $g'(x) \neq 0$, and we can apply Cauchy's Mean Value Theorem to the closed interval from $a$ to $x$. This step produces a number $c$ between $a$ and $x$ such that
+  $$ \frac{f'(c)}{g'(c)}=\frac{f(x)-f(a)}{g(x)-g(a)} $$
+  But $f(a)=g(a)$, so
+  $$ \frac{f'(c)}{g'(c)}=\frac{f(x)}{g(x)} $$
+  As $x$ approaches $a$, $c$ approaches $a$ because it always lies between $a$ and $x$. Therefore,
+  $$ \lim_{x \to a^+} \frac{f(x)}{g(x)}=lim_{c \to a} \frac{f'(c)}{g'(c)} = lim_{x \to a^+} \frac{f'(x)}{g'(x)} $$
+  which establishes l'Hospital's Rule for the case where $x$ approaches $a$ from
+  above. The case where $x$ approaches $a$ from below is proved by applying
+  Cauchy's Mean Value Theorem to the closed interval $[x,a], x <
+  a$.\cite{thomas}
+\end{proof}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{photos/cauchy.jpg}
+  \end{center}
+  \caption{Augustin Louis Cauchy, 1901.}
+\end{figure}
+\begin{theorem}[Cauchy's Mean Value Theorem]\label{th:caunchymv}\index{Cauchy's Mean Value Theorem}
+Suppose functions $f$ and $g$ are continuous on $[a, b]$ and differentiable throughout $(a, b)$ and also suppose $g'(x) \neq 0$ throughout $(a, b)$. Then there exists a number $c$ in $(a, b)$ at which
+  \[ \frac {f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)} \]
+\end{theorem}
+\section{Derivatives of Inverses of Differentiable Functions}\index{inverse
+functions}
+
+\begin{theorem}[The Derivative Rule for Inverses]\label{th:invderiv}
+  If $f$ has an interval $I$ as domain and $f'(x)$ exists and is never zero on $I$, then $f^{-1}$ is differentiable at every point in its domain (the range of $f$). The value of $(f^{-1})'$ at a point $b$ in the domain of $f^{-1}$ is the reciprocal of the value of $f'$ at the point $a=f^{-1}(b)$:
+    \begin{equation}
+      (f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}
+    \end{equation}
+  or
+    \begin{equation}
+      \cfrac{\ud f^{-1}}{\ud x}\bigg|_{x=b}=\cfrac{1}{\cfrac{\ud f}{\ud x}\bigg|_{x=f^{-1}(b)}}
+    \end{equation}
+    \begin{proof}
+      \begin{align*}
+        f(f^{-1}(x)) &= x &\text{Inverse function relationship} \\
+        \frac{\ud}{\ud x} f(f^{-1}(x)) &= 1 &\text{Differentiating both sides} \\
+        f'(f^{-1}(x))\cdot \cfrac{\ud}{\ud x}f^{-1}(x) &= 1 &\text{Chain Rule} \\
+        \frac{\ud}{\ud x}f^{-1}(x) &= \cfrac{1}{f'(f^{-1}(x))} &\text{Solving for the derivative}
+      \end{align*}
+    \end{proof}
+\end{theorem}
+
+

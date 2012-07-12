@@ -1,0 +1,63 @@
+\chapter{Algorithms}
+
+An \textbf{algorithm} is a finite sequence of precise instructions for
+performing a computation on or for solving a problem.
+
+\begin{algorithm}
+  \caption{Finding the Maximum Element in a Finite Sequence.\cite[p.~193]{rosen}}
+  \begin{algorithmic}[1]
+    \Procedure {max}{$a_1$, $a_2$, $\ldots$, $a_n$}
+      \State $max := a_1$
+      \For {$i:=2$, $i< n$}
+         \If{$max < a_i$}
+          $max := a_1$
+        \EndIf
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+
+The following two algorithms return $location$, the subscript of the term that
+equals $x$, or $0$ if $x$ is not found.
+\begin{algorithm}
+  \caption{The Linear Search Algorithm.\cite[p.~194]{rosen}}
+  \begin{algorithmic}[1]
+    \Procedure{linear search}{$x:$ integer, $a_1, a_2, \ldots, a_n:$ distinct
+    integers}
+      \State $i:=1$
+      \While{$i \leq n$ and $x \neq a_i$}
+        \State $i:= i+1$
+      \EndWhile
+      \If{$i \leq n$}
+        \State location $:= i$
+        \Else 
+        \State location $:= 0$
+      \EndIf
+      \State \Return location
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+\begin{algorithm}
+  \begin{algorithmic}
+    \Procedure {binary search}{$x:$ integer,$a_1,a_2,\ldots,a_n:$ increasing
+    integers}
+      \State $i:= 1$
+      \State $j:=n$
+      \While {$i<j$}
+        \State $m:=\lfloor (i+j)2 \rfloor$
+        \If{$x>a_m$}
+          \State $i:=m+1$
+        \Else
+          \State $j:=m$
+        \EndIf
+      \EndWhile
+      \If{$x=a_i$}
+        \State $location:=i$
+      \Else
+        \State $location:=0$
+      \EndIf
+      \State \Return location 
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+

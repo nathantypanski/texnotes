@@ -1,0 +1,119 @@
+\chapter{Transcendental Functions}
+
+\begin{defn}
+  A \textbf{transcendental function} is a function that does not satisfy a polynomial equation whose coefficients are themselves polynomials, in contrast to an algebraic function, which does satisfy such an equation.
+\end{defn}
+
+In other words, a transcendental function is a function that ``transcends'' algebra in the sense that it cannot be expressed in terms of a finite sequence of the algebraic operations of addition, multiplication, and root extraction.
+
+Examples of transcendental functions include the \emph{exponential function}, the \emph{logarithm}, and the \emph{trigonometric functions}.
+%\cite{wiki:transcendental}
+
+Formally,
+
+\begin{defn}
+  An analytic function \(f(z)\) of the real or complex variables \(z_1, \ldots, z_n\) is \textbf{transcendental} if the \(n+1\) functions \(z_1, \ldots, z_n\) are algebraically independent.
+  \cite{wiki:transcendental}
+\end{defn}
+
+\section{Natural Logarithms}
+
+\subsection{The Natural Logarithm and $e$}
+
+\begin{defn}
+	The \textbf{natural logarithm}is the function given by
+  \begin{equation}
+    \ln x = \int ^{x} _{1} \frac{1}{t} \ud t \text{,} \qquad x \in \mathbb{N}
+  \end{equation}
+\end{defn}
+\begin{defn}
+  The \textbf{number $e$} is that number in the domain of the natural logarithm satisfying
+  \[ \ln{e}=1 \]
+\end{defn}
+
+
+\subsection{Algebraic Properties of the Natural Logarithm}
+
+For any numbers $b>0$ and $x>0$, the natural logarithm satisfies the following rules:
+\begin{table}
+    \begin{tabular}{p{3in}>\(p{3in}<\)}
+      Product Rule      & \displaystyle{ \ln{bx}=\ln b + \ln x} \\\\
+      Quotient Rule     & \displaystyle{ \ln{\frac{b}{x}}=\ln b - \ln x} \\ \\
+      Reciprocal Rule   & \displaystyle{ \ln{\frac{1}{x}}=-\ln x} \\\\
+      Power Rule        & \displaystyle{ \ln{x^r}=r \ln x \qquad \forall r \in \mathbb{R}}
+    \end{tabular}
+\end{table}
+% \begin{equation}
+% 	\ln{bx}=\ln b + \ln x
+% \end{equation}
+% \begin{equation}
+% 	\ln{\frac{b}{x}}=\ln b - \ln x
+% \end{equation}
+% \begin{equation}
+% 	\ln{\frac{1}{x}}=-\ln x
+% \end{equation}
+% \begin{equation}
+% 	\forall r \in \mathbb{R} \quad \ln{x^r}=r \ln x
+% \end{equation}
+
+\section{Hyperbolic Functions}
+Both \(\cos x\) and \(\sin x\) come from the formula for a circle.
+\begin{equation}
+  x^2 + y^2=r^2
+  \label{eq:circle}
+\end{equation}
+
+But we can define other useful functions using the equation for a hyperbola.
+\begin{equation}
+  x^2-y^2=1
+  \label{eq:hyperbola}
+\end{equation}
+Namely, \(\cosh x\) and \(\sinh x\).
+
+In \ref{eq:hyperbola}, let \[ y \to \frac{e^x-e^{-x}}{2}\] to get \(\sinh x\).
+Let \[ x \to \frac{e^x+e^{-x}}{2}\] to find \(\cosh x\).
+
+We can prove that these still satisfy equation \ref{eq:hyperbola}:
+
+\begin{proof}
+  \begin{align*}
+    1&=x^2-y^2 \\
+    1&=\left( \frac{e^x+e^{-x}}{2} \right) - \left( \frac{e^x - e^{-x}}{2}
+    \right)^2 \\
+    1&=\frac{e^{2x}+2e^xe^{-x}+e^{-2x}}{4}-\frac{e^{2x}-2e^xe^{-x}+e^{-2x}}{4}
+    \qedhere
+  \end{align*}
+\end{proof}
+
+\section{Inverse Functions}\index{inverse functions}
+
+An inverse function undoes, or inverts, the effects of an original function.
+While inverse functions are not, by definition, transcendental, we will look at them in this chapter because they are useful for producing inverse trigonometric functions--functions that are transcendental.
+\begin{defn}
+  Suppose that \(f\) is a one-to-one function on a domain $D$ with range $R$. The \textbf{inverse function} $f^{-1}$ is defined by
+  \[ f^{-1}(b)=a \text{ if } f(a)=b \]
+  The domain of $f^{-1}$ is $R$ and the range of $f^{-1}$ is $D$.
+\end{defn}
+In order for an inverse function $f^{-1}(x)$ to exist for a function $f(x)$, the original function $f(x)$ must be one-to-one. Otherwise, the resulting ``inverse function'' would not be a function: more than one output would be produced from only one input, and it would not pass the vertical line test.
+\begin{remark} \index{composition}\index{inverse functions}
+  By definition, either composite of a function and its inverse will return the identity function.
+  \[ (f \circ f^{-1})(x)=f(f^{-1}(x))=x \]
+  or
+  \[ (f^{-1} \circ f)(x)=f^{-1}(f(x))=x \]
+\end{remark}
+
+\subsection{Finding Inverse Functions}
+To find the inverse of a function $f(x)$, replace $f(x)$ with $y$ and solve for $x$ in terms of $y$. Then, interchange $x$ and $y$.
+\begin{ex}
+  Find the inverse of $y=\frac{1}{2}x+1$, expressed as a function of $x$.
+  \begin{align*}
+    y &= \frac{1}{2}x+1 \\
+    2y &= x + 2 \\
+    x &= 2y -2 \xrightarrow{\text{(swap $x$ and $y$)}} \\
+    y &=2x-2
+  \end{align*}
+  The inverse of the function $f(x)=\frac{1}{2}x+1$ is the function $f^{-1}(x)=2x-2$.
+\end{ex}
+
+
+

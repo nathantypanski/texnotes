@@ -1,0 +1,207 @@
+\chapter{Counting}
+
+We can use counting techniques to determine the complexity of an algorithm.
+Counting is very important not only for computer science but also for any job.
+For example, counting problems are common in job interviews to see how a potential employee reacts.
+
+Counting, ultimately, is a very simple theoretical process governed by some basic rules.
+
+\section{Rules of Counting}
+
+\subsection{The Sum Rule}\index{sum rule for counting}
+  If a first task can be done in \(n_1\) ways and a second task can be done in \(n_2\) ways,
+  and if these tasks cannot be done at the same time, then there are \(n_1+n_2\) ways to do either task.
+
+  In set notation: if \(A\) and \(B\) are \emph{disjoint}, then \(|A \cup B|=|A|+|B|\).
+
+\subsection{The Product Rule}\index{product rule for counting}
+
+Suppose that a procedure can be broken down into two tasks.
+If there are \(n_1\) ways to do the first task and 
+\(n_2\) ways to do the second task
+\emph{after} the first task has been done,
+n there are \(n_1n_2\) ways to do the procedure.
+
+In set notation:
+\[|A \times B| = |A||B| \]
+
+\subsection{Examples}
+
+\begin{ex}
+  Let \(D = \{x, y, z\}\). Let \(R=\{1,2,3,4,5\}\).
+  \begin{itemize}
+    \item[a) ] How many functions are there from \(D\to R\)?
+    \item[b) ] How many \emph{one-to-one} functions are there?
+    \item[c) ] How many onto functions are there?
+  \end{itemize}
+  \begin{sol}
+    We only have two rules for counting right now.
+    For the product rule, we must assume we are going to define mapping for \(x\), then for \(y\), then for \(z\).
+    With the sum rule, then we can define mapping for \(x\), or \(y\), or \(z\).
+
+    Then we go back to ``how do we define the function?'' Do we have to find a mapping for every element in the domain?
+
+    Yes. By definition of functions, we must.
+
+
+    \begin{itemize}
+      \item[a) ] There are \(5 \times 5 \times 5\) possible mappings from \(D \to R\).
+      \item[b) ] \(5\times4\times3\).
+      \item[c) ] It is impossible for the function to be onto. There are not enough elements in the domain to have values in the range to map to them.:w
+    \end{itemize}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  A typical PIN is a sequence of any four numbers chosen form the 26 letters and the ten digits.
+  \begin{itemize}
+  \item[a) ] How many different PINs are possible if repetition is allowed?
+    \item[b) ] What if repetition is not allowed?
+  \end{itemize}
+  \end{ex}
+\begin{ex}
+  The ASCII character set is represented by 7 binary bits. How many characters are there in the set?
+  % \begin{sol}
+  %  We have to make seven choices in sequence to come up with an ASCII character.
+  %  For each choice, we have two choices.
+  % \end{sol}
+\end{ex}
+\begin{ex}
+  Count the number of binary bit strings of length 4 or less.
+\end{ex}
+\begin{ex}
+  A student can choose a computer project from one of three lists. The three lists contain 10, 20, or 30 possible projects. There is no overlap among that list. How many projects are there to choose from?
+  \begin{sol}
+    \[10+20+30 \text{ projects}\]
+  \end{sol}
+\end{ex}
+
+\section{The Pidgeonhole Problem}\index{pidgeonhole problem}
+\begin{quote}
+  A flock of 13 pideons roosts in a set of 12 pidgeonholes. One of the
+  pidgeonholes must have more than one pidgeon.
+\end{quote}
+If $k$ is a positive integer and $k+1$ objects are placed into $k$ boxex, then
+at least one box must have more than one object.
+\begin{proof}
+  We can prove this by contradiction. Suppose all of the pidgeons fit in to $k$
+  boxes exclusively. Therefore, there must be $k$ pidgeons, which is not equal
+  to $k+1$.
+\end{proof}
+\begin{corollary}
+  A function $f$ from a set with $k+1$ elements to a set with $k$ elements is
+  not \emph{one-to-one}.
+  \begin{proof}
+    Say we have eight boxes. We want to divide the objects evenly among the
+    boxes, so we place $2$ in each box. The number of boxes over the number of
+    elements is equal to $2$ objects per box.
+
+    For nine boxes, we must take the ceiling function of $9/4$ and find 3.
+  \end{proof}
+\end{corollary}
+\begin{theorem}
+  \label{th:pidgeonhole}
+  If $N$ objects are placed into $k$ boxes, then there is at least one box
+  containing at least $N/K$ objects.
+\end{theorem}
+\begin{ex}
+  Among 100 people there are at least [100/12]=9 who were born in the same
+  month.
+\end{ex}
+\begin{ex}
+  How many cards must be selected from a standard deck of 52 cards to guarantee
+  that at least three cards of the same suit are selected. After generalizing
+  the pidgeonhole problem, we find that at least one box contains at least
+  $[N/4]$ cards. At least three cards of one suit are selected 
+\end{ex}
+\section{Combination Rule}
+
+For the addition rule, we know the values and don't know the positions.
+Where we know the position and don't know the values, we use the combination
+rule to solve the problems.
+
+For the rule of products, things are more general. We can select the same
+elements, and we are determining value rather than location.
+
+\begin{ex}
+  How many bit strings of length $100$ have at least $2$ ones?
+  \begin{sol}
+    The solution is given by the combination rule:
+    \[ C(100 2) \]
+    For exactly 3 ones, we do
+    \[ C(100, 3) \]
+    One hundred $1$s:
+    \[ C(100,100) \]
+    Or
+    \[ C(100, 2) + C(100, 3),+ \cdots + C(100,100) \]
+    We can do this using the combination rule as follows:
+    \[ 2^{100} - C(100,0) - C(100,1) \]
+    which is the total number of bit strings with at least 2 ones.
+  \end{sol}
+\end{ex}
+
+\section{Counting the Complement}
+
+This is an applicaiton of the set decomposition principle, which states that the
+total number of objects is equal to the number of objects that have a certain
+property plus the number of objects that do not have the property.
+\begin{ex}
+  Passwords of lenght 8 are made of lowercase letters and decimal digits. How
+  many of such passwords contain at least one decimal digit?
+  
+  In the past, we solved this as follows:
+  \[ (26+10)^8 = \text{ number of passwords with more than one digit} + 26^8 \]
+
+  The combination rule will tell us:location of digit -> value of digit ->
+  value of letters
+
+
+  Number of passwords with one digit:
+  \[ C(8,1) \times 10 \times 26^7 \]
+  The number of passwords with two digits:
+  \[ C(8,2)\times10^2\times26^6 \]
+  And so on. The sum of these numbers provides our answer.
+\end{ex}
+
+\section{The Binomial Theorem}
+\begin{ex}
+  Find the expansion of
+  \[(x+y)^2,\, (x+y)^3\]
+  \begin{sol}
+    \[(x+y)^2 = x^2 + 2\times y+ y^2\]
+    That is to say,
+    \[ C(2, 0)+ C(2, 1)+ C(2,2) \]
+    For
+    \[(x+y)^3\]
+    we get
+    \begin{align*}
+      (x+y)^3&=C(3,0)+C(3,1)+C(3,2)+C(3,3) \\
+      &= x^3 + 3x^2 y + 3 x y^2 + y^3
+       &= (x+y)(x+y)(x+y)
+    \end{align*}
+  \end{sol}
+\end{ex}
+This gives us the \textbf{binomial theorem}.
+\[ (x+y)^n = \sum^n_{j=0} C(n, j)x^{n-j}y^j \]
+\begin{ex}
+  What is the coefficient of $x^{25}y^{75}$ in the expansion of $(2x-5y)^{100}$?
+  \begin{sol}
+    Let $2x=a$ and $5y =b$.
+    \[ (a+b)^n= \sum^n_{j=0} C(n,j) a^{n-j} b^j \]
+    Now we solve for the variables. We know $a$, $b$, and $n$, so we must solve for
+    $j=75$.
+    Now, we put together our sum.
+    \[ C(100,75)(2x)^{100-75}(-5y)^{75} \]
+    \[ = C(100,75) 2^{25} \cdot x^{25} \cdot (-5)^{75} \cdot y^{75} \]
+    Which makes our answer
+    \[ C(100, 75) \cdot 2^{25}\cdot(-5)^{25}\]
+  \end{sol}
+\end{ex}
+\begin{homework}
+  Section $6.3$ (p.413): $17,20,33,34,37$.
+  Section $6.4$ (p.421): $3, 5, 9$.
+
+  On Monday, we will get the even numbered answers for sections $6.1-6.4$,
+  around six or seven questions. We will also receive the review question
+  answers. This homework will be due on Tuesday, along with a quiz on counting.
+  Review the self-assessment on the counting sction.
+\end{homework}

@@ -81,10 +81,16 @@
 Our first pythagorean identity is just derived from the pythagorean theorem.
 \begin{figure}[H]
   \begin{center}
-    \includegraphics{continuous/functions/pyth.eps}
+    \subfigure[The Pythagorean Theorem states that the sum of the areas square $a$ and square $b$ is equal to the area of square $c$.]{
+      \includegraphics{continuous/functions/pyth.eps}
+      \label{fig:pyth}
+    }
+    \hspace{0.1\textwidth}
+    \subfigure[The equation for a unit circle is $a^2+b^2=1$. This creates a circle with a radius of $1$.]{
+      \includegraphics[width=0.3\textwidth]{continuous/functions/unitcirc.eps}
+      \label{fig:basicuniticircle}
+    }
   \end{center}
-  \caption{The Pythagorean Theorem states that the sum of the areas square $a$ and square $b$ is equal to the area of square $c$.}
-  \label{fig:pyth}
 \end{figure}
 \begin{equation}
   \sin^2x+\cos^2x=1
@@ -92,11 +98,33 @@ Our first pythagorean identity is just derived from the pythagorean theorem.
 \end{equation}
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{continuous/functions/unitcirc.eps}
+    \includegraphics[width=0.3\textwidth]{continuous/trig/pythcircle.eps}
+    \caption{The pythagorean squares on a unit circle.}
   \end{center}
-  \caption{The equation for a unit circle is $a^2+b^2=1$. This creates a circle with a radius of $1$.}
-  \label{fig:basicuniticircle}
+  \label{fig:pythcircle}
 \end{figure}
+Because the radius of the circle is $1$, then the length of side $c$ must also equal $1$.
+From this, we can conclude that $\sin^2x+\cos^2x$ must, indeed, equal 1.
+
+To make sure we understand this on a geometric level, let's first go over the basic trigonometric functions and their relationship with our triangle.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{continuous/trig/basictrig.eps}
+  \end{center}
+\end{figure}
+For this example:
+\begin{itemize}
+  \item $\sin\theta=b/c$
+  \item $\cos\theta=a/c$
+  \item $\tan\theta=b/a$
+\end{itemize}
+Gennerally speaking, for an angle $\theta$ on the inside of a triangle,
+\begin{itemize}
+  \item$\sin\theta$ is equal to the \emph{length of the opposite side divided by the length of the hypotenuse}.
+  \item$\cos\theta$ is equal to the \emph{adjacent side divided by the hypotenuse}.
+  \item$\tan\theta$ is equal to the \emph{opposite over the adjacent side}.
+\end{itemize}
+
 The other ones, we either have to memorize or learn to derive (described in Section \ref{sec:trigderiv}).
 \begin{equation}
   \sin{(x+y)} = \sin x \cos y + \sin y \cos x

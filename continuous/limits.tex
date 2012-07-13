@@ -1,4 +1,4 @@
-\chapter{Limits} \index{limits}
+\chapter{Limits}\label{limits} \index{limits}
 
 
 \section{Understanding Limits}
@@ -237,3 +237,13 @@ behaves \emph{near} $x=0$ (where it is undefined), we can examine the limit of $
 If the continuous functions $f(x)$ and $g(x)$ are both zero at $x=a$, then
 $$\lim_{x \to a} \frac{f(x)}{g(x)}$$
 cannot be found by substituting $x=a$. The substitution produces $0/0$, a meaningless expression, which we cannot evaluate. We use $0/0$ as a notation for an expression known as an \textbf{indeterminate form}. Other meaningless expressions often occur, such as $\infty / \infty$, $\infty \cdot 0$, $\infty - \infty$, $0^0$, and $1^{\infty}$, which cannot be evaluated in a consistent way; these are called indeterminate forms as well.
+
+\section{Continuity of Functions}
+\begin{defn}
+  A function is \textbf{continuous}\index{continuous} at $x=a$ iff
+  \begin{itemize}
+    \item $f(a)$ is defined.
+    \item $\lim_{x\to a} f(x)$ exists.
+    \item $\lim_{x\to a} f(x)=f(a)$.
+  \end{itemize}
+\end{defn}

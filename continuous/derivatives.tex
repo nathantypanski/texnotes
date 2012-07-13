@@ -35,7 +35,10 @@ Slope is also often seen with the point-slope formula, where given a point $(x_1
   y-y_1=m(x-x_1)
 \end{equation}
 
-In early mathematics courses, slope is often described as the ``rise'' over ``run'' of a graph. While this is accurate, it doesn't provide the complete picture. What a \emph{slope} really describes is how much a given function $f(x)$ is altering each of its input values $x$, often heard as ``change in $y$ over change in $x$.'' You'll notice that this is independent of any initial value $b$ selected for a linear function.\footnote{Which is why all constants disappear when you take the derivative of a function.}
+In early mathematics courses, slope is often described as the ``rise'' over ``run'' of a graph.
+While this is accurate, it doesn't provide the complete picture.
+What a \emph{slope} really describes is how much a given function $f(x)$ is altering each of its input values $x$, often heard as ``change in $y$ over change in $x$.''
+You'll notice that this is independent of any initial value $b$ selected for a linear function.\footnote{Which is why all constants disappear when you take the derivative of a function.}
 
 To figure out the slope of a linear function $f(x)=mx+b$, all you need to do is
 divide the difference between two output ($y$) values by the difference between
@@ -45,9 +48,10 @@ their two input ($x$) values. This is where equation \eqref{eq:slope} comes from
 \end{equation*}
 And because the function is linear, the slope $m$ is constant all the way through and any two points can be used to find it.
 
-\section{The Difference Quotient}
+\section{The Difference Quotient}\index{Difference Quotient}
 
-The \emph{difference quotient} is the same exact thing as the slope formula, with the only distinction being you know how far apart your two $x$ values are and you treat that distance as a variable. So $\Delta x=x_2-x_1$, and $x=x_1$.
+The \emph{difference quotient} is the same exact thing as the slope formula, with the only distinction
+being you treat how far apart your two $x$ values are as a variable. So $\Delta x=x_2-x_1$, and $x=x_1$.
 \begin{equation}
   \frac{\Delta f(x)}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}
 \end{equation}
@@ -88,9 +92,9 @@ For nonlinear functions, like $f(x)=x^2$, the derivative will yield a function (
 
 \subsection{Notation}
 
-There are a number of ways to denote the derivative of a function $y=f(x)$. The most common notation early on in calculus classes is the ``prime'' notation $y'$ and $f'$ because it is the simplest. Later on, you often see $\ud/\ud x$ style notation, because it is more specific. It tells us not only which function we are differentiating, but with respect to which variable. There is another important characteristic of this ``d'' notation: it is eerily similar to the definition of slope:
+There are a number of ways to denote the derivative of a function $y=f(x)$. The most common notation early on in calculus classes is the \emph{prime} notation $y'$ and $f'$ because it is the simplest. Later on, you often see $\ud/\ud x$ style notation, because it is more specific. It tells us not only which function we are differentiating, but with respect to which variable. A notable characteristic of this ``d notation'' is the similarity it provides to our equation for slope:
 \begin{align*}
-  &\underbrace{m=\frac{\Delta y}{\Delta x}=\frac{\Delta f(x)}{\Delta x}}_{\text{slope}} &\underbrace{y'=\frac{\ud y}{\ud x}=\frac{\ud f(x)}{\ud x}}_{\text{derivative}}
+  &m=\frac{\Delta y}{\Delta x}=\frac{\Delta f(x)}{\Delta x} &y'=\frac{\ud y}{\ud x}=\frac{\ud f(x)}{\ud x}
 \end{align*}
 In the case of slope, we're talking about specific $y$ and $x$ values, but in the case of a derivative, we're talking about \emph{infinitesimals}, and that particular distinction allows us to discuss the behavior of functions that aren't linear, but change their behavior over time.
 
@@ -98,10 +102,17 @@ In the case of slope, we're talking about specific $y$ and $x$ values, but in th
 
 The \emph{tangent line} to a graph at a point is just a line that acts like the function is linear and behaves exactly as the graph does at that point. This is useful for visualizing the derivative, and showing us how the behavior of a function can change depending on its $(x,y)$ location.
 
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{continuous/derivatives/tangent.eps}
+  \end{center}
+  \caption{A tangent line to the graph of $f(x)=x^2$.}
+\end{figure}
+
 To calculate the equation for a tangent line at a point, simply find the
 derivative of the function at that point and treat that as the slope of the
-tangent line. Then, use the $(x, y)$ values of the point to produce a function
-using equation \eqref{eq:pointslope}.
+tangent line. Then, use the $(x, y)$ values of the point to produce the tangent line's function
+using the point-slope equation (\eqref{eq:pointslope}).
 
 \subsection{Derivative Rules}
 
@@ -202,7 +213,7 @@ To graph a function:
   \end{enumerate}
 \section{l'Hospital's Rule}\index{l'Hospital's Rule}
 
-\textbf{l'Hospital's Rule} uses derivatives to calculate limits/index{limits} of fractions whose numerators and denominators both approach zero or $\infty$. Limits involving transcendental functions/index{transcendental functions} often require some use of the rule for their calculation.
+\textbf{l'Hospital's Rule} uses derivatives to calculate limits\index{limits} of fractions whose numerators and denominators both approach zero or $\infty$. Limits involving transcendental functions\index{transcendental functions} often require some use of the rule for their calculation.
 
 \begin{theorem}[L'Hospital's Rule]\label{th:lhospital}
   Suppose that $f(a)=g(a)=0$, that $f$ and $g$ are differentiable on an open interval $I$ containing $a$, and that $g'(x) \neq 0$ on $I$ if $x \neq a$. Then

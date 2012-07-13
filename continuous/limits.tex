@@ -83,13 +83,40 @@ For example, \(h(x)=\sin \frac{1}{x} \) oscillates indefinitely as \(x \to 0\), 
   \label{fig:p1sin1x}
 \end{figure}
 As \(x\to0\), it is impossible to say whether \(f(x)\) is approaching \(1\) or \(-1\).
+This is an example of an \textbf{oscillating discontinuity}\index{oscillating discontinuity}.
+There are more situations in which a limit does not exist.
 
-\subsection{Side Limits}
+In a \textbf{infinite discontinuity}\index{infinite discontinuity}, the graph jumps to $\infty$ or $-\infty$ at certain $x-values$.
+No limit can exist here.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{continuous/limits/infinited.eps}
+  \end{center}
+  \caption{An infinite discontinuity at $x=0$.}
+\end{figure}
+
+The other situation which can cause a limit to not exist at a point is a \textbf{jump discontinuity}\index{jump discontinuity}.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{continuous/limits/jumps.eps}
+  \end{center}
+  \caption{An infinite discontinuity at $x=0$.}
+\end{figure}
+\subsection{Side Limits}\index{side limits}
+
+In places where a limit does not exist, we can still talk about the limit from just one side or another.
+Note, however, that if $\lim_{x\to a}f(x)$ at a point, then the left an right limits also exist and must be equal to one another.
 
 \begin{theorem}
   \( \lim_{x\to a^-} f(x)=L \) iff \(f(x)\) gets arbitrarily close to \(L\) as \(x\) comes sufficiently close to \(a\), but \(x < a \).
   \label{theorem:lefthandlimit}
 \end{theorem}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/limits/llmt.eps}
+  \end{center}
+  \caption{The lefthand limit at $x=2$ exists, though the righthand limit does not.}
+\end{figure}
 \begin{theorem}
   \( lim_{x \to a^+} f(x)=L \) iff \(f(x)\) gets arbitrarily close to \(L\) as \(x\) gets sufficiently close to \(a\), but \(x > a\).
   \label{}
@@ -121,8 +148,8 @@ We can conclude, intuitively, that the limit of \(f(x)\) as \(x \to 0\) must be
   \[ \lim_{x \to c} g(x) = \lim_{x \to c} h(x) = L \]
   Then \(\lim_{x \to c} f(x) = L\).
   \label{the:sandwich}
+  \index{sandwich theorem}
 \end{theorem}
-
 
 \section{\emph{Epsilon}-\emph{Delta} Definition of a Limit}\index{epsilon-delta definition of a
 limit}
@@ -141,6 +168,7 @@ numbers.
 
 \section{Evaluating Limits}
 
+Let's look at a really complicated example of a limit\footnote{Credit for this example goes to Dr. Dobrescu's Math 140 class at CNU, Spring 2011.}, to make sure we truly understand them.
 For piecewise-defined functions, limits can get especially interesting. Here's an example:
 \index{piecewise function}
 
@@ -201,7 +229,7 @@ For piecewise-defined functions, limits can get especially interesting. Here's a
   Find
   \[ \lim_{x \to 4} \frac{4x-x^2}{2-\sqrt x} \text{.} \]
   \begin{sol}
-    First we multiply by the conjugate. For more on conjugates, see Section \ref{app:conjugate}.
+    First we multiply by the conjugate of the denominator to remove the radical from it. For more detail on conjugates, see Section \ref{app:conjugate}.
     \begin{align*}
       \lim_{x \to 4} \frac{4x-x^2}{2-\sqrt x}
       &= \lim_{x \to 4} \frac{4x-x^2}{2-\sqrt x} \cdot \frac{2+\sqrt x}{2+\sqrt x}\\

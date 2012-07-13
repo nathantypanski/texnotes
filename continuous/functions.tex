@@ -312,3 +312,63 @@ This height might be positive or negative, depending on the sign of \(f(x)\).
     \end{align*}
   \end{sol}
 \end{ex}
+
+\section{Inverse Functions}\index{inverse functions}
+
+An inverse function undoes, or inverts, the effects of an original function.
+While inverse functions are not, by definition, transcendental, we will look at them in this chapter because they are useful for producing inverse trigonometric functions--functions that are transcendental.
+\begin{defn}
+  Suppose that \(f\) is a one-to-one function on a domain $D$ with range $R$. The \textbf{inverse function} $f^{-1}$ is defined by
+  \[ f^{-1}(b)=a \text{ if } f(a)=b \]
+  The domain of $f^{-1}$ is $R$ and the range of $f^{-1}$ is $D$.
+\end{defn}
+In order for an inverse function $f^{-1}(x)$ to exist for a function $f(x)$, the original function $f(x)$ must be one-to-one. Otherwise, the resulting ``inverse function'' would not be a function: more than one output would be produced from only one input, and it would not pass the vertical line test.
+\begin{remark} \index{composition}\index{inverse functions}
+  By definition, either composite of a function and its inverse will return the identity function.
+  \[ (f \circ f^{-1})(x)=f(f^{-1}(x))=x \]
+  or
+  \[ (f^{-1} \circ f)(x)=f^{-1}(f(x))=x \]
+\end{remark}
+
+\begin{figure}[H]
+  \begin{center}
+    \subfigure[A plot of $f(x)=\sqrt x$.]{
+      \includegraphics[width=0.3\textwidth]{continuous/functions/sqrtx.eps}
+    }
+    \subfigure[A plot of $f^{-1}(\sqrt x)=x^2$.]{
+      \includegraphics[width=0.3\textwidth]{continuous/functions/x2inv.eps}
+    }
+  \end{center}
+  \label{fig:inversef}
+\end{figure}
+
+\subsection{Finding Inverse Functions}
+To find the inverse of a function $f(x)$, replace $f(x)$ with $y$ and solve for $x$ in terms of $y$. Then, interchange $x$ and $y$.
+\begin{ex}
+  Find the inverse of $y=\frac{1}{2}x+1$, expressed as a function of $x$.
+  \begin{sol}
+    First, we solve the function for $x$ in terms of $y$.
+    \begin{align*}
+      y &= \frac{1}{2}x+1 \\
+      \intertext{Multiply both sides by $2$.}
+      2y &= x + 2 \\
+      \intertext{Now subtract $2$ from both sides, and swap the left and right sides of the equation.}
+      x &= 2y -2
+      \intertext{Now we swap $x$ and $y$.}
+      y &=2x-2
+    \end{align*}
+    The inverse of the function $f(x)=\frac{1}{2}x+1$ is the function $f^{-1}(x)=2x-2$.
+    \begin{figure}[h]
+      \begin{center}
+        \subfigure[A plot of $f(x)=\frac{1}{2}x+1$.]{
+          \includegraphics[width=0.3\textwidth]{continuous/functions/halfxeg.eps}
+        }
+        \subfigure[A plot of $f^{-1}(x)=2x-2$.]{
+          \includegraphics[width=0.3\textwidth]{continuous/functions/halfxeginv.eps}
+        }
+      \end{center}
+      \label{fig:inverseg}
+    \end{figure}
+  \end{sol}
+\end{ex}
+

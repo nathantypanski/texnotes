@@ -17,25 +17,33 @@ Formally,
 \end{defn}
 
 \section{Natural Logarithms}
-
-\subsection{The Natural Logarithm and $e$}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{continuous/transcend/natlog.eps}
+  \end{center}
+  \caption{A plot of $f(x) =\ln x$.}
+  \label{fig:natlog}
+\end{figure}
 
 \begin{defn}
-	The \textbf{natural logarithm}is the function given by
+  The \textbf{natural logarithm}\index{natural logarithm} is the function given by
   \begin{equation}
     \ln x = \int ^{x} _{1} \frac{1}{t} \ud t \text{,} \qquad x \in \mathbb{N}
   \end{equation}
 \end{defn}
+
 \begin{defn}
   The \textbf{number $e$} is that number in the domain of the natural logarithm satisfying
   \[ \ln{e}=1 \]
+  It is roughly equal to
+  \[2.7182818284590452353602874713526624977572470936999595\ldots\]
 \end{defn}
 
 
 \subsection{Algebraic Properties of the Natural Logarithm}
 
 For any numbers $b>0$ and $x>0$, the natural logarithm satisfies the following rules:
-\begin{table}
+\begin{table}[H]
     \begin{tabular}{p{3in}>\(p{3in}<\)}
       Product Rule      & \displaystyle{ \ln{bx}=\ln b + \ln x} \\\\
       Quotient Rule     & \displaystyle{ \ln{\frac{b}{x}}=\ln b - \ln x} \\ \\
@@ -84,36 +92,3 @@ We can prove that these still satisfy equation \ref{eq:hyperbola}:
     \qedhere
   \end{align*}
 \end{proof}
-
-\section{Inverse Functions}\index{inverse functions}
-
-An inverse function undoes, or inverts, the effects of an original function.
-While inverse functions are not, by definition, transcendental, we will look at them in this chapter because they are useful for producing inverse trigonometric functions--functions that are transcendental.
-\begin{defn}
-  Suppose that \(f\) is a one-to-one function on a domain $D$ with range $R$. The \textbf{inverse function} $f^{-1}$ is defined by
-  \[ f^{-1}(b)=a \text{ if } f(a)=b \]
-  The domain of $f^{-1}$ is $R$ and the range of $f^{-1}$ is $D$.
-\end{defn}
-In order for an inverse function $f^{-1}(x)$ to exist for a function $f(x)$, the original function $f(x)$ must be one-to-one. Otherwise, the resulting ``inverse function'' would not be a function: more than one output would be produced from only one input, and it would not pass the vertical line test.
-\begin{remark} \index{composition}\index{inverse functions}
-  By definition, either composite of a function and its inverse will return the identity function.
-  \[ (f \circ f^{-1})(x)=f(f^{-1}(x))=x \]
-  or
-  \[ (f^{-1} \circ f)(x)=f^{-1}(f(x))=x \]
-\end{remark}
-
-\subsection{Finding Inverse Functions}
-To find the inverse of a function $f(x)$, replace $f(x)$ with $y$ and solve for $x$ in terms of $y$. Then, interchange $x$ and $y$.
-\begin{ex}
-  Find the inverse of $y=\frac{1}{2}x+1$, expressed as a function of $x$.
-  \begin{align*}
-    y &= \frac{1}{2}x+1 \\
-    2y &= x + 2 \\
-    x &= 2y -2 \xrightarrow{\text{(swap $x$ and $y$)}} \\
-    y &=2x-2
-  \end{align*}
-  The inverse of the function $f(x)=\frac{1}{2}x+1$ is the function $f^{-1}(x)=2x-2$.
-\end{ex}
-
-
-

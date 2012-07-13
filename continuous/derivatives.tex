@@ -1,4 +1,8 @@
 \chapter{Derivatives}
+\epigraph{Some people will tell you that slow is good---but I'm here to tell you that fast is better.}{unter S. Thompson}%, Kingdom of Fear: Loathsome Secrets of a Star-crossed Child in the Final Days of the American Century}
+
+
+The \textbf{derivate} of a function can be used to describe its \emph{instantaneous rate of change}.
 
 \section{Slopes}
 
@@ -113,11 +117,15 @@ To calculate the equation for a tangent line at a point, simply find the
 derivative of the function at that point and treat that as the slope of the
 tangent line. Then, use the $(x, y)$ values of the point to produce the tangent line's function
 using the point-slope equation (\eqref{eq:pointslope}).
-
 \subsection{Derivative Rules}
 
 Derivative rules are just shorthands for working things out manually using the
 limit definition in equation \eqref{eq:limitdef}. They all come from equation \eqref{eq:limitdef}, but they serve as generalizations to greatly simplify the work we have to do in calculating derivatives.
+
+\subsubsection{Constant Rule}
+
+The derivate of a constant is always zero. A constant has no rate of change.
+\[\ddx k=0\]
 
 \subsubsection{Power Rule}
 
@@ -199,6 +207,26 @@ The chain rule is used to differentiate composite functions, which look like $(f
     &=\frac{-5}{2x^{7/2}} \\
   \end{align*}
 \end{ex}
+\subsubsection{Trigonometric Derivative Rules}
+\begin{align}
+  \ddx \sin x &= \cos x & \ddx \sec x &= \sec x \tan x \\
+  \ddx \cos x &= -\sin x & \ddx \csc x &= -\cot x \csc x \\
+  \ddx \tan x &= \sec^2 x & \ddx \cot x &= -\csc^2 x
+  \label{trigderiv}
+\end{align}
+Many of these trig derivatives, such as the derivative of $\tan x$, can be found from simpler derivative rules.
+\begin{ex}
+  \[\ddx \tan x\]
+  \begin{sol}
+    \begin{align*}
+      \ddx \tan x &= \ddx \frac{\sin x}{\cos x} \\
+      &= \frac{\ddx (\sin x) \cos x - \ddx (\cos x) \sin x}{(\cos x)^2}\\
+      &=\frac{\cos^2 x+\sin^2 x}{\cos^2 x}\\
+      &=\frac{1}{\cos^2 x}\\
+      &=\sec^2 x
+    \end{align*}
+  \end{sol}
+\end{ex}
 \subsection{Differentiability}
   A function $f(x)$ is differentiable at a point $x_0$ if a tangent line to its curve exists at that point and is not vertical. Functions are not differentiable at breaks, immediate bends, cusps, or places with vertical tangents.
 
@@ -268,7 +296,7 @@ functions}
       \intertext{Because the lefthand side includes the composition of functions, we must use the chain rule in calculating its derivative. Applying the chain rule to the lefthand side of the equation gives us}
       f'\big(f^{-1}(x)\big)\cdot \cfrac{\ud}{\ud x}f^{-1}(x) &= 1  \\
       \intertext{Now, we divide each side of the equation by $f' \big( f^{-1}(x) \big)$ to solve for the derivative only.}
-      \frac{\ud}{\ud x}f^{-1}(x) &= \cfrac{1}{f'\big(f^{-1}(x)\big)}
+      \frac{\ud}{\ud x}f^{-1}(x) &= \cfrac{1}{f'\big(f^{-1}(x)\big)}\qedhere
     \end{align*}
   \end{proof}
 \end{theorem}

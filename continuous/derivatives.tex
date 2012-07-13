@@ -213,7 +213,7 @@ To graph a function:
   \end{enumerate}
 \section{l'Hospital's Rule}\index{l'Hospital's Rule}
 
-\textbf{l'Hospital's Rule} uses derivatives to calculate limits\index{limits} of fractions whose numerators and denominators both approach zero or $\infty$. Limits involving transcendental functions\index{transcendental functions} often require some use of the rule for their calculation.
+\textbf{l'Hospital's Rule} uses derivatives to calculate limits\index{limits} of fractions whose numerators and denominators both approach the same indeterminate for, which can be either zero or $\infty$. Limits involving transcendental functions\index{transcendental functions} often require some use of the rule for their calculation.
 
 \begin{theorem}[L'Hospital's Rule]\label{th:lhospital}
   Suppose that $f(a)=g(a)=0$, that $f$ and $g$ are differentiable on an open interval $I$ containing $a$, and that $g'(x) \neq 0$ on $I$ if $x \neq a$. Then
@@ -251,22 +251,24 @@ Suppose functions $f$ and $g$ are continuous on $[a, b]$ and differentiable thro
 functions}
 
 \begin{theorem}[The Derivative Rule for Inverses]\label{th:invderiv}
-  If $f$ has an interval $I$ as domain and $f'(x)$ exists and is never zero on $I$, then $f^{-1}$ is differentiable at every point in its domain (the range of $f$). The value of $(f^{-1})'$ at a point $b$ in the domain of $f^{-1}$ is the reciprocal of the value of $f'$ at the point $a=f^{-1}(b)$:
-    \begin{equation}
-      (f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}
-    \end{equation}
-  or
-    \begin{equation}
-      \cfrac{\ud f^{-1}}{\ud x}\bigg|_{x=b}=\cfrac{1}{\cfrac{\ud f}{\ud x}\bigg|_{x=f^{-1}(b)}}
-    \end{equation}
-    \begin{proof}
-      \begin{align*}
-        f(f^{-1}(x)) &= x &\text{Inverse function relationship} \\
-        \frac{\ud}{\ud x} f(f^{-1}(x)) &= 1 &\text{Differentiating both sides} \\
-        f'(f^{-1}(x))\cdot \cfrac{\ud}{\ud x}f^{-1}(x) &= 1 &\text{Chain Rule} \\
-        \frac{\ud}{\ud x}f^{-1}(x) &= \cfrac{1}{f'(f^{-1}(x))} &\text{Solving for the derivative}
-      \end{align*}
-    \end{proof}
+  If $f$ has an interval $I$ as domain and $f'(x)$ exists and is never zero on $I$, then $f^{-1}$ is differentiable at every point in its domain (the range of $f$). The value of $\big(f^{-1}\big)'$ at a point $b$ in the domain of $f^{-1}$ is the reciprocal of the value of $f'$ at the point $a=f^{-1}(b)$:
+  \begin{equation}
+    \big(f^{-1}\big)'(b)=\frac{1}{f'\big(f^{-1}(b)\big)} \qquad b \neq 0
+  \end{equation}
+  This can also be written
+  \begin{equation}
+    \cfrac{\ud f^{-1}}{\ud x}\bigg|_{x=b}=\cfrac{1}{\cfrac{\ud f}{\ud x}\bigg|_{x=f^{-1}(b)}}\qquad b \neq 0
+  \end{equation}
+  \begin{proof}
+  Because a function applied to the inverse of itself should return its own input value, we can start with this relationship.
+    \begin{align*}
+      f \big( f^{-1}(x) \big) &= x \\
+      \intertext{From here, take the derivative of both sides. On the left, we do so in notation only. On the right, we know that the derivative of a variable representing a constant is always 1.}
+      \frac{\ud}{\ud x} f\big(f^{-1}(x)\big) &= 1\\
+      \intertext{Because the lefthand side includes the composition of functions, we must use the chain rule in calculating its derivative. Applying the chain rule to the lefthand side of the equation gives us
+      f'\big(f^{-1}(x)\big)\cdot \cfrac{\ud}{\ud x}f^{-1}(x) &= 1  \\
+      \intertext{Now, we divide each side of the equation by $f' \big( f^{-1}(x) \big)$ to solve for the derivative only, noting that $x$ cannot equal $0$.}
+      \frac{\ud}{\ud x}f^{-1}(x) &= \cfrac{1}{f'\big(f^{-1}(x)\big)} \qquad x\neq 0
+    \end{align*}
+  \end{proof}
 \end{theorem}
-
-

@@ -1,0 +1,90 @@
+\chapter{Logic Circuits} \index{logic circuits}
+\epigraph{
+Look, everything we're putting into that box becomes ungrounded, and I don't
+mean grounded like to the earth, I mean, not tethered. I mean, we're blocking
+whatever keeps it moving forward and so they flip-flop. Inside the box it's like
+a street, both ends are cul-de-sacs. I mean, this isn't frame dragging or
+wormhole magic, this is basic mechanics and heat 101.}
+{\emph{Primer}, 2004}
+
+A logic circuit receives input signals \(p_1, p_2, \ldots, p_n\), each a bit, and produces output signals
+\(s_1, s_2, \ldots, s_n\), each a bit.
+
+\begin{figure}[h]
+  \center{
+      \subfigure[and]{
+        \begin{circuitikz} \draw
+          (0,2) node[and port] (myand1) {}
+          (myand1.in 1) node[anchor=east] {}
+          (myand1.in 2) node[anchor=east] {}
+          (myand1.out) node[anchor=west] {};
+        \end{circuitikz}
+      }
+      \subfigure[or]{
+        \begin{circuitikz} \draw
+          (0,2) node[or port] (myor1) {}
+          (myor1.in 1) node[anchor=east] {}
+          (myor1.in 2) node[anchor=east] {}
+          (myor1.out) node[anchor=west] {};
+        \end{circuitikz}
+      }
+      \subfigure[nor]{
+        \begin{circuitikz} \draw
+          (0,2) node[nor port] (mynor1) {}
+          (mynor1.in 1) node[anchor=east] {}
+          (mynor1.in 2) node[anchor=east] {}
+          (mynor1.out) node[anchor=west] {};
+        \end{circuitikz}
+      }
+      \subfigure[xor]{
+        \begin{circuitikz} \draw
+          (0,2) node[xor port] (myxor1) {}
+          (myxor1.in 1) node[anchor=east] {}
+          (myxor1.in 2) node[anchor=east] {}
+          (myxor1.out) node[anchor=west] {};
+        \end{circuitikz}
+      }
+      \subfigure[not]{
+        \begin{circuitikz} \draw
+          (0,2) node[not port] (mynot1) {}
+          (mynot1.in) node[anchor=east] {}
+          (mynot1.out) node[anchor=west] {};
+        \end{circuitikz}
+      }
+  }
+  \caption{Basic logic gates.}
+\end{figure}
+
+\begin{comment}
+\begin{figure}[h]
+  \begin{center}
+    \begin{circuitikz}
+      \draw
+      (8, 2) node[and port] (and0) {}
+
+      (3, 4) node[or port] (or0) {}
+      (3, 0) node[or port] (or1) {}
+      (5, 2) node[or port] (or2) {}
+
+      (1, 4) node[not port] (not0) {}
+      (2, 2) node[not port] (not1) {}
+      (1, 0) node[not port] (not2) {}
+
+      (not0.out) -- (or0.in 2)
+      (not0.in) -- (0, 4) node[anchor=east] {\(p_2\)}
+      (or0.in 1) -- (0, 5) node[anchor=east] {\(p_1\)}
+      (not1.in) -- (0, 3) node[anchor=east] {\(p_3\)}
+      (not2.in) -- (0, 0) node[anchor=east] {\(p_5\)}
+      (or1.in) -- (0, 2) node[anchor=east] {\(p_4\)}
+      (and0.out) -- (9,2) node[anchor=west] {\(s_1\)}
+      (or1.out) -- (or2.in 2)
+      (or0.out) -- (and0.in 1)
+      (not1.out) -- (or2.in 1)
+      (not2.out) -- (or1.in 2)
+      (or2.out) -- (and0.in 2);
+    \end{circuitikz}
+  \end{center}
+  \caption{A simple logic circuit}
+\end{figure}
+\end{comment}
+

@@ -127,15 +127,19 @@ For a function $y=f(x)$, we describe its type of symmetry by calling the functio
 \begin{defn}
   \index{one-to-one}
   \index{injective}
+  A function mapping from set $A$ to set $B$ is injective, or one-to-one, if for any two $x$ values in the domain, the function producing equal $y$ values implies that the $x$ values are equal. In mathematical language:
+
   \( f: A \to B \) is \textbf{injective} (or \emph{one-to-one})
   \(
     \forall{(x_1 \wedge x_2 \in A)}
     \bigg[f(x_1)=f(x_2)
     \to x_1=x_2\bigg]
-    \text{,}
+    \text{.}
   \)
-  which also means that for injective functions,
-  \( x_1 \neq x_2 \to f(x_1) \neq f(x_2)\).
+  \begin{remark}
+    This also means that for injective functions,
+    \( x_1 \neq x_2 \to f(x_1) \neq f(x_2)\).
+  \end{remark}
 \end{defn}
 \begin{figure}[H]
     \begin{center}
@@ -174,13 +178,11 @@ For a function $y=f(x)$, we describe its type of symmetry by calling the functio
         }
     \end{center}
   \end{figure}
-  \begin{remark}
-    A function \(y=f(x)\) is one-to-one iff its graph intersects each horizontal line at most once.\index{horizontal line test}
-  \end{remark}
+  A function \(y=f(x)\) is one-to-one iff its graph intersects each horizontal line at most once.\index{horizontal line test}
 \begin{defn}
   \index{onto}
   \index{surjective}
-  \(f: A \to B \) is \textbf{surjective} (or onto) iff
+  \(f: A \to B \) is \textbf{surjective} (or \emph{onto}) iff
     \(\forall{\left( b \in B \right)} \exists {\left( a \in A \right)} \big(f(a)=b\big) \).
 \end{defn}
 \begin{figure}[H]
@@ -302,7 +304,7 @@ This height might be positive or negative, depending on the sign of \(f(x)\).
   If \(f\) and \(g\) are functions, then the \textbf{composite} function \(f \circ g\) (``\(f\) composed with \(g\)'') is defined by
   \[ (f \circ g)(x)=f\bigl(g(x)\bigr) \text{.} \]
   \begin{remark}
-    The domain of \( f \circ g \) consists of the numbers \(x\) in the domain of \(g\) for which \(g(x)\) lies in the domain of \(f\).
+    The domain of \( f \circ g \) consists of the numbers \(x\) in the domain of \(g\) for which \(g(x)\) lies in the domain of \(f\). See figure \ref{fig:p1sin1x} for an example of a function which produces indefinite $y$-values for real $x$-values around $x=0$.
   \end{remark}
   \index{composition}
 \end{defn}
@@ -330,15 +332,19 @@ This height might be positive or negative, depending on the sign of \(f(x)\).
 \section{Inverse Functions}\index{inverse functions}
 
 An inverse function undoes, or inverts, the effects of an original function.
-While inverse functions are not, by definition, transcendental, we will look at them in this chapter because they are useful for producing inverse trigonometric functions--functions that are transcendental.
+% Old gibberish from when this was in the transcendental section.
+%While inverse functions are not, by definition, transcendental, we will look at them in this chapter because they are useful for producing inverse trigonometric functions--functions that are transcendental.
+They are useful for producing inverse trigonometric functions--functions that are transcendental.
+
 \begin{defn}
   Suppose that \(f\) is a one-to-one function on a domain $D$ with range $R$. The \textbf{inverse function} $f^{-1}$ is defined by
   \[ f^{-1}(b)=a \text{ if } f(a)=b \]
   The domain of $f^{-1}$ is $R$ and the range of $f^{-1}$ is $D$.
+  \index{inverse functions}
 \end{defn}
 In order for an inverse function $f^{-1}(x)$ to exist for a function $f(x)$, the original function $f(x)$ must be one-to-one. Otherwise, the resulting ``inverse function'' would not be a function: more than one output would be produced from only one input, and it would not pass the vertical line test.
 \begin{remark} \index{composition}\index{inverse functions}
-  By definition, either composite of a function and its inverse will return the identity function.
+  By definition, either composite of a function and its inverse will return the identity function, where $y=x$. For example:
   \[ (f \circ f^{-1})(x)=f(f^{-1}(x))=x \]
   or
   \[ (f^{-1} \circ f)(x)=f^{-1}(f(x))=x \]

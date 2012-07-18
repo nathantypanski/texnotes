@@ -11,9 +11,9 @@ For this example:
   \[\displaystyle{\sin\theta=\frac{b}{c}}\qquad
   \displaystyle{\cos\theta=\frac{a}{c}}\qquad
   \displaystyle{\tan\theta=\frac{b}{a}}\]
-Gennerally speaking, for an angle $\theta$ on the inside of a triangle,
+Gennerally speaking, for an angle $\theta$ on the inside of a right triangle,
 \begin{itemize}
-  \item$\sin\theta$ is equal to the \emph{length of the opposite side divided by the length of the hypotenuse}.
+  \item$\sin\theta$ is equal to the \emph{length of the opposite side divided by the length of the hypotenuse\footnote{The hypotenuse is the side of a right triangle opposite the right angle.}}.
   \item$\cos\theta$ is equal to the \emph{adjacent side divided by the hypotenuse}.
   \item$\tan\theta$ is equal to the \emph{opposite over the adjacent side}.
 \end{itemize}
@@ -44,7 +44,7 @@ Our first pythagorean identity is just derived from the pythagorean theorem.
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{continuous/trig/pythcircle.eps}
-    \caption{The pythagorean squares on a unit circle.}
+    \caption{The pythagorean squares on a unit circle. Note that the length of side $c$ must be $1$ because the radius of the circle is $1$.}
   \end{center}
   \label{fig:pythcircle}
 \end{figure}
@@ -97,7 +97,15 @@ The other ones, we either have to memorize or learn to derive (described in Sect
   \cos{2x}=\cos^2x-\sin^2x
 \end{equation}
 
-\subsection{Deriving Trigonometric Identities}\index{deriving trigonometric identities}\label{sec:trigderiv}
+\section{Useful Trigonometric Relationships}\index{trigonometric relationships}
+\begin{align}
+    \frac{1}{\sin\theta}&=\csc\theta \\
+    \frac{\cos\theta}{\sin\theta}&=\cot\theta \\
+    \frac{\sin\theta}{\cos\theta}&=\tan\theta \\
+    \frac{1}{\cos\theta}&=\sec\theta
+  \end{align}
+
+\section{Deriving Trigonometric Identities}\index{deriving trigonometric identities}\label{sec:trigderiv}
 
 We recall that using the pythagorean theorem and a triangle with a hypotenuse of length $1$, we can obtain our first trigonometric identity:
 \begin{equation}

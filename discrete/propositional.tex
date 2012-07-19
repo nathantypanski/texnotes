@@ -6,55 +6,79 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
 
 \section{Introduction to Propositional Logic}
 
-\begin{defn}\index{proposition}
-  A \textbf{proposition} is a declarative sentence. It declares a fact that can be either true or false, but not both.
-\end{defn}
+\index{proposition}
+  A \textbf{proposition} just a sentence that makes a statement.
+  \begin{ex}
+    ``My house is red.''
+  \end{ex}
 
-\begin{ex}
-  \begin{enumerate}
-    \item What time is it?
-    \item Toronto is the capital of Canada.
-    \item \(2+2=3\)
-    \item Read this carefully.
-    \item \(x+y=z\)
-    \item 1+1=2
-  \end{enumerate}
-  Statements 1 and 4 are not prpositions.
-  The others are, even if they are false (2 and 3) or we do not know the truth value (5).
-\end{ex}
-
-\begin{defn}\index{propositional calculus}
+\index{propositional calculus}
   \textbf{Propositional calculus} (or \emph{propositional logic}) assigns propositions \emph{propositional variables}
-  (e.g. \(p, q, r, s, \cdots\)) and deals with their logic and \emph{truth value}.
-\end{defn}
-\begin{defn}\index{negation}
-  Let \(p\) be a proposition. The \textbf{negation} of \(p\), denoted by \(\neg p\), is the statement
+  (e.g. \(p, q, r, s, \ldots\)) and deals with their logic and \emph{truth value}.
+  \begin{ex}
+    Let $p$ be ``my house is red.''
+  \end{ex}
+
+\index{negation}
+  Let \(p\) be a proposition. The \textbf{negation} of \(p\), denoted by \[\neg p\] is the statement
   ``it is not the case that \(p\).''
   The truth value of \(\neg p\) is the opposite of the truth value of \(p\).
-\end{defn}
-\begin{defn}\index{conjunction}
-  Let \(p\) and \(q\) be propositions. The \textbf{conjunction} of \(p\) and \(q\), denoted by \( p \wedge q \), is the proposition
+  \begin{ex}
+    Let $p$ be ``my house is red.''
+
+    Then $\neg p$ is ``it is not the case that my house is red,'' or simply ``my house is not red.''
+  \end{ex}
+
+\index{conjunction}
+  Let \(p\) and \(q\) be propositions. The \textbf{conjunction} of \(p\) and \(q\), denoted by \[ p \wedge q \] is the proposition
   ``\(p\) and \(q\).'' It is true when both \(p\) and \(q\) are true and false otherwise.
-\end{defn}
-\begin{defn}\index{disjunction}
-  Let \(p\) and \(q\) be propositions. The \textbf{disjunction} of \(p\) and \(q\), denoted by \( p \vee q \), is the proposition
+  \begin{ex}
+    Let $p$ be ``Kevin likes Sarah'' and let $q$ be ``Sarah likes Kevin.'
+
+    Then $p \wedge q$ is ``Kevin likes Sarah and Sarah likes Kevin,'' or ``Kevin and Sarah like each other.''
+    This statement would be false if either of the two did not like the other.
+  \end{ex}
+
+\index{disjunction}
+  Let \(p\) and \(q\) be propositions. The \textbf{disjunction} of \(p\) and \(q\), denoted by \[ p \vee q \] is the proposition
   ``\(p\) and \(q\).'' It is true when either \(p\) or \(q\) are true and false otherwise.
-\end{defn}
-\begin{defn}\index{exclusive or}
-  The \textbf{exclusive or} of \(p\) and \(q\), denoted by \(p \oplus q\), is true when exactly one of \(p\) and \(q\) is true and false otherwise.
-\end{defn}
-\begin{defn}\index{conditional statement}
-  The \textbf{conditional statement} \(p \to q\) is the propsition ``if p, then q.''
+  \begin{ex}
+    Let $p$ denote ``Kevin hates bagels'' and $q$ denote ``Kevin hates poppy seeds.''
+
+    The proposition $p \vee q$ is the statement ``Kevin hates bagels or poppy seeds.''
+    Note, here, that there is an implicit cue in the language that Kevin could, indeed, hate both bagels and poppy seeds.
+    The statement would be true if he were distasteful toward either one of them, or both.
+  \end{ex}
+
+\index{exclusive or}
+  The \textbf{exclusive or} of \(p\) and \(q\), denoted by \[p \oplus q\] is true when exactly one of \(p\) and \(q\) is true and false otherwise.
+  \begin{ex}
+    Let $p$ mean ``I could sleep in all day today'' and $q$ mean ``I could go to work.''
+
+    The statement $p \oplus q$ is true when only one of $p$ or $q$ is true.
+    It is the sentence ``I could go to work, or I could sleep in all day today.''
+    Since it does not make sense to do both at once, the \emph{exclusive or} is implied in our use of the English language.
+
+    We should keep an eye out for this distinction between disjunciton and exclusive or, as it requires careful
+    attention to the subtleties in our use of language.
+  \end{ex}
+
+  \index{conditional statement}
+  The \textbf{conditional statement} \[p \to q\] is the propsition ``if p, then q.''
   The conditional statement \(p \to q\) is false when \(p\) is true and \(q\) is false, and true otherwise.
-  Other ways of writing the conditional statement can be found in table \ref{tab:conditionals}
-\end{defn}
-\begin{defn} \index{hypothesis}\index{antecedent}\index{premise}
-  In the conditional statement \(p \to q\), \(p\) is called the \textbf{hypothesis} (or antecedent or premise).
-\end{defn}
-\begin{defn} \index{conclusion}\index{consequence}
-  In the conditional statement \(p \to q\), \(q\) is called the \textbf{conclusion} (or consequence).
-\end{defn}
-\begin{table}[h]
+  Other ways of writing the conditional statement can be found in table \ref{tab:conditionals}.
+  \index{hypothesis}\index{antecedent}\index{premise}
+  \(p\) is called the \textbf{hypothesis} (or antecedent or premise).
+  \index{conclusion}\index{consequence}
+  \(q\) is called the \textbf{conclusion} (or consequence).
+  \begin{ex}
+    Let $p$ be ``Joe broke his arm'' and $q$ be ``Joe will go to the hospital.''
+
+    The statement $p \to q$ is the statement ``If Joe broke his arm, then he will go to the hospital.''
+    It is true if Joe only goes to the hospital, if he only breaks his arm, and if both events occur.
+    The only situation in which it is false is if Joe breaks his arm, then does not go to the hospital.
+  \end{ex}
+  \begin{table}[H]
   \centering
   \boxed{
     \begin{tabular}{p{2in} p{2in}}
@@ -70,23 +94,40 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   \caption{Other ways of writing the conditional statement \(p \to q\).}
   \label{tab:conditionals}
 \end{table}
-\begin{defn} \index{converse}
+\index{converse}
   The \textbf{converse} of \(p \to q\) is \(q \to p\).
-\end{defn}
-\begin{defn} \index{contrapositive}\label{def:contrapositive}
+
+\index{contrapositive}\label{def:contrapositive}
   The \textbf{contrapositive} of \(p \to q\) is \(\neg q \to \neg p\). It is
   \emph{logically equivalent} to \(p \to q\).
+  We can prove this with the following \emph{truth table}:
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{|>$c<$|>$c<$|>$c<$|>$c<$|}
+      \hline
+      p & q & p\to q & \neg q \to \neg p\\
+      \hline
+      0 & 0 & 1 & 1 \\
+      0 & 1 & 1 & 1 \\
+      1 & 0 & 0 & 0 \\
+      1 & 1 & 1 & 1 \\\hline
+    \end{tabular}
+    \caption{A truth table for $p\to q$ and $\neg q \to \neg p$.}
+    \label{tab:contrapositive}
+  \end{table}
+  A \textbf{truth table} can be used to demonstrate the logical relationships between statements.
 
-  This is detailed further in \ref{app:def:contrapositive}.
-\end{defn}
-\begin{defn} \index{inverse}
+  This property of contrapositives is especially useful when we are trying to prove a statement,
+  as its contrapositive is often easier to prove than the statement itself.
+  This subject is detailed further in \ref{app:def:contrapositive}.
+
+\index{inverse}
   The \textbf{inverse} of \(p \to q\) is \(\neg p \to \neg q\).
-\end{defn}
-\begin{defn} \index{biconditional statement}
-  The \textbf{biconditional statement} (also called \emph{bi-implication}) \(p \leftrightarrow q\) is the statement
+
+  \index{biconditional statement}
+  The \textbf{biconditional statement}, also called \emph{bi-implication}, for $p$ and $q$ is \[p \leftrightarrow q.\] This is the statement
   ``\(p\) if and only if \(q\).''
   It is true when both \(p\) and \(q\) have the same truth value, and false otherwise.
-\end{defn}
 \begin{table}[h]
   \centering
   \boxed{
@@ -101,40 +142,6 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
 \end{table}
 
 \section{Logical Equivalence}
-
-\[ p \leftrightarrow q \] is logically equivalent to \[ (p \to q) \wedge (q \to p)\text{.}\]
-\begin{table}[h]
-  \centering
-  \boxed{
-    \begin{tabular}{>{\(}l<{\)} >{\(}r<{\)}|>{\(}c<{\)}|>\(c<\)|>\(c<\)|>\(c<\)}
-      p & q & \neg q & p \lor \neg q & p \land q & (p \lor \neg q) \to (p \land q) \\ \hline
-      1 & 1 & 0 & 1 & 1 & 1 \\
-      1 & 0 & 1 & 1 & 0 & 0 \\
-      0 & 1 & 0 & 0 & 0 & 1 \\
-      0 & 0 & 1 & 1 & 0 & 0
-    \end{tabular}
-  }
-  \caption{The truth table for \(p \lor \neg q) \to (p \land q)\)}
-\end{table}
-\section{Precedence}
-
-The \emph{not} operator takes the highest precedence.
-Then conjunction, followed by disjunction. That is,
-\[ p \land q \lor r \equiv (p \land q) \lor r \text{.}\]
-Then conditional, and finally bi-conditional operators.
-\begin{table}[H]
-  \centering
-  \boxed{
-    \begin{tabular}{l|c}
-      1 & $\neg$ \\
-      2 & $\land$ \\
-      3 & $\lor$ \\
-      4 & $\to$ \\
-      5 & $\iff$
-    \end{tabular}
-  }
-  \caption{Logical operator precedence.}
-\end{table}
 \begin{defn}\index{tautology}
   A \textbf{tautology} is a compound proposition that is always true, regardless of the truth values of the variables that occur in it.
 \end{defn}
@@ -144,6 +151,23 @@ Then conditional, and finally bi-conditional operators.
 \begin{defn}\index{contingency}
   A \textbf{contingency} is a compound proposition that is nither a tautology nor a contradiction.
 \end{defn}
+\begin{ex}
+  \( p \leftrightarrow q \) is logically equivalent to \( (p \to q) \wedge (q \to p)\).
+  We state this by writing
+  \[ p \leftrightarrow q \equiv (p \to q) \wedge (q \to p).\]
+\end{ex}
+\begin{table}  \centering
+  \boxed{
+    \begin{tabular}{>{\(}l<{\)} >{\(}r<{\)}|>{\(}c<{\)}|>\(c<\)|>\(c<\)|>\(c<\)}
+      p & q & \neg q & p \lor \neg q & p \land q & (p \lor \neg q) \to (p \land q) \\ \hline
+      1 & 1 & 0 & 1 & 1 & 1 \\
+      1 & 0 & 1 & 1 & 0 & 0 \\
+      0 & 1 & 0 & 0 & 0 & 1 \\
+      0 & 0 & 1 & 1 & 0 & 0
+    \end{tabular}
+  }
+  \caption{The truth table for \((p \lor \neg q) \to (p \land q)\)}
+\end{table}
 \begin{defn}\index{logical equivalence}
   The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \leftrightarrow q\) is a tautology.
   The notion \(p \equiv q\) denotes that \(p\) and \(q\) are logically equivalent.
@@ -154,6 +178,25 @@ Then conditional, and finally bi-conditional operators.
   \end{remark}
 \end{defn}
 
+\section{Precedence}
+
+The \emph{not} operator takes the highest precedence.
+Then conjunction, followed by disjunction. That is,
+\[ p \land q \lor r \equiv (p \land q) \lor r \text{.}\]
+Then conditional, and finally bi-conditional operators.
+\begin{table}[H]
+  \centering
+  \boxed{
+    \begin{tabular}{r|cl}
+      1 & $\neg$      &not\\
+      2 & $\land$     &and \\
+      3 & $\lor$      & or \\
+      4 & $\implies$  & conditional \\
+      5 & $\iff$      &biconditional
+    \end{tabular}
+  }
+  \caption{Logical operator precedence.}
+\end{table}
 \section{DeMorgan's Laws}
 
 \begin{equation}
@@ -221,29 +264,28 @@ Using DeMorgan's Laws, we can \emph{negate conjunctions and disjunctions}.
   \boxed{
     \begin{tabular}{>\(l<\) r}
       p \land T \equiv p & \multirow{2}{*}{identity} \\
-      p \lor f \equiv p \\
+      p \lor f \equiv p \\\hline
       p \lor T \equiv T & \multirow{2}{*}{domination} \\
-      p \land F \equiv F \\
+      p \land F \equiv F \\\hline
       p \lor p \equiv p & \multirow{2}{*}{idempotent} \\
-      p \land p \equiv p \\
-      \neg (\neg p) & double negation \\
+      p \land p \equiv p \\\hline
+      \neg (\neg p) & double negation \\\hline
       p \lor q \equiv q \lor p & \multirow{2}{*}{commutative} \\
-      p \land q \equiv q \land p \\
+      p \land q \equiv q \land p \\\hline
       (p \lor q) \lor r \equiv p \lor (q \lor r) & \multirow{2}{*}{associative} \\
-      (p \land q) \land r \equiv p \land (q \land r) \\
+      (p \land q) \land r \equiv p \land (q \land r) \\\hline
       p \land (q \lor r) \equiv (p \land q) \lor (p \land r) & \multirow{2}{*}{distributive} \\
-      p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \\
+      p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \\\hline
       \neg (p \lor q) \equiv \neg p \lor \neg q & \multirow{2}{*}{DeMorgan} \\
-      \neg (p \lor q) \equiv \neg p \land \neg q \\
+      \neg (p \lor q) \equiv \neg p \land \neg q \\\hline
       p \lor (p \land q) \equiv p & \multirow{2}{*}{absorbtion} \\
-      p \land (p \lor q) \equiv p \\
+      p \land (p \lor q) \equiv p \\\hline
       p \lor \neg p \equiv T & \multirow{2}{*}{negation} \\
       p \land \neg p \equiv F
     \end{tabular}
   }
   \caption{Useful logical equivalences}
 \end{table}
-
 
 \section{Proving Logical Equivalences}
 
@@ -287,6 +329,8 @@ The \textbf{length} of a bit string is the number of bits in the string.
 
 \section{Examples}
 
+% bad example, copied from a textbook.
+% I need to write my own.
 \begin{ex}\cite[p.~14]{rosen}
   Determine whether each of these conditional statements is true or false.
   \begin{itemize}
@@ -307,6 +351,8 @@ The \textbf{length} of a bit string is the number of bits in the string.
 \end{ex}
 
 \section{Propositional Satisfiability}
+% I'm pretty sure this section is ripped near-straight from a textbook too.
+% I really need to write my own.
 
 A compound proposition is \textbf{satisfiable} if there is an assignment of truth values to its variables that make it true.
 When no such assignments exists, it is \textbf{unsatisfiable}.

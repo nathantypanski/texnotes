@@ -80,7 +80,7 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   \end{ex}
   \begin{table}[H]
   \centering
-  \boxed{
+  %\boxed{
     \begin{tabular}{p{2in} p{2in}}
       ``if \(p\), then \(q\)'' & ``\(p\) implies \(q\)'' \\
       ``if \(p\), \(q\)'' & ``\(p\) only if \(q\)'' \\
@@ -90,7 +90,7 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
       ``a necessary condition for \(p\) is \(q\)'' & ``\(q\) follows from \(p\)'' \\
       ``\(q\) unless \(p\)''
     \end{tabular}
-  }
+  %}
   \caption{Other ways of writing the conditional statement \(p \implies q\).}
   \label{tab:conditionals}
 \end{table}
@@ -98,8 +98,12 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   The \textbf{converse} of \(p \implies q\) is \(q \implies p\).
 
 \index{contrapositive}\label{def:contrapositive}
-  The \textbf{contrapositive} of \(p \implies q\) is \(\neg q \implies \neg p\). It is
-  \emph{logically equivalent} to \(p \implies q\).
+  The \textbf{contrapositive} of
+  \(p \implies q\)
+  is
+  \(\neg q \implies \neg p\).
+  It is logically equivalent to
+  \(p \implies q\).
   We can prove this with the following \emph{truth table}:
   \begin{table}[H]
     \centering
@@ -123,6 +127,7 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
 
 \index{inverse}
   The \textbf{inverse} of \(p \implies q\) is \(\neg p \implies \neg q\).
+  It has the opposite truth value of the original statement.
 
   \index{biconditional statement}
   The \textbf{biconditional statement}, also called \emph{bi-implication}, for $p$ and $q$ is \[p \iff q.\] This is the statement
@@ -130,27 +135,24 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   It is true when both \(p\) and \(q\) have the same truth value, and false otherwise.
 \begin{table}[h]
   \centering
-  \boxed{
     \begin{tabular}{l}
       ``\(p\) is necessary and sufficient for \(q\)'' \\
       ``if \(p\), then \(q\), conversely'' \\
       ``p iff q''
     \end{tabular}
-  }
-  \caption{Other ways of writing the biconditional statement \(p \leftrightarrow q\).}
+  \caption{Other ways of writing the biconditional statement \(p \iff q\).}
   \label{tab:biconditionals}
 \end{table}
+In mathematical theorems, definitions, and related elements later in this text, we will often see the biconditional operator written \emph{iff}.
 
 \section{Logical Equivalence}
-\begin{defn}\index{tautology}
+\index{tautology}
   A \textbf{tautology} is a compound proposition that is always true, regardless of the truth values of the variables that occur in it.
-\end{defn}
-\begin{defn}\index{contradiction}
+\index{contradiction}
   A \textbf{contradiciton} is a compound proposition that is always false.
-\end{defn}
-\begin{defn}\index{contingency}
+\index{contingency}
   A \textbf{contingency} is a compound proposition that is nither a tautology nor a contradiction.
-\end{defn}
+  It can be either true or false.
 \begin{ex}
   \( p \leftrightarrow q \) is logically equivalent to \( (p \implies q) \wedge (q \implies p)\).
   We state this by writing
@@ -168,25 +170,24 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   }
   \caption{The truth table for \((p \lor \neg q) \implies (p \land q)\)}
 \end{table}
-\begin{defn}\index{logical equivalence}
-  The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \iff q\) is a tautology.
-  The notion \(p \equiv q\) denotes that \(p\) and \(q\) are logically equivalent.
-  \begin{remark}
-    The symbol \(\equiv\) is not a logical connection, and \(p\equiv q\) is not a compound proposition,
-    but rather it is the statement that \(p \iff q\) is a tautology.
-    The symbol \(\iff\) is sometimes used instead of \(\equiv\) to denote logical equivalence.
-  \end{remark}
-\end{defn}
+\index{logical equivalence}
+The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \iff q\) is a tautology.
+The notion \(p \equiv q\) denotes that \(p\) and \(q\) are logically equivalent.
+\begin{remark}
+  The symbol \(\equiv\) is not a logical connection, and \(p\equiv q\) is not a compound proposition,
+  but rather it is the statement that \(p \iff q\) is a tautology.
+  The symbol \(\iff\) is sometimes used instead of \(\equiv\) to denote logical equivalence.
+\end{remark}
 
 \section{Precedence}
+For more complex propositions, we need rules to tell which logical operators come first when we read them.
 
 The \emph{not} operator takes the highest precedence.
-Then conjunction, followed by disjunction. That is,
-\[ p \land q \lor r \equiv (p \land q) \lor r \text{.}\]
+Then conjunction, followed by disjunction.
 Then conditional, and finally bi-conditional operators.
 \begin{table}[H]
   \centering
-  \boxed{
+  %\boxed{
     \begin{tabular}{r|cl}
       1 & $\neg$      &not\\
       2 & $\land$     &and \\
@@ -194,10 +195,24 @@ Then conditional, and finally bi-conditional operators.
       4 & $\implies$  & conditional \\
       5 & $\iff$      &biconditional
     \end{tabular}
-  }
+  %}
   \caption{Logical operator precedence.}
+  \label{tab:precedence}
 \end{table}
+\begin{ex}
+  Is the statement \[ p \land q \lor r \] equivalent to the statement
+  \( ( p \land q ) \lor r\)
+  or \( p \land (q \lor r)\)?
+  \begin{sol}
+    Let's look at Table \ref{tab:precedence}.
+    It states that $\land$ (``and'') operators come before $\lor$ (``or'') operators.
+    Therefore,
+    \[ p \land q \lor r \equiv (p \land q) \lor r \text{.}\]
+  \end{sol}
+\end{ex}
+
 \section{DeMorgan's Laws}
+\textbf{DeMorgan's Laws} are an important concept in propositional logic and boolean algebra.
 
 \begin{equation}
   \neg (p \land q) \equiv \neg p \lor \neg q
@@ -211,24 +226,39 @@ These can be proven using a truth table.
   \boxed{
     \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
       p & q & \neg(p \land q) & \neg p \lor \neg q \\ \hline
-      1 & 1 & 0 & 0 \\
-      1 & 0 & 0 & 0 \\
-      0 & 1 & 0 & 0 \\
       0 & 0 & 1 & 1 \\
+      0 & 1 & 1 & 1\\
+      1 & 0 & 1 & 1\\
+      1 & 1 & 0 & 1\\
     \end{tabular}
   }
   \caption{A proof of DeMorgan's first law.}
 \end{table}
+\begin{table}[H]
+  \centering
+  \boxed{
+    \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
+      p & q & \neg(p \lor q) & \neg p \land \neg q \\ \hline
+      0 & 0 & 1 & 1 \\
+      0 & 1 & 0 & 0 \\
+      1 & 0 & 0 & 0 \\
+      1 & 1 & 0 & 0 \\
+    \end{tabular}
+  }
+  \caption{A proof of DeMorgan's second law.}
+\end{table}
+
 
 Extending DeMorgan's laws by the association laws for disjunction and conjunction, they become:
 \begin{equation}
- \neg\left(\bigvee^n_{n=1} p_n\right)=\bigwedge^n_{n=1} \neg p_n
-\end{equation}
-\begin{equation}
  \neg\left(\bigwedge^n_{n=1} p_n\right)=\bigvee^n_{n=1} \neg p_n
 \end{equation}
+\begin{equation}
+ \neg\left(\bigvee^n_{n=1} p_n\right)=\bigwedge^n_{n=1} \neg p_n
+\end{equation}
+Using DeMorgan's Laws, we can negate conjunctions and disjunctions.
 
-Using DeMorgan's Laws, we can \emph{negate conjunctions and disjunctions}.
+They are also useful in computer science, for simplifying boolean expressions.
 
 \begin{ex}
   Negate the following statement:
@@ -243,9 +273,15 @@ Using DeMorgan's Laws, we can \emph{negate conjunctions and disjunctions}.
 
 \section{Useful Logical Equivalences}
 
+Since propositions like $p \implies q$ are hard to work with because we have very few
+laws that work directly with them, it is useful to convert them into a form that uses
+other logical operators.
+
+We can do that using the following logical equivalence:
 \begin{equation}
   p \implies q \equiv \neg p \lor q
 \end{equation}
+which we prove using the following truth table:
 \begin{table}[H]
   \centering
   \boxed{
@@ -261,35 +297,38 @@ Using DeMorgan's Laws, we can \emph{negate conjunctions and disjunctions}.
 \end{table}
 \begin{table}
   \centering
-  \boxed{
     \begin{tabular}{>\(l<\) r}
-      p \land T \equiv p & \multirow{2}{*}{identity} \\
+      \textbf{Proposition} & \textbf{Name} \\ \hline\noalign{\smallskip}
+      p \land T \equiv p & \multirow{2}{*}{identity laws} \\
       p \lor f \equiv p \\\hline
-      p \lor T \equiv T & \multirow{2}{*}{domination} \\
+      p \lor T \equiv T & \multirow{2}{*}{domination laws} \\
       p \land F \equiv F \\\hline
-      p \lor p \equiv p & \multirow{2}{*}{idempotent} \\
-      p \land p \equiv p \\\hline
-      \neg (\neg p) & double negation \\\hline
-      p \lor q \equiv q \lor p & \multirow{2}{*}{commutative} \\
+      p \lor p \equiv p & \multirow{2}{*}{idempotent laws} \\
+      p \land p \equiv p \\\hline\noalign{\smallskip}
+      \neg (\neg p) & double negation law \\\noalign{\smallskip}\hline
+      p \lor q \equiv q \lor p & \multirow{2}{*}{commutative laws} \\
       p \land q \equiv q \land p \\\hline
-      (p \lor q) \lor r \equiv p \lor (q \lor r) & \multirow{2}{*}{associative} \\
+      (p \lor q) \lor r \equiv p \lor (q \lor r) & \multirow{2}{*}{associative laws} \\
       (p \land q) \land r \equiv p \land (q \land r) \\\hline
-      p \land (q \lor r) \equiv (p \land q) \lor (p \land r) & \multirow{2}{*}{distributive} \\
+      p \land (q \lor r) \equiv (p \land q) \lor (p \land r) & \multirow{2}{*}{distributive laws} \\
       p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \\\hline
-      \neg (p \lor q) \equiv \neg p \lor \neg q & \multirow{2}{*}{DeMorgan} \\
+      \neg (p \lor q) \equiv \neg p \lor \neg q & \multirow{2}{*}{DeMorgan's laws} \\
       \neg (p \lor q) \equiv \neg p \land \neg q \\\hline
-      p \lor (p \land q) \equiv p & \multirow{2}{*}{absorbtion} \\
+      p \lor (p \land q) \equiv p & \multirow{2}{*}{absorbtion laws} \\
       p \land (p \lor q) \equiv p \\\hline
-      p \lor \neg p \equiv T & \multirow{2}{*}{negation} \\
+      p \lor \neg p \equiv T & \multirow{2}{*}{negation laws} \\
       p \land \neg p \equiv F
     \end{tabular}
-  }
-  \caption{Useful logical equivalences}
+  \caption{Useful logical equivalence laws.}
+  \label{tab:logequiv}
 \end{table}
 
 \section{Proving Logical Equivalences}
 
-Proving logical equivalences can be achieved using the rules we already have.
+We can prove logical equivalences by using the rules in Table \ref{tab:logequiv}, and showing
+how one step leads to another until we reach something we know to be true.
+Alternatively, we could start with a statement that we know to be true and work our way to the logical equivalence we are trying to prove.
+Both of these proof methods are valid, though not especially rigorous, as they rely upon rules that we may not have established the truth value of with the mathematical rigor required to consider them \emph{formal proofs}.
 \begin{ex}
   Show that \(\neg (p \implies q)\) and \( p \land \neg q\) are logically equivalent.
   \begin{sol}
@@ -304,28 +343,30 @@ Proving logical equivalences can be achieved using the rules we already have.
   \end{sol}
 \end{ex}
 
-\section{Bit Operations}
+Alternatively, they can be proven using truth tables, as described in section \ref{def:contrapositive}.
 
-These logical operators can also be performed on \textbf{bits} (0 is false, 1 is true).
-These are called \textbf{bit operations}, and can even be performed on \textbf{bit strings}, sequences of zero or more bits.
-The \textbf{length} of a bit string is the number of bits in the string.
-\begin{ex}
-  Perform bitwise OR, AND, and XOR operations on the following bit strings.
-  \begin{align*}
-    01 \, 1011 \, 0100 & \\
-    11 \, 0001 \, 1101 &
-  \end{align*}
-  \begin{sol}
-    \begin{align*}
-      01 \, 1011 \, 0100 & \\
-      11 \, 0001 \, 1101 &
-      \\ \\
-      11 \, 1011 \, 1111 & \quad \text{bitwise OR} \\
-      01 \, 0001 \, 0100 & \quad \text{bitwise AND} \\
-      10 \, 1010 \, 1011 & \quad \text{bitwise XOR}
-    \end{align*}
-  \end{sol}
-\end{ex}
+% \section{Bit Operations}
+%
+% These logical operators can also be performed on \textbf{bits} (0 is false, 1 is true).
+% These are called \textbf{bit operations}, and can even be performed on \textbf{bit strings}, sequences of zero or more bits.
+% The \textbf{length} of a bit string is the number of bits in the string.
+% \begin{ex}
+%   Perform bitwise OR, AND, and XOR operations on the following bit strings.
+%   \begin{align*}
+%     01 \, 1011 \, 0100 & \\
+%     11 \, 0001 \, 1101 &
+%   \end{align*}
+%   \begin{sol}
+%     \begin{align*}
+%       01 \, 1011 \, 0100 & \\
+%       11 \, 0001 \, 1101 &
+%       \\ \\
+%       11 \, 1011 \, 1111 & \quad \text{bitwise OR} \\
+%       01 \, 0001 \, 0100 & \quad \text{bitwise AND} \\
+%       10 \, 1010 \, 1011 & \quad \text{bitwise XOR}
+%     \end{align*}
+%   \end{sol}
+% \end{ex}
 
 % \section{Examples}
 %
@@ -374,4 +415,4 @@ Thus, reasoning is often more useful than truth tables in showing a compound pro
 %     (b) is true when at least one of \(p\), \(q\), or \(r\) is false and one is true.
 %     So (c), a combination of (a) and (b), is unsatisfiable.
 %   \end{sol}
-% \end{ex}
+% \end{exK

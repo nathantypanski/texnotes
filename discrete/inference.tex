@@ -10,123 +10,119 @@ propositions before it.
 
 \section{Rules of Inference for Propositions}
 
+We will present the rules of inference using a variant of \emph{Fitch diagrams}.
+Each step in a Fitch diagram includes a number for the step, a proposition or conclusion,
+and a justification for the step.
+
 \subsection{\emph{Modus ponens}}\label{modus_ponens}\index{\emph{modus ponens}}
 \begin{equation*}
   \begin{fitch}
-    \fb p       &\\
-    \fa p \to q &\\
-    \fa  q
+    \fb p       & assumption \\
+    \fa p \to q & assumption \\
+    \fa  q & $\big(p \wedge (p \to q)\big) \to q$
   \end{fitch}
 \end{equation*}
 \emph{Modus ponens} is Latin for ``mode that affirms,'' and comes from the
-tautology $(p \wedge (p \to q)) \to q$. It is the simplest valid
+tautology $\big(p \wedge (p \to q)\big) \to q$. It is the simplest valid
 \textbf{argument}\index{argument}, a sequence of statements that ends with a conclusion.
 
 \subsection{\emph{Modus tollens}}\index{\emph{modus tollens}}
 \begin{equation*}
   \begin{fitch}
-    \fb \neg q \\
-    \fa p \to q \\
-    \fa \neg p
+    \fb \neg q  & assumption \\
+    \fa p \to q & assumption \\
+    \fa \neg p & $\big(\neg q \wedge (p \to q)\big) \to \neg p$
   \end{fitch}
 \end{equation*}
-
-$(\neg q \wedge (p \to q)) \to \neg p$.
 
 \subsection{Hypothetical syllogism}\index{hypothetical syllogism}
 \begin{equation*}
   \begin{fitch}
-    \fb p \to q \\
-    \fa q \to r \\
-    \fa p \to r
+    \fb p \to q& assumption \\
+    \fa q \to r& assumption \\
+    \fa p \to r& $\big((p \to q) \wedge (q \to r)\big) \to (p \to r)$
   \end{fitch}
 \end{equation*}
-Sometimes thought of as \emph{double modus ponens}, a hypothetical syllogism is
-$((p \to q) \wedge (q \to r)) \to (p \to r)$.
+A hypothetical syllogism is sometimes thought of as \emph{double modus ponens}.
 
 \subsection{Disjunctive syllogism}\index{disjunctive syllogism}
 \begin{equation*}
   \begin{fitch}
-    \fb p \vee q \\
-    \fa \neg p \\
-    \fa q
+    \fb p \vee q & assumption \\
+    \fa \neg p   & assumption \\
+    \fa q & $(p \lor q ) \land \neg p \to q$
   \end{fitch}
 \end{equation*}
-$(p \lor q ) \land \neg p \to q$.
 
 \subsection{Addition}\index{addition}
 \begin{equation*}
   \begin{fitch}
-    \fb p \\
-    \fa p \lor q
+    \fb p & assumption \\
+    \fa p \lor q & $ p \to (p \lor q)$
   \end{fitch}
 \end{equation*}
-$ p \to (p \lor q)$.
 
 \subsection{Simplification}\index{simplification}
 \begin{equation*}
   \begin{fitch}
-    \fb p \land q \\
-    \fa p
+    \fb p \land q & assumption \\
+    \fa p & $(p \land q) \to p$
   \end{fitch}
 \end{equation*}
-$(p \land q) \to p$.
 
 \subsection{Conjunction}\index{conjunction}
 \begin{equation*}
   \begin{fitch}
-    \fb p \\
-    \fa q \\
-    \fa p \land q
+    \fb p & assumption \\
+    \fa q & assumption \\
+    \fa p \land q & $\big( (p) \land (q)\big) \to (p \land q)$
   \end{fitch}
 \end{equation*}
-$( (p) \land (q)) \to (p \land q)$.
 
 \subsection{Resolution}\index{resolution}
 \begin{equation*}
   \begin{fitch}
-    \fb p \lor q \\
-    \fa \neg p \lor r \\
-    \fa q \lor r
+    \fb p \lor q      & assumption \\
+    \fa \neg p \lor r & assumption \\
+    \fa q \lor r & $ \big( (p \lor q) \land (\neg p \lor r ) \big) \to (q \lor r)$
   \end{fitch}
 \end{equation*}
-$ ( (p \lor q) \land (\neg p \lor r ) ) \to (q \lor r)$.
-
-
 
 \section{Rules of Inference for Quantified Statements}
 
 \subsection{Universal Generalization}
-  \textbf{Universal generalization} states that given $P(c)$ for all elements $c$
-  in the domain, $\forall x P(x)$ is true.
- \begin{equation}
+
+\textbf{Universal generalization} states that given $P(c)$ for all elements $c$
+in the domain, $\forall x P(x)$ is true.
+\begin{equation}
   \begin{fitch}
-    \fb P(c) \text{ for some arbitrary $c$} \\
-    \fa \forall x P(x) & \text{Universal generalization}
+    \fb P(c) \text{ for some arbitrary $c$} & assumption \\
+    \fa \forall x P(x) & universal generalization
   \end{fitch}
   \label{eq:univ_gen}
 \end{equation}
 
-
 \subsection{Universal Instantiation}\label{univ_inst}
+
 \textbf{Universal instantiation}  states that given $\forall x P(x)$, $P(c)$ is
 true for a particular element $c$ in the domain.
 \begin{equation}
   \begin{fitch}
-    \fb \forall x (P(x) \to Q(x)) \\
-    \fa P(a) & \text{Universal instantiation}
+    \fb \forall x \big(P(x) \to Q(x)\big) & proposition \\
+    \fa P(a) & universal instantiation
   \end{fitch}
   \label{eq:univ_inst}
 \end{equation}
 
 \subsection{Existential Generalization}
-  \textbf{Existential generalization}\index{existential generalization} concludes
-  that, given a particular element $c$ for which $P(c)$ is known to be true, $\exists x P(x)$.
 
+\textbf{Existential generalization}\index{existential generalization} concludes
+that, given a particular element $c$ for which $P(c)$ is known to be true, $\exists x P(x)$.
 
 \subsection{Existential Instantiation}
-  \textbf{Existential instatiation}\index{existential instatiation} states that if
-  $\exists x P(x)$ is true, $P(c)$ for some element $c$.
+
+\textbf{Existential instatiation}\index{existential instatiation} states that if
+$\exists x P(x)$ is true, $P(c)$ for some element $c$.
 
 \subsection{Universal \emph{Modus Ponens}}
 

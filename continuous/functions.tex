@@ -343,13 +343,6 @@ They are useful for producing inverse trigonometric functions--functions that ar
   \index{inverse functions}
 \end{defn}
 In order for an inverse function $f^{-1}(x)$ to exist for a function $f(x)$, the original function $f(x)$ must be one-to-one. Otherwise, the resulting ``inverse function'' would not be a function: more than one output would be produced from only one input, and it would not pass the vertical line test.
-\begin{remark} \index{composition}\index{inverse functions}
-  By definition, either composite of a function and its inverse will return the identity function, where $y=x$. For example:
-  \[ (f \circ f^{-1})(x)=f(f^{-1}(x))=x \]
-  or
-  \[ (f^{-1} \circ f)(x)=f^{-1}(f(x))=x \]
-\end{remark}
-
 \begin{figure}[H]
   \begin{center}
     \subfigure[A plot of $f(x)=\sqrt x$.]{
@@ -361,6 +354,12 @@ In order for an inverse function $f^{-1}(x)$ to exist for a function $f(x)$, the
   \end{center}
   \label{fig:inversef}
 \end{figure}
+\begin{remark} \index{composition}\index{inverse functions}
+  By definition, either composite of a function and its inverse will return the identity function, where $y=x$. For example:
+  \[ (f \circ f^{-1})(x)=f(f^{-1}(x))=x \]
+  or
+  \[ (f^{-1} \circ f)(x)=f^{-1}(f(x))=x. \]
+\end{remark}
 
 \subsection{Finding Inverse Functions}
 To find the inverse of a function $f(x)$, replace $f(x)$ with $y$ and solve for $x$ in terms of $y$. Then, interchange $x$ and $y$.
@@ -378,7 +377,7 @@ To find the inverse of a function $f(x)$, replace $f(x)$ with $y$ and solve for 
       y &=2x-2
     \end{align*}
     The inverse of the function $f(x)=\frac{1}{2}x+1$ is the function $f^{-1}(x)=2x-2$.
-    \begin{figure}[h]
+    \begin{figure}[H]
       \begin{center}
         \subfigure[A plot of $f(x)=\frac{1}{2}x+1$.]{
           \includegraphics[width=0.3\textwidth]{continuous/functions/halfxeg.eps}

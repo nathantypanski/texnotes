@@ -17,19 +17,29 @@ becomes a proposition when a value is assigned to $x$.
   numerical counterparts.
 \end{ex}
 
-\section{Universal Quantification}
-The \textbf{universal quantification}\index{universal quantification} of $P(x)$ is the statement
-    ``$P(x)$ for all values of $x$ in the domain.''
-  The notation \[\forall x P(x)\] denotes the universal quantification of $P(x)$.
-
-If we wish to state that a given propositional function is true for all possible values in a domain, we use the \emph{universal quantification} of that function.
 
 \section{Domain of Discourse}
 Just as values for a variable must be stated in order for a propositional function to have a truth value, a \textbf{domain of discourse}\index{domain of discourse} must be specified in addition to the universal quantification.
 This is often referred to as just the \emph{domain} of the function.
 
-To show that the universal quantification of $P(x)$ is false for a domain, find
-an $x$ for which $P(x)$ is false.
+
+For example, for porpostional functions talking about numbers, we often assume $D \to\mathbb{R}$.
+\footnote{We use $D$ as shorthand referring to the domain of discourse of a function.
+$\mathbb{R}$ means ``all real numbers.'' That is, all rational and irrational numbers. It does not include, for example, complex numbers which include $i$, the ``imaginary unit.''}
+
+
+\section{Universal Quantification}
+If we wish to state that a given propositional function is true for all possible values in a domain, we use the \emph{universal quantification} of that function.
+
+The \textbf{universal quantification}\index{universal quantification} of $P(x)$ is the statement
+``$P(x)$ for all values of $x$ in the domain.''
+The notation
+\begin{equation}
+  \forall x P(x)
+\end{equation}
+denotes the universal quantification of $P(x)$.
+
+To show that the universal quantification of $P(x)$ is false for a domain, find an $x$ for which $P(x)$ is false.
 
 \section{Existential Quantification}\index{existential quantification}
 
@@ -60,45 +70,112 @@ To demonstrate uniqueness using propositional logic, we make a statement such as
 
 \section{Logical Equivalence of Quantified Propositions}\index{logical equivalence}
 
-The following is a quote from Rosen's \emph{Discrete Mathematics and its Applications} on the issue:
+In order for two statements involving predicates and quantifiers to be logically equivalent,
+they must have the same truth value regardless of the values of their propositional variables
+and the domain of discourse used.
 
-\begin{quote}
-  Statements involving predicates and quantifiers are \textbf{logically
-  equivalent} if and only if they have the same truth value no matter what
-  predicates are substituted into the statements and which the domain of
-  discourse is used for the variables in these propositional functions. We use the
-  notation $S \equiv T$ to indicate that two statements $S$ and $T$ involving
-  predicates and quantifiers are logically equivalent.
+DeMorgan's Laws are an important logical equivalence even when quantified propositions are discussed.
+As stated in our definition of logial equivalence, they hold regardless of the values of their variables.
 
-  \hfill\cite[p.~45]{rosen}
-\end{quote}
+%The following is a quote from Rosen's \emph{Discrete Mathematics and its Applications} on the issue:
+%
+%\begin{quote}
+%  Statements involving predicates and quantifiers are \textbf{logically
+%  equivalent} if and only if they have the same truth value no matter what
+%  predicates are substituted into the statements and which the domain of
+%  discourse is used for the variables in these propositional functions. We use the
+%  notation $S \equiv T$ to indicate that two statements $S$ and $T$ involving
+%  predicates and quantifiers are logically equivalent.
+%
+%  \hfill\cite[p.~45]{rosen}
+%\end{quote}
 
-\section{DeMorgan's Laws for Quantifiers}\index{DeMorgan's laws for quantifiers}
+\subsection{DeMorgan's Laws for Quantifiers}\index{DeMorgan's laws for quantifiers}
+
+DeMorgan's Laws for quantifiers allow us to radically simplify logical expressions involving quantifiers.
 
 \begin{equation}
   \neg \exists x P(x) \equiv \forall x \neg P(x)
+  \label{eq:dmq1}
 \end{equation}
 \begin{equation}
   \neg \forall x P(x) \equiv \exists x \neg P(x)
+  \label{eq:dmq2}
 \end{equation}
+
+\begin{ex}
+  For example, let's take \emph{Euler's conjecture},\footnote{Pronounced ``oiler.''} first proposed in 1769.\footnote{Eventually disproved in 1987. Solution at the end of the example.}
+
+  Let us first define the propositional function $P(a,b,c,d)$.\footnote{ $ : : = $ is used to mean ``equals by definition,'' and is sometimes used in order to contrast with regular ``equals.''}
+  \[P(a,b,c,d) : : =
+    a^4 + b^4 + c^4 = d^4\]
+Now, Euler proposed that there are no positive integers $a, b, c,$ and $d$ such that $P(a,b,c,d)$ is true. We state this by writing
+  \[ E(a,b,c,d) : : =
+    \forall a \in \mathbb{Z^+}
+    \forall b \in \mathbb{Z^+}
+    \forall c \in \mathbb{Z^+}
+    \forall d \in \mathbb{Z^+}
+    \big(\neg P(a,b,c,d) \big).\]
+Let's break this apart.
+The ``$a \in \mathbb{Z^+}$ is used to describe our \emph{domain of discourse}.
+$\mathbb{Z^+}$ refers to the set of all positive integers.
+In general use, we can simplify this statement by writing
+\[ E(a,b,c,d) : : =
+  \forall a,b,c,d, \in \mathbb{Z^+} \big( \neg P(x)\big)\]
+but for our purposes, we want to work with the original proposition, because we wish to use DeMorgan's Laws on it.
+
+Using DeMorgan's first law for quantifiers, equation \eqref{eq:dmq1}, we can change the last part of this proposition:
+\[\forall d \in \mathbb{Z^+} \big(\neg P(a,b,c,d)\big)\equiv \neg \exists d \in \mathbb{Z^+} \big(P(a,b,c,d)\big)\]
+Now, we continue up the chain, reversing each of the negated statements as if everything to the right of the negation sign were one single proposition.
+Here's our new statement:
+\begin{align*}
+  E(a,b,c,d) : : &=
+  \forall a \in \mathbb{Z^+}
+  \forall b \in \mathbb{Z^+}
+  \forall c \in \mathbb{Z^+}
+  \neg\exists d \in \mathbb{Z^+}
+  \big( P(a,b,c,d) \big)\\
+  \intertext{Now, continuing DeMorgan's Laws,}
+  E(a,b,c,d) : : &=
+  \forall a \in \mathbb{Z^+}
+  \forall c \in \mathbb{Z^+}
+  \neg\exists c \in \mathbb{Z^+}
+  \exists d \in \mathbb{Z^+}
+  \big( P(a,b,c,d) \big)\\
+  E(a,b,c,d) : : &=
+  \forall a \in \mathbb{Z^+}
+  \neg\exists c \in \mathbb{Z^+}
+  \exists c \in \mathbb{Z^+}
+  \exists d \in \mathbb{Z^+}
+  \big( P(a,b,c,d) \big)\\
+  \intertext{Arriving finally at}
+  E(a,b,c,d) : : &=
+  \neg\exists a \in \mathbb{Z^+}
+  \exists c \in \mathbb{Z^+}
+  \exists c \in \mathbb{Z^+}
+  \exists d \in \mathbb{Z^+}
+  \big( P(a,b,c,d) \big),\\
+\end{align*}
+which is logically equivalent to the original $E(a,b,c,d)$ we proposed.
+
+This shows that if just one of the variables in $E(a,b,c,d)$ cannot be said to exist, then the entire proposition becomes false.
+
+It turns out, in contrast to \emph{Euler's conjecture}, a solution to $P(a,b,c,d)$ can be found. With the values $a=95800$, $b=217519$, $c=414560$, and $d=422481$, $P(a,b,c,d)$ is true.
+\end{ex}
 
 \section{Order of Quantifiers}\index{quantifiers, order of}
 
-The quantificaiton
+Assuming a domain of discourse of all real numbers, the quantificaiton
 \begin{equation}
   \exists y \forall x Q(x, y)
 \end{equation}
 denotes the propositon
-\begin{quote}
-  ``There is a real number $y$ such that for every real number $x$, $Q(x, y)$.''
-\end{quote}
+``There is a real number $y$ such that for every real number $x$, $Q(x, y)$.''
 
-The quantificaiton
+By contrast, the quantificaiton
 \begin{equation}
   \forall x \exists y Q(x, y)
 \end{equation}
-denotes the propositon
-\begin{quote}
-  ``For every real number $x$ there is a real number $y$ such that $Q(x, y)$.''
-\end{quote}
+states that
+``For every real number $x$ there is a real number $y$ such that $Q(x, y)$.''
 

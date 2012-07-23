@@ -194,15 +194,52 @@
 \newcommand{\ddx}{\frac{\ud}{\ud x}}
 \newcommand{\szinfty}{\sum_{n=0}^{\infty}}
 
-%%%%%%%%%%%%
-% theorems %
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% theorems                                                               %
+%                                                                        %
+% \newtheoremstyle{stylename}% name of the style to be used              %
+%   {spaceabove}% measure of space to leave above the theorem. E.g.: 3pt %
+%   {spacebelow}% measure of space to leave below the theorem. E.g.: 3pt %
+%   {bodyfont}% name of font to use in the body of the theorem           %
+%   {indent}% measure of space to indent                                 %
+%   {headfont}% name of head font                                        %
+%   {headpunctuation}% punctuation between head and body                 %
+%   {headspace}% space after theorem head; " " = normal interword space  %
+%   {headspec}% Manually specify head                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\theoremstyle{definition} \newtheorem{ex}{Example}[section]
-\theoremstyle{definition} \newtheorem*{sol}{Solution}
+\newtheoremstyle{example}% name of the style to be used
+  {2ex}% measure of space to leave above the theorem. E.g.: 3pt
+  {2ex}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {} % punctuation between head and body
+  {1em}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\newtheoremstyle{solution}% name of the style to be used
+  {1ex}% measure of space to leave above the theorem. E.g.: 3pt
+  {1ex}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\itshape}% name of head font
+  {.}% punctuation between head and body
+  {1em}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\newtheoremstyle{defn}% name of the style to be used
+  {2ex}% measure of space to leave above the theorem. E.g.: 3pt
+  {2ex}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {0.5em}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{example} \newtheorem{ex}{Example}[section]
+\theoremstyle{solution} \newtheorem*{sol}{Solution}
 \theoremstyle{plain} \newtheorem{theorem}{Theorem}
 \theoremstyle{plain} \newtheorem{corollary}{Corollary}
-\theoremstyle{definition} \newtheorem*{defn}{Definition}
+\theoremstyle{defn} \newtheorem*{defn}{Definition}
 \theoremstyle{definition} \newtheorem{homework}{Homework}
 \theoremstyle{remark} \newtheorem*{remark}{Remark}
 \theoremstyle{remark} \newtheorem*{note}{Note}

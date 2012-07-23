@@ -11,52 +11,154 @@ and the axioms and rules of inference being used are not explicitly state.
 However, we may wish to teach a computer how to create proofs. In order to do
 so, we must be extremely precise in our language. Likewise, in order to present
 mathematically precise proofs, we must know how to write \emph{formal
-proofs}\index{formal proofs}.\cite[p.~81]{rosen}
+proofs}\index{formal proofs}.\footnote{This introduction comes almost entirely from \cite[p.~81]{rosen}. It should be rewritten as soon as possible.}
 
 \begin{defn}
   A \textbf{fact} or \textbf{result} is a statement that can be shown to be
   true, but is not as important as a theorem.
+  \index{fact}\index{result}
 \end{defn}
 \begin{defn}
-  A \textbf{lemma} is a less important theorem that is helpful in the proof of
-  other theorems.
+  A \textbf{theorem} is a statement that can be shown to be true, and is associated with a degree of importance.
+  \index{theorem}
 \end{defn}
 \begin{defn}
-  A \textbf{theorem} is a statement that can be shown to be true, associated
-  with a degree of importance.
+  A \textbf{lemma} is a ``less important theorem'' that is helpful in the proof of other theorems.
+  Interestingly enough, a well-constructed lemma can often be more important than the original proof itself. % from mcsfull.pdf
+  \index{lemma}
 \end{defn}
 \begin{defn}
-  A \textbf{corollary} is a theorem that can be established directly from a
-  theorem that has been provided.
+  A \textbf{corollary} is an additional theorem found only a couple logical steps from its parent theorem.
+  \index{corollary}
 \end{defn}
 \begin{defn}
-  A \textbf{conjecture} is a statement that is proposed to be true, but has not
-  been proven to be true.
+  A \textbf{conjecture} is a statement that is proposed to be true, but has not yet been proven.
+  \index{conjecture}
 \end{defn}
 
-%\section{Direct Proof}\index{direct proofs}
-%
-%A \textbf{direct proof} starts with the premises and follows directly to the
-%conclusion.
-%
-%\begin{ex}
-%  Give a direct proof of the theorem
-%  \begin{quote}
-%    ``If $n+1$ is an odd integer, then $n+3$ is an odd integer.''
-%  \end{quote}
-%  %\[ n+1 = 2k + 1 \]
-%%   \begin{sol}
-%%     \begin{proof}
-%%       \begin{align*}
-%%         n+1 &= 2k+1 & 2k+1 \text{ is odd.} \\
-%%         n+3 &= 2k+1+3 & \text{Add }2\text{ to each side.} \\
-%%         n+3 &= 2k+4 &\text{Simplify.}
-%%       \end{align*}
-%%     \end{proof}
-%%   \end{sol}
-%\end{ex}
-%
-%\section{Indirect Proof}\index{indirect proofs}
+\section{Direct Proof}\index{direct proofs}
+
+A \textbf{direct proof} starts with known facts, and the satement we are trying to prove
+follows directly from them.
+
+In using a direct proof for proving an implication \[P \implies Q\]
+we start by assuming $P$ is true, then using the \emph{rules of inference}, reach the conclusion
+$Q$ through direct logical steps from $P$.
+
+\begin{ex}
+  Prove that if $n$ is greater than $4$ then $2^n$ is greater than $n^2$.
+  % A direct proof is easiest.
+  % Write a proof for this. It comes from one of my DM tests from freshman year, and I missed the points.
+\end{ex}
+\begin{ex}
+  Give a direct proof of the theorem
+  \begin{quote}
+    ``If $n+1$ is an odd integer, then $n+3$ is an odd integer.''
+  \end{quote}
+  \begin{proof}
+    If $n+1$ is an odd integer, then we can write it in the form
+    \begin{align*}
+      n+1 &= 2k_1+1 \\
+      \intertext{Now, we subtract $1$ from both sides.}
+      n &= 2k_1 \\ \intertext{Which shows that $n$ is even. If we add $2$ to both sides,}
+      n+2 &= 2k_1 +2 \\
+      \intertext{An even number plus $2$ is still even, so we could write $2k_1+2$ as $2k_2$.}
+      n+2 &= 2k_2 \\
+      \intertext{Now we add $1$ to each side to reach our conclusion.}
+      n+3 &= 2k_2 + 1
+    \end{align*}
+    Any number in the form $2k+1$ is odd.
+    We have proven that if $n+1$ is an odd integer, then $n+3$ is also an odd integer.
+  \end{proof}
+\end{ex}
+
+\section{Indirect Proof}\index{indirect proofs}
+
+An \textbf{indirect proof} is, basically, any proof that is not a \emph{direct proof}.
+There are a variety of ways of accomplishing a proof that are not direct proofs,
+and many of them are dramatically simpler or easier to understand than the direct
+proof for a given theorem would be.
+
+\subsection{Proof by Contrapositive}\label{sec:contrapositive}
+The first method of indirect proof we will discuss is the \textbf{proof by contrapositive}.
+It is often more useful to work with the contrapositive something than the original statement.
+
+Remembering our definition of the contrapositive from Section \ref{sec:propintro}, let's cover some examples.
+\begin{defn}
+  The \textbf{contrapositive} of the statement \(P \to Q \) is the statement \(\neg Q \to \neg P\).
+\end{defn}
+
+\begin{ex}
+  Find the contrapositive of the following:
+  \begin{quote}
+    ``If it is snowing then it is cold.''
+  \end{quote}
+  \begin{sol}
+    Assign propositional variables to both of the statements.
+    \begin{quote}
+      Let $s$ be ``it is snowing.'' Let $c$ be the statement ``it is cold.''
+      The statement we are trying to prove is
+      \[ P(x) : : = s\to c.\]
+      Its contrapositive, therefore, is
+      \[ C(x) : : = \neg c \to \neg s \]
+      which is the statement ``if it is not cold then it is not snowing.''
+      This is logically equivalent to our original statement.
+      \[ P(x) \equiv C(x) \]
+    \end{quote}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  Prove the following, by contrapositive:
+  \begin{quote}
+  ``If a number squared is odd, then the number itself is odd.''
+  \end{quote}
+  \begin{proof}
+    We will use proof by contraposition.
+    \begin{quote}
+      Let $S(x)$ be ``$x$ squared is odd.''
+
+      Let $O(x)$ be ``$x$ is odd.''
+    \end{quote}
+    In mathematical language, this is\footnote{$2k+1$ is the simplest mathematical expression for a generic odd integer.}
+    \begin{align*}
+      S(x) & : : = x^2 = 2k_2+1 \\
+      O(x) & : : = x = 2k_1+1
+    \end{align*}
+    where $k$ is any integer.
+
+    So we are trying to prove
+    \[ S(x) \to O(x). \]
+    The contrapositive of this statement is
+    \[\neg O(x) \to \neg S(x).\]
+    Now, remembering that all even integers can be expressed in the form $n=2k$, let's find the negations of each of our propositional functions.
+    \begin{align*}
+      \neg S(x) &: : = x^2 = 2k_2 \\
+      \neg O(x) &: : = x = 2k_1
+    \end{align*}
+    So the statement we are trying to prove is
+    \begin{align*}
+      \neg O(x) &\implies \neg S(x) \\
+      x = 2k_1 &\implies x^2=2k_2
+    \end{align*}
+    From the first proposition,
+    \begin{align*}
+      x &= 2k_1 \\
+      \intertext{Square both sides of the equation.}
+      x^2 &= 2k_1^2 \\
+      x^2 &= (2k_1)(2k_1) \\
+      x^2 &= 4k_1 \\
+      \intertext{Because all even integers are divisible by $2$, $4k_1$ could also be written as $2k_2$.}
+      x^2 &= 2k_2
+    \end{align*}
+    which is the conclusion we were trying to reach.
+    From this, we can conclude that
+    \[ \neg O(x) \to \neg S(x)\]
+    and therefore, by contrapositive,
+    \[ S(x)\to O(x).\qedhere\]
+  \end{proof}
+\end{ex}
+
+
 %
 %An \textbf{indirect proof} is any proof that does not start with the premises
 %and end with the conclusion. A \textbf{proof by contraposition} is a specific
@@ -97,7 +199,11 @@ proofs}\index{formal proofs}.\cite[p.~81]{rosen}
 %	\end{proof}
 %\end{ex}
 %
-%\section{Proof by Contradiction}\index{proof by contradiction}
+\section{Proof by Contradiction}\index{proof by contradiction}
+
+To use proof by contradiction to prove a proposition $P$, we start by assuming $P$ is false.
+From this, we derive a logical contradiction.
+Because $\neg P$ leads to a contradiction, we conclude that $P$ must be true.
 %
 %To prove $P$ is true, assume the conclusion $P$ is false. Derive a contradiction, usually of the form $R \wedge \neg R$ which establishes $\neg P \to 0$. The contrapositive of this assertion is $1 \to P$ from which it follows that $P$ must be true.
 %
@@ -307,6 +413,5 @@ proofs}\index{formal proofs}.\cite[p.~81]{rosen}
 %    $2^{2(n+1)}-1$ & Induction conclusion. & \\
 %  \end{tabular}
 %\end{ex}
-%
-%
-%
+
+

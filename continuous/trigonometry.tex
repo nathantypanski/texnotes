@@ -3,7 +3,7 @@
 \section{Sine, Cosine, and Tangent}
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{continuous/trig/basictrig.eps}
+    \includegraphics[width=0.4\textwidth]{continuous/trig/basictrig.eps}
   \end{center}
 \end{figure}
 
@@ -27,7 +27,7 @@ Our first pythagorean identity is just derived from the pythagorean theorem.
   %credit: wikipedia. Anyone have a better source?
   \label{th:pythagoras}
 \end{theorem}
-\begin{figure}[H]
+\begin{figure}[h]
   \begin{center}
     \subfigure[The Pythagorean Theorem states that the sum of the areas square $a$ and square $b$ is equal to the area of square $c$.]{
       \includegraphics[width=0.4\textwidth]{continuous/functions/pyth.eps}
@@ -40,8 +40,7 @@ Our first pythagorean identity is just derived from the pythagorean theorem.
     }
   \end{center}
 \end{figure}
-
-\begin{figure}[H]
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{continuous/trig/pythcircle.eps}
     \caption{The pythagorean squares on a unit circle. Note that the length of side $c$ must be $1$ because the radius of the circle is $1$.}
@@ -123,7 +122,7 @@ Dividing by $\cos^2x$ produces:
 	\tan^2x+1=&\sec^2x
 \end{align}
 
-We should also memorize the following two identities:
+We should memorize the following two identities:
 \begin{equation}
   \sin{a+b}=\sin a \cos a + \sin b \cos b
   \label{eq:sinab}
@@ -132,16 +131,46 @@ We should also memorize the following two identities:
   \cos{a+b}=\cos a \cos b + \sin a \sin b
   \label{eq:cosab}
 \end{equation}
-From equation \eqref{eq:sinab} we can infer that
+From equation \eqref{eq:sinab} we can infer that, if both $a$ and $b$ are the same,
 \begin{equation}
   \sin{2\theta}=2 \sin \theta \cos \theta
   \label{eq:sin2q}
 \end{equation}
-and from equation \eqref{eq:cosab} we can infer that
-\begin{equation}
-  \cos{2\theta}=\cos^2 \theta - \sin^2\theta
+using the same reasoning, \eqref{eq:cosab} gives us
+\begin{align}
+  \cos{2\theta}&=\cos \theta \cos \theta- \sin\theta \sin\theta \nonumber\\
+  \cos{2\theta}&=\cos^2 \theta - \sin^2\theta
   \label{eq:cos2q}
+\end{align}
+
+We can generalize the pythagorean theorem by deriving the \textbf{law of cosines}\index{law of cosines}:
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{continuous/trig/lawcosines.eps}
+  \end{center}
+\end{figure}
+In the above figure, we use the distance formula
+\begin{equation}
+  d=\sqrt{(x_1 - x_2)^2+(y_1-y_2)^2}
+  \label{eq:distance}
 \end{equation}
+\begin{align}
+  \notag  c &= \sqrt{(b-a\cos \theta)^2+(0-a\sin\theta)^2} \\
+  \notag  c&=\sqrt{(b-a\cos\theta)^2+(a\sin\theta)^2} \\
+  \notag  c^2&=(b-a\cos\theta)^2+(a\sin\theta)^2 \\
+  \notag  c^2 &= (b-a\cos\theta)(b-a\cos\theta)+(a\sin\theta)(a\sin\theta) \\
+  \notag  c^2 &= b^2 -ab\cos\theta -ab\cos\theta+(a\cos\theta)^2+(a\sin\theta)^2\\
+  \notag  c^2&=b^2-2ab\cos\theta+(a\cos\theta)^2+(a\sin\theta)^2\\
+  \intertext{Now we use the distance formula to find the length of $a$,}
+  \notag  a&=\sqrt{(a\cos\theta)^2+(a\sin\theta)^2}\\
+  \intertext{and square our result}
+  \notag  a^2&=(a\cos\theta)^2+(a\sin\theta)^2\\
+  \intertext{which now substitutes nicely into our original equation}
+  \notag  c^2&=b^2-2ab\cos\theta+(a\cos\theta)^2+(a\sin\theta)^2\\
+  \notag  c^2&=b^2-2ab\cos\theta+a^2\\
+  c^2&=a^2+b^2-2ab\cos\theta
+\end{align}
+This is the \emph{law of cosines}, a general form of the pythagorean theorem that doesn't only work with right triangles.
 
 By rearranging \eqref{eq:cos2q} and substituting from \eqref{eq:pyth} we can derive power reduction identities for $\cos^2 \theta$
 \begin{align}

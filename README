@@ -1,1 +1,5 @@
-You will need pdf2latex to compile this document.
+I use texlive to compile this document.
+
+I do so by hitting \ll in vim-latexsuite.
+
+There's probably a better way to do this, but the point is this document should always compile and all required LaTeX files and figures should be included.

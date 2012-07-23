@@ -9,48 +9,43 @@ type of \textbf{predicate}\index{predicate} in
 predicate logic. The important thing about propositional functions is that their
 truth value depends on the value of a variable, $x$. A propositional function
 becomes a proposition when a value is assigned to $x$.
+\begin{ex}
+  \[ P(n)=\text{``$n$ is prime''} \]
+  Note that $P(n)$, here, where $P(n)$ is a propositional function with a truth value,
+  is different from the numerical function $p(n)$. When we talk about functions in the
+  context of propositional logic, we must be careful not to confuse them with their possible
+  numerical counterparts.
+\end{ex}
 
 \section{Universal Quantification}
-
-If we wish to state that a given propositional function is true for all possible
-values in a domain, we use the \emph{universal quantification} of that function.
-Just as values for a variable must be stated in order for a propositional
-function to have a truth value, a \textbf{domain of discourse}\index{domain of
-discourse} must be specified
-in addition to the universal quantification. This is often referred to as just
-the \emph{domain}.
-
-\begin{defn}
-  The \textbf{universal quantification}\index{universal quantification} of $P(x)$ is the statement
-  \begin{quote}
+The \textbf{universal quantification}\index{universal quantification} of $P(x)$ is the statement
     ``$P(x)$ for all values of $x$ in the domain.''
-  \end{quote}
-  The notation $\forall x P(x)$ denotes the universal quantification of
-  $P(x)$.%\cite[p.~40]{rosen}
-  % This is really stupid to cite. It's public domain/original enough to be mine.
-\end{defn}
+  The notation \[\forall x P(x)\] denotes the universal quantification of $P(x)$.
+
+If we wish to state that a given propositional function is true for all possible values in a domain, we use the \emph{universal quantification} of that function.
+
+\section{Domain of Discourse}
+Just as values for a variable must be stated in order for a propositional function to have a truth value, a \textbf{domain of discourse}\index{domain of discourse} must be specified in addition to the universal quantification.
+This is often referred to as just the \emph{domain} of the function.
 
 To show that the universal quantification of $P(x)$ is false for a domain, find
 an $x$ for which $P(x)$ is false.
 
 \section{Existential Quantification}\index{existential quantification}
 
-If we wish to state that an element exists in a domain, we use the
-\emph{existential quantification} of a propositional function.
+If we wish to state that an element exists in a domain, we use the \emph{existential quantification} of a propositional function.
 
-\begin{defn}
-  The \textbf{existential quantificaiton}\index{existential quantification} of $P(x)$ is the proposition
-  \begin{quote}
-    ``There exists an element $x$ in the domain such that $P(x)$''
-  \end{quote}
-  We use the notation $\exists P(x)$ for the existential quantification of
-  $P(x)$.%\cite[p.~42]{rosen}
-  % see earlier comment for universal quantification.
-\end{defn}
+The \textbf{existential quantificaiton}\index{existential quantification} of $P(x)$ is the proposition
+  ``There exists an element $x$ in the domain such that $P(x)$.''
+We use the notation \[\exists x P(x)\] for the existential quantification of $P(x)$.
 
-In order to show that the existential quantification of $P(x)$ is false, we must
-show that $P(x)$ is false for every possible value of $x$ in the domain.
+\begin{note}
+  In order to show that the existential quantification of $P(x)$ is false, we must
+  show that $P(x)$ is false for every possible value of $x$ in the domain.
+\end{note}
 
+
+\subsection{Uniqueness Quantifier}
 A specific case of existential quantification is defined by the
 \textbf{uniqueness quantifier}\index{uniqueness quantifier}, $\exists!$ or $\exists_1$. The notation
 \[ \exists! x P(x) \]
@@ -60,8 +55,10 @@ existential quantification cannot be used on it. Since propositional logic can
 be used to express uniqueness already, we should try to avoid use of uniqueness
 quantification.
 
-\section{Logical Equivalence of Quantified Propositions}\index{logical
-equivalence}
+To demonstrate uniqueness using propositional logic, we make a statement such as the following:
+\[ \exists x \Big( P(x) \land \forall y \big( P(y) \implies (x=y)\big)\Big) \]
+
+\section{Logical Equivalence of Quantified Propositions}\index{logical equivalence}
 
 The following is a quote from Rosen's \emph{Discrete Mathematics and its Applications} on the issue:
 

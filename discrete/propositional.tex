@@ -64,8 +64,8 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   \end{ex}
 
   \index{conditional statement}
-  The \textbf{conditional statement} \[p \to q\] is the propsition ``if p, then q.''
-  The conditional statement \(p \to q\) is false when \(p\) is true and \(q\) is false, and true otherwise.
+  The \textbf{conditional statement} \[p \implies q\] is the propsition ``if p, then q.''
+  The conditional statement \(p \implies q\) is false when \(p\) is true and \(q\) is false, and true otherwise.
   Other ways of writing the conditional statement can be found in table \ref{tab:conditionals}.
   \index{hypothesis}\index{antecedent}\index{premise}
   \(p\) is called the \textbf{hypothesis} (or antecedent or premise).
@@ -74,7 +74,7 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   \begin{ex}
     Let $p$ be ``Joe broke his arm'' and $q$ be ``Joe will go to the hospital.''
 
-    The statement $p \to q$ is the statement ``If Joe broke his arm, then he will go to the hospital.''
+    The statement $p \implies q$ is the statement ``If Joe broke his arm, then he will go to the hospital.''
     It is true if Joe only goes to the hospital, if he only breaks his arm, and if both events occur.
     The only situation in which it is false is if Joe breaks his arm, then does not go to the hospital.
   \end{ex}
@@ -91,28 +91,28 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
       ``\(q\) unless \(p\)''
     \end{tabular}
   }
-  \caption{Other ways of writing the conditional statement \(p \to q\).}
+  \caption{Other ways of writing the conditional statement \(p \implies q\).}
   \label{tab:conditionals}
 \end{table}
 \index{converse}
-  The \textbf{converse} of \(p \to q\) is \(q \to p\).
+  The \textbf{converse} of \(p \implies q\) is \(q \implies p\).
 
 \index{contrapositive}\label{def:contrapositive}
-  The \textbf{contrapositive} of \(p \to q\) is \(\neg q \to \neg p\). It is
-  \emph{logically equivalent} to \(p \to q\).
+  The \textbf{contrapositive} of \(p \implies q\) is \(\neg q \implies \neg p\). It is
+  \emph{logically equivalent} to \(p \implies q\).
   We can prove this with the following \emph{truth table}:
   \begin{table}[H]
     \centering
     \begin{tabular}{|>$c<$|>$c<$|>$c<$|>$c<$|}
       \hline
-      p & q & p\to q & \neg q \to \neg p\\
+      p & q & p\implies q & \neg q \implies \neg p\\
       \hline
       0 & 0 & 1 & 1 \\
       0 & 1 & 1 & 1 \\
       1 & 0 & 0 & 0 \\
       1 & 1 & 1 & 1 \\\hline
     \end{tabular}
-    \caption{A truth table for $p\to q$ and $\neg q \to \neg p$.}
+    \caption{A truth table for $p\implies q$ and $\neg q \implies \neg p$.}
     \label{tab:contrapositive}
   \end{table}
   A \textbf{truth table} can be used to demonstrate the logical relationships between statements.
@@ -122,10 +122,10 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   This subject is detailed further in \ref{app:def:contrapositive}.
 
 \index{inverse}
-  The \textbf{inverse} of \(p \to q\) is \(\neg p \to \neg q\).
+  The \textbf{inverse} of \(p \implies q\) is \(\neg p \implies \neg q\).
 
   \index{biconditional statement}
-  The \textbf{biconditional statement}, also called \emph{bi-implication}, for $p$ and $q$ is \[p \leftrightarrow q.\] This is the statement
+  The \textbf{biconditional statement}, also called \emph{bi-implication}, for $p$ and $q$ is \[p \iff q.\] This is the statement
   ``\(p\) if and only if \(q\).''
   It is true when both \(p\) and \(q\) have the same truth value, and false otherwise.
 \begin{table}[h]
@@ -152,28 +152,28 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
   A \textbf{contingency} is a compound proposition that is nither a tautology nor a contradiction.
 \end{defn}
 \begin{ex}
-  \( p \leftrightarrow q \) is logically equivalent to \( (p \to q) \wedge (q \to p)\).
+  \( p \leftrightarrow q \) is logically equivalent to \( (p \implies q) \wedge (q \implies p)\).
   We state this by writing
-  \[ p \leftrightarrow q \equiv (p \to q) \wedge (q \to p).\]
+  \[ p \leftrightarrow q \equiv (p \implies q) \wedge (q \implies p).\]
 \end{ex}
 \begin{table}  \centering
   \boxed{
     \begin{tabular}{>{\(}l<{\)} >{\(}r<{\)}|>{\(}c<{\)}|>\(c<\)|>\(c<\)|>\(c<\)}
-      p & q & \neg q & p \lor \neg q & p \land q & (p \lor \neg q) \to (p \land q) \\ \hline
+      p & q & \neg q & p \lor \neg q & p \land q & (p \lor \neg q) \implies (p \land q) \\ \hline
       1 & 1 & 0 & 1 & 1 & 1 \\
       1 & 0 & 1 & 1 & 0 & 0 \\
       0 & 1 & 0 & 0 & 0 & 1 \\
       0 & 0 & 1 & 1 & 0 & 0
     \end{tabular}
   }
-  \caption{The truth table for \((p \lor \neg q) \to (p \land q)\)}
+  \caption{The truth table for \((p \lor \neg q) \implies (p \land q)\)}
 \end{table}
 \begin{defn}\index{logical equivalence}
-  The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \leftrightarrow q\) is a tautology.
+  The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \iff q\) is a tautology.
   The notion \(p \equiv q\) denotes that \(p\) and \(q\) are logically equivalent.
   \begin{remark}
     The symbol \(\equiv\) is not a logical connection, and \(p\equiv q\) is not a compound proposition,
-    but rather it is the statement that \(p \leftrightarrow q\) is a tautology.
+    but rather it is the statement that \(p \iff q\) is a tautology.
     The symbol \(\iff\) is sometimes used instead of \(\equiv\) to denote logical equivalence.
   \end{remark}
 \end{defn}
@@ -244,20 +244,20 @@ Using DeMorgan's Laws, we can \emph{negate conjunctions and disjunctions}.
 \section{Useful Logical Equivalences}
 
 \begin{equation}
-  p \to q \equiv \neg p \lor q
+  p \implies q \equiv \neg p \lor q
 \end{equation}
 \begin{table}[H]
   \centering
   \boxed{
     \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
-      p & q & p \to q & \neg p \lor q \\ \hline
+      p & q & p \implies q & \neg p \lor q \\ \hline
       1 & 1 & 1 & 1 \\
       1 & 0 & 0 & 1 \\
       0 & 1 & 1 & 1 \\
       0 & 0 & 1 & 1 \\
     \end{tabular}
   }
-  \caption{A proof of \(p \to q\).}
+  \caption{A proof of \(p \implies q \equiv \neg p \lor q\).}
 \end{table}
 \begin{table}
   \centering
@@ -291,14 +291,14 @@ Using DeMorgan's Laws, we can \emph{negate conjunctions and disjunctions}.
 
 Proving logical equivalences can be achieved using the rules we already have.
 \begin{ex}
-  Show that \(\neg (p \to q)\) and \( p \land \neg q\) are logically equivalent.
+  Show that \(\neg (p \implies q)\) and \( p \land \neg q\) are logically equivalent.
   \begin{sol}
     \[
       \begin{fitch}
-        \fb \neg (p \to q) \equiv \neg (p \to q) \\
-        \fa \neg(p \to q) \equiv \neg(\neg p \lor q) & \(p \to q \equiv \neg p \lor q\) \\
-        \fa \neg(p \to q) \equiv \neg(\neg p) \land \neg q & \text{DeMorgan's Law} \\
-        \fa \neg(p \to q) \equiv p \land \neg q & \text{Double negation}
+        \fb \neg (p \implies q) \equiv \neg (p \implies q) \\
+        \fa \neg(p \implies q) \equiv \neg(\neg p \lor q) & \(p \implies q \equiv \neg p \lor q\) \\
+        \fa \neg(p \implies q) \equiv \neg(\neg p) \land \neg q & \text{DeMorgan's Law} \\
+        \fa \neg(p \implies q) \equiv p \land \neg q & \text{Double negation}
       \end{fitch}
     \]
   \end{sol}
@@ -327,28 +327,28 @@ The \textbf{length} of a bit string is the number of bits in the string.
   \end{sol}
 \end{ex}
 
-\section{Examples}
-
-% bad example, copied from a textbook.
-% I need to write my own.
-\begin{ex}\cite[p.~14]{rosen}
-  Determine whether each of these conditional statements is true or false.
-  \begin{itemize}
-    \item[a) ] if \(1+1=2\), then \(2+2=5\)
-    \item[b) ] if \(1+1=3\), then \(2+2=4\)
-    \item[c) ] if \(1+1=3\), then \(2+2=5\)
-    \item[d) ] if monkeys can fly, then \(1+1=3\)
-  \end{itemize}
-  \begin{sol}
-    In each case, we simply determine the truth value of the hypothesis and the conclusion, then use the definition of the truth value of conditional statements to get our answer.
-    \begin{itemize}
-      \item[a) ] The hypothesis is true, and the conclusion is false, so the statement is false.
-      \item[b) ] Since the hypothesis is false and the conclusion is true, the statement is true.
-      \item[c) ] Since the hypothesis is false, regardless of the conclusion the conditional statement must be true.
-      \item[d) ] Since the hypothesis is false, the conditional is true.
-    \end{itemize}
-  \end{sol}
-\end{ex}
+% \section{Examples}
+%
+% % bad example, copied from a textbook.
+% % I need to write my own.
+% \begin{ex}\cite[p.~14]{rosen}
+%   Determine whether each of these conditional statements is true or false.
+%   \begin{itemize}
+%     \item[a) ] if \(1+1=2\), then \(2+2=5\)
+%     \item[b) ] if \(1+1=3\), then \(2+2=4\)
+%     \item[c) ] if \(1+1=3\), then \(2+2=5\)
+%     \item[d) ] if monkeys can fly, then \(1+1=3\)
+%   \end{itemize}
+%   \begin{sol}
+%     In each case, we simply determine the truth value of the hypothesis and the conclusion, then use the definition of the truth value of conditional statements to get our answer.
+%     \begin{itemize}
+%       \item[a) ] The hypothesis is true, and the conclusion is false, so the statement is false.
+%       \item[b) ] Since the hypothesis is false and the conclusion is true, the statement is true.
+%       \item[c) ] Since the hypothesis is false, regardless of the conclusion the conditional statement must be true.
+%       \item[d) ] Since the hypothesis is false, the conditional is true.
+%     \end{itemize}
+%   \end{sol}
+% \end{ex}
 
 \section{Propositional Satisfiability}
 % I'm pretty sure this section is ripped near-straight from a textbook too.
@@ -362,18 +362,16 @@ To show a compound proposition is satisfiable, we need only demonstrate one poss
 However, to demonstrate it unsatisfiable, we would need to show every possible assignment of truth values and show why they make it false.
 Thus, reasoning is often more useful than truth tables in showing a compound proposition is unsatisfiable.
 
-\begin{ex}
-  Determine whether each of the following is satisfiable.
-  \begin{itemize}
-    \item[a) ] \( (p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \)
-    \item[b) ]  \((p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r) \)
-    \item[c) ]  \( (p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \land (p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r)\)
-  \end{itemize}
-  \begin{sol}
-    (a) is true when \(p\), \(q\) and \(r\) have the same truth value.
-    (b) is true when at least one of \(p\), \(q\), or \(r\) is false and one is true.
-    So (c), a combination of (a) and (b), is unsatisfiable.
-  \end{sol}
-\end{ex}
-
-
+% \begin{ex}
+%   Determine whether each of the following is satisfiable.
+%   \begin{itemize}
+%     \item[a) ] \( (p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \)
+%     \item[b) ]  \((p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r) \)
+%     \item[c) ]  \( (p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \land (p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r)\)
+%   \end{itemize}
+%   \begin{sol}
+%     (a) is true when \(p\), \(q\) and \(r\) have the same truth value.
+%     (b) is true when at least one of \(p\), \(q\), or \(r\) is false and one is true.
+%     So (c), a combination of (a) and (b), is unsatisfiable.
+%   \end{sol}
+% \end{ex}

@@ -1,45 +1,51 @@
 \chapter{Predicates and Quantifiers}
 
+Predicates and quantifiers are an introduction to the idea that we can replace parts of our propositions with variables in order to separate our discussion of logic from the irrelevant details of the problem.
+
+We saw in the previous chapter how the specifics of propositions seemed largely irrelavent; most examples were useless gibberish like ``my house is red'' with all of the focus on the theoretical relationships between these statements.
+
+Now, we will learn a more powerful language with which to discuss these relationships.
+
+\section{Predicate Logic}
+
 Propositional logic is too simple for us to make many types of conclusions.
 Instead, we use \textbf{predicate logic}, which allows us to make general
 statements about objects and their properties.
 
 A \textbf{propositional function}\index{propositonal function}, $P(x)$, is a
 type of \textbf{predicate}\index{predicate} in
-predicate logic. The important thing about propositional functions is that their
-truth value depends on the value of a variable, $x$. A propositional function
-becomes a proposition when a value is assigned to $x$.
+predicate logic. The important thing about propositional functions is that their truth value depends on the value of a variable, $x$.
+A propositional function becomes a proposition when a value is assigned to $x$, and then it has a truth value and we can evaluate it.
 \begin{ex}
   \[ P(n)=\text{``$n$ is prime''} \]
-  Note that $P(n)$, here, where $P(n)$ is a propositional function with a truth value,
-  is different from the numerical function $p(n)$. When we talk about functions in the
-  context of propositional logic, we must be careful not to confuse them with their possible
-  numerical counterparts.
+  \begin{remark}
+    $P(n)$, a propositional function with a truth value, is different from the numerical function $p(n)$.
+    When we talk about functions in the context of propositional logic, we must be careful not to confuse them with their possible numerical counterparts.
+  \end{remark}
 \end{ex}
 
 
-\section{Domain of Discourse}
+\subsection{Domain of Discourse}\index{domain of discourse}
 Just as values for a variable must be stated in order for a propositional function to have a truth value, a \textbf{domain of discourse}\index{domain of discourse} must be specified in addition to the universal quantification.
 This is often referred to as just the \emph{domain} of the function.
 
 
-For example, for porpostional functions talking about numbers, we often assume $D \to\mathbb{R}$.
-\footnote{We use $D$ as shorthand referring to the domain of discourse of a function.
+For example, for porpostional functions talking about numbers, we often assume $D \to\mathbb{R}$.\footnote{We use $D$ as shorthand referring to the domain of discourse of a function.
 $\mathbb{R}$ means ``all real numbers.'' That is, all rational and irrational numbers. It does not include, for example, complex numbers which include $i$, the ``imaginary unit.''}
 
 
-\section{Universal Quantification}
-If we wish to state that a given propositional function is true for all possible values in a domain, we use the \emph{universal quantification} of that function.
+\section{Quantification}\index{quantification}
+%If we wish to state that a given propositional function is true for all possible values in a domain, we use the \emph{universal quantification} of that function.
+%% Yeah, but we use this for so much more than that. Commenting this out for now.
 
-The \textbf{universal quantification}\index{universal quantification} of $P(x)$ is the statement
-``$P(x)$ for all values of $x$ in the domain.''
-The notation
+The \textbf{universal quantification}\index{universal quantification} of $P(x)$
 \begin{equation}
   \forall x P(x)
 \end{equation}
-denotes the universal quantification of $P(x)$.
+is the statement
+``$P(x)$ for all values of $x$ in the domain.''
 
-To show that the universal quantification of $P(x)$ is false for a domain, find an $x$ for which $P(x)$ is false.
+To show that the universal quantification of $P(x)$ is false for a domain, simply find a single value of $x$ for which $P(x)$ is false.
 
 \section{Existential Quantification}\index{existential quantification}
 

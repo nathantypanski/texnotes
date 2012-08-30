@@ -52,7 +52,7 @@
 
 
 \section{Integration by Parts}\index{integration by parts}
-
+% rewrite this.
 Integration by parts is used for simplifying integrals of the form
 \[ \int f(x)g(x) \ud x \text{.} \]
 It is useful when \(f\) can be differentiated repeatedly and $g$ can be integrated repeatedly without difficulty. The integrals
@@ -87,12 +87,25 @@ Sometimes it is easier to remember the formula if we write it in differential fo
 This formula expresses one integral, $\int u \ud v$, in terms of a second integral, $\int v \ud u$. With a proper choice of $u$ and $v$, the second integral may be easier to evaluate than the first.
 
 \begin{ex}
-  \begin{align*}
-    \int \underbrace{x}_{u} \underbrace{\cos x \ud x}_{\ud v} &= \underbrace{x}_u \underbrace{\sin x}_v - \int \underbrace{\sin x}_v \underbrace{\ud x}_{\ud u} \\
-    &= x \sin x + \cos x +C
-  \end{align*}
+  Integrate
+  \[
+    \int x \cos x \ud x.
+    \]
+    \begin{sol}
+      We use integration by parts with
+      \begin{align*}
+        u&= x & \ud v &= \cos x \\
+        \ud u &= \ud x & v &= \sin x
+      \end{align*}
+      So our integral becomes something we can integrate.
+      \begin{align*}
+        \int x \cos x \ud x &= x \sin x - \int \sin x \ud x \\
+        &= x \sin x + \cos x +C
+      \end{align*}
+    \end{sol}
 \end{ex}
 
+% Rewrite this. Copied from textbook.
 The goal of integration by parts is to go from an integral $\int u \ud v$ that we don't see how to evaluate to an integral $\int v \ud u$ that we can evaluate.
 Generally, you choose $\ud v$ first to be as much of the integrand, including $\ud x$, as you can readily integrate; $u$ is the leftover part.
 When finding $v$ from $\ud v$, any antiderivative will work and we usually pick the simplest one; no arbitrary constant of integration is needed in $v$ because it would simply cancel out on the right-hand side of \ref{equation:intbyparts}.
@@ -100,7 +113,6 @@ When finding $v$ from $\ud v$, any antiderivative will work and we usually pick 
 \begin{ex} A tough integration by parts problem.\footnote{Solved by Dr. James Martin, CNU Department of Mathematics. \url{http://math.cnu.edu/martin.htm}}
 	\[ \int \frac{xe^{2x}}{(2x+1)^2}\ud x \]
   \begin{sol}
-  \begin{proof}
       We use integration by parts as follows:
       \begin{align*}
         u&=e^{2x} & \ud v&=\frac{x}{(2x+1)^2} \\
@@ -133,22 +145,23 @@ When finding $v$ from $\ud v$, any antiderivative will work and we usually pick 
           -\frac{1}{2}\int \frac{e^{2x}}{1+2x}\ud x \\
           =& \frac{e^{2x}}{4+8x}+\frac{e^{2x}\ln{|1+2x|}}{4}
           -\frac{e^{2x}\ln{|1+2x|}}{4}+C \\
-          =& \frac{e^{2x}}{4+8x}+C \qedhere
+          =& \frac{e^{2x}}{4+8x}+C
         \end{align*}
-      \end{proof}
 \end{sol}
 \end{ex}
 \begin{ex}
-  \[\int\ln x \ud x\]
-  \begin{sol} Since $\int \ln x \ud x$ can be written as $\int \ln x \cdot 1 \ud x$, we use the formula $\int u \ud v =  uv - \int v \ud u$ with:
+  Integrate
+  \[\int\ln x \ud x.\]
+  \begin{sol}
+  Since $\int \ln x \ud x$ can be written as $\int \ln x \cdot 1 \ud x$, we can use integration by parts as follows:
   \begin{align*}
     u&=\ln x & \ud v &= \ud x \\
-    \ud u &= \frac{1}{x}\ud x & v&=x
+    \ud u &= \frac{\ud x }{x} & v&=x
   \end{align*}
-  Thus
+  Which gives us the integral
   \begin{align*}
     \int\ln x \ud x &=
-      x \ln x - \int x \cdot \frac{1}{x} \ud x \\
+      x \ln x - \int  \frac{x \ud x}{x} \\
       &= x \ln x - \int \ud x \\
       &= x \ln x - x + C
     \end{align*}
@@ -167,7 +180,7 @@ This is a set of guidlines\footnote{Proposed by Herbert Kasube of Bradley Univer
 
 
 \subsection{Reduction Formulas}
-
+% probably rewrite this. I think I might have too much unoriginal material in this section.
 Consider the integral
 \begin{align*}
   I_n=&\int x^n e^{ax} \ud x
@@ -185,256 +198,288 @@ For $n=0$ the reduction formula says
 $$ I_0=\frac{1}{a}e^{ax} \to \int e^{ax}\ud x = \frac{1}{a}e^{ax}+C $$
 
 When $n \neq 0$ the reduction formula tells us that we have to compute $I_{n-1}$ if we want to find $I_n$. The point of a reduction formula is that the same formula also applies to $I_{n-1}$, and $I_{n-1}$, etc. so that after repeated application of the formula we end up with $I_0$, an integral we know how to compute.\cite{freenotes}
-
-
-\subsection{Examples}
-\begin{ex}[textbook: \#4/pg.441]
-  \[ \int e^{x} \cos(x) \ud x \]
-  \begin{align*}
-    u &= \cos x & \ud v &= e^{x}\ud x \\
-    du &= -\sin x \ud x & v &= e^{x}
-  \end{align*}
-  \begin{align*}
-    \int e^{x} \, \cos(x) \ud x
-    &= \cos(x) \, e^{x} - \int -\sin(x)e^{x}\ud x \\
-    &= e^x \cos x + \underbrace{\int e^x \sin{e^x} \ud x}_{\lets u=e^x} \\
-    &=e^x \cos x - \cos{e^x} + C
-  \end{align*}
-\end{ex}
 \begin{ex}
-  \[ \int (1-x)^{9}\ud x \]
-  This is not an integration by parts problem, it's just a regular $u$-substitution and power rule problem.
-  \begin{align*}
-    &\lets u = (1-x) & & \lets \ud u = -1\ud x
-  \end{align*}
-  $$ \frac{-(1-x)^{10}}{10}+C $$
-\end{ex}
-\begin{ex}
-  \[ \int 3x^{2} \, \cos{x^{3}} \ud x \]
-  Again, this is not an integration by parts problem, because we can spot the derivative of $x^3$ clearly in the integrand:
-  \begin{align*}
-    &\lets u=x^{3} & &\lets du = 3x^{2}\ud x
-  \end{align*}
-  \begin{align*}
-    \int 3x^2 \, \cos{x^{3}} \ud x &=
-    \int \cos u \ud u \\
-    &= \sin u + C \\
-    &= \sin{x^3} + C
-  \end{align*}
-\end{ex}
-\begin{ex}
-  \[ \int x \, \cos x \ud x \]
-  \begin{align*}
-    u&=x & \ud v &= \cos x \ud x \\
-    \ud u &= -1 \ud x & v&= \sin{x}
-  \end{align*}
-  \begin{align*}
-    \int x \, \cos x \ud x &=x \sin(x) - \int \sin x \ud x+C \\
-    &=x \sin x+\cos x+C
-  \end{align*}
-\end{ex}
-\begin{ex}
-  \[ \int x \, e^{x} \ud x \]
-  \begin{align*}
-    & u = x && & dv = e^{x}\ud x \\
-    & \ud u = \ud x && & v = e^{x}
-  \end{align*}
-  \begin{align*}
-    \int x \, e^{x} \ud x &=
-    x e^x-\int e^x \ud x \\
-    &= x e^{x} - e^{x} + C
-  \end{align*}
-\end{ex}
-\begin{ex}
-  \[ \int x \ln x \ud x \]
-  \begin{align*}
-    & u = lnx  &&
-    & dv = x \ud x \\
-    & du = \frac{1}{x} \ud x &&
-    & v = \frac{x^{2}}{2}
-  \end{align*}
-  \begin{align*}
-    \int x \ln x \ud x &=
-    \ln x \frac{x^{2}}{2} - \int \frac{1}{x} \cdot \frac{x^{2}}{2} \ud x \\
-    &= \ln x \frac{x^2}{2} - \frac {x^2}{4} + C
-  \end{align*}
-\end{ex}
-\begin{ex}
-  \[ \int x e^{x^2} \ud x \]
-  Not a chain rule problem. Just let $u=x^2$.
-  \[ \int x e^{x^2} \ud x = \frac{1}{2} e^{x^2}+C \]
-\end{ex}
-\begin{ex}
-  \[ \int x^3 e^{x^2} \ud x \]
-  Don't be discouraged if your first attempt at integration by parts fails.
-  \begin{align*}
-    u &= x^{3} & dv &= e^{x^{2}} \\
-    \ud u &= 3x^{2} \ud x & v &= \text{?}
-  \end{align*}
-  Just try again:
-  \begin{align*}
-    u &= x^2 & dv &= x e^{x^2} \ud x \\
-    \ud u &= 2x \ud x & v &= \frac{e^{x^2}}{2}
-  \end{align*}
-  \begin{align*}
-    \int x^3 e^{x^2} \ud x &=
-    \frac{x^2 e^{x^2}}{2} - \int \frac{2}{2} x e^{x^2} \ud x
-    =\frac {x^2 e^x}{2}- \frac {e^{x^2}}{2} + C \\
-    &=\frac{x^2 e^x-e^x}{2}+C
-  \end{align*}
-\end{ex}
-\begin{ex}
-  \[ \int e^x (x+1)^2 \ud x \]
-  Start with integration by parts:
-  \begin{align*}
-    u &= (x+1)^2 & \ud v &= e^x \ud x \\
-    \ud u &= 2(x+1)\ud x & v &= e^x
-  \end{align*}
-  \begin{align*}
-    \int e^x (x+1)^2 \ud x&=
-      e^x (x+1)^2 - \int e^x 2(x+1)\ud x \\
-    &=e^x (x+1)^2 - 2\int e^x (x+1)\ud x
-  \end{align*}
-  Saving this for later...
-  \begin{comment}
-  Then use integration by parts again:
-  \begin{align*}
-    u &= x+1 & \ud v &= e^x \ud x \\
-    \ud u &= \ud x & v &= e^x
-  \end{align*}
-  \begin{align*}
-    \int e^x (x+1)^2 \ud x&=
-      e^x (x+1)^2 - 2\left[e^x(x+1)-\int e^x \ud x \right] \\
-    &=e^x (x+1)^2 - 2[e^x(x+1)-e^x] + C \\
-    &=e^x (x+1)^2 - 2e^x(x+1)+2e^x + C\\
-    &=x^2e^x+e^x-2xe^x-2e^x+2e^x+C
-  \end{align*}
-  \end{comment}
-\end{ex}
-\begin{ex}
-  Dr. Martin called this one ``strange.''
-  \[ \int \ln x \ud x \]
-  \begin{align*}
-  u &= \ln x & \ud v &=\ud x \\
-  \ud u &= \frac {1}{x} \ud x & v &= x
-  \end{align*}
-  \begin{align*}
-    \int \ln x \ud x &=\ln x - \int \frac{1}{x} x \ud x\\
-    &=\ln x - x + C
-  \end{align*}
-\end{ex}
-\begin{ex}
-  Another ``strange'' integral:
-  \[ \int \arcsin x \ud x \]
-\end{ex}
-\begin{ex}
-  \[ \int \sin^{-1}x \ud x \]
-  \begin{align*}
-    u &= \sin^{-1}x & \ud v&=\ud x\\
-    \ud u &= \frac {1}{\sqrt{1-x^2}} \ud x & v &= x
-  \end{align*}
-  \begin{align*}
-    \int \sin^{-1}x \ud x &=
-    x \sin^{-1}x - \underbrace{\int \frac {x}{\sqrt{1-x^{2}}} \ud x}_{\lets u = 1-x^{2}}=x \sin^{-1}x-\frac{1}{2} \int \frac{\ud u}{\sqrt{u}} \\
-    &=x \sin^{-1}x+\frac{1}{2} \int u^{-1/2}\ud u=x sin^{-1}x+\sqrt u +C \\
-    &=x \sin^{-1}x+\sqrt{1-x^{2}} +C
-  \end{align*}
-\end{ex}
-\begin{ex}
-  \[ \int 4x e^{4x} \ud x \]
-  \begin{sol}
-  We use integration by parts with
-  \begin{align*}
-    u&=x & \ud v&=e^{4x}\ud x \\
-    \ud u &=\ud x & v &=\frac{1}{4}e^{4x}
-	\end{align*}
-	\begin{align*}
-	  \frac{1}{x^4+2x^2+1}
-	    =&4\left[x \cdot \frac{1}{4}e^{4x}-\int 1 \cdot \frac{1}{4} e^{4x} \ud x\right] \\
-	    =&4\left[x \cdot \frac{1}{4}e^{4x}-\frac{1}{4}\int e^{4x} \ud x\right] \\
-	    =& x e^{4x}-\frac{1}{4}e^{4x} + C
-  \end{align*}
-\end{sol}
-\end{ex}
-
-% \begin{homework}
-% pg. 489 odd 1-7, pg. 441 odd 1-23, pg. 441 6, 8, 35, 39.
-% \end{homework}
-
-\begin{ex}[\#23/pg.441]
-  \[ \int e^{2x}\cos{3x}\ud x \]
-  \begin{align*}
-    u &= \cos{3x} & \ud v&=e^{2x}\ud x\\
-    \ud u &= -3\sin{3x}\ud x & v&=\frac{1}{2}e^{2x}
-  \end{align*}
-  \begin{align*}
-    \int e^{2x}\cos{3x}\ud x &=
-      \frac{1}{2}e^{2x}\cos{3x}+\frac{3}{2}\int e^{2x}\sin{3x}\ud x \\
-    &=\frac{1}{2}e^{2x}\cos{3x}+\frac{3}{2}
-      \left[\frac{1}{2}e^{2x}\sin{3x}-\frac{3}{2}\int e^{2x}\cos{3x}\ud x \right]\ \\
-    \to\frac{4}{4}\int e^{2x}\cos{3x}\ud x
-      &=\frac{1}{2}e^{2x}\cos{3x}+\frac{3}{4}e^{2x}\sin{3x}-\frac{9}{4}\int e^{2x}\cos{3x}\ud x \\
-    \frac{13}{4}\int e^{2x}\cos{3x}\ud x
-      &=\frac{1}{2}e^{2x}\cos{3x}+\frac{3}{4}e^{2x}\sin{3x}+C \\
-    13\int e^{2x}\cos{3x}\ud x
-      &=2e^{2x}\cos{3x}+3e^{2x}\sin{3x}+C \\
-    \int e^{2x}\cos{3x}\ud x
-      &=\frac{2}{13}e^{2x}\cos{3x}+\frac{3}{13}e^{2x}\sin{3x}+C \\
-    &=\frac{e^{2x}}{13}\left[2\cos{3x}+3\sin{3x}\right]+C
-  \end{align*}
-  % Old in-class garbage:
-  % $$\frac{1}{2}cos(3x)e^{2x}+\frac{3}{2}\int e^{2x}sin(3x)\ud x \frac{1}{2}cos(3x)e^{2x}+\frac{3/2} (\frac{1}{2}e^{2x}sin(3x)-\frac{3}{2}\int e^{2x}cos(3x)\ud x)
-\end{ex}
-\begin{ex}
+  %[textbook: \#4/pg.441]
   Integrate
-  \[ \int x^2\cos{3x}\ud x \]
-  \begin{sol}
-    Use integration by parts.
-    \begin{align*}
-      u&=x^2 && \ud v=\cos{3x}\ud x \\
-      \ud u=&2x\ud x && v=\frac{1}{3}\sin{3x}
-    \end{align*}
-    \begin{align*}
-      \int x^2\cos{3x}\ud x
-      =nt^{a}_{-\infty} f(x) \ud x
-          + \int^{\infty}_{a} f(x) \ud x& \frac{1}{3}x^2\sin{3x}-\frac{2}{3}\int x \sin{3x} \ud x \\
-      \intertext{Now use integration by parts again}
-      =& \frac{1}{3}x^2\sin{3x}-\frac{2}{3} \left( \frac{-x}{3}\cos{3x}+\frac{1}{3}\int\cos{3x}\ud x \right)\\
-      =& \frac{1}{3}x^2\sin{3x}+\frac{2}{9}x\cos{3x}-\frac{2}{27}\sin{3x}+C
-    \end{align*}
-  \end{sol}
-\end{ex}
-\begin{ex}
-  Integrate
-  \[ \int \frac{x}{\sqrt{x+3}} \]
-  \begin{sol}
-  Use integration by parts with
-  \begin{align*}
-    u&=x  & \ud v&=\frac{\ud x}{\sqrt{x+3}} \\
-    \ud u&=\ud x & v &=2\sqrt{x+3}
-  \end{align*}
-  \begin{align*}
-    \int \frac{x}{\sqrt{x+3}} =& 2x\sqrt{x+3}-\int 2\sqrt{x+3}\ud x \\
-    =& 2x \sqrt{x+3}-\frac{4}{3}(x+3)^{3/2}+C
-  \end{align*}
-\end{sol}
-\end{ex}
-\begin{ex}
-  Integrate
-  \[\sin^{-1}{3x}\ud x\]
+  \[ \int e^x \cos x \ud x \]
   \begin{sol}
     We use integration by parts with
     \begin{align*}
-      u&=\arcsin{3x} & \ud v &= \ud x \\
-      \ud u &=\frac{3}{\sqrt{1-9x^2}}\ud x & v&=x
+      u &= \cos x & \ud v &= e^x \ud x \\
+      \ud u &= - \sin x \ud x & v &=e^x
     \end{align*}
+    Which gives us the integral
     \begin{align*}
-      \arcsin{3x}\ud x
-      =&x\arcsin{3x}-\int \frac{3x \ud x}{\sqrt{1-9x^2}} \\
-      =&x\arcsin{3x}+\frac{1}{3}\sqrt{1-9x^2}+C
+      \int e ^x \cos x \ud x &= e^x \cos x - \int -e^x \sin x \ud x \\
+      &= e^x \cos x+ \int e^x \sin x \ud x \\
+      \intertext{Now we use $u$-substitution with $u=e^x$ and $\ud u = e^x \ud x$.}
+      &= e^x \cos x + \int \sin u \ud u \\
+      &= e^x \cos x - \cos u +C \\
+      &= e^x \cos x - \cos {e^x} +C
     \end{align*}
   \end{sol}
 \end{ex}
+\begin{ex}
+  Integrate
+  \[ \int (1-x)^{9}\ud x. \]
+  \begin{sol}
+    This is not an integration by parts problem.
+    It is just a regular $u$-substitution and power rule problem.
+    Let $u=1-x$ and $\ud u = -\ud x$.
+    \begin{align*}
+      \int (1-x)^9 \ud x &= -\int u ^9 \\
+      &= -\frac{u^{10}}{10}+C\\
+      &= -\frac{(1-x)^{10}}{10}+C
+    \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  Integrate:
+  \[
+    \int 3x^2 \cos x^3 \ud x
+    \]
+  \begin{sol}
+    Again, this is not an integration by parts problem.
+    Because we can spot the derivative of $x^3$ clearly in the integrand,
+    we can let $u=x^3$ and $\ud u = 3x^2 \ud x$.
+    \begin{align*}
+      \int 3x^2 \cos x^3 \ud x & = \int \cos u \ud u \\
+      &= \sin u +C\\
+      &= \sin {x^3}+C
+    \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  Integrate
+  \[
+    \int x \cos x \ud x
+    \]
+    \begin{sol}
+      Use integration by parts with
+      \begin{align*}
+        u &= x & \ud v &= \cos x \ud x \\
+        \ud u &= \ud x & v &= \sin x
+      \end{align*}
+      Which gives us
+      \begin{align*}
+        \int x \cos x \ud x &= x \sin x - \int \sin x \ud x \\
+        &= x \sin x + \cos x +C
+      \end{align*}
+    \end{sol}
+\end{ex}
+\begin{ex}
+  Integrate
+  \[
+    \int x e^x \ud x
+    \]
+    \begin{sol}
+      Use integration by parts with
+      \begin{align*}
+        u&=x & \ud v &= e^x \ud x \\
+        \ud u &= \ud x & v &= e^x
+      \end{align*}
+      \begin{align*}
+        \int x e^x \ud x &= x e^x -\int e^x \ud x \\
+        &=x e^x -e^x +C
+      \end{align*}
+    \end{sol}
+\end{ex}
+\begin{ex}
+  Integrate
+  \[
+    \int x \ln x \ud x
+    \]
+  \begin{sol}
+    Use integration by parts with
+    \begin{align*}
+      u&= \ln x & \ud v &= x \ud x \\
+      \ud u &= \frac{\ud x}{x} & v &= \frac{x^2}{2}
+    \end{align*}
+    Which gives us
+    \begin{align*}
+      \int x \ln x &= \frac{x^2 \ln x}{2}- \int \frac{x^2 \ud x}{2x} \\
+      &= \frac{x^2 \ln x}{2}-\frac{1}{2} \int x \ud x \\
+      &= \frac{x^2 \ln x}{2}-\frac{x^2}{4}+C
+    \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  \[
+    \int x e^{x^2} \ud x
+    \]
+    \begin{sol}
+      This looks like an integration by parts problem at first, but again it is just a regular $u$-substitution problem.
+      Let $u=x^2$ and $\ud u=2x\ud x$.
+      \begin{align*}
+        \int x e^{x^2} \ud x &= \frac{1}{2}e^u \ud u \\
+        &= \frac{1}{2} e^u +C \\
+        &= \frac{1}{2}e^{x^2} +C
+      \end{align*}
+    \end{sol}
+\end{ex}
+% PLEASE rewrite this section ASAP.
+% Clean it up, add descriptions, put it in proper format, etc.
+% This is priority #1 for now.
+%
+%  \begin{ex}
+%    \[ \int x^3 e^{x^2} \ud x \]
+%    Don't be discouraged if your first attempt at integration by parts fails.
+%    \begin{align*}
+%      u &= x^{3} & dv &= e^{x^{2}} \\
+%      \ud u &= 3x^{2} \ud x & v &= \text{?}
+%    \end{align*}
+%    Just try again:
+%    \begin{align*}
+%      u &= x^2 & dv &= x e^{x^2} \ud x \\
+%      \ud u &= 2x \ud x & v &= \frac{e^{x^2}}{2}
+%    \end{align*}
+%    \begin{align*}
+%      \int x^3 e^{x^2} \ud x &=
+%      \frac{x^2 e^{x^2}}{2} - \int \frac{2}{2} x e^{x^2} \ud x
+%      =\frac {x^2 e^x}{2}- \frac {e^{x^2}}{2} + C \\
+%      &=\frac{x^2 e^x-e^x}{2}+C
+%    \end{align*}
+%  \end{ex}
+%  \begin{ex}
+%    \[ \int e^x (x+1)^2 \ud x \]
+%    Start with integration by parts:
+%    \begin{align*}
+%      u &= (x+1)^2 & \ud v &= e^x \ud x \\
+%      \ud u &= 2(x+1)\ud x & v &= e^x
+%    \end{align*}
+%    \begin{align*}
+%      \int e^x (x+1)^2 \ud x&=
+%        e^x (x+1)^2 - \int e^x 2(x+1)\ud x \\
+%      &=e^x (x+1)^2 - 2\int e^x (x+1)\ud x
+%    \end{align*}
+%    Saving this for later...
+%    \begin{comment}
+%    Then use integration by parts again:
+%    \begin{align*}
+%      u &= x+1 & \ud v &= e^x \ud x \\
+%      \ud u &= \ud x & v &= e^x
+%    \end{align*}
+%    \begin{align*}
+%      \int e^x (x+1)^2 \ud x&=
+%        e^x (x+1)^2 - 2\left[e^x(x+1)-\int e^x \ud x \right] \\
+%      &=e^x (x+1)^2 - 2[e^x(x+1)-e^x] + C \\
+%      &=e^x (x+1)^2 - 2e^x(x+1)+2e^x + C\\
+%      &=x^2e^x+e^x-2xe^x-2e^x+2e^x+C
+%    \end{align*}
+%    \end{comment}
+%  \end{ex}
+%  \begin{ex}
+%    Another ``strange'' integral:
+%    \[ \int \arcsin x \ud x \]
+%  \end{ex}
+%  \begin{ex}
+%    \[ \int \sin^{-1}x \ud x \]
+%    \begin{align*}
+%      u &= \sin^{-1}x & \ud v&=\ud x\\
+%      \ud u &= \frac {1}{\sqrt{1-x^2}} \ud x & v &= x
+%    \end{align*}
+%    \begin{align*}
+%      \int \sin^{-1}x \ud x &=
+%      x \sin^{-1}x - \underbrace{\int \frac {x}{\sqrt{1-x^{2}}} \ud x}_{\lets u = 1-x^{2}}=x \sin^{-1}x-\frac{1}{2} \int \frac{\ud u}{\sqrt{u}} \\
+%      &=x \sin^{-1}x+\frac{1}{2} \int u^{-1/2}\ud u=x sin^{-1}x+\sqrt u +C \\
+%      &=x \sin^{-1}x+\sqrt{1-x^{2}} +C
+%    \end{align*}
+%  \end{ex}
+%  \begin{ex}
+%    \[ \int 4x e^{4x} \ud x \]
+%    \begin{sol}
+%    We use integration by parts with
+%    \begin{align*}
+%      u&=x & \ud v&=e^{4x}\ud x \\
+%      \ud u &=\ud x & v &=\frac{1}{4}e^{4x}
+%  	\end{align*}
+%  	\begin{align*}
+%  	  \frac{1}{x^4+2x^2+1}
+%  	    =&4\left[x \cdot \frac{1}{4}e^{4x}-\int 1 \cdot \frac{1}{4} e^{4x} \ud x\right] \\
+%  	    =&4\left[x \cdot \frac{1}{4}e^{4x}-\frac{1}{4}\int e^{4x} \ud x\right] \\
+%  	    =& x e^{4x}-\frac{1}{4}e^{4x} + C
+%    \end{align*}
+%  \end{sol}
+%  \end{ex}
+%
+%  % \begin{homework}
+%  % pg. 489 odd 1-7, pg. 441 odd 1-23, pg. 441 6, 8, 35, 39.
+%  % \end{homework}
+%
+%  \begin{ex}[\#23/pg.441]
+%    \[ \int e^{2x}\cos{3x}\ud x \]
+%    \begin{align*}
+%      u &= \cos{3x} & \ud v&=e^{2x}\ud x\\
+%      \ud u &= -3\sin{3x}\ud x & v&=\frac{1}{2}e^{2x}
+%    \end{align*}
+%    \begin{align*}
+%      \int e^{2x}\cos{3x}\ud x &=
+%        \frac{1}{2}e^{2x}\cos{3x}+\frac{3}{2}\int e^{2x}\sin{3x}\ud x \\
+%      &=\frac{1}{2}e^{2x}\cos{3x}+\frac{3}{2}
+%        \left[\frac{1}{2}e^{2x}\sin{3x}-\frac{3}{2}\int e^{2x}\cos{3x}\ud x \right]\ \\
+%      \to\frac{4}{4}\int e^{2x}\cos{3x}\ud x
+%        &=\frac{1}{2}e^{2x}\cos{3x}+\frac{3}{4}e^{2x}\sin{3x}-\frac{9}{4}\int e^{2x}\cos{3x}\ud x \\
+%      \frac{13}{4}\int e^{2x}\cos{3x}\ud x
+%        &=\frac{1}{2}e^{2x}\cos{3x}+\frac{3}{4}e^{2x}\sin{3x}+C \\
+%      13\int e^{2x}\cos{3x}\ud x
+%        &=2e^{2x}\cos{3x}+3e^{2x}\sin{3x}+C \\
+%      \int e^{2x}\cos{3x}\ud x
+%        &=\frac{2}{13}e^{2x}\cos{3x}+\frac{3}{13}e^{2x}\sin{3x}+C \\
+%      &=\frac{e^{2x}}{13}\left[2\cos{3x}+3\sin{3x}\right]+C
+%    \end{align*}
+%    % Old in-class garbage:
+%    % $$\frac{1}{2}cos(3x)e^{2x}+\frac{3}{2}\int e^{2x}sin(3x)\ud x \frac{1}{2}cos(3x)e^{2x}+\frac{3/2} (\frac{1}{2}e^{2x}sin(3x)-\frac{3}{2}\int e^{2x}cos(3x)\ud x)
+%  \end{ex}
+%  \begin{ex}
+%    Integrate
+%    \[ \int x^2\cos{3x}\ud x \]
+%    \begin{sol}
+%      Use integration by parts.
+%      \begin{align*}
+%        u&=x^2 && \ud v=\cos{3x}\ud x \\
+%        \ud u=&2x\ud x && v=\frac{1}{3}\sin{3x}
+%      \end{align*}
+%      \begin{align*}
+%        \int x^2\cos{3x}\ud x
+%        =nt^{a}_{-\infty} f(x) \ud x
+%            + \int^{\infty}_{a} f(x) \ud x& \frac{1}{3}x^2\sin{3x}-\frac{2}{3}\int x \sin{3x} \ud x \\
+%        \intertext{Now use integration by parts again}
+%        =& \frac{1}{3}x^2\sin{3x}-\frac{2}{3} \left( \frac{-x}{3}\cos{3x}+\frac{1}{3}\int\cos{3x}\ud x \right)\\
+%        =& \frac{1}{3}x^2\sin{3x}+\frac{2}{9}x\cos{3x}-\frac{2}{27}\sin{3x}+C
+%      \end{align*}
+%    \end{sol}
+%  \end{ex}
+%  \begin{ex}
+%    Integrate
+%    \[ \int \frac{x}{\sqrt{x+3}} \]
+%    \begin{sol}
+%    Use integration by parts with
+%    \begin{align*}
+%      u&=x  & \ud v&=\frac{\ud x}{\sqrt{x+3}} \\
+%      \ud u&=\ud x & v &=2\sqrt{x+3}
+%    \end{align*}
+%    \begin{align*}
+%      \int \frac{x}{\sqrt{x+3}} =& 2x\sqrt{x+3}-\int 2\sqrt{x+3}\ud x \\
+%      =& 2x \sqrt{x+3}-\frac{4}{3}(x+3)^{3/2}+C
+%    \end{align*}
+%  \end{sol}
+%  \end{ex}
+%  \begin{ex}
+%    Integrate
+%    \[\sin^{-1}{3x}\ud x\]
+%    \begin{sol}
+%      We use integration by parts with
+%      \begin{align*}
+%        u&=\arcsin{3x} & \ud v &= \ud x \\
+%        \ud u &=\frac{3}{\sqrt{1-9x^2}}\ud x & v&=x
+%      \end{align*}
+%      \begin{align*}
+%        \arcsin{3x}\ud x
+%        =&x\arcsin{3x}-\int \frac{3x \ud x}{\sqrt{1-9x^2}} \\
+%        =&x\arcsin{3x}+\frac{1}{3}\sqrt{1-9x^2}+C
+%      \end{align*}
+%    \end{sol}
+%  \end{ex}
 
 
 \section{Trigonometric Integrals}

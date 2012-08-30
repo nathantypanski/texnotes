@@ -626,47 +626,75 @@ We can also use trigonometric identities to eliminate square roots in integrals:
 
 \textbf{Trigonometric substitution} is the substitution of trigonometric functions for other expressions. One may use the trigonometric identities to simplify certain integrals containing radical expressions.
 
-You'll want to understand these trig identities:
-
+There are two important trig identities for us to know in this section:
 \[ 1-sin^{2}\theta=cos^{2}\theta \]
 \[ 1+tan^{2}\theta=sec^{2}\theta \]
 
-Useful for problems that look this:
+We will find trigonometric substitution useful for problems that look this:
 
 \[ \int \frac{dx} {x \sqrt{x^{2}-4}} \]
 
-Integrands with:
-
-\begin{itemize}
-  \item $ \sqrt{x^{2}-a^{2}} \implies
-    \lets x=a\sec \theta \text{,} \qquad
-    \ud x = a \sec \theta \, \tan \theta \ud \theta $
-  \item $ \sqrt{a^{2}-x^{2}} \implies
-    \lets x = a \sin \theta \text{,} \qquad
-    \ud x = a \cos \theta \ud \theta $
-  \item $ \sqrt{x^2+a^2} \implies
-    \lets x = a \tan \theta \text{,} \qquad
-    \ud x = \sec^2 \theta \ud \theta$
-\end{itemize}
-
-\subsection{Examples}
+For integrands with $ \sqrt{x^{2}-a^{2}}$, $\lets x=a\sec \theta$ and let $\ud x = a \sec \theta \tan \theta \ud \theta $.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{continuous/integration/asectheta.eps}
+  \end{center}
+\end{figure}
+For integrands with $\sqrt{a^2-x^2}$, let $x=a \sin \theta$ and $\ud x = a \cos \theta \ud \theta$.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{continuous/integration/asintheta.eps}
+  \end{center}
+\end{figure}
+For integrands with $ \sqrt{x^2+a^2}$, let $x = a \tan \theta$ and $\ud x = \sec^2 \theta \ud \theta$.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{continuous/integration/atantheta.eps}
+  \end{center}
+\end{figure}
 
 \begin{ex}
-  \[ \int \frac{dx} {x \sqrt{x^{2}-4}} \]
+  Integrate
+  \[ \int \frac{\ud x}{x \sqrt {x^2 -4}} \]
   \begin{sol}
-  \begin{align*}
-    \lets x&=2\sec \theta & \lets dx &= 2 \sec \theta \tan \theta \ud \theta
-  \end{align*}
-  \begin{align*}
-	  \int \frac{\ud x} {x \sqrt{x^2-4}}
-	  =&\int \frac{2 \sec \theta \tan \theta \ud \theta}{2 \sec \theta \sqrt{4\sec^2\theta-4}} \\
-	  =&\int \frac{\tan \theta \ud \theta}{\sqrt{4\sec^2 \theta-4}} \\
-	  =&\int \frac{\tan \theta}{2 \tan \theta} \ud \theta
-	  = \frac {1}{2} \theta + C \\
-  \end{align*}
-This is unfinished, we still need to solve for $\theta$.
-\end{sol}
+    Let $x=2 \sec \theta$ and $\ud x = 2 \sec \theta \tan \theta \ud \theta$.
+    \begin{align*}
+      \int \frac{\ud x}{x \sqrt {x^2 -4}}
+      &= \int \frac{2 \sec \theta \tan \theta \ud \theta}{2 \sec \theta \sqrt{4\sec^2 \theta -4}} \\
+      &= \int\frac{tan \theta \ud \theta}{\sqrt{4 \sec^2 \theta -4}} \\
+      \intertext{Now we use the trigonometric identity $1+\tan^2\theta=\sec^2\theta$.}
+      &= \int \frac{\tan\theta\ud\theta}{\sqrt{4(1+\tan^2\theta)-4}}\\
+      &= \int \frac{\tan\theta\ud\theta}{\sqrt{4\tan^2\theta}}\\
+      &= \int\frac{\tan\theta\ud\theta}{2\tan\theta}\\
+      &= \int \frac{1}{2}\ud\theta \\
+      &= \frac{1}{2}\theta+C\\
+      \intertext{Now we draw a triangle, using the numbers from our original substitution:}
+      % add a picture
+      &=\frac{1}{2}\arcsec{\frac{x}{2}} +C
+    \end{align*}
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=0.4\textwidth]{continuous/integration/secexample.eps}
+      \end{center}
+    \end{figure}
+  \end{sol}
 \end{ex}
+% \begin{ex}
+%   \[ \int \frac{dx} {x \sqrt{x^{2}-4}} \]
+%   \begin{sol}
+%   \begin{align*}
+%     \lets x&=2\sec \theta & \lets dx &= 2 \sec \theta \tan \theta \ud \theta
+%   \end{align*}
+%   \begin{align*}
+% 	  \int \frac{\ud x} {x \sqrt{x^2-4}}
+% 	  =&\int \frac{2 \sec \theta \tan \theta \ud \theta}{2 \sec \theta \sqrt{4\sec^2\theta-4}} \\
+% 	  =&\int \frac{\tan \theta \ud \theta}{\sqrt{4\sec^2 \theta-4}} \\
+% 	  =&\int \frac{\tan \theta}{2 \tan \theta} \ud \theta
+% 	  = \frac {1}{2} \theta + C \\
+%   \end{align*}
+% This is unfinished, we still need to solve for $\theta$.
+% \end{sol}
+% \end{ex}
 \begin{ex}
   \[ \int \frac{\ud x}{\sqrt{1-x^{2}}} = \sin^{-1}x+C \]
 \end{ex}

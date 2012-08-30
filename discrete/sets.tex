@@ -162,9 +162,11 @@ Now, we conclude that the set $C$ must be empty.
     \[\sum_{i=1}^n = \frac{n(n+1)}{2}\]
     holds for all $n<c$ but not for $n=c$. So, that sum should hold for $c-1$:
     \begin{align*}
-      1+2+3+\cdots+(c-1)&=\frac{c(c-1)}{2}\\
+      1+2+3+\cdots+(c-1)&=\frac{(c-1)\big[(c-1)+1\big]}{2}\\
+      1+2+3+\cdots+(c-1)&=\frac{(c-1)c}{2}\\
+      1+2+3+\cdots+(c-1)&=\frac{c^2-c}{2}\\
       \intertext{Now, we add $c$ to both sides.}
-      1+2+3+\cdots+(c-1)+c&=\frac{c(c-1)}{2}+c\\
+      1+2+3+\cdots+(c-1)+c&=\frac{c^2-c}{2}+c\\
       \intertext{Simplify.}
       1+2+3+\cdots+(c-1)+c&=\frac{c^2-c}{2}+(c)\left(\frac{2}{2}\right)\\
       1+2+3+\cdots+(c-1)+c&=\frac{c^2-c+2c}{2} \\

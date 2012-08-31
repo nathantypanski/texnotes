@@ -484,27 +484,60 @@ When $n \neq 0$ the reduction formula tells us that we have to compute $I_{n-1}$
 
 \section{Trigonometric Integrals}
 
-Trigonometric integrals involve algebraic combinations of the six basic trigonometric functions. In principle, we can always express such integrals in terms of sines and cosines, but it is often simpler to work with other functions, as in the integral
-$$ \int sec^2 x \ud x = \tan x + C $$
-The general idea is to use identities to transform the integrals we have to find into integrals that are easier to work with.
+To solve trigonometric integrals (that is, integrals already involving trigonometric functions),
+we often have to do a fair amount of playing around with trigonometric identities in order to make them possible.
+A technique we can use to further this is separating out trigonometric operators that are in powers, such that we may perform substitution on them.
 
-We begin with integrals of the form:
-$$ \int \sin^mx\cos^nx\ud x $$
-where $m$ and $n$ are nonnegative integers (positive or zero). We can divide the appropriate substitution into three cases according to $m$ and $n$ being odd or even.
-\begin{enumerate}
-  \item If \textbf{$m$ is odd}, we write $m$ as $2k+1$ and use the identity $\sin^2x=1-\cos^2x$ to obtain
-  $$sin^mx=sin^{2k+1}x=(sin^2x)^k\sin x=(1-\cos^2x)^k\sin x $$
-  Then we combine the single $\sin x$ with $\ud x$ in the integral and set $\sin x \ud x$ equal to $-\ud (\cos x)$.
-  \item If \textbf{$m$ is even and $n$ is odd} in $\int \sin^mx\cos^nx \ud x$, we write $n$ as $2k+1$ and use the identity $\cos^2x=1-\sin^2x$ to obtain
-  $$ \cos^nx=\cos^{2k+1}x=(\cos^2x)^k\cos x=(1-\sin^2x)^k\cos x $$
-  We then combine the single $\cos x$ with $\ud x$ and set $\cos x \ud x$ equal to $d(\sin x)$.
-  \item If \textbf{both $m$ and $n$ are even} in $\int \sin^mx\cos^nx\ud x$, we subsitute
-  \begin{align*}
-    &\sin^2x=\frac{1-\cos{2x}}{2}
-    &\cos^2x=\frac{1+\cos{2x}}{2}
-  \end{align*}
-  to reduce the integrand to one in lower powers of $\cos{2x}$.
-\end{enumerate}
+Take the following integral, for example.
+\begin{ex}
+  Integrate.
+  \[\int \cot^2x \csc^4x \ud x \]
+  \begin{sol}
+    Separate a $\csc^2x$ from the integrand.
+    \begin{align*}
+      \int \cot^2x \csc^4x \ud x
+      =& \cot^2x \csc^2x \csc^2x \ud x
+    \end{align*}
+    Remembering our basic trig identity
+    \[ \sin^2x + \cos^2x = 1\]
+    we can divide through by $\sin^2x$ to get
+    \[ 1+\cot^2x=\csc^2x \]
+    and substitute that into our new integral
+    \begin{align*}
+      \int\cot^2x\csc^2x\csc^2x\ud x
+      =& \int \cot^2x (1+\cot^2x)\csc^2x \ud x \\
+      \intertext{Now we let $u=\cot x$ and $\ud u=\csc^2x \ud x$.}
+      =&\int u^2(1+u^2)\ud u \\
+      \intertext{which we can do.}
+      =& \frac{u^3}{3}+\frac{u^5}{5}+C \\
+      \intertext{Now replace our old $u$-substitutions}
+      =& \frac{\cot^3x}{3}+\frac{\cot^5x}{5}+C
+    \end{align*}
+  \end{sol}
+\end{ex}
+
+
+% Trigonometric integrals involve algebraic combinations of the six basic trigonometric functions. In principle, we can always express such integrals in terms of sines and cosines, but it is often simpler to work with other functions, as in the integral
+% $$ \int sec^2 x \ud x = \tan x + C $$
+% The general idea is to use identities to transform the integrals we have to find into integrals that are easier to work with.
+%
+% We begin with integrals of the form:
+% $$ \int \sin^mx\cos^nx\ud x $$
+% where $m$ and $n$ are nonnegative integers (positive or zero). We can divide the appropriate substitution into three cases according to $m$ and $n$ being odd or even.
+% \begin{enumerate}
+%   \item If \textbf{$m$ is odd}, we write $m$ as $2k+1$ and use the identity $\sin^2x=1-\cos^2x$ to obtain
+%   $$sin^mx=sin^{2k+1}x=(sin^2x)^k\sin x=(1-\cos^2x)^k\sin x $$
+%   Then we combine the single $\sin x$ with $\ud x$ in the integral and set $\sin x \ud x$ equal to $-\ud (\cos x)$.
+%   \item If \textbf{$m$ is even and $n$ is odd} in $\int \sin^mx\cos^nx \ud x$, we write $n$ as $2k+1$ and use the identity $\cos^2x=1-\sin^2x$ to obtain
+%   $$ \cos^nx=\cos^{2k+1}x=(\cos^2x)^k\cos x=(1-\sin^2x)^k\cos x $$
+%   We then combine the single $\cos x$ with $\ud x$ and set $\cos x \ud x$ equal to $d(\sin x)$.
+%   \item If \textbf{both $m$ and $n$ are even} in $\int \sin^mx\cos^nx\ud x$, we subsitute
+%   \begin{align*}
+%     &\sin^2x=\frac{1-\cos{2x}}{2}
+%     &\cos^2x=\frac{1+\cos{2x}}{2}
+%   \end{align*}
+%   to reduce the integrand to one in lower powers of $\cos{2x}$.
+% \end{enumerate}
 
 We can also use trigonometric identities to eliminate square roots in integrals:
 \begin{ex}
@@ -521,9 +554,6 @@ We can also use trigonometric identities to eliminate square roots in integrals:
     &= \frac{\sqrt2}{2}
   \end{align*}
 \end{ex}
-
-
-\subsection{Examples}
 \begin{comment}
   I don't like how this is structured.
   \begin{itemize}
@@ -614,8 +644,22 @@ We can also use trigonometric identities to eliminate square roots in integrals:
 \end{sol}
 \end{ex}
 \begin{ex}
-  $$ \int cot^{8}x \, csc^{4}x \ud x $$
+  \[\int \cot^8 x \csc ^4 x \ud x \]
+  \begin{sol}
+    We integrate this in the same way as the previous example, by setting aside $\csc^2 x$.
+    \begin{align*}
+      \int \cot^8 x \csc ^4 x \ud x&= \int \cot^8x\csc^2x\csc^2x\ud x \\
+      \intertext{Now we substitute with the identity $1+\cot^2x=\csc^2x$.}
+      &=\cot^8x\csc^2x (1+\cot^2 x)\ud x \\
+      \intertext{Now we let $u=\cot x$ and $\ud u = \csc^2x \ud x$.}
+      &=\int u^7(1+u^2)\ud u \\
+      &= \int u^8 \ud u + \int u^{10} \ud u \\
+      &= \frac{u^9}{9}+\frac{u^{11}}{11}+C \\
+      &= \frac{\cot^9 x}{9}+\frac{\cot^{11}x}{11}+C
+    \end{align*}
+  \end{sol}
 \end{ex}
+
 
 % \begin{homework}
 % Read section 8.2 and solve pg. 448 1-12,13,15,33,37,38,45,47,50,51,53,55,63,65,67
@@ -759,42 +803,45 @@ For integrands with $ \sqrt{x^2+a^2}$, let $x = a \tan \theta$ and $\ud x = \sec
 
 
 \section{Partial Fraction Decomposition}
-
-A rational function $P(x)/Q(x)$ can be rewritten using what is known as partial fraction decomposition. This procedure often allows integration to be performed on each term separately by inspection. For each factor of $Q(x)$ the form $(a\,x+b)^m$:
-
-\begin{equation}
-  \frac{A_1}{a\,x+b}+\frac{A_2}{(a\,x+b)^2}+\ldots+\frac{A_m}{(a\,x+b)^m}
-\end{equation}
-
-For each factor of the form $(a\,x^2+b\,x+c)^m$ introduce terms:
-
-\begin{equation}
-  \frac{A_1\,x+B_1}{a\,x^2+b\,x+c}+\frac{A_2\,x+B_2}{(a\,x^2+b\,x+c)^2}+\ldots+\frac{A_m\,x+B_m}{(a\,x^2+b\,x+c)^m}
-\end{equation}
-
-Then write:
-
-\begin{equation}
-  \frac{P(x)}{Q(x)}=\frac{A_1}{a\,x+b}+\ldots+\frac{A_2\,x+B_2}{(a\,x^2+b\,x+c)^2}+\ldots
-\end{equation}
-
-And solve for $A_i$s and $B_i$s.
-
-
-\subsection{Repeated Linear/Quadratic Den. Factors}
-
-\begin{align*}
-  \frac {\cdots}{\underbrace{(x^2+3)^2}_\text{quadratic} \, \underbrace{(x+1)}_\text{linear} \, \underbrace{(x^2+x+4)}_\text{quadratic}}
-  &=\frac {Ax+B}{(x^2+3)^2} + \frac{Cx+D}{(x^2+3)^1} + \frac {E}{x+1} + \frac {Fx+G}{x^2+x+4}
-\end{align*}
-
-\begin{align*}
-  \frac {\cdots}{(x^2-2x+1)(x^2-4x+4)}
-  &=\frac {\cdots}{(x-1)^2(x-2)^2} \\
-  &=\frac{A}{(x-1)^2}+\frac{B}{x-1}+\frac{C}{(x-2)^2}+\frac{D}{x-2}
-\end{align*}
+% Unoriginal work. REWRITE THIS!
+%
+% A rational function $P(x)/Q(x)$ can be rewritten using what is known as partial fraction decomposition. This procedure often allows integration to be performed on each term separately by inspection. For each factor of $Q(x)$ the form $(a\,x+b)^m$:
+%
+% \begin{equation}
+%   \frac{A_1}{a\,x+b}+\frac{A_2}{(a\,x+b)^2}+\ldots+\frac{A_m}{(a\,x+b)^m}
+% \end{equation}
+%
+% For each factor of the form $(a\,x^2+b\,x+c)^m$ introduce terms:
+%
+% \begin{equation}
+%   \frac{A_1\,x+B_1}{a\,x^2+b\,x+c}+\frac{A_2\,x+B_2}{(a\,x^2+b\,x+c)^2}+\ldots+\frac{A_m\,x+B_m}{(a\,x^2+b\,x+c)^m}
+% \end{equation}
+%
+% Then write:
+%
+% \begin{equation}
+%   \frac{P(x)}{Q(x)}=\frac{A_1}{a\,x+b}+\ldots+\frac{A_2\,x+B_2}{(a\,x^2+b\,x+c)^2}+\ldots
+% \end{equation}
+%
+% And solve for $A_i$s and $B_i$s.
+%
+%
+% \subsection{Repeated Linear/Quadratic Den. Factors}
+%
+% \begin{align*}
+%   \frac {\cdots}{\underbrace{(x^2+3)^2}_\text{quadratic} \, \underbrace{(x+1)}_\text{linear} \, \underbrace{(x^2+x+4)}_\text{quadratic}}
+%   &=\frac {Ax+B}{(x^2+3)^2} + \frac{Cx+D}{(x^2+3)^1} + \frac {E}{x+1} + \frac {Fx+G}{x^2+x+4}
+% \end{align*}
+%
+% \begin{align*}
+%   \frac {\cdots}{(x^2-2x+1)(x^2-4x+4)}
+%   &=\frac {\cdots}{(x-1)^2(x-2)^2} \\
+%   &=\frac{A}{(x-1)^2}+\frac{B}{x-1}+\frac{C}{(x-2)^2}+\frac{D}{x-2}
+% \end{align*}
 
 \subsection{Determining A,B,C, \dots}
+
+% This is just BAD. Really bad. Jesus, fix this.
 
 Multiply the denominator by both sides of the new equation:
 \[ {denominator}*\left[\frac{x^3+2x^2+x+8}{(x^2+4)^2}\right]=\left[\frac{Ax+B}{(x^2+4)^2}+\frac{Cx+D}{(x^2+4)^1}\right]*{denominator} \]
@@ -1391,32 +1438,6 @@ The integral diverges.
 \end{ex}
 
 \section{Test Review}
-
-\begin{ex}
-  \[\int \cot^2x \csc^4x \ud x \]
-  \begin{sol}
-    Set aside a $\csc^2x$.
-    \begin{align*}
-      \int \cot^2x \csc^4x \ud x
-      =& \cot^2x \csc^2x \csc^2x \ud x
-    \end{align*}
-    Remembering our basic trig identity
-    \[ \sin^2x + \cos^2x = 1\]
-    we can divide through by $\sin^2x$ to get
-    \[ 1+\cot^2x=\csc^2x \]
-    and substitute that into our new integral
-    \begin{align*}
-      \int\cot^2x\csc^2x\csc^2x\ud x
-      =& \int \cot^2x (1+\cot^2x)\csc^2x \ud x \\
-      \intertext{Now we let $u=\cot x$ and $\ud u=\csc^2x \ud x$.}
-      =&\int u^2(1+u^2)\ud u \\
-      \intertext{which we can do.}
-      =& \frac{u^3}{3}+\frac{u^5}{5}+C \\
-      \intertext{Now replace our old $u$-substitutions}
-      =& \frac{\cot^3x}{3}+\frac{\cot^5x}{5}+C
-    \end{align*}
-  \end{sol}
-\end{ex}
 \begin{ex}
   \[ \int \tan x \sec^4x \ud x \]
   \begin{sol}

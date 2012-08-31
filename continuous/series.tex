@@ -1,11 +1,12 @@
 \chapter{Infinite Series}
 \label{ch:series}
 
-An infinite series is the sum of an infinite sequence of numbers
+We produce an infinite series by taking the sum of an infinite sequence.
 \[ a_1 + a_2 + a_3 + \cdots + a_n + \cdots \]
-Given a sequence $\{a_n\}$, the number $a_n$ is the \textbf{$n$th term} of the
-series. The sequence $\{s_n\}$ is the \textbf{sequence of partial sums} of the
-series, defined by
+
+Given a sequence $\{a_n\}$, the number $a_n$ is the \textbf{$n$th term} of the series.
+The sequence $\{s_n\}$ is the \textbf{sequence of partial sums} of the series, defined by
+\cite[p.~544]{thomas}
 \begin{align*}
   s_1 &= a_1 \\
   s_2 &= a_1 + a_2 \\
@@ -31,18 +32,17 @@ Given a series, we will usually want to know whether it converges or diverges,
 and if it converges, then to what number?
 
 For converging series, there are some rules that can aid us:
-\begin{theorem}\label{th:combiningseries}
+\begin{theorem}[Rules for combining series]\label{th:combiningseries}
   If $\sum a_n = A$ and $\sum b_n = B$ are convergent series, then
-  \begin{table}[H]
-    \centering
-    \begin{tabular}{ll>$r<$}
-    1. & Sum Rule & \sum (a_n+b_n) = \sum a_n + \sum b_n = A +B \\
-    2. & Difference Rule & \sum (a_n-b_n) = \sum a_n - \sum b_n = A -B \\
-    3.& Constant Multiple Rule & \sum ka_n = k\sum a_n = kA \text{ for any
-    $k$}
-    \end{tabular}
-  \end{table}
+  the \textbf{sum rule} states that
+  \[ \sum (a_n+b_n) = \sum a_n + \sum b_n = A +B.\]
+  The \textbf{difference rule} for series states that
+  \[ \sum (a_n-b_n) = \sum a_n - \sum b_n = A -B. \]
+  And the \textbf{constant multiple rule} tells us
+  \[ \sum ka_n = k\sum a_n = kA, \]
+  where $k$ is a constant number.
 \end{theorem}
+\cite[p.~549]{thomas}
 
 % \begin{remark}
 %   When discussing a series,
@@ -71,10 +71,9 @@ The sequence will continue growing. That is, the sequence will diverge.
 
 So we should take the following limit:
 \[ \lim_{n \to \infty} \frac{n!}{2n!+1} \]
-How do we calculate the limit of a sequence involving $n!$? Our limit rules tell
-us nothing about evaluating factorials. We can, however, use a creative little trick
-common in evaluating limits of polynomials: divide each term in both the
-numerator and denominator by the term of the highest power.
+Our limit rules tell us nothing about evaluating limits involving factorials.
+We can, however, use a creative little trick common in evaluating limits of polynomials:
+divide each term in both the numerator and denominator by the term of the highest power.
 \begin{align*}
   \lim_{n \to \infty} \frac{n!}{2n!+1} &=
   \frac{\frac{n!}{n!}}{\frac{2 \cdot n!}{n!}+\frac{1}{n!}} \\
@@ -118,22 +117,29 @@ tell us nothing about the convergence or divergence of the series.
       s_n &= s_{n-1} + a_n \\
       \lim_{n \to \infty} s_n &= \lim_{n \to \infty} s_{n-1} + a_n \\
       L&=L + \lim_{n\to \infty} a_n \\
-      \lim_{n\to \infty} a_n &= 0\qedhere
+      \lim_{n\to \infty} a_n &= 0
     \end{align*}
+    Because we have proven this statement, we know that our original remark,
+    \begin{quote}
+      If \(\lim_{n\to \infty} a_n \neq 0 \) then the series diverges,
+    \end{quote}
+    must be true.
   \end{proof}
 \end{theorem}
 
+Let's try to put this theorem to use.
 \begin{ex}
   Does the series
   \[ \sum^\infty_{n=1} \frac{6n}{6n+1} \]
   diverge or converge?
   \begin{sol}
     Take \( \lim_{n\to\infty} \frac{6n}{6n+1} \).
+    This gives us
     \begin{align*}
       \lim_{n\to\infty} \frac{6n}{6n+1}
       &\=H \lim_{n\to\infty} \frac{6}{6} \neq 0
     \end{align*}
-    By Theorem \ref{th:nthtermdiv}, the series diverges.
+    By Theorem \ref{th:nthtermdiv}, which we just proved, the series diverges.
   \end{sol}
 \end{ex}
 
@@ -142,12 +148,10 @@ tell us nothing about the convergence or divergence of the series.
 \begin{ex}
   The series
   \[ \sum_{n=1}^{\infty} \frac{1}{n} \]
-  is called the \textbf{harmonic series}. How does this series behave?
-  \begin{remark}
-    Just because
-    \[ \lim_{n \to \infty} \frac{1}{n}\]
-    is zero does not imply anything about convergence or divergence.
-  \end{remark}
+  is called the \textbf{harmonic series}. How does this series behave?\footnote{Note that Theorem \ref{th:nthtermdiv} is useless to us here.
+  The fact that
+  $ \lim_{n \to \infty} \frac{1}{n}$
+is zero does not imply anything about convergence or divergence.}
 
   We can try finding some of its partial sums:
   \begin{align*}
@@ -158,6 +162,9 @@ tell us nothing about the convergence or divergence of the series.
     &\vdots \\
     s_n & = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots + a_n
   \end{align*}
+  Initially, it might appear as if the harmonic sequence converges.
+  However, we would be wrong to assume as much.
+
   Notice that as we continue to add terms, we could group them in the following
   way:
   \begin{align*}
@@ -169,9 +176,10 @@ tell us nothing about the convergence or divergence of the series.
     + \bigg( \frac{533}{840} \bigg)
     + \bigg( \frac{95549}{144144} \bigg)
     + \cdots \\
+    \intertext{Calculating the exact values of these terms,}
     &\approx 1+ 0.5 + (0.583333) + (0.635424) + (0.662872) + \cdots
   \end{align*}
-  The series is increasing indefinitely, just doing it very slowly.
+  we can see that the series is increasing indefinitely, just doing it very slowly.
   \end{ex}
 
 
@@ -300,11 +308,11 @@ then $|r^n| \to \infty$ and the series diverges.\cite[p.~546]{thomas}
       &=1+\frac{1}{2} \\
       &= \frac{3}{2}
     \end{align*}
+    The sequence converges to $\frac{3}{2}$.
     \end{sol}
 \end{ex}
 
 \section{The Comparison Test}\index{series comparison test}
-
 \begin{theorem}[The Comparison Test]\label{th:seriescomp}
   Let $\sum a_n$, $\sum c_n$, and $\sum d_n$ be series with nonnegative terms.
   Suppose that for some integer $N$
@@ -314,22 +322,23 @@ then $|r^n| \to \infty$ and the series diverges.\cite[p.~546]{thomas}
 
   \textbf{(b)} If $\sum d_n$ diverges, then $\sum a_n$ also diverges.
 \end{theorem}
+\cite[p. 559]{thomas}
 
 \section{The Integral Test}\index{series integral test}
 
 Another helpful tool for discovering the behavior of a series is the
-\emph{integral test}. In simple terms it is present as follows:
-Given the following two statements:
+\emph{integral test}.
+In simple terms, given the following two statements:
 \begin{enumerate}
-  \item \(f' < 0 \text{ over } [\ldots, \infty) \)
-  \item \(f(n)\) is always positive. We can often see this by writing out some terms.
+  \item \(f' < 0 \text{ over some interval } [a, \infty) \)
+    \item \(f(n)\) is always positive.\footnote{We can often see this by writing out some terms.}
 \end{enumerate}
 The integral test states that:
 
 \begin{align*}
-  \text{\textbf{(a)}} & \sum^\infty_{n=\ldots} f(n) \text{ converges if }
-  \int_{\ldots}^{\infty} f(x) \ud x \text{ converges.}  \\
-  \text{\textbf{(b)}} & \sum^\infty_{n=\ldots} f(n) \text{ diverges if } \int_{\ldots}^{\infty} f(x) \ud x \text{ diverges.}
+  \text{\textbf{(a)}} & \sum^\infty_{n=a} f(n) \text{ converges if }
+  \int_{a}^{\infty} f(x) \ud x \text{ converges.}  \\
+  \text{\textbf{(b)}} & \sum^\infty_{n=a} f(n) \text{ diverges if } \int_{a}^{\infty} f(x) \ud x \text{ diverges.}
 \end{align*}
 
 \begin{proof}
@@ -341,18 +350,18 @@ The integral test states that:
   \end{align*}
 \end{proof}
 
+Here is the official wording for the integral test, copied from \emph{Thomas' Calculus} \cite[p.~554]{thomas}:
 \begin{theorem}[The Integral Test]\label{th:seriesint}
   Let $\{a_n\}$ be a sequence of positive terms. Suppose that $a_n = f(n)$,
   where $f$ is a continuous, positive, decreasing function of $x$ for all $x
   \geq N$ ($N \in \mathbb{Z_+}$). Then the series $\sum_{n=N}^\infty a_n$ and
   the integral $\int_N^\infty f(x)\ud x$ both converge or both
-  diverge.\cite[p.~554]{thomas}
+  diverge.
 \end{theorem}
 
 \begin{ex}\label{famousp}
-  How do we know that the following series
+  Use the integral test to show that the harmonic series diverges.
   \[ \sum^\infty_{n=1} \frac{1}{n} \]
-  diverges?
   \begin{sol}
     First, we test it with Theorem \ref{th:nthtermdiv}.
     \[ \lim_{n\to\infty} \frac{1}{n}=0\]
@@ -367,7 +376,7 @@ The integral test states that:
     Its derivative, \[f'(x)=-\frac{1}{x^2}\] is always negative. Thus, we can
     use the integral test to describe the behavior of $\sum^\infty_{n=1} a_n$.
     \[
-      \int^\infty_1 \frac{1}{n} = \lim_{t\to\infty} \ln x |^\infty_1
+      \int^\infty_1 \frac{1}{n} = \lim_{t\to\infty} \ln x \bigg|^\infty_1
     \]
     This integral diverges, so by Theorem \ref{th:seriesint} the series also
     diverges.
@@ -392,39 +401,34 @@ The integral test states that:
       &=\frac{-1}{2}\int_{k=4}^\infty -2 k e^{-k^2} \ud k \\
       &=\frac{-1}{2}e^{-x^2} \bigg|_4^\infty
     \end{align*}
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[scale=0.8]{continuous/series/henxs.eps}
+      \end{center}
+      \caption{A plot of $-\frac{1}{2}e^{-k^2}$}
+      \label{fig:henxs}
+    \end{figure}
     We can tell that this integral converges, so the series converges.
   \end{sol}
 \end{ex}
 
+\section{$p$ Series}
+\label{sec:pseries}
 
-\section{p Series}
-
-A \(p\) series is of the form.
-
+A \(p\) series is of the form
 \[ \sum_{n=1}^{\infty} \frac{1}{n^p} \]
 
-At \(p=1\), it diverges because of the integral test.
-This is actually a famous instance of the \(p\)-series.
-
-At \(p=2\), the series converges.
-
-At \(p=-1\), the series diverges.
-
-At \(p=-2\), the series diverges by \ref{th:nthtermdiv}.
-
+At \(p=1\), it is a harmonic series and we could say it diverges because of Theorem \ref{th:seriesint}.
+Meanwhile, at \(p=2\), the series converges.
+If we take \(p=-1\), the series diverges.
+At \(p=-2\), the series diverges by Theorem \ref{th:nthtermdiv}.
 At \(p=1.0000000000001\), the series converges by the integral test.
 
-We can get a feeling that \( p>1 \) leads to convergence, and \(p <= 1\) leads to a diverging series.
+We can get a feeling that \( p>1 \) leads to convergence, and \(p \leq 1\) leads to a diverging series.
 
-\begin{homework}
-  Online assignment due 04 April 2012 at midnight.
+\section{Series Comparison Test}
 
-  The next one is due Friday 07 April 2012 at midnight.
-\end{homework}
-
-\section{Encyclopedia of Series}
-
-\subsection{Converging series}
+\subsection{Converging Series}
 \begin{ex}\label{ex:convcomp}
   \[ \sum_{n=1}^{\infty} \frac{5+2\sqrt n}{n^3} \]
   \begin{sol}
@@ -432,16 +436,20 @@ We can get a feeling that \( p>1 \) leads to convergence, and \(p <= 1\) leads t
     Let $f(x)=\frac{5+2\sqrt{x}}{x^3}$, which is always positive on $x\geq 1$.
     Then $f'(x) = -\frac{5(\sqrt{x}+3)}{x^4}$, which is always negative on $x
     \geq 1$.
-    \begin{figure}[H]
-      \begin{center}
-        \subfigure[A plot of $f(x)=\frac{5+2\sqrt{x}}{x^3}$.]{
-          \includegraphics[scale=0.8]{graphs/5p2sqxx3.eps}
-        }
-        \subfigure[A plot of $f(x)=\frac{5+2\sqrt{x}}{x^3}$.]{
-          \includegraphics[scale=0.8]{graphs/n5xp3x4.eps}
-        }
-      \end{center}
-    \end{figure}
+    % Something is wrong with these figures.
+    % Both have the same caption, yet they are obviously completely different pictures.
+    % I should determine how they relate and fix this, or remake them.
+    %
+    % \begin{figure}[H]
+    %   \begin{center}
+    %     \subfigure[A plot of $f(x)=\frac{5+2\sqrt{x}}{x^3}$.]{
+    %       \includegraphics[scale=0.8]{graphs/5p2sqxx3.eps}
+    %     }
+    %     \subfigure[A plot of $f(x)=\frac{5+2\sqrt{x}}{x^3}$.]{
+    %       \includegraphics[scale=0.8]{graphs/n5xp3x4.eps}
+    %     }
+    %   \end{center}
+    % \end{figure}
     \begin{align*}
       \int_1^\infty \frac{5+2\sqrt x}{x^3} \ud x
       &= \int_1^\infty \frac{5}{x^3} \ud x
@@ -496,9 +504,10 @@ We can get a feeling that \( p>1 \) leads to convergence, and \(p <= 1\) leads t
 \end{ex}
 \begin{ex}
   \[ \sum_{n=1}^{\infty} \frac{1}{n^4} \]
-  This converges.
+  This is a $p$-series with $p=4$, and therefore converges.
 
   \[ \sum_{n=1}^{\infty} \frac{1}{n^4+2} \]
+  This series converges by comparison with $\sum_{n=1}^\infty \frac{1}{n^4}$.
 \end{ex}
 \begin{ex}
   \[ \sum_{n=1}^{\infty} \frac{2}{n^2+4n+3} \]
@@ -550,13 +559,12 @@ We can get a feeling that \( p>1 \) leads to convergence, and \(p <= 1\) leads t
   We can still state that this diverges by comparison with the above.
 \end{ex}
 
-
 \section{Root Test}\index{series root test}
 
 \begin{theorem}[Root Test]
   Let \(\sum a_n\) be a series with \( a_n \geq 0\) for \(n \geq N\), and
   suppose that
-  \[ \lim_{n \to \infty} \sqrt{a_n}^n = \rho \]
+  \[ \lim_{n \to \infty} \sqrt[n]{a_n} = \rho \]
   then (a) the series \emph{converges} if \(\rho < 1 \), \textbf{(b)} the series
   diverges if \( \rho > 1\) or if \(\rho\) is infinite, or \textbf{(c)} the test
   is \emph{inconclusive} if \(\rho = 1\).
@@ -662,8 +670,7 @@ We can get a feeling that \( p>1 \) leads to convergence, and \(p <= 1\) leads t
   \end{sol}
 \end{ex}
 
-
-\section{Examples}
+\subsection{Examples}
 
 \begin{ex}
   Does

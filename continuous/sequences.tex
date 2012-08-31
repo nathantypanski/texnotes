@@ -89,8 +89,6 @@ terms, as follows:
   That is, this number $L$ does not exist.
 \end{defn}
 
-\section{Properties of Sequences}
-
 \subsection{Bounded Sequences}
 \begin{defn}\index{lower bound}
   If there exists a number $m$ such that $m \leq a_n$ for every $n$ we say the sequence is \textbf{bounded below}.
@@ -116,7 +114,7 @@ terms, as follows:
 \subsection{Nondecreasing and Nonincreasing Sequences}\label{nondecreasing}
 \begin{defn}\index{nondecreasing}
   Given a sequence \(\{a_n\}\), we call the sequence \textbf{nondecreasing} if
-  \[\forall n (a_n \geq a_{n-1})\text{.}\]
+  \[\forall n (a_n \geq a_{n-1}).\]
   This means that for across the entire sequence, a given element in the sequence is either greater than or equal to the preceeding element.
   A nondecreasing sequence is different from a strictly \emph{increasing} sequence in that it allows for two elements to be equal.
   \begin{figure}[H]
@@ -128,7 +126,7 @@ terms, as follows:
 \end{defn}
 \begin{defn}
   Given a sequence \(\{a_n\}\), we call the sequence \textbf{nonincreasing} if
-  \[\forall n (a_n \leq a_{n-1})\].
+  \[\forall n (a_n \leq a_{n-1}).\]
 \end{defn}
 \begin{defn}
   If \(\{a_n\}\) is either nondecreasing or nonincreasing we call it \textbf{monotonic}.
@@ -148,12 +146,7 @@ terms, as follows:
     values:
     \[ \frac{n+2}{2n-1} =
       \left\{3,\frac{4}{3},1,\frac{6}{7},\frac{7}{9},\frac{8}{11}, \cdots \right\} \]
-    \begin{figure}[h]
-      \begin{center}
-        \includegraphics{graphs/np22nm1.pdf}
-      \end{center}
-      \caption{A graph of the sequence $ a_n=\frac{n+1}{2n-1} $.}
-    \end{figure}
+
 
     We could take the derivative of the similar function
     \[ f(x)=\frac{x+2}{2x-1} \]
@@ -191,7 +184,7 @@ terms, as follows:
     Furthermore, note the end-behavior of this derivative:
     \[ \lim_{x \to \infty} f'(x) = 0 \]
     This implies that, eventually, the rate of change evens off to an indefinitely small number.
-    Presumably, this would mean that \(f(x)\) has a horizontal asymptote (i.e. converges upon a number).
+    Presumably, this would mean that \(f(x)\) has a horizontal asymptote.
     Based on this information, it seems reasonable to conclude that the sequence \(a_n\) is convering upon a number.
     We do not, however, know to what number it converges.
 
@@ -214,7 +207,8 @@ terms, as follows:
         \[ n > N \implies a_n = f(n)\]
         and
         \[\big|a_n -L \big| = \big|f(n) - L\big| < \varepsilon\text{.} \qedhere\]
-      \end{proof} % Thomas' Calculus, p. 537
+        \cite[p. 537]{thomas}%Thomas' Calculus, p. 537
+      \end{proof}
     \end{theorem}
     This allows us to use \emph{l'Hospital's Rule} to find the limits of some
     sequences. We can state that
@@ -229,8 +223,13 @@ terms, as follows:
       &= \frac{1}{2}
     \end{align*}
     This shows us that the sequence $a_n$ also converges to \(\frac{1}{2}\).
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics{graphs/np22nm1.pdf}
+      \end{center}
+      \caption{A graph of the sequence $ a_n=\frac{n+1}{2n-1} $.}
+    \end{figure}
 \end{ex}
-\subsection{Examples}
 \begin{ex}
   Demonstrate that $\{n!\}$ is nondecreasing.
   \begin{sol}
@@ -404,7 +403,9 @@ terms, as follows:
       \end{proof}
     \end{theorem}
     \begin{theorem}\label{th:limxnnf}
+      % Theorem and proof are a direct rip from Thomas' Calculus.
       For any number $x$, $\lim_{n\to\infty} \frac{x^n}{n!} = 0$.
+        \cite[p.~AP-22]{thomas}
       \begin{proof}
       Since
       \[ - \frac{|x|^n}{n!} \leq \frac{x^n}{n!} \leq \frac{|x|^n}{n!},\]
@@ -429,7 +430,8 @@ terms, as follows:
         \right)^n .\]
         Now, the constant $M^M / M!$ does not change as $n$ increases. Thus
         Theorem \ref{th:sandwichsequence} tells us that $|x|^n/n! \to 0$ because
-        $(|x|/M)^n \to 0$.\cite[p.~AP-22]{thomas}
+        $(|x|/M)^n \to 0$.
+        \cite[p.~AP-22]{thomas}
       \end{proof}
     \end{theorem}
     Thus, by Theorem \ref{th:limxnnf}, \[\lim_{n \to \infty} a_n =
@@ -441,30 +443,33 @@ terms, as follows:
   \begin{sol}
     Consider
     \begin{align*}
-      a_n = \left| \frac{(-1)^n}{n!} \right| = \frac{1}{n!} = 0
+      b_n = \left| \frac{(-1)^n}{n!} \right| = \frac{1}{n!} = 0
     \end{align*}
-    Using the \emph{convergence theorem for sequences}, we know that this sequence converges.
-    \begin{remark}
-      Review \emph{bounded and monotonic} for sequences, txtbg pg 536.
-    \end{remark}
+    Intuitively, we can also state that $a_n$ should converge.
+    Using Theorem \ref{th:limxnnf}, we can determine that this sequence converges.
+    % Review \emph{bounded and monotonic} for sequences, txtbg pg 536.
+    % That's in Thomas' calculus. -[Nathan]
   \end{sol}
 \end{ex}
 \begin{ex}
   \[ a_n = \frac{1}{n-0.\bar{9}} \]
   \begin{sol}
-    Converges to \(0\).
+    A sequence can be unbounded, and still converge.
 
-    Consider, however, the very first term in this sequence.
+    $0.\bar{9}$ is very close to $1$, close enough that we can treat it as $1$ as $n\to\infty$.
+    Doing so, it becomes clear that this sequence converges, as $\frac{1}{n-1}$ converges.
+    Consider, however, the very first term, where $n=1$.
     This term is \emph{gigantic}, essentially \(\infty\).
     The sequence is not bounded, yet it still manages to converge.
+    This sequence converges to \(0\).
   \end{sol}
 \end{ex}
 \begin{ex}
-  Does the seqeuence
+  Does the following sequence converge?
   \[ a_n = \left( \frac{n+8}{9n} \right) \left( 1-\frac{8}{n} \right) \]
-  converge or diverge? Find the limit if the sequence is convergent.
+  Find the limit if the sequence is convergent.
   \begin{sol}
-    Remembering that a limit of products is a product of limits:
+    Remembering that a limit of products is a product of limits,
     \begin{align*}
       \lim_{n \to \infty} \left( \frac{n+8}{9n} \right) \left( 1-\frac{8}{n} \right)
       &= \lim_{n \to \infty} \left( \frac{n+8}{9n} \right) \cdot
@@ -486,27 +491,29 @@ terms, as follows:
         $a_1=2$, the upper bound for the sequence. To find the lower bound, we
         take the limit as $n \to \infty$:
         \[ \lim_{n \to \infty} a_n = \lim_{n \to \infty} \frac{2}{n^2} = 0 \]
-        Which gives us the lower bound of the sequence.
+        Which shows us that $0$ is the lower bound of the sequence.
 
-        Thus, we can conclude that the sequence is monotonic and bounded.
+        Thus, we can conclude that the sequence is monotonic and bounded, and therefore converges.
   \end{sol}
 \end{ex}
 \begin{ex}
   Find a formula for the nth term of the sequence where \(a_n\) is calculated
   directly from \(n\).
-  \[ \frac{1}{1}, \frac{4}{2}, \frac{7}{6}, \frac{10}{24}, \frac{13}{120} \cdots
-    \]
+  \[ \frac{1}{1}, \frac{4}{2}, \frac{7}{6}, \frac{10}{24}, \frac{13}{120} \cdots \]
   \begin{sol}
-    \[ a_n = \frac{3n-2}{n!}\]
+    We basically have to just take close guesses and see if we can make a sequence that follows this.
+
+    Doing so, we will find that the answer is
+    \[ a_n = \frac{3n-2}{n!}.\]
   \end{sol}
 \end{ex}
 
-\begin{homework}
-    Wolfram Mathematica assingment and MyMathLab homework due Friday, March 23, 2012.
-\end{homework}
-\begin{homework}
-  Read Section 10.2
-
-  pg. 551 ALL 27-34, 35, 36, 37, 38, 41, 43, 49, 50, 51, 55, 56, 57, 58, 59, 61
-\end{homework}
-
+% \begin{homework}
+%     Wolfram Mathematica assingment and MyMathLab homework due Friday, March 23, 2012.
+% \end{homework}
+% \begin{homework}
+%   Read Section 10.2
+%
+%   pg. 551 ALL 27-34, 35, 36, 37, 38, 41, 43, 49, 50, 51, 55, 56, 57, 58, 59, 61
+% \end{homework}
+%

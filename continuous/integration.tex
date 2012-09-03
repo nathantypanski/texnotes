@@ -1,9 +1,11 @@
 \chapter{Techniques of Integration}
+\section{Basic Integration Formulas}
+\label{sec:basicints}
+The following are our basic integrals.
+We can use this table for reference from time to time,
+but as we develop our integration skills, we will become increasingly proficient at using them on-the-spot.
 
-\section{A Brief Table of Integrals}
-
-\subsection{Basic Forms}
-
+Some are more important than others. For a more complete understanding of these rules, refer to a calculus textbook.
 \begin{equation}
   \int k\,\ud x=kx+C \qquad \text{(any number \emph{k})}
 \end{equation}
@@ -50,42 +52,122 @@
   \frac{\ud x}{\sqrt{a^2+x^2}}=\arcsin{\frac{x}{a}+C} \qquad (a > 0)
 \end{equation}
 
+% SECTION COPIED FROM TEXTBOOK
+% \section{Integration by Parts}\index{integration by parts}
+% % rewrite this.
+% Integration by parts is used for simplifying integrals of the form
+% \[ \int f(x)g(x) \ud x \text{.} \]
+% It is useful when \(f\) can be differentiated repeatedly and $g$ can be integrated repeatedly without difficulty. The integrals
+% \[ \int x \cos x \ud x \quad \text{and} \quad \int x^2 e^x \ud x \]
+% are such integrals because $f(x)=x$ or $f(x)=x^2$ can be differentiated repeatedly to become zero, and $g(x)=\cos x$ or $g(x)=e^x$ can be integrated repeatedly without difficulty. Integration by parts also applies to integrals like
+% \[ \int \ln x \ud x \quad \text{and} \quad \int e^x \cos x \ud x \]
+% In the first case, $f(x)=\ln x$ is easy to differentiate and $g(x)=1$ easily integrates to $x$. In the second case, each part of the integrand appears again after repeated differentiation or integration.
+%
+\section{Integration by Substitution}
+Integration by substitution is our simplest technique for evaluating integrals that don't seem to fit into one of our basic rules.
+To do these, we must have a grasp on usage of the fundamental integrals from Section \ref{sec:basicints}.
+Let's look at an example.
+\begin{ex}
+  Integrate
+  \[
+    \int 2e^{2x} \ud x
+    \]
+  Initially, we don't know how to solve this.
+  We know that $\int e^x \ud x$ is just $e^x +C$, but the constant multiplier in the exponent throws us off.
+  Notice, however, that the derivative of $2x$, the offending element, is clearly present in the problem: it is $2$.
+  This allows us to use a handy trick to make the integrand resemble one that we know how to evaluate.
 
-\section{Integration by Parts}\index{integration by parts}
-% rewrite this.
-Integration by parts is used for simplifying integrals of the form
-\[ \int f(x)g(x) \ud x \text{.} \]
-It is useful when \(f\) can be differentiated repeatedly and $g$ can be integrated repeatedly without difficulty. The integrals
-\[ \int x \cos x \ud x \quad \text{and} \quad \int x^2 e^x \ud x \]
-are such integrals because $f(x)=x$ or $f(x)=x^2$ can be differentiated repeatedly to become zero, and $g(x)=\cos x$ or $g(x)=e^x$ can be integrated repeatedly without difficulty. Integration by parts also applies to integrals like
-\[ \int \ln x \ud x \quad \text{and} \quad \int e^x \cos x \ud x \]
-In the first case, $f(x)=\ln x$ is easy to differentiate and $g(x)=1$ easily integrates to $x$. In the second case, each part of the integrand appears again after repeated differentiation or integration.
+  Simply let $u=2x$.
+  Note that if we perform this subsitution, we would get half the equation in terms of $u$ and the other half in terms of $x$.
+  We obviously don't know how to handle this, so we take the derivative of $u$, giving us $\ud u=2$.
 
+  Now we may make our substitutions.
+  \begin{align*}
+    \int 2e^{2x} \ud x &= \int e^u \ud u \\
+    &= e^u +C
+    \intertext{ Now we just write this in terms of our original variables.}
+    &= e^{2x}+C
+  \end{align*}
+  And we're done.
+\end{ex}
 
-\subsection{Integration By Parts Formula}
+The concept of $u$-substitution isn't tricky.
+We should know how to perform substitutions at this point.
+What's hard, and what we'll need to practice, is which values to select for our $u$ and $\ud u$.
+Remember: look for a piece of the integrand whose derivative is also present in the integrand, and just give it a shot.
 
-If $f$ and $g$ are differentiable functions of $x$, the Product Rule says that
-$$ \frac{\ud}{\ud x} [f(x)g(x)]=f'(x)g(x)+f(x)g'(x) $$
-In terms of indefinite integrals, this equation becomes
-$$ \int \frac{\ud}{\ud x} [f(x)g(x)] \ud x=\int [f'(x)g(x)+f(x)g'(x)] \ud x $$
-or
-$$ \int \frac{\ud}{\ud x} [f(x)g(x)] \ud x=
-\int f'(x)g(x) \ud x + \int f(x)g'(x) \ud x $$
-Rearranging the terms of this last equation, we get
-$$ \int f(x)g'(x) \ud x =
-\int \frac{\ud}{\ud x}[f(x)g(x)]\ud x - \int f'(x)g(x) \ud x $$
-Leading to the \textbf{integration by parts} formula
-\begin{equation}
-  \int f(x)g'(x)=f(x)g(x)-\int f'(x)g(x) \ud x
-\end{equation}
-Sometimes it is easier to remember the formula if we write it in differential form. Let $u=f(x)$ and $v=g(x)$. Then $\ud u=f'(x)\ud x$ and $\ud v=g'(x)\ud x$. Using the Substitution Rule, the \textbf{integration by parts} formula becomes
+If your first substitution fails, don't be discouraged--just try again.
+
+Oftentimes, we won't be lucky enough to see the \emph{exact} derivative in our integrand.
+If we're lucky, however, we can usually get within a constant of it, and then we can tweak the integrand to suit our needs.
+Let's see what this means.
+\begin{ex}
+  Integrate.
+  \[ \int x (x^2+3/2)^9 \ud x \]
+  \begin{sol}
+    We can try $u=x^2$, $\ud u=2x$. Unfortunately, we still don't know how to evaluate $(u+3/2)^9$ if we do that.
+    It was a good guess, though, and got us closer to an answer. But, wait--$3/2$ is a constant, and should come out when we take its derivative.
+
+    Try letting $u=x^2+3/2$ and $\ud u = 2x \ud x$ instead. This gets us \emph{really} close, except there's no $2$ in our integrand.
+
+    From here, there are two ways to fix this. One is to simply make the righthand side of $\ud u = 2x \ud x$ look how we want it.
+    To do this, we simply divide both sides by two.
+    This gives us
+    \[u=x^2+3/2 \, \frac{\ud u}{2}=x \ud x\]
+    Now we're getting somewhere. We can substitute this into our original integral:
+    \begin{align*}
+      \int x (x^2+3/2)^9 \ud x &= \int u^9 \frac{\ud u}{2} \\
+      \intertext{Constants can come out, so this is equal to}
+      &= \frac{1}{2} \int u^9 \ud u \\
+      \intertext{Awesome! We can integrate this now.}
+      &= \frac{1}{2} \frac{u^{10}}{10}+C
+      \intertext{Finally, we just replace the $u$ terms with their equivalents in terms of $x$.}
+      &= \frac{x^2+3/2}{20}+C
+    \end{align*}
+    Which is our final answer.
+  \end{sol}
+\end{ex}
+\begin{ex}
+  Integrate
+  \[ \int (1-x)^{9}\ud x. \]
+  \begin{sol}
+    Let $u=1-x$ and $\ud u = -\ud x$.
+    \begin{align*}
+      \int (1-x)^9 \ud x &= -\int u ^9 \\
+      &= -\frac{u^{10}}{10}+C\\
+      &= -\frac{(1-x)^{10}}{10}+C
+    \end{align*}
+  \end{sol}
+\end{ex}
+
+\section{Integration By Parts Formula}
+\index{integration by parts}
+
+Integration by parts is a method of separating out elements of integrals that we don't know how to evaluate, and taking their derivative instead.
+
+Its formula comes from our definition for the derivative product rule:
+  \begin{align*}
+    \frac{\ud}{\ud x}\big[ f(x) g(x) \big] &= f'(x)g(x)+f(x)g'(x) \\
+    \intertext{If we take the indefinite integral of each side,}
+    \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int \big[f'(x)g(x)+f(x)g'(x)\big] \ud x\\
+    \intertext{Now separate out the terms in the righthand side.}
+    \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \\
+    \intertext{From here, we note that the integral and deriviative in the lefthand side cancel each other out, if we use the fundamental theorem of calculus.}
+    f(x)g(x) &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \\
+    \intertext{Now, subtract the first integral from both sides.}
+    f(x)g(x) -\int f'(x)g(x) \ud x &= \int f(x)g'(x) \ud x \\
+    \intertext{Swap the left and righthand sides, and we have the formula for integration by parts!}
+     \int f(x)g'(x) \ud x&=f(x)g(x) -\int f'(x)g(x) \ud x \\
+  \end{align*}
+  For convenience, we can rewrite this formula in terms of $u$, $\ud u$, $\ud v$, and $v$ as follows:
 \begin{equation}
   \int u \ud v =  uv - \int v \ud u
   \label{equation:intbyparts}
 \end{equation}
-
-This formula expresses one integral, $\int u \ud v$, in terms of a second integral, $\int v \ud u$. With a proper choice of $u$ and $v$, the second integral may be easier to evaluate than the first.
-
+The real goal, here, is to always make $\int v \ud u$ easier to evaluate than $\int u \ud v$.
+It doesn't really matter what $u$ and $v$ are.
+Learning when to use integration by parts can be tricky, and learning which parts are best assigned where is even more difficult.
+Generally, this takes a fair amount of examples, coupled with considerable practice for one to develop an efficient intuitive understanding.
 \begin{ex}
   Integrate
   \[
@@ -104,12 +186,8 @@ This formula expresses one integral, $\int u \ud v$, in terms of a second integr
       \end{align*}
     \end{sol}
 \end{ex}
-
-% Rewrite this. Copied from textbook.
-The goal of integration by parts is to go from an integral $\int u \ud v$ that we don't see how to evaluate to an integral $\int v \ud u$ that we can evaluate.
-Generally, you choose $\ud v$ first to be as much of the integrand, including $\ud x$, as you can readily integrate; $u$ is the leftover part.
-When finding $v$ from $\ud v$, any antiderivative will work and we usually pick the simplest one; no arbitrary constant of integration is needed in $v$ because it would simply cancel out on the right-hand side of \ref{equation:intbyparts}.
-
+A note on selecting $u$ and $\ud v$: it is usually easiest to pick $\ud v$ first to be everything we know how to integrate, including the $\ud x$, and then let $u$ be the rest.
+This is just a guideline, however, and one we will frequently have to bend.
 \begin{ex} A tough integration by parts problem.\footnote{Solved by Dr. James Martin, CNU Department of Mathematics. \url{http://math.cnu.edu/martin.htm}}
 	\[ \int \frac{xe^{2x}}{(2x+1)^2}\ud x \]
   \begin{sol}
@@ -220,26 +298,12 @@ When $n \neq 0$ the reduction formula tells us that we have to compute $I_{n-1}$
   \end{sol}
 \end{ex}
 \begin{ex}
-  Integrate
-  \[ \int (1-x)^{9}\ud x. \]
-  \begin{sol}
-    This is not an integration by parts problem.
-    It is just a regular $u$-substitution and power rule problem.
-    Let $u=1-x$ and $\ud u = -\ud x$.
-    \begin{align*}
-      \int (1-x)^9 \ud x &= -\int u ^9 \\
-      &= -\frac{u^{10}}{10}+C\\
-      &= -\frac{(1-x)^{10}}{10}+C
-    \end{align*}
-  \end{sol}
-\end{ex}
-\begin{ex}
   Integrate:
   \[
     \int 3x^2 \cos x^3 \ud x
     \]
   \begin{sol}
-    Again, this is not an integration by parts problem.
+    This is not an integration by parts problem.
     Because we can spot the derivative of $x^3$ clearly in the integrand,
     we can let $u=x^3$ and $\ud u = 3x^2 \ud x$.
     \begin{align*}
@@ -599,7 +663,7 @@ We can also use trigonometric identities to eliminate square roots in integrals:
 		&= \frac{\sin^3x}{3}-\frac{2\sin^5x}{5}+\frac{\sin^7x}{7}-\frac{\sin^5x}{5}+\frac{2\sin^7x}{7}-\frac{\sin^9x}{9}+C \\
 		&= \frac{\sin^3x}{3}-\frac{\sin^5x}{5}+\frac{3\sin^7x}{7}-\frac{\sin^9x}{9}+C
 	\end{align*}
-\end{sol}
+  \end{sol}
 \end{ex}
 \begin{ex}
 	\[\int \sin^{15}x\ud x \]

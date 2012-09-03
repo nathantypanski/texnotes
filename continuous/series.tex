@@ -1183,122 +1183,215 @@ infinite sum.
 
 \section{Taylor and Maclauren Series}
 
-This is used to approximate ``ugly'' functions with polynomial(s). In the
-business world, this is useful such that we are not working with increasingly
-complicated functions.
+A \textbf{Taylor Series}\index{Taylor series} is an approximation of a function using a power series.
 
+  We do so by treating this function as the sum of a power series
+  \begin{align*}
+    f(x) &= \sum^\infty_{n=1} a_n(x-a)^n \\
+    f(x) &= a_0+a_1(x-a)+a_2 (x-a)^2 + a_3 (x-a)^3 + \cdots a_n (x-a)^n + \cdots
+  \end{align*}
+  If we differentiate this power series, we get
+  \begin{align*}
+    f(x) &= a_0+a_1(x-a)+a_2 (x-a)^2 + a_3 (x-a)^3 + \cdots a_n (x-a)^n + \cdots \\
+    f'(x) &= 0+a_1+2a_2 (x-a) +3 a_3 (x-a)^2 + \cdots n a_n (x-a)^{n-1} + \cdots \\
+    \intertext{Differentiate it again, and we get}
+    f''(x) &= 1 \cdot 2a_2+2 \cdot 3 a_3 (x-a) + 3 \cdot 4 a_4 (x-a)^2 + \cdots + (n-1)n a_n (x-a)^{n-2} + \cdots \\
+    \intertext{Further differentiation leaves us}
+    f'''(x) &= 2 \cdot 3 a_3 + 2 \cdot 3 \cdot 4 a_4 (x-a) + 3 \cdot 4 \cdot 5 a_5 (x-a)^2 + \cdots
+  \end{align*}
+  So the $n^\textrm{th}$ derivative, for all $n$, is
+  \[ f^n(x) = n! a_n + \textrm{a sum of terms with $(x-a)$ as a factor.} \]
+  All these equations are perfect approximations of $f(x)$ at $x=a$, though repeated differentiation makes them more accurate as we get further from that value.
+  This property allows us to state that $f'(a)=a_1$, $f''(a)=1 \cdot 2 a_2$, $f'''(a)=1 \cdot 2 \cdot 3 a_3$, and
+  \[ f^{(n)}(a) = n! a_n.\]
+  This shows us that, if $f(x)$ \emph{has} a power series representation, then its $n^\textrm{th}$ term coefficient is
+  \[ a_n = \frac{f^{(n)}(a)}{n!}. \]
+  \cite[p. 600]{thomas}
+
+We don't normally treat these as infinite series, as that defeats the purpose of using a series produce a simplified version of a function.
+
+\begin{theorem}
+  The Taylor series of a function around a point $x=a$ is
+  \[ f(x) \approx f(a) + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\cdots . \]
+  \label{th:taylorseries}
+\end{theorem}
+If this Taylor Series is calculated about $x=0$, we call it a \textbf{Maclauren Series}\index{Maclauren Series}.
 \begin{ex}
+   Say we are trying to approximate the function
   \[ f(x) =  e^x \]
+  around $x=1$.
   \begin{figure}[H]
     \begin{center}
       \includegraphics{continuous/series/etx.eps}
     \end{center}
     \caption{A plot of $f(x)=e^x$.}
-    \label{fig:etx}
   \end{figure}
-  Before we start, we must decide \emph{where} we are going to make the
-  approximation.
-
-  Say we are attempting this at $x=1$, for example. So the function is constant.
-
-  \[ f(x) = A \]
+  For the simplext possible approximation, we would just calculate the function at $x=1$ and that would be our solution.
+  This is a constant function and is called a \textbf{0$^\textrm{th}$ order approximation}.
+  \[f(x) \approx e \]
+  To improve our approximation, we increase the power of our Taylor series.
+  \begin{align*}
+    f(x) &\approx a_0 + a_1 (x-a)\\
+    f(x) &\approx e + e (x-1)
+  \end{align*}
   \begin{figure}[H]
     \begin{center}
-      \includegraphics{continuous/series/etx2.eps}
+      \includegraphics{continuous/series/1storder.eps}
     \end{center}
-    \caption{A plot of $e^x$ and $e$.}
-    \label{fig:etx2}
+    \caption{A plot of $e^x$ and $e+e(x-1)$.}
   \end{figure}
-  The best approximation is $f(x)=e^1$. This intersects the graph of $f(x)=e^x$
-  at $x=1$. This is called at \textbf{$0$th order approximation}.
-
-  This can get the slope right at one point.
-
-  \[ f(x)=c_0 + c_1x\]
-  [ include a plot ]
-  Treat this function as a y value. The $y$ values is $e^1$.
-  \[e^1=c_0+c_1 \cdot 1\]
-  We have one equation and two unknowns. We should also, here, approximate the
-  slope of $e^x$ at $x=1$.
-   \begin{align*}
-    e^1&=c_0+c_1 \cdot 1 \\
-    (e^x)' \bigg|_{x=1} &\equiv c_1
-  \end{align*}
-  To solve this, recognize $c_1$ is $e^1$. Plug this into the first equation for
-  your coefficients.
-
-  \[ f(x) = c_0 + c_1x + c_2x^2 \]
-  [plot]
-  This will hopefully get the concavity right.
-  \[e^1= c_0+c_1(1)+c_2(1) \]
+  We can improve it even further by increasing our number of terms:
   \begin{align*}
-    e^1&=c_0+c_1 \cdot 1 \\
-    (e^x)' \bigg|_{x=1} &\equiv c_1 + 2 c_2 \\ \intertext{take the second
-    derivative for concavity.}
-    (e^x)'' \bigg|_{x=1} &\equiv 2 \cdot 1 \cdot c_2 \\
+    f(x) &\approx a_0 + a_1 (x-a) + a_2 (x-a)^2 \\
+    \intertext{We already know the first two coefficients, so}
+    f(x) &\approx e + e (x-a) + a_2 (x-a)^2 \\
+    \intertext{To find $a_2$, we take the second derivative of $f(x)$ at $x=1$ and divide that by $2!$.}
+    f(x) &\approx e + e (x-a) + \frac{e}{2!} (x-a)^2 \\
   \end{align*}
-  Now, starting with finding $c_2$, we can get the coefficients for all the
-  preceding equations.
-
-  \[ f(x) = c_0 + c_1x + c_2x^2+c_3x^3 \]
-  [plot]
-  We are doing a better job of approximating $e^x$ at each step. Now we will put
-  a cubic function as our approximation.
-  \begin{align*}
-    e^1&=c_0+c_1 \cdot 1+c_2 \cdot 1^2 + c_3 \cdot 1^3 \cdot 1 \\
-    (e^1)' \bigg|_{x=1}&=+c_1 +2c_2 \cdot x \bigg|_{x=1}  +3 c_3 \cdot
-    x^2\bigg|_{x=1} \cdot 1 \\ \intertext{Here we get the slope to be correct.}
-    (e^x)'' \bigg|_{x=1} &= 2 c_2 + c_3 \cdot x^2 \bigg|_{x=1} \\
-    (e^x)''' \bigg|_{x=1} &= 3 \cdot 2 \cdot 1 \cdot c_3
-  \end{align*}
-
-  We notice that \[\frac{ (e^x)^n \bigg|_{x=1}}{n!} = c_n \]
-
-  Ths is what we call a \emph{Taylor series approximation} of $f(x)$ at $x=1$.
+  \begin{figure}[H]
+    \begin{center}
+      \includegraphics{continuous/series/1storder.eps}
+    \end{center}
+    \caption{A plot of $e^x$ and $e+e(x-1)+\frac{e}{2!} (x-a)^2$.}
+  \end{figure}
 \end{ex}
+\begin{comment}
+  \begin{ex}
+    Say we are trying to approximate the function
+    \[ f(x) =  e^x \]
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics{continuous/series/etx.eps}
+      \end{center}
+      \caption{A plot of $f(x)=e^x$.}
+      \label{fig:etx}
+    \end{figure}
+    Before we start, we must decide \emph{where} we are going to make the
+    approximation.
+    Say we are approximating this function around $x=1$.
 
-\begin{theorem}
-  The \textbf{Taylor series} approximation of $f(x)$ at $x=a$ is
-  \[ f \bigg|_{x=a} + f'\bigg|_{x=a} + \frac{f''\bigg|x=a}{2!} \cdot (x-a)^2 +
-    \frac{f'''\bigg|_{x=a} (x-a)^3}{3!} + \frac{f''''\bigg|_{x=a} (x-a)^4}{4!} +
-    \cdots\]
-  \label{th:taylorseries}
-\end{theorem}
+    For the simplext possible approximation, we would just calculate the function at $x=1$ and that would be our solution.
+    \begin{align*}
+      f(x) &\approx f(a) \\
+      f(x) &\approx e
+    \end{align*}
+    This is a constant function and is called a \textbf{0$^\textrm{th}$ order approximation}.
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics{continuous/series/etx2.eps}
+      \end{center}
+      \caption{A plot of $e^x$ and $e$.}
+      \label{fig:etx2}
+    \end{figure}
+    This can get the slope right at one point.
+    But, if we want to create a more accurate approximation, we would need to include the derivative of the function around $x=1$.
+
+    Treat this function as a y value. The $y$ values is $e^1$.
+    \[e^1=c_0+c_1 (x-a)\]
+    We have one equation and two unknowns. We should also, here, approximate the
+    slope of $e^x$ at $x=1$.
+    \begin{align*}
+      f'(x)&=c_0+c_1 \cdot 1 \\
+      \ddx e^x \bigg|_{x=1} &\equiv c_1
+    \end{align*}
+    To solve this, recognize $c_1$ is $e^1$. Plug this into the first equation for
+    your coefficients.
+
+    \[ f(x) = c_0 + c_1x + c_2x^2 \]
+    [plot]
+    This will hopefully get the concavity right.
+    \[e^1= c_0+c_1(1)+c_2(1) \]
+    \begin{align*}
+      e^1&=c_0+c_1 \cdot 1 \\
+      (e^x)' \bigg|_{x=1} &\equiv c_1 + 2 c_2 \\ \intertext{take the second
+      derivative for concavity.}
+      (e^x)'' \bigg|_{x=1} &\equiv 2 \cdot 1 \cdot c_2 \\
+    \end{align*}
+    Now, starting with finding $c_2$, we can get the coefficients for all the
+    preceding equations.
+
+    \[ f(x) = c_0 + c_1x + c_2x^2+c_3x^3 \]
+    [plot]
+    We are doing a better job of approximating $e^x$ at each step. Now we will put
+    a cubic function as our approximation.
+    \begin{align*}
+      e^1&=c_0+c_1 \cdot 1+c_2 \cdot 1^2 + c_3 \cdot 1^3 \cdot 1 \\
+      (e^1)' \bigg|_{x=1}&=+c_1 +2c_2 \cdot x \bigg|_{x=1}  +3 c_3 \cdot
+      x^2\bigg|_{x=1} \cdot 1 \\ \intertext{Here we get the slope to be correct.}
+      (e^x)'' \bigg|_{x=1} &= 2 c_2 + c_3 \cdot x^2 \bigg|_{x=1} \\
+      (e^x)''' \bigg|_{x=1} &= 3 \cdot 2 \cdot 1 \cdot c_3
+    \end{align*}
+
+    We notice that \[\frac{ (e^x)^n \bigg|_{x=1}}{n!} = c_n \]
+
+    Ths is what we call a \emph{Taylor series approximation} of $f(x)$ at $x=1$.
+  \end{ex}
+\end{comment}
 \begin{ex}
-  Find a Taylor series apprximation of
+  Find a 4$^\textrm{th}$ order Taylor series apprximation of
   \[ f(x) = \ln x \]
   at $x=2$.
   \begin{sol}
-    \[ \ln 2 + \frac{1}{x} \bigg|_2 (x-2) + \frac{-1}{x^2} \bigg|_2
-      \frac{(x-2)^2}{2!} + \frac{2}{x^3}\bigg|_{x=2} \frac{(x-2)^3}{3!}
-      + \frac{-6}{x^4}\bigg|_{x=2} \frac{(x-2)^4}{4!} + \cdots\]
-      Taylor series are power series. This yields a \emph{power series} about
-      $x=2$.
-  \end{sol}
-\end{ex}
-\begin{ex}
-  Find a Taylor series of
-  \[ f(x) = \sin x \]
-  at $x=0$.
-  \begin{sol}
-    We see odd numbers appear.
+    The first two terms are easy
+    \[ f(x) \approx \ln{2} + \frac{1}{2} (x-2) + \cdots \]
+    but then we must take the second derivative of $f(x)$ at $x=2$.
     \begin{align*}
-      \sin x &\approx \left[ \sin 0 + \cos x (x-0)^1 + \frac{-\sin x (x-0)^2}{2!} -
-      \cos x (x-0)^{3}{3!} + \frac{\sin x (x-0)^4}{4!} \right]_{x=0} + \frac{\cos x
-      (x-0)^5}{5!}
-      \cdots
-      \\
-      \sin x &\approx 0+x - \frac{x^3}{3!} + \frac{x^5}{5!} + \cdots
-  \end{align*}
-  We could, in other words, write this as
-  \[ \sin x = \sum_{n=0}^\infty \frac{(-1)^n \cdot x^{2n+1}}{(2n+1)!} \]
-  This is a \emph{power series about} $x=0$.
-  Since we have a power series, we can find its \emph{interval of convergence.}
-
-  \[ \lim_{n\to\infty} \frac{(-1)^{n+1} x^{2(n+1)+1}}{[2(n+1)+1]!} \]
-  An $x^2$ factors.
- We're left with   \[ \lim_{n\to\infty} \frac{(-1)^{n+1}
-   x^{2(n+1)+1}}{[2(n+1)+1][2(n+1]} \]
-  The interval of convergence is $-\infty<x<\infty$.
+      \ddx \ln x &= \frac{1}{x} = x^{-1} \\
+      \ddx x^{-1} &= -2 x^{-2} \\
+      \ddx x^{-1}\bigg|_{x=2}&= \frac{-2}{4} \\
+      &= \frac{-1}{2}
+    \end{align*}
+    and now we can get the third term
+    \begin{align*}
+      f(x) &\approx \ln{2} + \frac{1}{2} (x-2) - \frac{1}{2\cdot 2!}(x-2)^2 + \cdots \\
+      f(x) &\approx \ln{2} + \frac{1}{2} (x-2) - \frac{1}{8}(x-2)^2 + \cdots
+    \end{align*}
+    Now we find the third derivative of $f(x)$ at $x=2$:
+    \begin{align*}
+      f^{(3)}(x)\bigg|_{x=2}=\frac{1}{4}
+    \end{align*}
+    \begin{align*}
+      f(x) &\approx \ln{2} + \frac{1}{2} (x-2) - \frac{1}{8}(x-2)^2 + \frac{1}{24}(x-2)^3 + \cdots
+    \end{align*}
+    And the fourth
+    \begin{align*}
+      f^{(4)}(x)\bigg|_{x=2}=\frac{8}{3}
+    \end{align*}
+    Making our final answer
+    \[
+      f(x) \approx \ln{2} + \frac{1}{2} (x-2) - \frac{1}{8}(x-2)^2 + \frac{1}{24}(x-2)^3 -\frac{1}{64}(x-2)^4
+    \]
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics{continuous/series/lnxtaylor.eps}
+      \end{center}
+      \caption{A plot of $\ln x$ and our Taylor approximation.}
+    \end{figure}
   \end{sol}
 \end{ex}
+% \begin{ex}
+%   Find a Taylor series of
+%   \[ f(x) = \sin x \]
+%   at $x=0$.
+%   \begin{sol}
+%     We see odd numbers appear.
+%     \begin{align*}
+%       \sin x &\approx \left[ \sin 0 + \cos x (x-0)^1 + \frac{-\sin x (x-0)^2}{2!} -
+%       \cos x (x-0)^{3}{3!} + \frac{\sin x (x-0)^4}{4!} \right]_{x=0} + \frac{\cos x
+%       (x-0)^5}{5!}
+%       \cdots
+%       \\
+%       \sin x &\approx 0+x - \frac{x^3}{3!} + \frac{x^5}{5!} + \cdots
+%   \end{align*}
+%   We could, in other words, write this as
+%   \[ \sin x = \sum_{n=0}^\infty \frac{(-1)^n \cdot x^{2n+1}}{(2n+1)!} \]
+%   This is a \emph{power series about} $x=0$.
+%   Since we have a power series, we can find its \emph{interval of convergence.}
+%
+%   \[ \lim_{n\to\infty} \frac{(-1)^{n+1} x^{2(n+1)+1}}{[2(n+1)+1]!} \]
+%   An $x^2$ factors.
+%  We're left with   \[ \lim_{n\to\infty} \frac{(-1)^{n+1}
+%    x^{2(n+1)+1}}{[2(n+1)+1][2(n+1]} \]
+%   The interval of convergence is $-\infty<x<\infty$.
+%   \end{sol}
+% \end{ex}

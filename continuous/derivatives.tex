@@ -1,65 +1,94 @@
 \chapter{Derivatives}
 \epigraph{Some people will tell you that slow is good---but I'm here to tell you that fast is better.}{Hunter S. Thompson}%, Kingdom of Fear: Loathsome Secrets of a Star-crossed Child in the Final Days of the American Century}
 
+Say we are trying to find the rate of change of the function $x^3$.
+That is, essentially, its slope.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3.eps}
+  \end{center}
+  \caption{A plot of $x^3$.}
+\end{figure}
+We'd like to be able to do this with just a straight line, but that's simply not possible.
+We could, however, draw a straight line that approximates this function around a specific value, say $x=1$.
+We can just draw a line that approximates the function, to try to get it right:
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3_1.eps}
+  \end{center}
+\end{figure}
+But that's not a very accurate impression of our slope.
+To make it better, we could draw a line between two points that are \emph{even closer} to $x=1$.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3_2.eps}
+  \end{center}
+\end{figure}
+And to improve this further, we can continue to draw lines closer and closer to that point.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3_3.eps}
+  \end{center}
+\end{figure}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3_4.eps}
+  \end{center}
+\end{figure}
+Until we are drawing lines between two points which are an \emph{infinitely small} distance apart from one another.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3vline.eps}
+  \end{center}
+  %\caption{A plot of $x^3$ and $3x-2$.}
+\end{figure}
+The slope of this line is the \emph{derivative} of our function at $x=1$.
 
-The \textbf{derivate} of a function can be used to describe its \emph{instantaneous rate of change}.
+We see that, around $x=1$, our slopes are very close.
+But as we get further from that $x$-value, we don't have a very good approximation of the slope anymore.
+This is because a derivative describes the \emph{instantaneous rate of change} of the function \emph{at that point}.
+It's not the slope of the entire function, it's just the slope at one, specific, selected point.
+
+The \textbf{derivate}\index{derivative} of a function $f(x)$ at $x=a$ is used to describe its \emph{instantaneous slope} the value $x=a$.
 
 \section{Slopes}
-
-The entire idea of a derivative is based on the idea behind the slope of a graph. You probably remember the equation for the slope of a line from algebra,
-\begin{equation}
-  \label{eq:slope}
-  m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}
-\end{equation}
-which is usually associated with the general form of a linear equation
-\begin{equation}
-  y=mx+b
-\end{equation}
-\begin{figure}[h]
+\index{slope}
+The entire idea of a derivative is based on the idea behind the slope of a graph.
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{continuous/derivatives/lineform.eps}
   \end{center}
   \caption{The general form equation for a line.}
 \end{figure}
-\begin{figure}[h]
+The slope, $m$, of a given straight line\footnote{$b$ is the \emph{y-intercept} of the function.}
+$f(x)=mx+b$ is given by its \emph{change in $y$ values divided by its change in $x$ values}
+\begin{align}
+  \label{eq:slope}
+  m&=\frac{\Delta y}{\Delta x,} \\
+  \intertext{which we can find using the formula}
+  m&=\frac{y_2-y_1}{x_2-x_1,} \\
+  \intertext{which is equivalent to}
+  m&=\frac{f(x_2)-f(x_1)}{x_2-x_1.}
+\end{align}
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{continuous/derivatives/lineform_slope.eps}
   \end{center}
-  \caption{How we determine ``rise over run'' in a graph.}
+  \caption{How we determine slope in a graph.}
 \end{figure}
-\begin{remark}
-  $\Delta$ is a common symbol in calculus, and it basically means ``change in.''
-\end{remark}
+% In early mathematics courses, slope is often described as the ``rise'' over ``run'' of a graph.
+% While this is accurate, it doesn't provide the complete picture.
+% What a \emph{slope} really describes is how much a given function $f(x)$ is altering each of its input values $x$, often heard as ``change in $y$ over change in $x$.''
+% You'll notice that this is independent of any initial value $b$ selected for a linear function.\footnote{Which is why all constants disappear when you take the derivative of a function.}
 
-Where $m$ is the slope of the graph, $x$ is your input value, and $b$ is the \emph{y-intercept}, or initial $y$ value, for the function.
+\section{The Difference Quotient}\index{difference quotient}
 
-Slope is also often seen with the point-slope formula, where given a point $(x_1, y_1)$ and a slope $m$, you can solve for $y$ to get a linear function.
-\begin{equation}
-  \label{eq:pointslope}
-  y-y_1=m(x-x_1)
-\end{equation}
-
-In early mathematics courses, slope is often described as the ``rise'' over ``run'' of a graph.
-While this is accurate, it doesn't provide the complete picture.
-What a \emph{slope} really describes is how much a given function $f(x)$ is altering each of its input values $x$, often heard as ``change in $y$ over change in $x$.''
-You'll notice that this is independent of any initial value $b$ selected for a linear function.\footnote{Which is why all constants disappear when you take the derivative of a function.}
-
-To figure out the slope of a linear function $f(x)=mx+b$, all you need to do is
-divide the difference between two output ($y$) values by the difference between
-their two input ($x$) values. This is where equation \eqref{eq:slope} comes from:
-\begin{equation*}
-  m=\frac{f(x_2)-f(x_1)}{x_2-x_1}
-\end{equation*}
-And because the function is linear, the slope $m$ is constant all the way through and any two points can be used to find it.
-
-\section{The Difference Quotient}\index{Difference Quotient}
-
-The \emph{difference quotient} is the same exact thing as the slope formula, with the only distinction
-being you treat how far apart your two $x$ values are as a variable. So $\Delta x=x_2-x_1$, and $x=x_1$.
+The \emph{difference quotient} works the same way as the slope formula, except we treat how far apart our two $x$ values are as a variable.
 \begin{equation}
   \frac{\Delta f(x)}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}
 \end{equation}
-\begin{figure}[h]
+So $\Delta x=x_2-x_1$, and $x=x_1$.
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{continuous/derivatives/diffquot.eps}
   \end{center}
@@ -70,31 +99,28 @@ You'll often see the difference quotient written with $\Delta x \to h$ as
   \frac{\Delta f(x)}{\Delta x}=\frac{f(x+h)-f(x)}{h}
 \end{equation}
 
-\section{Derivatives}
+\subsection{Limit Definition of Derivatives}
 
-\subsection{Limit Definition}
-
-The difference quotient is used in the limit definition of the derivative, which is
+The difference quotient is used in the \textbf{limit definition of a derivative}\index{derivative, limit definition}, which is
 \begin{equation}
   \label{eq:limitdef}
   \frac{\ud f(x)}{\ud x}=\lim_{h \to 0} \frac{f(x+h)-f(x)}{h}
 \end{equation}
-Notice that the only distinction between this equation and the difference quotient/slope equation from earlier is the introduction of a limit. The idea behind that limit is that you're calculating the slope of a function as the distance between your $x_2$ and $x_1$ values becomes infinitely small ($h\to 0$). We call this distance an \emph{infinitesimal}: a distance smaller than any feasible measurement, but not zero in size.
+% Notice that the only distinction between this equation and the difference quotient/slope equation from earlier is the introduction of a limit. The idea behind that limit is that you're calculating the slope of a function as the distance between your $x_2$ and $x_1$ values becomes infinitely small ($h\to 0$). We call this distance an \emph{infinitesimal}: a distance smaller than any feasible measurement, but not zero in size.
+%
+% So what a derivative of a function is going to tell us is how the function behaves (its slope) at a particular ``infinitely small'' portion of the graph, which might as well be a point.
+%
+% For linear functions, the function behaves the same no matter where you look at it, so their derivatives are always constant and equal to the slope of the function.
+%
+% For nonlinear functions, like $f(x)=x^2$, the derivative will yield a function (in this case, just $f'(x)=2x$), because the function is changing its input values differently depending on where you are looking. Near the origin, where $x=0$, the derivative is zero and any $x$ value will give $y$ values not too far from the original input. But as you move further from the origin, the ratio of $y/x$ gets larger and larger, and the derivative in turn gets bigger and bigger.
+% \begin{figure}[H]
+%     \begin{center}
+%       \includegraphics[width=0.5\textwidth]{continuous/derivatives/xsquared.eps}
+%       \caption{A graph of $f(x)=x^2$ and $f'(x)=2x$.}
+%     \end{center}
+% \end{figure}
 
-So what a derivative of a function is going to tell us is how the function behaves (its slope) at a particular ``infinitely small'' portion of the graph, which might as well be a point.
-
-For linear functions, the function behaves the same no matter where you look at it, so their derivatives are always constant and equal to the slope of the function.
-
-For nonlinear functions, like $f(x)=x^2$, the derivative will yield a function (in this case, just $f'(x)=2x$), because the function is changing its input values differently depending on where you are looking. Near the origin, where $x=0$, the derivative is zero and any $x$ value will give $y$ values not too far from the original input. But as you move further from the origin, the ratio of $y/x$ gets larger and larger, and the derivative in turn gets bigger and bigger.
-
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[width=0.5\textwidth]{continuous/derivatives/xsquared.eps}
-      \caption{A graph of $f(x)=x^2$ and $f'(x)=2x$.}
-    \end{center}
-  \end{figure}
-
-\subsection{Notation}
+\section{Notation Used with Derivatives}
 
 There are a number of ways to denote the derivative of a function $y=f(x)$. The most common notation early on in calculus classes is the \emph{prime} notation $y'$ and $f'$ because it is the simplest. Later on, you often see $\ud/\ud x$ style notation, because it is more specific. It tells us not only which function we are differentiating, but with respect to which variable. A notable characteristic of this ``d notation'' is the similarity it provides to our equation for slope:
 \begin{align*}
@@ -102,21 +128,62 @@ There are a number of ways to denote the derivative of a function $y=f(x)$. The 
 \end{align*}
 In the case of slope, we're talking about specific $y$ and $x$ values, but in the case of a derivative, we're talking about \emph{infinitesimals}, and that particular distinction allows us to discuss the behavior of functions that aren't linear, but change their behavior over time.
 
-\subsection{Tangent Lines}
+\section{Tangent Lines}
 
-The \emph{tangent line} to a graph at a point is just a line that acts like the function is linear and behaves exactly as the graph does at that point. This is useful for visualizing the derivative, and showing us how the behavior of a function can change depending on its $(x,y)$ location.
-
+Remember our line that gave us the slope of $f(x)=x^3$ at $x=1$?
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.4\textwidth]{continuous/derivatives/tangent.eps}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3vline.eps}
   \end{center}
-  \caption{A tangent line to the graph of $f(x)=x^2$.}
+  %\caption{A plot of $x^3$ and $3x-2$.}
 \end{figure}
+That was called a \emph{tangent line} to $f(x)$ at that point.
+How do we find out what the equation for that line is?
 
-To calculate the equation for a tangent line at a point, simply find the
-derivative of the function at that point and treat that as the slope of the
-tangent line. Then, use the $(x, y)$ values of the point to produce the tangent line's function
-using the point-slope equation (\eqref{eq:pointslope}).
+Well, we use the derivative of the function, calculated at $x=1$, to determine the slope of our tangent line.
+\begin{align*}
+  f(x)&=x^3\\
+  f'(x)&=\lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\
+  \intertext{Remembering back to Section \ref{sec:compositefunctions},}
+  f'(x)&=\lim_{h \to 0} \frac{(x+h)^3-x^3}{h} \\
+  \intertext{Expand $(x+h)^3$.}
+  f'(x)&=\lim_{h \to 0} \frac{(x+h)(x+h)(x+h)-x^3}{h} \\
+  f'(x)&=\lim_{h \to 0} \frac{(x^2+hx+hx+h^2)(x+h)}{h} \\
+  f'(x)&=\lim_{h \to 0} \frac{(x^2+2hx+h^2)(x+h)}{h} \\
+  f'(x)&=\lim_{h \to 0} \frac{x^3+2hx^2+h^2x+x^2h+2h^2x+h^3-x^3}{h} \\
+  f'(x)&=\lim_{h \to 0} \frac{3hx^2+3h^2x+h^3}{h} \\
+  f'(x)&=\lim_{h \to 0} 3x^2+3hx+h^2 \\
+  \intertext{Since we are taking the limit as $h\to0$,}
+  f'(x)&=3x^2
+\end{align*}
+If we calculate this derivative at $x=1$, we get
+\begin{align*}
+  f'(x)\Big|_{x=1}&=3(1)^2 \\
+  &=3
+\end{align*}
+So the slope of our tangent line is $3$.
+But that was an awful lot of work just to get one little derivative!
+It would be handy if we could generalize the derivative of functions like this, so that we don't have to do it again in the future.
+Luckily, we can, and this generalization is what we call the \emph{power rule}.
+
+The \textbf{power rule}\index{power rule} states that
+\begin{equation}
+  \ddx x^n=nx^{n-1}
+\end{equation}
+
+% The \emph{tangent line} to a graph at a point is just a line that acts like the function is linear and behaves exactly as the graph does at that point. This is useful for visualizing the derivative, and showing us how the behavior of a function can change depending on its $(x,y)$ location.
+
+% \begin{figure}[H]
+%   \begin{center}
+%     \includegraphics[width=0.4\textwidth]{continuous/derivatives/tangent.eps}
+%   \end{center}
+%   \caption{A tangent line to the graph of $f(x)=x^2$.}
+% \end{figure}
+%
+% To calculate the equation for a tangent line at a point, simply find the
+% derivative of the function at that point and treat that as the slope of the
+% tangent line. Then, use the $(x, y)$ values of the point to produce the tangent line's function
+% using the point-slope equation (\eqref{eq:pointslope}).
 \subsection{Derivative Rules}
 
 Derivative rules are just shorthands for working things out manually using the
@@ -126,13 +193,6 @@ limit definition in equation \eqref{eq:limitdef}. They all come from equation \e
 
 The derivate of a constant is always zero. A constant has no rate of change.
 \[\ddx k=0\]
-
-\subsubsection{Power Rule}
-
-The power rule states that
-\begin{equation}
-  \ddx x^n=nx^{n-1}
-\end{equation}
 
 \subsubsection{Product Rule}
 

@@ -1,40 +1,26 @@
 \chapter{Proofs}\index{proofs}
-% This is, again, a near-direct quote!
-% ABSOLUTELY REWRITE THIS
-% TO NOT QUOTE ROSEN!
-Proofs are arguments that establish the truth of mathematical statements.
+We use proofs to establish the truth of mathematical statemnts.
+There are a number of types of these statements, of varying importance.
 
-Most mathematical proofs for humans are \textbf{indirect proofs}\index{indirect proofs},
-where more than one rule of inference may be used in each step, steps may be skipped,
-and the axioms and rules of inference being used are not explicitly state.
+Before we prove our statement, it is called a \textbf{conjecture}\index{conjecture}.
 
-However, we may wish to teach a computer how to create proofs. In order to do
-so, we must be extremely precise in our language. Likewise, in order to present
-mathematically precise proofs, we must know how to write \emph{formal
-proofs}\index{formal proofs}.\footnote{This introduction comes almost entirely from \cite[p.~81]{rosen}. It should be rewritten as soon as possible.}
+A \textbf{fact} or \textbf{result} is the simplest type of statement we might prove.
+Sometimes proofs are required, but more often they are simply demonstrated, implied, or obvious.
+\index{fact}\index{result}
 
-\begin{defn}
-  A \textbf{fact} or \textbf{result} is a statement that can be shown to be
-  true, but is not as important as a theorem.
-  \index{fact}\index{result}
-\end{defn}
-\begin{defn}
-  A \textbf{theorem} is a statement that can be shown to be true, and is associated with a degree of importance.
-  \index{theorem}
-\end{defn}
-\begin{defn}
-  A \textbf{lemma} is a ``less important theorem'' that is helpful in the proof of other theorems.
-  Interestingly enough, a well-constructed lemma can often be more important than the original proof itself. % from mcsfull.pdf
-  \index{lemma}
-\end{defn}
-\begin{defn}
-  A \textbf{corollary} is an additional theorem found only a couple logical steps from its parent theorem.
-  \index{corollary}
-\end{defn}
-\begin{defn}
-  A \textbf{conjecture} is a statement that is proposed to be true, but has not yet been proven.
-  \index{conjecture}
-\end{defn}
+\textbf{Theorems} are where proofs start to become important.
+They are the foundations of complex mathematical logic.
+ \index{theorem}
+ Some theorems are less important than others, and we call these lemmata.\index{lemmata}
+ A \textbf{lemma}\index{lemma} is a less important theorem, often used in proving our main theorem.
+ After are theorem is proven, we can often draw \textbf{corollaries}\index{corollary}, theorems that follow easily from our proven theorem.
+
+Some proofs are \textbf{formal proofs}, which use the rules of inference to establish truth.
+These proofs are the ``simplest'' in that they involve the simplest forms of logic, though they can become incredibly complex as we attempt to write formal proofs for more and more complex theorems.
+
+Thus, we most often will encounter \textbf{informal proofs}.
+These proofs establish truth using language and logic that makes sense to humans.
+They are often formed by building on
 
 \section{Direct Proof}\index{direct proofs}
 
@@ -45,11 +31,12 @@ In using a direct proof for proving an implication \[P \implies Q\]
 we start by assuming $P$ is true, then using the \emph{rules of inference}, reach the conclusion
 $Q$ through direct logical steps from $P$.
 
-\begin{ex}
-  Prove that if $n$ is greater than $4$ then $2^n$ is greater than $n^2$.
-  % A direct proof is easiest.
-  % Write a proof for this. It comes from one of my DM tests from freshman year, and I missed the points.
-\end{ex}
+% I have become fairly convinced this is meant to be proven by induction.
+% \begin{ex}
+%   Prove that if $n$ is greater than $4$ then $2^n$ is greater than $n^2$.
+%   % A direct proof is easiest.
+%   % Write a proof for this. It comes from one of my DM tests from freshman year, and I missed the points.
+% \end{ex}
 \begin{ex}
   Give a direct proof of the theorem
   \begin{quote}

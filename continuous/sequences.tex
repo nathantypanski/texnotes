@@ -383,58 +383,8 @@ terms, as follows:
       $\lim_{n\to\infty} a_n = \lim_{n\to\infty} c_n = L$, then
       $\lim_{n\to\infty} b_n = L$ also.
     \end{theorem}
-    \begin{theorem}\label{th:xninfty}
-      If \(|x| < 1, \lim_{n \to \infty} x^n = 0\).
-      \begin{proof}
-        We need to show that to each $\varepsilon > 0$ there corresponds an
-        integer $N$ so large that $\forall n > N \big( |x^n| < \varepsilon\big)$
-        Since $\varepsilon^{1/n}\to 1$, while $|x|<1$, $\exists N \big(
-        \varepsilon^{1/n} > |x|$. In other words,
-        \begin{equation}\label{eq:limxto1}
-          \Big|x^N\Big| = \Big|x^N\Big| < \varepsilon.
-        \end{equation}
-        This is the integer we seek because, if $|x|< 1$, then
-        \begin{equation}\label{eq:limxto2}
-          \forall n > N \bigg( \Big|x^n\Big| < \Big|x^N\Big|\bigg)
-        \end{equation}
-        Combining \eqref{eq:limxto1} and \eqref{eq:limxto2} produces
-        $|x^n|<\varepsilon$ for all $n > N$, concluding the
-        proof.\cite[p.~AP-21]{thomas}
-      \end{proof}
-    \end{theorem}
-    \begin{theorem}\label{th:limxnnf}
-      % Theorem and proof are a direct rip from Thomas' Calculus.
-      For any number $x$, $\lim_{n\to\infty} \frac{x^n}{n!} = 0$.
-        \cite[p.~AP-22]{thomas}
-      \begin{proof}
-      Since
-      \[ - \frac{|x|^n}{n!} \leq \frac{x^n}{n!} \leq \frac{|x|^n}{n!},\]
-      all we need to show is that $|x|^n/n! \to 0$. We can then apply theorem
-      \ref{th:sandwichsequence} to conclude that $x^n/n! \to 0$.
-
-      The first step in showing that $|x|^n/n! \to 0$ is to choose an integer $M
-      > |x|$, so that $(|x|/M) < 1$. By Theorem \ref{th:xninfty}, we then have
-      that $\left( |x|/M \right)^n \to 0$. We then restrict our attention to
-      values of $n > M$. For these values of $n$, we can write
-      \begin{align*}
-        \frac{|x|^n}{n!}&=
-        \frac{|x|^n}{1\cdot2\cdot\cdots\cdot M
-          \cdot\underbrace{(M+1)\cdot(M+2)\cdot\cdots n}_{(n-M) \text{
-          factors}}}
-          \\
-          &\leq \frac{|x|^n}{M!M^{n-M}}=\frac{|x|^n \cdot M^M}{M^n \cdot M!} =
-          \frac{M^M}{M!} \left( \frac{|x|}{M} \right)^n .
-      \end{align*}
-      Thus,
-      \[ 0 \leq \frac{|x|^n}{n!}\leq \frac{M^M}{M!}\left( \frac{|x|}{M}
-        \right)^n .\]
-        Now, the constant $M^M / M!$ does not change as $n$ increases. Thus
-        Theorem \ref{th:sandwichsequence} tells us that $|x|^n/n! \to 0$ because
-        $(|x|/M)^n \to 0$.
-        \cite[p.~AP-22]{thomas}
-      \end{proof}
-    \end{theorem}
-    Thus, by Theorem \ref{th:limxnnf}, \[\lim_{n \to \infty} a_n =
+      A proof of this theorem is found in \ref{proof:sandwichsequence}.
+      By Theorem \ref{th:sandwichsequence}, \[\lim_{n \to \infty} a_n =
       \lim_{n\to\infty}\frac{2^n}{n!}=0.\]
   \end{sol}
 \end{ex}
@@ -446,7 +396,7 @@ terms, as follows:
       b_n = \left| \frac{(-1)^n}{n!} \right| = \frac{1}{n!} = 0
     \end{align*}
     Intuitively, we can also state that $a_n$ should converge.
-    Using Theorem \ref{th:limxnnf}, we can determine that this sequence converges.
+    Using Theorem \ref{th:sandwichsequence}, we can determine that this sequence converges.
     % Review \emph{bounded and monotonic} for sequences, txtbg pg 536.
     % That's in Thomas' calculus. -[Nathan]
   \end{sol}

@@ -9,13 +9,13 @@ Quadratic formula\index{quadratic formula}
 \end{equation}
 
 \section{Point-slope Formula}
+\label{sec:pointslope}
 \index{point-slope formula}
 The \textbf{point-slope formula} allows us, given a point $(x_1, y_1)$ and a slope $m$, to solve for $y$ as a function of $x$.
 \begin{equation}
   \label{eq:pointslope}
   y-y_1=m(x-x_1)
 \end{equation}
-
 
 \section{Conjugate}\label{app:def:conjugate}
 \index{conjugate}
@@ -150,6 +150,27 @@ I didn't write any of this. Check the citations for my sources.
   \end{proof}
 \end{theorem}
 
+\section{L'Hospital's Rule}
+\label{proof:lhospital}
+\begin{theorem}[L'Hospital's Rule]
+  Suppose that $f(a)=g(a)=0$, that $f$ and $g$ are differentiable on an open interval $I$ containing $a$, and that $g'(x) \neq 0$ on $I$ if $x \neq a$. Then
+  \[ \lim_{x \to a} \frac {f(x)}{g(x)} \=H \lim_{x \to a} \frac{f'(x)}{g'(x)} \]
+  assuming that the limit on the right side of this equation exists.
+\end{theorem}
+\begin{proof}
+  We first establish the limit equation for the case $x \to a^+$. The method needs almost no change to apply to $x \to a^{-}$, and the combination of these two cases establishes the result.
+
+  Suppose that $x$ lies to the right of $a$. Then $g'(x) \neq 0$, and we can apply Cauchy's Mean Value Theorem to the closed interval from $a$ to $x$. This step produces a number $c$ between $a$ and $x$ such that
+  $$ \frac{f'(c)}{g'(c)}=\frac{f(x)-f(a)}{g(x)-g(a)} $$
+  But $f(a)=g(a)$, so
+  $$ \frac{f'(c)}{g'(c)}=\frac{f(x)}{g(x)} $$
+  As $x$ approaches $a$, $c$ approaches $a$ because it always lies between $a$ and $x$. Therefore,
+  $$ \lim_{x \to a^+} \frac{f(x)}{g(x)}=lim_{c \to a} \frac{f'(c)}{g'(c)} = lim_{x \to a^+} \frac{f'(x)}{g'(x)} $$
+  which establishes l'Hospital's Rule for the case where $x$ approaches $a$ from
+  above. The case where $x$ approaches $a$ from below is proved by applying
+  Cauchy's Mean Value Theorem (found in Section \ref{sec:lhospital}) to the closed interval $[x,a], x <
+  a$.\cite{thomas}
+\end{proof}
 \input{appendix/logic.tex}
 
 \chapter{The Fibonacci Sequence and the Golden Ratio}

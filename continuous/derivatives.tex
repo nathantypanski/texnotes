@@ -49,7 +49,7 @@ But as we get further from that $x$-value, we don't have a very good approximati
 This is because a derivative describes the \emph{instantaneous rate of change} of the function \emph{at that point}.
 It's not the slope of the entire function, it's just the slope at one, specific, selected point.
 
-The \textbf{derivate}\index{derivative} of a function $f(x)$ at $x=a$ is used to describe its \emph{instantaneous slope} the value $x=a$.
+The \textbf{derivative}\index{derivative} of a function $f(x)$ at $x=a$ is used to describe its \emph{instantaneous slope} the value $x=a$.
 
 \section{Slopes}
 \index{slope}
@@ -131,12 +131,6 @@ In the case of slope, we're talking about specific $y$ and $x$ values, but in th
 \section{Tangent Lines}
 
 Remember our line that gave us the slope of $f(x)=x^3$ at $x=1$?
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3vline.eps}
-  \end{center}
-  %\caption{A plot of $x^3$ and $3x-2$.}
-\end{figure}
 That was called a \emph{tangent line} to $f(x)$ at that point.
 How do we find out what the equation for that line is?
 
@@ -162,6 +156,26 @@ If we calculate this derivative at $x=1$, we get
   &=3
 \end{align*}
 So the slope of our tangent line is $3$.
+\begin{note}
+  The symbol $\big|_{x=1}$ means to evaluate the preceding term at the value $x=a$.
+  It is often seen referring to a function's derivative at a particular point, which is different from the function's derivative in general.
+\end{note}
+
+Now we use the point-slope formula (Section \ref{sec:pointslope}) with $m=3$ to find the equation for our tangent line.
+\begin{align*}
+  y-y_1 &= m (x-x_1) \\
+  y &= mx-mx_1 +y_1 \\
+  y&=3x-3\cdot 1 + 1 \\
+  y&=3x-2
+\end{align*}
+Which tells us that the equation for the tangent line to our function at $x=1$ is $y=3x-2$.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3vline.eps}
+  \end{center}
+  \caption{A plot of $x^3$ and $3x-2$.}
+\end{figure}
+\subsection{Derivative Rules}
 But that was an awful lot of work just to get one little derivative!
 It would be handy if we could generalize the derivative of functions like this, so that we don't have to do it again in the future.
 Luckily, we can, and this generalization is what we call the \emph{power rule}.
@@ -170,6 +184,29 @@ The \textbf{power rule}\index{power rule} states that
 \begin{equation}
   \ddx x^n=nx^{n-1}
 \end{equation}
+
+\begin{ex}
+  Find the derivative of $f(x)=x^9$ with respect to $x$.
+  \begin{sol}
+    We subtract $1$ from the value of our exponent and make the original exponent the coefficient of the variable.
+    This means that
+    \[ \frac{\ud f(x)}{\ud x} = 9x^8. \]
+  \end{sol}
+\end{ex}
+\begin{ex}
+  The power rule also works for negative exponents.
+  Let's try finding the derivative of $f(x)=\frac{1}{x}$ with respect to x.
+  \begin{sol}
+    To find this derivative, we first recognize that $x^{-1} \equiv 1/x$.
+    \begin{align*}
+      f(x)&=\frac{1}{x}=x^{-1}
+      \intertext{And now simply use the power rule as normal.}
+      f'(x) &= -1 \cdot x^{-2} \\
+      \intertext{Simplify.}
+      f'(x)&= -\frac{1}{x^2}
+    \end{align*}
+  \end{sol}
+\end{ex}
 
 % The \emph{tangent line} to a graph at a point is just a line that acts like the function is linear and behaves exactly as the graph does at that point. This is useful for visualizing the derivative, and showing us how the behavior of a function can change depending on its $(x,y)$ location.
 
@@ -184,39 +221,88 @@ The \textbf{power rule}\index{power rule} states that
 % derivative of the function at that point and treat that as the slope of the
 % tangent line. Then, use the $(x, y)$ values of the point to produce the tangent line's function
 % using the point-slope equation (\eqref{eq:pointslope}).
-\subsection{Derivative Rules}
 
-Derivative rules are just shorthands for working things out manually using the
-limit definition in equation \eqref{eq:limitdef}. They all come from equation \eqref{eq:limitdef}, but they serve as generalizations to greatly simplify the work we have to do in calculating derivatives.
+Derivative rules are just shorthands for working things out manually using the limit definition in equation \eqref{eq:limitdef}.
+They all come from equation \eqref{eq:limitdef} and greatly simplify the work we have to do in calculating derivatives.
 
-\subsubsection{Constant Rule}
+Before we go further, let's cover some important properties to know when finding derivatives.
+First, the \emph{derivative of a sum} is the same as a \emph{sum of derivatives}.
+\index{derivatives, sum of}
+\begin{ex}
+  Find the derivative of $f(x)=x^2+x$.
+  \begin{sol}
+    We now know that
+    \[ f'(x) = \ddx (x^2+x)\]
+    is equivalent to
+    \[ f'(x) =\ddx x^2 + \ddx x.\]
+    Simply use the power rule to differentiate.
+    \begin{align*}
+      f'(x) &= 2x+1\cdot x^0 \\
+      \intertext{Since any number raised to the power $0$ is just $1$,}
+      f'(x)&= 2x+1.
+    \end{align*}
+  \end{sol}
+\end{ex}
 
-The derivate of a constant is always zero. A constant has no rate of change.
-\[\ddx k=0\]
+When differentiating functions involving constant multiples, we may move the constants out of the derivative.
+This means that, if $g(x)$ is a differentiable function and $k$ is a constant multiple,
+\[ \ddx \big( k g(x) \big) = k \ddx \big(g(x)\big).\]
+This is known as the \textbf{constant multiple rule}.\index{derivatives, constant multiples}
 
-\subsubsection{Product Rule}
+The derivate of a constant is always zero, because constant has no rate of change.
+For any constant number $k$, we know that
+\[\ddx k=0.\]
+This is called the \textbf{constant rule for derivatives}.\index{derivatives, constant rule}
 
-The product rule states that
+We will use both of these new rules in the following example.
+\begin{ex}
+  Find the derivative of the function $f(x)=3x^3+1$.
+  \begin{sol}
+    We just learned to differentiate sums, so we know to differentiate this in separate pieces.
+    \begin{align*}
+      f'(x) &= \ddx 3x^3 + \ddx 1 \\
+      \intertext{We use the power rule on the first term and the constant rule on the second term to reach our derivative.}
+      f'(x)&= 9x^2+0 \\
+      &=9x^2
+    \end{align*}
+  \end{sol}
+  Now, say we wished to differentiate this function $f(x)$ a second time.
+  We have a couple of ways we could write this:
+  \begin{align*}
+    \frac{\ud^2 f(x)}{\ud x} && f''(x)
+  \end{align*}
+  and we would call this the \textbf{second derivative} of $f(x)$ with respect to $x$.
+  \index{second derivative}
+  \[ f''(x) = 18x \]
+\end{ex}
+
+The \textbf{product rule}\index{derivatives, product rule} tells us that for two differentiable functions $f(x)$ and $g(x)$,
 \begin{equation}
-  \ddx (uv)=u \frac{\ud v}{\ud x}+v\frac{\ud u}{\ud x}
+  \ddx f(x) \cdot g(x) = f(x) \frac{\ud g(x)}{\ud x}+g(x)\frac{\ud f(x)}{\ud x}
+\end{equation}
+It's worth noting that because of the commutative law for addition, it doesn't matter which derivative we place first.
+
+The \textbf{quotient rule}\index{derivatives, quotient rule} states that for a ratio of two differentiable functions $f(x)$ and $g(x)$,
+\begin{equation}
+  \frac{\ud}{\ud x}\left(\frac{f(x)}{g(x)}\right)=\frac{g(x)\cfrac{\ud f(x)}{\ud x}-f(x)\cfrac{\ud g(x)}{\ud x}}{g(x)^2}.
+\end{equation}
+We should be careful with this one.
+Unlike the with the product rule, there is no leniency offered with the quotient rule's order of operations:
+\begin{equation}
+  \frac{\ud}{\ud x}\left(\frac{f(x)}{g(x)}\right) \neq \frac{f(x)\cfrac{\ud g(x)}{\ud x}-g(x)\cfrac{\ud f(x)}{\ud x}}{g(x)^2}.
 \end{equation}
 
-\subsubsection{Quotient Rule}
 
-The quotient rule states that
-\begin{equation}
-  \frac{\ud}{\ud x}\left(\frac{u}{v}\right)=\frac{v\frac{\ud u}{\ud x}-u\frac{\ud v}{\ud x}}{v^2}
-\end{equation}
-
-\subsubsection{Chain Rule}
-
+The \textbf{chain rule} is used to differentiate composite functions, which look like $(f \circ g)(x)$ and mean $f(g(x))$.
+This type of functions is introduced and further explained in Section \ref{sec:compositefunctions}.
 The chain rule states that if $y=f(u)$ and $u=g(x)$, then
 \begin{equation}
   \frac{\ud y}{\ud x}=\frac{\ud y}{\ud u} \cdot \frac{\ud u}{\ud x}
 \end{equation}
-
-The chain rule is used to differentiate composite functions, which look like $(f \circ g)(x)$ and mean $f(g(x))$. You'll want to develop an intuitive understanding for when to use the chain rule.
+We will want to develop an intuitive understanding for when to use the chain rule.
+Some derivatives appear to require the chain rule, when in fact they can be differentiated in much simpler ways.
 \begin{ex}
+  Here's an example of such a problem.
   Find the derivative of $f(x)$, where
   \[ f(x)=\frac{1}{x^3} \]
   \begin{figure}[h]
@@ -236,7 +322,7 @@ The chain rule is used to differentiate composite functions, which look like $(f
 \begin{ex}
   Find the derivative of $f(x)$, where
   $$ f(x)=\left(\frac{1}{\sqrt{x}}\right)^5 $$
-  This is a chain rule problem. We use
+  This problem combines the chain rule and product rule. We use the chain rule with
   \begin{align*}
     & g(x)=\frac{1}{\sqrt{x}}
     & & f(x)={(g(x))^5}
@@ -289,10 +375,73 @@ Many of these trig derivatives, such as the derivative of $\tan x$, can be found
 \end{ex}
 \subsection{Differentiability}
 A function $f(x)$ is \textbf{differentiable}\index{differentiable} at a point $x_0$ if a tangent line to its curve exists at that point and is not vertical.
-  Functions are not differentiable at breaks, immediate bends, cusps, or places with vertical tangents.
+Functions are not differentiable at breaks, immediate bends, cusps, or places with vertical tangents.
+
+\subsection{Linearization of Functions}
+\index{linearization}
+
+One application of derivatives is linearization of functions.
+This is handy for performing calculations that, otherwise, would be ridiculously difficult without a calculator.
+The key is to treat the derivative of the function as the slope of a straight line,
+and then to consider the $y$-values of that line \emph{good enough} approximations of the original function within a small enough interval.
+
+In order to linearize a function $f(x)$, we must be capable of calculating its derivative at some other, nearby value $x=a$.
+Then, we use the point-slope formula (see Section \ref{sec:pointslope}) to find the equation for a line that approximates our function around that value.
+
+We then write the linearization of this function $f(x)$ at $x=a$ as $L_a (x)$, and state that
+\[ L_a (x) \approx f(x) \]
+on some interval $I$.
+
+\begin{ex}
+  Find a linearization of the function $f(x)=\sqrt{x}$ and use it to approximate the value of $f(4.001)$.
+  \begin{sol}
+    We must first find a value on $f(x)$ close to $x=4.001$ that shouldn't be a problem for us.
+    The obvious solution is to use $a=4$, such that $f(a)=\sqrt{4}=2$.
+    This gives us the point $(4, 2)$ on the plot of $f(x)$.
+
+    Great, but we still need the slope of our new line.
+    To find it, we must take the derivative of our original function.
+    Convert the square root into an exponent.
+    \begin{align*}
+      f(x) &= \sqrt{x} = x^{1/2} \\
+      \intertext{Use the power rule.}
+      \ddx f(x) &= \frac{1}{2x^{1/2}} \\
+      &= \frac{1}{2\sqrt x} \\
+      \intertext{Now we evaluate this at $x=a=4$ to get the slope at our known point.}
+      \ddx f(x) \bigg|_{x=4}&= \frac{1}{2\sqrt{4}} \\
+      &= \frac{1}{2\cdot 2} \\
+      &= \frac{1}{4}
+    \end{align*}
+    This is the slope of $f(x)$ at $x=a$.
+
+    Now, we use this slope in the point-slope fomula (Section \ref{sec:pointslope}) to write our linearized function.
+    \begin{align*}
+      y-y_1 &= m (x-x_1) \\
+      L_a(x)-f(a) &= f'(a) (x-a) \\
+      L_a(x)-2 &= \frac{1}{4}(x-4) \\
+      L_a(x) &= \frac{1}{4}x-1+2 \\
+      L_a(x)&= \frac{x}{4}+1
+    \end{align*}
+    Now that we have our linearized function, which should approximate $f(x)$, we can find $L_a (4.001)$.
+    \begin{align*}
+      L_a(4.0001) &= \frac{4.001}{4}+1 \\
+      &= 1.00025 +1 \\
+      &= 2.00025
+    \end{align*}
+    This means that $f(4.001)$ either equals, or is extremely close to $2.00025$.
+    In our case, it just so happens that our approximation was perfect: $f(4.001)=2.00025$.
+    Not bad for what could've been a nasty calculation--we found it easily, entirely by hand!
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{continuous/derivatives/lin_ex1.eps}
+      \end{center}
+      \caption{A plot of $f(x)$ and $L_a(x)$.}
+    \end{figure}
+  \end{sol}
+\end{ex}
 
 \subsection{Graphing Functions}
-To graph a function:\footnote{from my notes in Dr. Dobrescu's Math 140 class, Fall 2011}
+To graph a function:\footnote{This section is copied from my notes from Dr. Dobrescu's Math 140 class, taken in Fall 2011 at Christopher Newport University.}
   \begin{enumerate}
    \item Find all \textbf{critical values}. Critical values are locations where $\frac{\ud y}{\ud x}=0$ or is undefined.\footnote{At locations where $\frac{\ud y}{\ud x}=0$, the tangent line is horizontal.}
    \item Find all \textbf{points of inflection}. These are locations where the second derivative ($\frac{\ud^2y}{\ud x}$) is zero or undefined.
@@ -300,7 +449,8 @@ To graph a function:\footnote{from my notes in Dr. Dobrescu's Math 140 class, Fa
    \item Determine where $\frac{\ud y}{\ud x}$ is \emph{negative} to find where $f(x)$ is \emph{decreasing}.
    \item Determine the sign of $\frac{\ud^2y}{\ud x}$ on both sides of all \emph{points of inflection}. The graph is \emph{concave up} where $\frac{\ud^2y}{\ud x}$ is positive, and \emph{concave down} where $\frac{\ud^2y}{\ud x}$ is negative.
   \end{enumerate}
-\section{l'Hospital's Rule}\label{lhospital}\index{l'Hospital's Rule}
+
+\section{l'Hospital's Rule}\label{sec:lhospital}\index{l'Hospital's Rule}
 
 \textbf{l'Hospital's Rule} uses derivatives to calculate limits\index{limits} of fractions whose numerators and denominators both approach the same indeterminate for, which can be either zero or $\infty$. Limits involving transcendental functions\index{transcendental functions} often require some use of the rule for their calculation.
 
@@ -312,20 +462,7 @@ To graph a function:\footnote{from my notes in Dr. Dobrescu's Math 140 class, Fa
 \begin{remark}
   L'Hopital's Rule does not apply when either the numerator or the denominator has a finite nonzero limit.
 \end{remark}
-\begin{proof}
-  We first establish the limit equation for the case $x \to a^+$. The method needs almost no change to apply to $x \to a^{-}$, and the combination of these two cases establishes the result.
-
-  Suppose that $x$ lies to the right of $a$. Then $g'(x) \neq 0$, and we can apply Cauchy's Mean Value Theorem to the closed interval from $a$ to $x$. This step produces a number $c$ between $a$ and $x$ such that
-  $$ \frac{f'(c)}{g'(c)}=\frac{f(x)-f(a)}{g(x)-g(a)} $$
-  But $f(a)=g(a)$, so
-  $$ \frac{f'(c)}{g'(c)}=\frac{f(x)}{g(x)} $$
-  As $x$ approaches $a$, $c$ approaches $a$ because it always lies between $a$ and $x$. Therefore,
-  $$ \lim_{x \to a^+} \frac{f(x)}{g(x)}=lim_{c \to a} \frac{f'(c)}{g'(c)} = lim_{x \to a^+} \frac{f'(x)}{g'(x)} $$
-  which establishes l'Hospital's Rule for the case where $x$ approaches $a$ from
-  above. The case where $x$ approaches $a$ from below is proved by applying
-  Cauchy's Mean Value Theorem to the closed interval $[x,a], x <
-  a$.\cite{thomas}
-\end{proof}
+The proof of this theorem is found in Section \ref{proof:lhospital}.
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.2\textwidth]{photos/cauchy.jpg}

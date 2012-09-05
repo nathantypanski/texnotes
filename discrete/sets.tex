@@ -1,4 +1,5 @@
 \chapter{Sets}
+\label{ch:sets}
 A \textbf{set} is an unordered collection of objects, called its \emph{elements}. We generally write sets in capital letters, such as $A$, to contrast them from the elements contained in them.
 
 We write $a \in A$ to state that $a$ is an element of the set $A$.
@@ -45,7 +46,12 @@ Therefore, if $A$ and $B$ are sets, then they are equal iff
 \[ \forall (x \in A \iff x \in B). \]
 In English, two sets $A$ and $B$ are equal if and only if every element in a implies it also exists in B, and vice versa.
 We then write $A=B$ to show that they are equal sets.
-
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{discrete/sets/equal.eps}
+  \end{center}
+  \caption{$A=B$.}
+\end{figure}
 We have two ways to write an \textbf{empty set}.
 We could write $\emptyset$ or $\{ \}$.
 
@@ -57,7 +63,12 @@ We then write $A \subseteq B$ to show that $A$ is a subset of $B$.
 To demonstrate that $A$ is a subset of $B$, show that if $x$ belongs to $A$ then it also belongs to $B$.
 To show that $A$ is not a subset of $B$, that is, $A \not \subseteq B$, find a single element $x \in A$ such that $x \not \in B$.
 \footnote{The symbol $\not \in$ means \emph{not in}.}
-
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{discrete/sets/subset.eps}
+  \end{center}
+  \caption{$A\subseteq B$}
+\end{figure}
 If the set $A$ is a subset of the set $B$ but $A \neq B$, we write $A \subset B$ and say that $A$ is a \textbf{proper subset} of $B$.
 That is, $A$ is a proper subset of $B$ iff
 \[ \forall x (x \in A \implies x \in B) \land \exists x (x \in B \and x \not \in A). \]
@@ -82,11 +93,26 @@ The \textbf{intersection}\index{intersection} of $A$ and $B$, denoted $A \cap B$
 is the set containing those elements in both $A$ and $B$, but not just one.
 If the intersection of $A$ and $B$ is $\emptyset$, we say the two sets are \textbf{disjoint}.\index{disjoint}
 \[ A \cap B = \big\{ x \in A | x \in B \big\}\]
-
-The \textbf{union}\index{union} of $A$ and $B$, denoted $A \cup B$,
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{discrete/sets/intersection.eps}
+  \end{center}
+  \caption{$A\cap B$}
+\end{figure}The \textbf{union}\index{union} of $A$ and $B$, denoted $A \cup B$,
 is the set containing all elements in either or both $A$ and $B$.
 \[ A \cup B = \big\{ x | x \in A \lor x \in B \big\}\]
-
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{discrete/sets/union.eps}
+  \end{center}
+  \caption{$A$ and $B$}
+\end{figure}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{discrete/sets/preunion.eps}
+  \end{center}
+  \caption{$A\cup B$}
+\end{figure}
 The \textbf{complement}\index{complement} of $A$ and $B$, denoted $A \setminus B$,
 is the set containing those elements in $A$ but not in $B$.
 It is sometimes called the \emph{component of $B$ with respect to $A$}.

@@ -37,7 +37,7 @@ We will combine these techniques in an effort to paint a complete picture of its
    The \textbf{natural domain} of a function is the largest set of real \(x\)-values for which a function returns real \(y\)-values.
   A function is said to be \textbf{real-valued} when \(D = \mathbb{R}\).
   That is, the domain is equal to to the set of real numbers.
-  This means that we can put any arbitrary real number into the function and it will return a real $y$-value.
+  This means that we can put an arbitrary real number into the function and it will return a real $y$-value.
 
    \begin{remark}
      When we define a funciton \(y=f(x)\) with a formula and the domain is not stated explicitly or restricted by context, the domain is assumed to be the \emph{natural domain}.
@@ -115,7 +115,7 @@ An example of an even function is the function $f(x)=x^2$.
 \begin{defn}
   \index{one-to-one}
   \index{injective}
-  A function mapping from set $D$ to set $R$ is \textbf{injective}, or \textbf{one-to-one}, if for any two $x$ values in the domain, the function producing equal $y$ values implies that the $x$ values are equal. In mathematical language:
+  If each $f(x)$ value produced by a function $f$ can only be obtained by one unique $x$ value, then we say $f$ is \textbf{injective}, or \textbf{one-to-one}.
 
   \( f: D \to R \) is injective or one-to-one iff
   \[
@@ -130,7 +130,7 @@ An example of an even function is the function $f(x)=x^2$.
 \end{defn}
 \begin{figure}[H]
     \begin{center}
-        \subfigure[The function \(f(x)=x^2\) is not \emph{one-to-one} because there are two possible \(x\)-values that can produce any given \(y\)-value.]
+        \subfigure[The function \(f(x)=x^2\) is not \emph{one-to-one} because there are two possible \(x\)-values that can produce each given \(y\)-value.]
         {
           \begin{tikzpicture}
             \begin{axis}[
@@ -147,7 +147,7 @@ An example of an even function is the function $f(x)=x^2$.
           \end{tikzpicture}
         }
         \hspace{0.2in}%
-        \subfigure[The function \(f(x)=x^3\) is \emph{one-to-one} because any given \(y\)-value is mapped from a unique \(x\)-value.]
+        \subfigure[The function \(f(x)=x^3\) is \emph{one-to-one} because every given \(y\)-value is mapped from a unique \(x\)-value.]
         {
           \begin{tikzpicture}
             \begin{axis}[

@@ -257,46 +257,46 @@ This is a set of guidlines\footnote{Proposed by Herbert Kasube of Bradley Univer
 \end{enumerate}
 
 
-\subsection{Reduction Formulas}
-% probably rewrite this. I think I might have too much unoriginal material in this section.
-Consider the integral
-\begin{align*}
-  I_n=&\int x^n e^{ax} \ud x
-  \intertext{Integration by parts gives you}
-  I_n=&x^n \frac{1}{a}e^{ax}-\int nx^{n-1}\frac{1}{a}e^{ax}\ud x \\
-     =&\frac{1}{a}x^ne^{ax}-\frac{n}{a}\int x^{n-1}e^{ax}\ud x
-\end{align*}
-We haven't computed the integral. What we have done is derived the following \textbf{reduction formula}
-\begin{equation}
-  I_n=\frac{1}{a}x^ne^{ax}-\frac{n}{a}I_{n-1}
-\end{equation}
-which holds for all $n$.
-
-For $n=0$ the reduction formula says
-$$ I_0=\frac{1}{a}e^{ax} \to \int e^{ax}\ud x = \frac{1}{a}e^{ax}+C $$
-
-When $n \neq 0$ the reduction formula tells us that we have to compute $I_{n-1}$ if we want to find $I_n$. The point of a reduction formula is that the same formula also applies to $I_{n-1}$, and $I_{n-1}$, etc. so that after repeated application of the formula we end up with $I_0$, an integral we know how to compute.\cite{freenotes}
-\begin{ex}
-  %[textbook: \#4/pg.441]
-  Integrate
-  \[ \int e^x \cos x \ud x \]
-  \begin{sol}
-    We use integration by parts with
-    \begin{align*}
-      u &= \cos x & \ud v &= e^x \ud x \\
-      \ud u &= - \sin x \ud x & v &=e^x
-    \end{align*}
-    Which gives us the integral
-    \begin{align*}
-      \int e ^x \cos x \ud x &= e^x \cos x - \int -e^x \sin x \ud x \\
-      &= e^x \cos x+ \int e^x \sin x \ud x \\
-      \intertext{Now we use $u$-substitution with $u=e^x$ and $\ud u = e^x \ud x$.}
-      &= e^x \cos x + \int \sin u \ud u \\
-      &= e^x \cos x - \cos u +C \\
-      &= e^x \cos x - \cos {e^x} +C
-    \end{align*}
-  \end{sol}
-\end{ex}
+% \subsection{Reduction Formulas}
+% % probably rewrite this. I think I might have too much unoriginal material in this section.
+% Consider the integral
+% \begin{align*}
+%   I_n=&\int x^n e^{ax} \ud x
+%   \intertext{Integration by parts gives you}
+%   I_n=&x^n \frac{1}{a}e^{ax}-\int nx^{n-1}\frac{1}{a}e^{ax}\ud x \\
+%      =&\frac{1}{a}x^ne^{ax}-\frac{n}{a}\int x^{n-1}e^{ax}\ud x
+% \end{align*}
+% We haven't computed the integral. What we have done is derived the following \textbf{reduction formula}
+% \begin{equation}
+%   I_n=\frac{1}{a}x^ne^{ax}-\frac{n}{a}I_{n-1}
+% \end{equation}
+% which holds for all $n$.
+%
+% For $n=0$ the reduction formula says
+% $$ I_0=\frac{1}{a}e^{ax} \to \int e^{ax}\ud x = \frac{1}{a}e^{ax}+C $$
+%
+% When $n \neq 0$ the reduction formula tells us that we have to compute $I_{n-1}$ if we want to find $I_n$. The point of a reduction formula is that the same formula also applies to $I_{n-1}$, and $I_{n-1}$, etc. so that after repeated application of the formula we end up with $I_0$, an integral we know how to compute.\cite{freenotes}
+% \begin{ex}
+%   %[textbook: \#4/pg.441]
+%   Integrate
+%   \[ \int e^x \cos x \ud x \]
+%   \begin{sol}
+%     We use integration by parts with
+%     \begin{align*}
+%       u &= \cos x & \ud v &= e^x \ud x \\
+%       \ud u &= - \sin x \ud x & v &=e^x
+%     \end{align*}
+%     Which gives us the integral
+%     \begin{align*}
+%       \int e ^x \cos x \ud x &= e^x \cos x - \int -e^x \sin x \ud x \\
+%       &= e^x \cos x+ \int e^x \sin x \ud x \\
+%       \intertext{Now we use $u$-substitution with $u=e^x$ and $\ud u = e^x \ud x$.}
+%       &= e^x \cos x + \int \sin u \ud u \\
+%       &= e^x \cos x - \cos u +C \\
+%       &= e^x \cos x - \cos {e^x} +C
+%     \end{align*}
+%   \end{sol}
+% \end{ex}
 \begin{ex}
   Integrate:
   \[

@@ -125,13 +125,14 @@ Note, however, that if $\lim_{x\to a}f(x)$ at a point, then the left an right li
 
 \subsection{The Sandwich Theorem}
 
-Let us look at a more complicated example of a limit:
+Let us look at a more complicated example of a limit.
+Suppose we have the functions
 \begin{align*}
-  h(x) &= |x| \\
-  f(x) &= x\sin{\frac{1}{x}}\\
-  g(x) &= -|x|
+  h(x) &= |x|, \\
+  f(x) &= x\sin{\frac{1}{x}}, \\
+  \text{and }g(x) &= -|x|,
 \end{align*}
-Where at \(x=0\), \(g(x) \leq f(x) \leq h(x)\) at 0.
+where at \(x=0\), \(g(x) \leq f(x) \leq h(x)\) at 0.
 \begin{figure}[H]
   \begin{center}
     \includegraphics{graphs/sandwichtheorem.pdf}
@@ -143,11 +144,11 @@ We can conclude, intuitively, that the limit of \(f(x)\) as \(x \to 0\) must be
 \ref{fig:p1sin1x}. We can generalize this kind of behavior as a theorem, the
 \emph{sandwich theorem}.
 \begin{theorem}[The Sandwich Theorem]
-  Suppose that \(g(x) \leq f(x) \leq h(x)\) for all \(x\) in some open interval
-  containing \(c\), except possibly at \(x=c\) itself. Suppose also that
-  \[ \lim_{x \to c} g(x) = \lim_{x \to c} h(x) = L \]
-  Then \(\lim_{x \to c} f(x) = L\).
-  \label{the:sandwich}
+  If \[g(x) \leq f(x) \leq h(x)\] holds for all \(x \neq c\) in some open interval containing a number \(c\),
+  and
+  \[ \lim_{x \to c} g(x) = \lim_{x \to c} h(x) = L, \]
+  then \(\lim_{x \to c} f(x)\) also equals $L$.
+  \label{th:sandwich}
   \index{sandwich theorem}
 \end{theorem}
 
@@ -260,7 +261,25 @@ For piecewise-defined functions, limits can get especially interesting. Here's a
     \end{align*}
   \end{sol}
 \end{ex}
+\begin{ex}
+  Suppose we wished to evaluate the limit
+  \[  \lim_{\theta \to 0} \frac{\sin \theta}{5 \theta}. \]
+  \begin{sol}
+    Well, first we should recognize that $\sin \theta$ is not the kind of function that is growing indefinitely:
+    it oscillates forever between two values, $1$ and $-1$.
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{continuous/limits/sintheta.eps}
+      \end{center}
+      \caption{A plot of $\sin \theta$.}
+      \label{fig:sintheta}
+    \end{figure}
+  \end{sol}
+  But dividing by larger and larger values is going to make this function's \textbf{amplitude}\index{amplitude},
+  its distance from the $y$-value of $0$, much smaller.
 
+  Using Theorem \ref{th:sandwich},\footnote{How?} we can see that this limit approaches $1$.
+\end{ex}
 
 \section{Indeterminate Forms}
 
@@ -281,3 +300,10 @@ cannot be found by substituting $x=a$. The substitution produces $0/0$, a meanin
     \item $\lim_{x\to a} f(x)=f(a)$.
   \end{itemize}
 \end{defn}
+
+\section{The Mean Value Theorem}
+\index{mean value theorem}
+The following is a simplified case of the mean value theorem:
+The \textbf{mean value theorem} states that, for a continuous function $f$,
+if we have an $f(a)$ which is negative and a $f(b)$ which is positive,
+then $f$ crosses the $x$-axis somewhere on the interval $(a, \, b)$.

@@ -174,13 +174,13 @@ Now, we conclude that the set $C$ must be empty.
 
 \begin{ex}
   Prove that the sum of all integers from $1$ to $n$ is \[\frac{n(n+1)}{2}.\]
+
+  In basic algebraic notation, we could write this sum as
+  \[1 + 2 + 3 + \cdots + n \]
+  But we have a way of simplifying this using something called \textbf{sigma notation}\index{sigma notation}.
+  We would write it as follows:
+  \[1+2+3+\cdots+n  \sum_{1}^n \frac{n(n+1)}{2} \]
   \begin{proof}
-    In mathematical notation, we write this sum as
-    \begin{align*}
-      P(n) : : = 1 + 2 + 3 + \cdots + n &= \frac{n(n+1)}{2} \\
-      \intertext{or in \emph{sigma notation}\index{sigma notation} as }
-      P(n) : : = \sum_{i=1}^n = \frac{n(n+1)}{2}
-    \end{align*}
     Now, we define a set $C$ such that
     \[ C : : = \bigg\{ n \in \mathbb N \big| \sum_{i=1}^n i \neq \frac{n(n+1)}{2}\bigg\}\]
     By the \emph{well-ordering principle}, $C$ has a smallest element, which we will call $c$.

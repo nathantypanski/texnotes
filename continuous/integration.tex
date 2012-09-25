@@ -70,51 +70,78 @@ We can use this table for reference from time to time,
 but as we develop our integration skills, we will become increasingly proficient at using them on-the-spot.
 
 Some are more important than others. For a more complete understanding of these rules, refer to a calculus textbook.
-\begin{equation}
-  \int k\,\ud x=kx+C \qquad \text{(any number \emph{k})}
-\end{equation}
-\begin{equation}
-  \int x^n \, \ud x = \frac {x^{n+1}}{n+1}+C\,(n \neq -1)
-\end{equation}
-\begin{equation}
-  \int \frac{\ud x}{x}=\ln{|x|}+C
-\end{equation}
-\begin{equation}
-  \int e^x\, \ud x=e^x+C
-\end{equation}
-\begin{equation}
-  \int a^x\, \ud x=\frac{a^x}{\ln a}+C \,(a>0,a\neq 1)
-\end{equation}
-\begin{equation}
-  \int \sin x \, \ud x=-\cos x +C
-\end{equation}
-\begin{equation}
-  \int \cos x \ud x=sin\,x+C
-\end{equation}
-\begin{equation}
-  \int \sec^2x \ud x = \tan x + C
-\end{equation}
-\begin{equation}
-  \int \csc^2 x \ud x = -cot\,x +C
-\end{equation}
-\begin{equation}
-  \int \sec x \tan x \ud x = \sec x +C
-\end{equation}
-\begin{equation}
-  \int \csc x \cot x \,dx = -\csc x +C
-\end{equation}
-\begin{equation}
-  \int \cot x \ud x=\ln{|\sin x|}+C
-\end{equation}
-\begin{equation}
-  \int \cosh x \ud x=\sinh x\,+C
-\end{equation}
-\begin{equation}
-  \int \frac{\ud x}{a^2+x^2}=\frac{1}{a}\arctan{\frac{x}{a}}+C
-\end{equation}
-\begin{equation}
-  \int \frac{\ud x}{\sqrt{a^2+x^2}}=\arcsin{\frac{x}{a}+C} \qquad (a > 0)
-\end{equation}
+\begin{align*}
+  &\int k\ud x=kx+c \qquad \text{(any number \emph{k})}
+  &&\int x^n\ud x = \frac {x^{n+1}}{n+1}+c\qquad (n \neq -1) \\
+  &\int \frac{\ud x}{x}=\ln{|x|}+c
+  &&\int e^x \ud x=e^x+c \\
+  &\int a^x \ud x=\frac{a^x}{\ln a}+c \qquad (a>0,\, a\neq 1)
+  &&\int \sin x \ud x=-\cos x +c \\
+  &\int \cos x \ud x=\sin x+c
+  &&\int \sec^2x \ud x = \tan x +c \\
+  &\int \csc^2 x \ud x = -\cot x +c
+  &&\int \sec x \tan x \ud x = \sec x +c \\
+  &\int \csc x \cot x \ud x = -\csc x +c
+  &&\int \tan x \ud x =\ln {\abs{\sec x}} +c \\
+  &\int \cot x \ud x=\ln{|\sin x|}+c
+  &&\int \sec x \ud x = \ln{\abs{\sec x + \tan x}} +c \\
+  &\int \csc x \ud x = -\ln{\abs{\csc x + \cot x}}+c
+  &&\int \sinh x \ud x=\cosh x+c \\
+  &\int \cosh x \ud x=\sinh x+c
+  &&\int \frac{\ud x}{a^2+x^2}=\frac{1}{a}\arctan{\frac{x}{a}}+c \\
+  &\int \frac{\ud x}{\sqrt{a^2+x^2}}=\arcsin{\frac{x}{a}+c} \qquad (a > 0)
+  &&\int \frac{\ud x}{x\sqrt{x^2-a^2}}=\frac{1}{a}\arcsec{\abs{\frac{x}{a}}}+c \\
+  & \int\frac{\ud x}{\sqrt{a^2+x^2}}=\sinh^{-1}{\frac{x}{a}}+c \qquad (a>0)
+  && \int\frac{\ud x}{\sqrt{x^2-a^2}}=\cosh^{-1}{\frac{x}{a}}+c \qquad (x>a>0)
+\end{align*}
+\cite[p. 435]{thomas}
+%% badly formatted
+%
+%\begin{equation}
+%  \int k\,\ud x=kx+C \qquad \text{(any number \emph{k})}
+%\end{equation}
+%\begin{equation}
+%  \int x^n \, \ud x = \frac {x^{n+1}}{n+1}+C\,(n \neq -1)
+%\end{equation}
+%\begin{equation}
+%  \int \frac{\ud x}{x}=\ln{|x|}+C
+%\end{equation}
+%\begin{equation}
+%  \int e^x\, \ud x=e^x+C
+%\end{equation}
+%\begin{equation}
+%  \int a^x\, \ud x=\frac{a^x}{\ln a}+C \,(a>0,a\neq 1)
+%\end{equation}
+%\begin{equation}
+%  \int \sin x \, \ud x=-\cos x +C
+%\end{equation}
+%\begin{equation}
+%  \int \cos x \ud x=sin\,x+C
+%\end{equation}
+%\begin{equation}
+%  \int \sec^2x \ud x = \tan x + C
+%\end{equation}
+%\begin{equation}
+%  \int \csc^2 x \ud x = -cot\,x +C
+%\end{equation}
+%\begin{equation}
+%  \int \sec x \tan x \ud x = \sec x +C
+%\end{equation}
+%\begin{equation}
+%  \int \csc x \cot x \,dx = -\csc x +C
+%\end{equation}
+%\begin{equation}
+%  \int \cot x \ud x=\ln{|\sin x|}+C
+%\end{equation}
+%\begin{equation}
+%  \int \cosh x \ud x=\sinh x\,+C
+%\end{equation}
+%\begin{equation}
+%  \int \frac{\ud x}{a^2+x^2}=\frac{1}{a}\arctan{\frac{x}{a}}+C
+%\end{equation}
+%\begin{equation}
+%  \int \frac{\ud x}{\sqrt{a^2+x^2}}=\arcsin{\frac{x}{a}+C} \qquad (a > 0)
+%\end{equation}
 
 % SECTION COPIED FROM TEXTBOOK
 % \section{Integration by Parts}\index{integration by parts}

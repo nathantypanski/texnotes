@@ -58,7 +58,8 @@ The entire idea of a derivative is based on the idea behind the slope of a graph
   \begin{center}
     \includegraphics[width=0.5\textwidth]{continuous/derivatives/lineform.eps}
   \end{center}
-  \caption{The general form equation for a line.}
+  \caption{The slope-intercept form equation for a line.}
+  % Kyle Martin corrected this caption for me. Thanks Kyle!
 \end{figure}
 The slope, $m$, of a given straight line\footnote{$b$ is the \emph{y-intercept} of the function.}
 $f(x)=mx+b$ is given by its \emph{change in $y$ values divided by its change in $x$ values}
@@ -267,6 +268,7 @@ The derivate of a constant is always zero, because constant has no rate of chang
 \begin{theorem}[Constant Rule for Derivatives]
   For any constant number $k$, we know that
   \[\ddx k=0.\]
+  \label{th:deriv:constantrule}
 \end{theorem}
 This is called the \textbf{constant rule for derivatives}.\index{derivatives, constant rule}
 
@@ -520,3 +522,46 @@ functions}
     \end{align*}
   \end{proof}
 \end{theorem}
+
+\section{Antiderivatives}
+\begin{defn}
+  A function $F$ is an \textbf{antiderivative} of $f$ on an interval $I$ if $\forall (x \in I) \big[F'(x)=f(x)\big]$.
+  \index{antiderivative}
+\end{defn}
+\begin{ex}
+  Find an antiderivative of $f(x)=3x^2$.
+  \begin{sol}
+    We should think of a function whose derivative yields the function $3x^2$.
+    It seems clear that this function is related to the power rule, and reversing that rule would give us $x^3$.
+    Now let's take the derivative of this and see if it works.
+    \begin{align*}
+      F(x)&=x^3 \\
+      F'(x) &= 3x^2
+    \end{align*}
+    What's interesting here is that $3x^2$ is not the only function for which its derivative is $3x^2$.
+    We know from Theorem \ref{th:deriv:constantrule}, the constant rule for derivatives, that the derivative of any constant is zero.
+    From this, we know that
+    \[ F(x)=3x^2+1 \]
+    or
+    \[ F(x)=3x^2+20\]
+    or even
+    \[ F(x)=3x^2+39250\]
+    all satisfy our definition for an antiderivative of $f(x)$.
+    How do we write this?
+
+    The \textbf{generalized antiderivative} of $f(x)$ is written
+    \[ F(x)+c \]
+    where $c$ is an ``arbitrary constant''--that is, any number whatsoever that does not contain a variable.
+    This ``function,'' $F(x)+c$, therefore, does not actually refer to \emph{one} function in particular,
+    or even a \emph{handful} thereof, but rather a \textbf{family of functions}, all of which have a derivative equal to $f(x)$.
+
+    For our example, the generalized antiderivative of $f(x)=3x^2$ is $F(x)=x^3+c$.
+  \end{sol}
+\end{ex}
+We would plot this using \textbf{integral curves}, which represent a variety of possible versions of the function for different values of $c$.
+\begin{figure}[<+htpb+>]
+  \begin{center}
+    \includegraphics[width=3in]{continuous/derivatives/intcurves.eps}
+  \end{center}
+  \caption{A few possible integral curves for $F(x)=x^3+c$.}
+\end{figure}

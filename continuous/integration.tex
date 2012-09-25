@@ -41,6 +41,28 @@ This way we are just measuring different heights, and our width is always consta
   \caption{Approximating the area under the curve with two boxes.}
 \end{figure}
 
+\section{Fundamental Theorem of Calculus}
+\index{fundamental theorem of calculus}
+\begin{theorem}[Fundamental Theorem of Calculus, part 1]
+  If $f$ is continuous on $[a,b]$, then $F(x)=\int^x_a f(t)dt$ is continuous on $[a,b]$ and
+  differentiable on $(a,b)$ and its derivative is $f(x)$:
+  \begin{equation}
+    F'(x) = \ddx \int^x_a f(t)\ud t=f(x)
+    \label{eq:ftc1}
+  \end{equation}
+  \cite[p. 276]{thomas}
+  \label{th:ftc1}
+\end{theorem}
+\begin{theorem}
+  If $f$ is continuous at every point in $[a,b]$ and $F$ is any antiderivative of $f$ on $[a,b]$, then
+  \begin{equation}
+    \int^a_b f(x)\ud x=F(b)-F(a).
+    \label{eq:ftc2}
+  \end{equation}
+  \cite[p. 277]{thomas}
+  \label{th:ftc2}
+\end{theorem}
+
 \section{Basic Integration Formulas}
 \label{sec:basicints}
 The following are our basic integrals.

@@ -145,7 +145,7 @@ It is easy, however, to check a proper solution.
 \end{ex}
 
 % in-class section
-A common differential equation we will encounter is a \emph{freefall problem}.
+A common differential equation we will encounter is a \emph{freefall problem}\footnote{The following text comes from my Fall 2012 ordinary differential equations in-class lectures at Christopher Newport University.}.
 Here's an example:
 
 \begin{figure}[H]
@@ -170,3 +170,179 @@ Now, acceleration is the same as \emph{change in velocity,} so this is equivalen
 where $v$ is the object's velocity, $t$ is the time, $g$ is the acceleration of gravity near the surface of Earth, and $\gamma$ is the coefficient of friction for the air.
 
 This is a \textbf{first-order linear ordinary differential equation}.
+
+
+\begin{ex}
+  \item[19.]
+    Consider a lake of constant volume $V$ containing at time $t$ an amount $Q(t)$ of pollutant,
+    evenly distributed throughout the lake with a concentration of $c(t)$, where $c(t)=Q(t)/V$.
+    Assume that water containing a concentration $k$ of pollutant enters the lake at rate $r$,
+    and that water leaves the lake at the same rate.
+    Suppose that pollutants are also added to the lake at rate $P$.
+    Note that the given assumptions neglect a number of factors that may, in some cases, be important--for example,
+    the water added or lost by precipitation, absorption, or evaporation;
+    the tendency of irregularities in the coastline to produce sheltered bays;
+    and the fact that pollutants are not deposited evenly throughout the lake but (usually) at isolated points in its periphery.
+    The results below must be interpreted in the light of the neglect of such factors as these. \cite[p. 63]{boycede}
+    \begin{enumerate}
+      \item[(a)]
+        If at time $t=0$ the concentration of pollutant is $c_0$, find an expression for the concentration $c(t)$ at any time.
+        What is the limiting concentration as $t\to\infty$?
+        \begin{sol}
+          We know that the rate of addition of pollutants is found using the equation
+          \begin{equation*}
+            \frac{\ud Q(t)}{\ud t} = \text{rate in} - \text{rate out}.
+          \end{equation*}
+          Our ``rate in'' constitutes both the rate at which polluted water is added to the lake,
+          and the rate at which pollutants are directly added to the lake.
+          Therefore,
+          \[ \text{rate in}=kr+P. \]
+          The ``rate out'' is found by multiplying the concentration of pollutant in the lake by the rate at which water leaves the lake.
+          Therefore,
+          \begin{align*}
+            \text{rate out} &=r\, c(t),\\
+            \intertext{which we could write as}
+            \text{rate out}&= r \frac{Q(t)}{V}.
+          \end{align*}
+
+          Our rate of change for the pollutants then becomes
+          \begin{equation}
+            \frac{\ud Q(t)}{\ud t} = kr+P-r\frac{Q(t)}{V},
+            \label{dqdt}
+          \end{equation}
+          Which we can rearrange in the form
+          \begin{equation}
+            \frac{\ud Q(t)}{\ud t}+\frac{r\, Q(t)}{V} = kr+P.
+            \label{dqdtr}
+          \end{equation}
+          Multiplying \eref{dqdtr} by the integrating factor $\mu (t)=e^{rt/V}$ yields us
+          \begin{equation}
+            e^{rt/V}\frac{\ud Q(t)}{\ud t}+\frac{e^{rt/V}r}{V}Q(t) = e^{rt/V}kr+e^{rt/V}P.
+            \label{dqif}
+          \end{equation}
+          Integrating both sides of \eref{dqif}, we obtain
+          \begin{equation}
+            e^{rt/V}Q(t) = \bigintssss \! \! \left[ e^{rt/V} kr + e^{rt/V}P\right] \ud t.
+            \label{qint}
+          \end{equation}
+          Integrating the right side of \eref{qint} and solving for $Q(t)$, we obtain the general solution to \eref{dqdt}, that is
+          \begin{equation}
+            Q(t) =  kV+\frac{PV}{r}+C e^{-rt/V},
+            \label{qtsol}
+          \end{equation}
+          where $C$ is an arbitrary constant.
+
+          We can now find an expression for $c(t)$, which is given by
+          \begin{equation}
+            c(t) =\frac{Q(t)}{V}.
+            \label{ct}
+          \end{equation}
+          Substituting \eref{qtsol} into \eref{ct}, we find that
+          \begin{equation}
+            c(t) = k + \frac{P}{r}+\frac{C e^{-rt/V}}{V}.
+            \label{ct2}
+          \end{equation}
+
+          Using the initial value $c(0)=c_0$ and solving for $C$, we obtain
+          \begin{equation}
+            C=c_0 -\frac{P}{r}-k
+            \label{csol}
+          \end{equation}
+          Substituting our value for $C$ back into \eref{ct2}, we find our solution to the initial value problem,
+          \begin{equation}
+            c(t)=k+\frac{P}{r}+e^{-rt/V}\left( c_0 - \frac{P}{r} -k\right).
+            \label{ctbig}
+          \end{equation}
+          The factors of $e^{-rt/V}$
+          will become negligible because $e^{-rt/V}$ approaches zero as $t\to\infty$.
+          Thus, the limiting concentration of pollutants in the lake is given by
+          \begin{equation}
+            \lim_{t\to\infty} c(t) = k+\frac{P}{r}.
+            \label{limc}
+          \end{equation}
+       \end{sol}
+      \item[(b)]
+        If the addition of pollutants to the lake is terminated ($k=0$ and $P=0$ for $t>0$),
+        determine the time interval $T$ that must elapse before the concentration of pollutants is reduced to $50\%$ of its original value;
+        to $10\%$ of its original value.
+
+        \begin{sol}
+          Since $k=0$ and $P=0$, we can neglect the first and last two terms of \eref{ctbig}.
+          To find the time interval $T$ where the pollutants have reached a given fraction, which we will call $\alpha$, of their original value,
+          we must remember that $c_0$ is the original concentration and find the value for $t$ where
+          \begin{equation}
+            c(t) = \frac{c_0}{\alpha}.
+            \label{halfc}
+          \end{equation}
+          To achieve this, we replace $c(t)$ in \eref{halfc} with $c_0/\alpha$ and replace the variable $t$ with the variable for our time interval, $T$.
+          This shows that
+          \begin{equation}
+            \frac{c_0}{\alpha}=c_0 e^{-rT/V}.
+            \label{halfceq}
+          \end{equation}
+          We divide by $c_0$ and take the natural logarithm of both sides, finding that
+          \begin{equation}
+            -\frac{rT}{V}=\ln{\alpha},
+            \label{Tnlog}
+          \end{equation}
+          provided that $\alpha > 0$.
+
+          To solve for $T$, we multiply both sides of this equation by $-V/r$, which gives us the value of $T$,
+          \begin{equation}
+            T = \frac{-V\ln{\alpha}}{r}.
+            \label{tsol}
+          \end{equation}
+          For the time interval that must elapse before the concentration of pollutants is reduced to $50\%$ of its original value, $\alpha=1/2$ and
+          \begin{equation}
+            T=\frac{V\ln2}{r}.
+          \end{equation}
+          Likewise, to find the time interval that must elapse before the concentration of pollutants is reduced to $10\%$ of its original value, $\alpha=1/10$ and
+          \begin{equation}
+            T=\frac{V \ln{10}}{r}.
+          \end{equation}
+        \end{sol}
+      \item[(c)]
+        Table \ref{tab:volflow} contains data for several of the Great Lakes.
+        Using these data, determine from part (b) the time $T$ necessary to reduce the contamination of each of these lakes
+        to $10\%$ of its original value.
+        \begin{table}[H]
+          \begin{center}
+            \begin{tabular}{ccc}
+              \hline
+              Lake & $V(\text{km}^3\times 10^3)$ & $r(\text{km}^3/\text{year})$ \\ \hline
+              Superior & 12.2 & 65.2 \\
+              Michigan & 4.9 & 158 \\
+              Erie & 0.46 & 175 \\
+              Ontario & 1.6 & 209 \\ \hline
+            \end{tabular}
+            \caption{Volume and Flow Data for the Great Lakes}
+          \end{center}
+          \label{tab:volflow}
+        \end{table}
+        \begin{sol}
+          For Lake Superior,
+          \begin{align*}
+            T&=\frac{\left(12.2\, \text{km}^3 \times 10^3\right) \ln{10}}{65.2\, \text{km}^3/\text{year}} \\
+            &=430.852\; \text{years}.
+          \end{align*}
+
+          For Lake Michigan,
+          \begin{align*}
+            T&=\frac{\left(4.9\, \text{km}^3 \times 10^3\right) \ln{10}}{158\, \text{km}^3/\text{year}} \\
+            &=71.4093\; \text{years}.
+          \end{align*}
+
+          For Lake Erie,
+          \begin{align*}
+            T&=\frac{\left(0.46 \, \text{km}^3 \times 10^3\right) \ln{10}}{175\, \text{km}^3/\text{year}} \\
+            &=6.05251\; \text{years}.
+          \end{align*}
+
+          For Lake Ontario,
+          \begin{align*}
+            T&=\frac{\left(1.6\, \text{km}^3 \times 10^3\right) \ln{10}}{209\, \text{km}^3/\text{year}} \\
+            &=17.6274\; \text{years}.
+          \end{align*}
+        \end{sol}
+    \end{enumerate}
+\end{ex}

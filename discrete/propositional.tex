@@ -255,7 +255,6 @@ Intermediary steps may aid one's understanding, though they are not necessary in
   \caption{A proof of DeMorgan's second law.}
 \end{table}
 
-
 Extending DeMorgan's laws by the association laws for disjunction and conjunction, shown in Table \ref{tab:logequiv}, they become:
 \begin{equation}
  \neg\left(\bigwedge^n_{n=1} p_n\right)=\bigvee^n_{n=1} \neg p_n
@@ -263,9 +262,8 @@ Extending DeMorgan's laws by the association laws for disjunction and conjunctio
 \begin{equation}
  \neg\left(\bigvee^n_{n=1} p_n\right)=\bigwedge^n_{n=1} \neg p_n
 \end{equation}
-Using DeMorgan's Laws, we can negate conjunctions and disjunctions.
-
-They are also useful in computer science, for simplifying boolean expressions.
+Using DeMorgan's Laws, we can \emph{negate conjunctions and disjunctions}.
+In computer science, we use DeMorgan's Laws to simplify boolean expressions.
 
 \begin{ex}
   Negate the following statement:
@@ -273,22 +271,23 @@ They are also useful in computer science, for simplifying boolean expressions.
   \begin{sol}
     Let \(p\) be ``Miguel has a cell phone.''
     Let \(q\) be ``Miguel has a laptop.''
-    \[ \neg(p \land q) \equiv \neg p \lor \neg q \]
-    ``Miguel does not have a cell phone or he does not have a laptop.''
+    The negation of $p \land q$ is
+    \[ \neg p \lor \neg q, \]
+    which means ``Miguel does not have a cell phone or he does not have a laptop.''
   \end{sol}
 \end{ex}
 
 \section{Useful Logical Equivalences}
 
-Since propositions like $p \implies q$ are hard to work with because we have very few
-laws that work directly with them, it is useful to convert them into a form that uses
-other logical operators.
+In a proof or simplification of propositional logic statements, propositions like $p \implies q$
+are difficult for us to work with.
+We have very few laws or equivalences which work directly with them, so we often must convert them into an equivalent form using other operators.
 
-We can do that using the following logical equivalence:
+We can convert $p\implies q$ to a proposition using only the $\neg$ and $\lor$ operators using the logical equivalence
 \begin{equation}
-  p \implies q \equiv \neg p \lor q
+  p \implies q \equiv \neg p \lor q,
 \end{equation}
-which we prove using the following truth table:
+which we will prove using a truth table in Table \ref{tab:conditionalproof}.
 \begin{table}[H]
   \centering
   \boxed{
@@ -301,8 +300,9 @@ which we prove using the following truth table:
     \end{tabular}
   }
   \caption{A proof of \(p \implies q \equiv \neg p \lor q\).}
+  \label{tab:conditionalproof}
 \end{table}
-\begin{table}
+\begin{table}[H]
   \centering
     \begin{tabular}{>\(l<\) r}
       \textbf{Proposition} & \textbf{Name} \\ \hline\noalign{\smallskip}

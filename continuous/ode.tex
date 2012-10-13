@@ -115,19 +115,19 @@ It is easy, however, to check a proper solution.
     \end{align*}
   \end{sol}
 \end{ex}
-\subsection{Parameterizing}
-\begin{ex}
-  Find all solutions for
-  \[ x''=2t.\]
-  \begin{sol}
-    \begin{align*}
-      \int 2t \ud t &= 2 \int t \ud t \\
-      &= t^2 + c_1 \\
-      \int (t+c_1) \ud t &= \frac{t^3}{3}+c_1 t +c_2
-    \end{align*}
-  \end{sol}
-\end{ex}
-\subsection{Initial Value Problems}
+%\subsection{Parameterizing}
+% terrible example
+%\begin{ex}
+%  Find all solutions for
+%  \[ x''=2t.\]
+%  \begin{sol}
+%    \begin{align*}
+%      \int 2t \ud t &= 2 \int t \ud t \\
+%      &= t^2 + c_1 \\
+%      \int (t+c_1) \ud t &= \frac{t^3}{3}+c_1 t +c_2
+%    \end{align*}
+%  \end{sol}
+%\end{ex}
 \begin{ex}
   Solve $x''=2t$ with the initial values $x(1)=1$, $x'(1)=2$.
   \begin{align*}
@@ -171,9 +171,146 @@ where $v$ is the object's velocity, $t$ is the time, $g$ is the acceleration of 
 
 This is a \textbf{first-order linear ordinary differential equation}.
 
+\begin{ex}
+  Let's look at the differential equation
+  \begin{equation}
+    y'+3y=te^{-2t}
+    \label{eq:prule}
+  \end{equation}
+  We solve this using a manipulation of the product rule for derivatives.
+  It states that
+  \begin{equation}
+    \frac{\ud}{\ud t} f(x) g(x)= \frac{\ud f(x)}{\ud t} g(x) + \frac{\ud g(x)}{\ud t} f(x).
+  \end{equation}
+  We can rewrite Equation \eqref{eq:prule} to appear in this form using an \emph{integrating factor}\footnote{Define this.}.
+  \[ \frac{\ud y}{\ud x}= t e^{-2t} \]
+  If we take $y$ to equal $f(x)$ and the coefficient of $y$ in the second term to be $g(x)$, we realize that we must look for a $\mu (t) \ud t$ such that
+  \begin{align*}
+    \frac{\ud \mu}{\ud t} &= g(t) \mu(t) \\
+    \mu (t) &= e^{\int 3 \ud t}\\
+    &=e^{3t}
+  \end{align*}
+  to make the left side of Equation \eqref{eq:prule} satisfy the product rule.
+  Note that we can ignore the arbitrary constant in $\mu (t)$ because it will eventually appear when we integrate both sides of \eqref{eq:prule}.
+
+  Now, we multiply both sides of \eqref{eq:prule} by $\mu (t)$.
+  \begin{align*}
+    y'+3y &= te^{-2t} \\
+    y' e^{3t} +3ye^{3t} &= te^{3t}+e^t \\
+    \intertext{Use the product rule.}
+    \frac{\ud y}{\ud t} \big[e^{3t}y\big] &=  te^{3t}+e^t \\
+    \intertext{Integrate both sides.}
+    e^{3t}y&=\frac{te^{3t}}{3}-\frac{e^{3t}}{9}+e^t+c\\
+    y &=\frac{t}{3}-\frac{1}{9}+e^{-2t}+ce^{-3t}
+  \end{align*}
+\end{ex}
+\begin{ex}
+  \[y' +y = t e^{-t}+1\]
+  \begin{sol}
+    Multiply both sides by the integration factor $\mu (t) = e^t$.
+    \begin{align*}
+      y'e^t +ye^t &= t +e^t \\
+      y e^t &= \frac{t^2}{2}+e^t+c \\
+      y &= \frac{t}{2e}+1+\frac{c}{e^t}
+    \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  \[y' -2y =3e^t\]
+  \begin{sol}
+    Multiply both sides by the integration factor $\mu(t) = e^{-2t}$.
+    \begin{align*}
+      y'e^{-2t} -2ye^{-2t} &= 3e^{-t} \\
+      ye^{-2t} &= -3 e^{-t} +c \\
+      y &= -3 e^t +ce^{2t}
+    \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  \[ y' e^{t^2}+2tye^{t^2} = 2t \]
+   \begin{sol}
+    Multiply both sides by the integration factor $\mu(t) = e^{t^2}$.
+    \begin{align*}
+      y'e^{t^2}+2tye^{t^2} &= 2t \\
+      y e^{t^2} &= t^2 +c \\
+      y &= t^2 e^{-t^2}+ce^{-t^2}
+    \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  \[y'e^{t/2}+\frac{ye^{t/2}}{2} = \frac{t}{2e^{t/2}} + \frac{e^{t/2}}{2} \]
+  \begin{sol}
+   Multiply both sides by the integration factor $\mu(t) = e^{t/2}$.
+   \begin{align*}
+     y'e^{t/2}+\frac{ye^{t/2}}{2} &= \frac{t}{2e^{t/2}} + \frac{e^{t/2}}{2} \\
+     y e^{t/2} &= \int \left[ \frac{t}{2e^{t/2}} + \frac{e^{t/2}}{2} \right] \ud t \\
+     \intertext{The indefinite integral $\int t e^{-t/2} \ud t$ is $-2t e^{-t/2}-4e^{-t/2}+c_1$, and the indefinite integral $\int e^{t/2} \ud t$ is $2e^{t/2}+c_2$.}
+     ye^{t/2} &= \frac{2e^{t/2}-4e^{-t/2}-2te^{-t/2}}{2}+c \\
+     ye^{t/2} &= e^{t/2} -2 e^{-t/2}-t e^{-t/2}+c \\
+     y &= 1 -2e^{-t} -t e^{-t} + c e^{-t/2}
+   \end{align*}
+  \end{sol}
+\end{ex}
+\begin{ex}
+  \[y' + y = 5 \sin {2t}\]
+  \begin{sol}
+   Multiply both sides by the integration factor $\mu (t) = e^t$.
+   \begin{align*}
+     y' e^t + ye^t &= 5 e^t \sin{2t} \\
+     ye^t &= 5 \int e^t \sin{2t} \ud t \\
+   \end{align*}
+   Integrate $\int e^t \sin{2t} \ud t$. Use integration by parts with $u =\sin{2t}$ and $\ud v = e^t \ud t$.
+   \begin{align*}
+     \int e^t \sin{2t} \ud t &= e^t \sin{2t}-2 \int e^t \cos{2t} \ud t \\
+     \intertext{Integrate by parts again, this time with $u = \cos{2t}$ and $\ud v=e^t \ud t$.}
+     \int e^t \sin{2t} \ud t &= e^t \sin{2t}-2 \bigg[ e^t \cos{2t} + 2 \int e^t \sin{2t} \ud t \bigg] \\
+     \int e^t \sin{2t} \ud t &= e^t \sin{2t}-2 e^t \cos{2t} -4 \int e^t \sin{2t} \ud t \\
+     5\int e^t \sin{2t} \ud t &= e^t \sin{2t}-2 e^t \cos{2t}
+   \end{align*}
+   Substitute this into our differential equation.
+   \begin{align*}
+     ye^t &= 5 \int e^t \sin{2t} \ud t \\
+     ye^t &= e^t \sin{2t} -2 e^t \cos^{2t} +c \\
+     y &= \sin{2t}-2\cos{2t}+\frac{c}{e^t}
+   \end{align*}
+  \end{sol}
+\end{ex}
+
+These examples were all \textbf{first order linear equations}\index{first-order linear differential equation} of the standard form
+\begin{equation}
+  \frac{\ud y}{\ud t}+p(t)y=g(t),
+  \label{eq:1ordlineq}
+\end{equation}
+where $p$ and $g$ are given functions of the independent variable $t$.\cite[p. 32]{boycede}
+
+The \textbf{general first order equation}\index{general first-order differential equation} is
+\begin{equation}
+  \frac{\ud y}{\ud t}=ay+b.
+\end{equation}
+\cite[p. 42]{boycede}
+
+If we can rewrite a first order equation in the form
+\begin{equation}
+  M(x)+N(y)\frac{\ud y}{\ud x}=0
+  \label{eq:separableode}
+\end{equation}
+then it is \textbf{separable}\index{separable differential equation} because we can rewrite it
+\begin{equation}
+  M(x)\ud x+ N(y) \ud y=0
+\end{equation}
+then place the terms involving each variable on opposite sides of the equation.
+
+If the right side of the equation $\ud y/\ud x=f(x,y)$ can be expressed as a function of the ratio $y/x$ only, then the equation is said to be \textbf{homogenous}\index{homogeneous differential equation}.
+To solve these, introduce a new dependent variable $v$ such that $v=y/x$ or $y=xv(x)$.
+Express $\ud y/\ud x$ in terms of $x$, $v$, and $\ud v/\ud x$.
+
+An \textbf{autonomous} differential equation\index{autonomous differential equation} has the form
+\begin{equation}
+  \frac{\ud y}{\ud t}=f(y).
+  \label{eq:autode}
+\end{equation}
 
 \begin{ex}
-  \item[19.]
     Consider a lake of constant volume $V$ containing at time $t$ an amount $Q(t)$ of pollutant,
     evenly distributed throughout the lake with a concentration of $c(t)$, where $c(t)=Q(t)/V$.
     Assume that water containing a concentration $k$ of pollutant enters the lake at rate $r$,
@@ -227,10 +364,10 @@ This is a \textbf{first-order linear ordinary differential equation}.
           \end{equation}
           Integrating the right side of \eref{qint} and solving for $Q(t)$, we obtain the general solution to \eref{dqdt}, that is
           \begin{equation}
-            Q(t) =  kV+\frac{PV}{r}+C e^{-rt/V},
+            Q(t) =  kV+\frac{PV}{r}+a e^{-rt/V},
             \label{qtsol}
           \end{equation}
-          where $C$ is an arbitrary constant.
+          where $a$ is an arbitrary constant.
 
           We can now find an expression for $c(t)$, which is given by
           \begin{equation}
@@ -239,11 +376,11 @@ This is a \textbf{first-order linear ordinary differential equation}.
           \end{equation}
           Substituting \eref{qtsol} into \eref{ct}, we find that
           \begin{equation}
-            c(t) = k + \frac{P}{r}+\frac{C e^{-rt/V}}{V}.
+            c(t) = k + \frac{P}{r}+\frac{a e^{-rt/V}}{V}.
             \label{ct2}
           \end{equation}
 
-          Using the initial value $c(0)=c_0$ and solving for $C$, we obtain
+          Using the initial value $c(0)=c_0$ and solving for $a$, we obtain
           \begin{equation}
             C=c_0 -\frac{P}{r}-k
             \label{csol}
@@ -345,4 +482,16 @@ This is a \textbf{first-order linear ordinary differential equation}.
           \end{align*}
         \end{sol}
     \end{enumerate}
+\end{ex}
+\begin{ex}
+  Solve \[\frac{\ud y}{\ud t}=3(1-\frac{y}{5})y. \]
+  \begin{sol}\footnote{Honestly, I have no idea if this is correct or not. I haven't checked it at all.}
+    \begin{align*}
+      \frac{\frac{\ud y}{\ud t}}{y(1-y/5)}&=3 \\
+      \frac{\ud y}{\ud t}\left[\frac{1}{y}+\frac{1}{5-y}\right]&=3 \\
+      \log y - \log{(5-y)}&=3t+c_1 \\
+      y^2&=e^{3x}+c-5 \\
+      y= \sqrt{e^{3x}+c-5}
+    \end{align*}
+  \end{sol}
 \end{ex}

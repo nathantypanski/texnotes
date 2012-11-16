@@ -98,56 +98,55 @@
 \BOOKMARK [1][-]{section.12.5}{Trigonometric Integrals}{chapter.12}% 98
 \BOOKMARK [1][-]{section.12.6}{Trigonometric Substitution}{chapter.12}% 99
 \BOOKMARK [1][-]{section.12.7}{Partial Fraction Decomposition}{chapter.12}% 100
-\BOOKMARK [2][-]{subsection.12.7.1}{Determining A,B,C, \203}{section.12.7}% 101
-\BOOKMARK [2][-]{subsection.12.7.2}{Factoring}{section.12.7}% 102
-\BOOKMARK [2][-]{subsection.12.7.3}{Examples}{section.12.7}% 103
-\BOOKMARK [1][-]{section.12.8}{Simpson's Rule}{chapter.12}% 104
-\BOOKMARK [1][-]{section.12.9}{Improper Integrals}{chapter.12}% 105
-\BOOKMARK [2][-]{subsection.12.9.1}{Infinite Range}{section.12.9}% 106
-\BOOKMARK [2][-]{subsection.12.9.2}{Infinite Domain}{section.12.9}% 107
-\BOOKMARK [1][-]{section.12.10}{Test Review}{chapter.12}% 108
-\BOOKMARK [0][-]{chapter.13}{Sequences}{part.2}% 109
-\BOOKMARK [1][-]{section.13.1}{Representing a Sequence}{chapter.13}% 110
-\BOOKMARK [2][-]{subsection.13.1.1}{Bounded Sequences}{section.13.1}% 111
-\BOOKMARK [2][-]{subsection.13.1.2}{Nondecreasing and Nonincreasing Sequences}{section.13.1}% 112
-\BOOKMARK [0][-]{chapter.14}{Infinite Series}{part.2}% 113
-\BOOKMARK [1][-]{section.14.1}{Limit Test}{chapter.14}% 114
-\BOOKMARK [1][-]{section.14.2}{Harmonic Series}{chapter.14}% 115
-\BOOKMARK [1][-]{section.14.3}{Geometric Series}{chapter.14}% 116
-\BOOKMARK [1][-]{section.14.4}{The Comparison Test}{chapter.14}% 117
-\BOOKMARK [1][-]{section.14.5}{The Integral Test}{chapter.14}% 118
-\BOOKMARK [1][-]{section.14.6}{p Series}{chapter.14}% 119
-\BOOKMARK [1][-]{section.14.7}{Series Comparison Test}{chapter.14}% 120
-\BOOKMARK [2][-]{subsection.14.7.1}{Converging Series}{section.14.7}% 121
-\BOOKMARK [2][-]{subsection.14.7.2}{Diverging Series}{section.14.7}% 122
-\BOOKMARK [1][-]{section.14.8}{Root Test}{chapter.14}% 123
-\BOOKMARK [1][-]{section.14.9}{Ratio Test}{chapter.14}% 124
-\BOOKMARK [2][-]{subsection.14.9.1}{Examples}{section.14.9}% 125
-\BOOKMARK [1][-]{section.14.10}{Alternating Series Test}{chapter.14}% 126
-\BOOKMARK [1][-]{section.14.11}{Power Series}{chapter.14}% 127
-\BOOKMARK [1][-]{section.14.12}{Taylor and Maclauren Series}{chapter.14}% 128
-\BOOKMARK [0][-]{chapter.15}{Ordinary Differential Equations}{part.2}% 129
-\BOOKMARK [-1][-]{part.3}{III Physics}{}% 130
-\BOOKMARK [0][-]{chapter.16}{Newton's Laws of Motion}{part.3}% 131
-\BOOKMARK [0][-]{chapter.17}{Circuits}{part.3}% 132
-\BOOKMARK [1][-]{section.17.1}{Capcacitors}{chapter.17}% 133
-\BOOKMARK [2][-]{subsection.17.1.1}{Equivalent Capacitors in Parallel}{section.17.1}% 134
-\BOOKMARK [2][-]{subsection.17.1.2}{Equivalent Capacitors in Series}{section.17.1}% 135
-\BOOKMARK [-1][-]{part.4}{IV Appendix}{}% 136
-\BOOKMARK [0][-]{chapter.18}{Important Concepts}{part.4}% 137
-\BOOKMARK [1][-]{section.18.1}{Quadratic Formula}{chapter.18}% 138
-\BOOKMARK [1][-]{section.18.2}{Point-slope Formula}{chapter.18}% 139
-\BOOKMARK [1][-]{section.18.3}{Conjugate}{chapter.18}% 140
-\BOOKMARK [0][-]{chapter.19}{Proofs}{part.4}% 141
-\BOOKMARK [1][-]{section.19.1}{Power Rule for Derivatives}{chapter.19}% 142
-\BOOKMARK [1][-]{section.19.2}{Sandwich Theorem for Sequences}{chapter.19}% 143
-\BOOKMARK [1][-]{section.19.3}{L'Hospital's Rule}{chapter.19}% 144
-\BOOKMARK [0][-]{chapter.20}{Logic Circuits}{part.4}% 145
-\BOOKMARK [0][-]{chapter.21}{The Fibonacci Sequence and the Golden Ratio}{part.4}% 146
-\BOOKMARK [1][-]{section.21.1}{The Fibonacci Sequence}{chapter.21}% 147
-\BOOKMARK [2][-]{subsection.21.1.1}{History}{section.21.1}% 148
-\BOOKMARK [2][-]{subsection.21.1.2}{Mathematics}{section.21.1}% 149
-\BOOKMARK [1][-]{section.21.2}{The Golden Ratio}{chapter.21}% 150
-\BOOKMARK [1][-]{section.21.3}{Culture}{chapter.21}% 151
-\BOOKMARK [2][-]{subsection.21.3.1}{Lateralus}{section.21.3}% 152
-\BOOKMARK [0][-]{chapter.22}{Algorithms}{part.4}% 153
+\BOOKMARK [2][-]{subsection.12.7.1}{Factoring}{section.12.7}% 101
+\BOOKMARK [2][-]{subsection.12.7.2}{Examples}{section.12.7}% 102
+\BOOKMARK [1][-]{section.12.8}{Simpson's Rule}{chapter.12}% 103
+\BOOKMARK [1][-]{section.12.9}{Improper Integrals}{chapter.12}% 104
+\BOOKMARK [2][-]{subsection.12.9.1}{Infinite Range}{section.12.9}% 105
+\BOOKMARK [2][-]{subsection.12.9.2}{Infinite Domain}{section.12.9}% 106
+\BOOKMARK [1][-]{section.12.10}{Test Review}{chapter.12}% 107
+\BOOKMARK [0][-]{chapter.13}{Sequences}{part.2}% 108
+\BOOKMARK [1][-]{section.13.1}{Representing a Sequence}{chapter.13}% 109
+\BOOKMARK [2][-]{subsection.13.1.1}{Bounded Sequences}{section.13.1}% 110
+\BOOKMARK [2][-]{subsection.13.1.2}{Nondecreasing and Nonincreasing Sequences}{section.13.1}% 111
+\BOOKMARK [0][-]{chapter.14}{Infinite Series}{part.2}% 112
+\BOOKMARK [1][-]{section.14.1}{Limit Test}{chapter.14}% 113
+\BOOKMARK [1][-]{section.14.2}{Harmonic Series}{chapter.14}% 114
+\BOOKMARK [1][-]{section.14.3}{Geometric Series}{chapter.14}% 115
+\BOOKMARK [1][-]{section.14.4}{The Comparison Test}{chapter.14}% 116
+\BOOKMARK [1][-]{section.14.5}{The Integral Test}{chapter.14}% 117
+\BOOKMARK [1][-]{section.14.6}{p Series}{chapter.14}% 118
+\BOOKMARK [1][-]{section.14.7}{Series Comparison Test}{chapter.14}% 119
+\BOOKMARK [2][-]{subsection.14.7.1}{Converging Series}{section.14.7}% 120
+\BOOKMARK [2][-]{subsection.14.7.2}{Diverging Series}{section.14.7}% 121
+\BOOKMARK [1][-]{section.14.8}{Root Test}{chapter.14}% 122
+\BOOKMARK [1][-]{section.14.9}{Ratio Test}{chapter.14}% 123
+\BOOKMARK [2][-]{subsection.14.9.1}{Examples}{section.14.9}% 124
+\BOOKMARK [1][-]{section.14.10}{Alternating Series Test}{chapter.14}% 125
+\BOOKMARK [1][-]{section.14.11}{Power Series}{chapter.14}% 126
+\BOOKMARK [1][-]{section.14.12}{Taylor and Maclauren Series}{chapter.14}% 127
+\BOOKMARK [0][-]{chapter.15}{Ordinary Differential Equations}{part.2}% 128
+\BOOKMARK [-1][-]{part.3}{III Physics}{}% 129
+\BOOKMARK [0][-]{chapter.16}{Newton's Laws of Motion}{part.3}% 130
+\BOOKMARK [0][-]{chapter.17}{Circuits}{part.3}% 131
+\BOOKMARK [1][-]{section.17.1}{Capcacitors}{chapter.17}% 132
+\BOOKMARK [2][-]{subsection.17.1.1}{Equivalent Capacitors in Parallel}{section.17.1}% 133
+\BOOKMARK [2][-]{subsection.17.1.2}{Equivalent Capacitors in Series}{section.17.1}% 134
+\BOOKMARK [-1][-]{part.4}{IV Appendix}{}% 135
+\BOOKMARK [0][-]{chapter.18}{Important Concepts}{part.4}% 136
+\BOOKMARK [1][-]{section.18.1}{Quadratic Formula}{chapter.18}% 137
+\BOOKMARK [1][-]{section.18.2}{Point-slope Formula}{chapter.18}% 138
+\BOOKMARK [1][-]{section.18.3}{Conjugate}{chapter.18}% 139
+\BOOKMARK [0][-]{chapter.19}{Proofs}{part.4}% 140
+\BOOKMARK [1][-]{section.19.1}{Power Rule for Derivatives}{chapter.19}% 141
+\BOOKMARK [1][-]{section.19.2}{Sandwich Theorem for Sequences}{chapter.19}% 142
+\BOOKMARK [1][-]{section.19.3}{L'Hospital's Rule}{chapter.19}% 143
+\BOOKMARK [0][-]{chapter.20}{Logic Circuits}{part.4}% 144
+\BOOKMARK [0][-]{chapter.21}{The Fibonacci Sequence and the Golden Ratio}{part.4}% 145
+\BOOKMARK [1][-]{section.21.1}{The Fibonacci Sequence}{chapter.21}% 146
+\BOOKMARK [2][-]{subsection.21.1.1}{History}{section.21.1}% 147
+\BOOKMARK [2][-]{subsection.21.1.2}{Mathematics}{section.21.1}% 148
+\BOOKMARK [1][-]{section.21.2}{The Golden Ratio}{chapter.21}% 149
+\BOOKMARK [1][-]{section.21.3}{Culture}{chapter.21}% 150
+\BOOKMARK [2][-]{subsection.21.3.1}{Lateralus}{section.21.3}% 151
+\BOOKMARK [0][-]{chapter.22}{Algorithms}{part.4}% 152

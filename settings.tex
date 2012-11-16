@@ -54,7 +54,7 @@
 
 
 % number equations by section
-\numberwithin{equation}{section}
+% \numberwithin{equation}{section}
 \numberwithin{figure}{chapter}
 \numberwithin{table}{chapter}
 \numberwithin{subsection}{section}
@@ -90,6 +90,14 @@
 %\restylefloat{figure}
 
 %%%%%%%%%%%%%%%%%%%% ABBREVIATIONS %%%%%%%%%%%%%%%%%%%%
+
+%my abbreviations
+
+\newcommand{\ec}{\mathrm e}
+\newcommand{\iu}{\mathrm i}
+
+% someone else's abbreviations, from uknown source
+
 \newcommand{\pha}{{}_\bullet}
 \newcommand{\phb}{{}_\blacktriangle}
 \newcommand{\phc}{\blacktriangle}
@@ -111,7 +119,6 @@
 \newcommand{\bra}[1]{\left[#1\right]}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
-
 \newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
 \newcommand{\pmat}[1]{\pa{\mat{#1}}}
 \newcommand{\bmat}[1]{\bra{\mat{#1}}}
@@ -195,7 +202,7 @@
 \DeclareMathOperator{\=H}{\stackrel{\text{H}}{=}}
 \newcommand{\ddx}{\frac{\ud}{\ud x}}
 \newcommand{\szinfty}{\sum_{n=0}^{\infty}}
-\newcommand{\eref}[1]{Eq$\,$\ref{#1}}
+\newcommand{\eref}[1]{Eq.$\,$\eqref{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % theorems                                                               %

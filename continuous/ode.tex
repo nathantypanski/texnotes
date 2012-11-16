@@ -1,6 +1,6 @@
 \chapter{Ordinary Differential Equations}
 % this section comes from MIT OCW ODE 18.035c Fall 2011 ed.
-We will start by talking about \emph{first-order ordinary differential equations}\footnote{The following text comes from MIT OpenCourseWare notes on ODE 18.035c, Fall 2011 Edition},
+We will start by talking about {\em first-order ordinary differential equations}\footnote{The following text comes from MIT OpenCourseWare notes on ODE 18.035c, Fall 2011 Edition},
 that is, ordinary differential equations involving the first derivative.
 They appear of the form:
 \begin{equation}
@@ -81,7 +81,7 @@ where $c_1$ and $c_2$ are arbitrary constants.
 Equation \eqref{eq:param1} represents a $1$-parameter family of functions.
 \eqref{eq:param2} represents a $2$-parameter family of functions.
 
-We will write $\ud y / \ud x$, $y'$, or $D_y$ to mean \emph{the derivative of $y$ with respect to $x$.}
+We will write $\ud y / \ud x$, $y'$, or $D_y$ to mean {\em the derivative of $y$ with respect to $x$.}
   Only the first way of writing this actually specifies the independent variable, which is $x$.
 For second derivatives, we would write
 \[ \frac{\ud ^2 y}{\ud x^2}= y''=D^2 y. \]
@@ -132,10 +132,16 @@ It is easy, however, to check a proper solution.
   Solve $x''=2t$ with the initial values $x(1)=1$, $x'(1)=2$.
   \begin{align*}
     x'&= t^2 +c_1 \\
+    x&= \frac{t^3}{3} +xc_1+c_2 \\
     x'(t) &= t^2 + c_1 \\
     x'(1) &=2 \\
     2&= 1+c_1 \\
-    c_1 &=1
+    c_1 &=1 \\
+    x'(t) &= t^2 + 1 \\
+    x(t) &= \frac{t^3}{3}+x+c_2 \\
+    1 &= \frac{1}{3}+1=c_2 \\
+    c_2 &= -\frac{1}{3} \\
+    x(t) &= \frac{t^3}{3}+x-\frac{1}{3}
   \end{align*}
   \begin{align*}
     1&=\frac{1}{3}+1+c_2 \\
@@ -158,12 +164,12 @@ Here's an example:
 
 Basic physics tells us that $\sum \vec F = m\vec a$,
 where $m$ is the object's mass and $\vec{a}$ is the object's acceleration.
-For our purposes, we will define $\vec F_g$ to be in the \emph{direction of increasing} $x$.
+For our purposes, we will define $\vec F_g$ to be in the \emph{direction of increasing\/} $x$.
 Based on these assumptions, we can state that
 \[
   ma=\vec{F_g}+\vec{F_r}
   \]
-Now, acceleration is the same as \emph{change in velocity,} so this is equivalent to
+Now, acceleration is the same as \emph{change in velocity}, so this is equivalent to
 \[
   m\frac{\ud v}{\ud t}=mg - \gamma v
   \]
@@ -484,14 +490,42 @@ An \textbf{autonomous} differential equation\index{autonomous differential equat
     \end{enumerate}
 \end{ex}
 \begin{ex}
-  Solve \[\frac{\ud y}{\ud t}=3(1-\frac{y}{5})y. \]
-  \begin{sol}\footnote{Honestly, I have no idea if this is correct or not. I haven't checked it at all.}
+  Solve \(\frac{\ud y}{\ud t}=3(1-\frac{y}{5})y \)
+  for $y$.
+  \begin{sol}
+    Rewrite this as
+    \[ \frac{\frac{\ud y}{\ud t}}{5(5-y)y}, \]
+    and integrate
+    \[ 5 \int \frac{\ud y}{(5-y)y}=\int 3 \ud t. \]
+    The first integral,
+    \begin{equation}
+      \int \frac{\ud y}{(5-y)y},
+      \label{eq:ex1int1}
+    \end{equation}
+      can be evaluated using partial fraction decomposition.
     \begin{align*}
-      \frac{\frac{\ud y}{\ud t}}{y(1-y/5)}&=3 \\
-      \frac{\ud y}{\ud t}\left[\frac{1}{y}+\frac{1}{5-y}\right]&=3 \\
-      \log y - \log{(5-y)}&=3t+c_1 \\
-      y^2&=e^{3x}+c-5 \\
-      y= \sqrt{e^{3x}+c-5}
+      \frac{1}{(5-y)y}&=\frac{A}{5-y}+\frac{B}{y} \\
+      1&=Ay+B(5-y) \\
+      1&=Ay+5B-By \\
+      \intertext{We solve for $A$ and $B$.}
+        A-B&=0 \\
+      \intertext{and}
+      5B&=1.
+    \end{align*}
+    So $A=1/5$ and $B=1/5$, and our integral becomes
+    \[ \int \left[ \frac{1}{5(5-y)}+\frac{1}{5y} \right] \ud y, \]
+    which is
+    \[ -\frac{1}{5} \ln {\abs{5-y}} + \frac{1}{5} \ln {\abs{y}}. \]
+    Subsituting this into \eref{eq:ex1int1} and assuming positive logarithms, we get
+    \[ \ln{y}-\ln{(5-y)}=3t+c. \]
+    Now we solve for $y$.
+    \begin{align*}
+      \frac{y}{5-y}&=\ec^{3t+c} \\
+      y &= (5-y) \ec^{3t+c} \\
+      y&= 5\ec^{3t+c}-y\ec^{3t+c} \\
+      y+y\ec^{3t+c}&=5\ec^{3t+c} \\
+      \intertext{Factor and divide, making our answer} \\
+      y&=\frac{5 \ec^{3t+c}}{1+\ec^{3t+c}}. \\
     \end{align*}
   \end{sol}
 \end{ex}

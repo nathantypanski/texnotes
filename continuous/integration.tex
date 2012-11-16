@@ -996,44 +996,6 @@ For integrands with $ \sqrt{x^2+a^2}$, let $x = a \tan \theta$ and $\ud x = \sec
 
 
 \section{Partial Fraction Decomposition}
-% Unoriginal work. REWRITE THIS!
-%
-% A rational function $P(x)/Q(x)$ can be rewritten using what is known as partial fraction decomposition. This procedure often allows integration to be performed on each term separately by inspection. For each factor of $Q(x)$ the form $(a\,x+b)^m$:
-%
-% \begin{equation}
-%   \frac{A_1}{a\,x+b}+\frac{A_2}{(a\,x+b)^2}+\ldots+\frac{A_m}{(a\,x+b)^m}
-% \end{equation}
-%
-% For each factor of the form $(a\,x^2+b\,x+c)^m$ introduce terms:
-%
-% \begin{equation}
-%   \frac{A_1\,x+B_1}{a\,x^2+b\,x+c}+\frac{A_2\,x+B_2}{(a\,x^2+b\,x+c)^2}+\ldots+\frac{A_m\,x+B_m}{(a\,x^2+b\,x+c)^m}
-% \end{equation}
-%
-% Then write:
-%
-% \begin{equation}
-%   \frac{P(x)}{Q(x)}=\frac{A_1}{a\,x+b}+\ldots+\frac{A_2\,x+B_2}{(a\,x^2+b\,x+c)^2}+\ldots
-% \end{equation}
-%
-% And solve for $A_i$s and $B_i$s.
-%
-%
-% \subsection{Repeated Linear/Quadratic Den. Factors}
-%
-% \begin{align*}
-%   \frac {\cdots}{\underbrace{(x^2+3)^2}_\text{quadratic} \, \underbrace{(x+1)}_\text{linear} \, \underbrace{(x^2+x+4)}_\text{quadratic}}
-%   &=\frac {Ax+B}{(x^2+3)^2} + \frac{Cx+D}{(x^2+3)^1} + \frac {E}{x+1} + \frac {Fx+G}{x^2+x+4}
-% \end{align*}
-%
-% \begin{align*}
-%   \frac {\cdots}{(x^2-2x+1)(x^2-4x+4)}
-%   &=\frac {\cdots}{(x-1)^2(x-2)^2} \\
-%   &=\frac{A}{(x-1)^2}+\frac{B}{x-1}+\frac{C}{(x-2)^2}+\frac{D}{x-2}
-% \end{align*}
-\subsection{Determining A,B,C, \dots}
-
-% This is just BAD. Really bad. Jesus, fix this.
 
 Multiply the denominator by both sides of the new equation:
 \[ {denominator}*\left[\frac{x^3+2x^2+x+8}{(x^2+4)^2}\right]=\left[\frac{Ax+B}{(x^2+4)^2}+\frac{Cx+D}{(x^2+4)^1}\right]*{denominator} \]
@@ -1379,21 +1341,9 @@ Note: you cannot factor a sum of perfect squares.
 \end{defn}
 \begin{figure}[H]
   \begin{center}
-    \begin{tikzpicture}
-      \begin{axis}[
-        ylabel={$\frac{1}{\sqrt{x}}$},
-        axis x line=bottom,
-        axis y line=center,
-        tick align=outside,
-        axis y discontinuity=crunch,
-        xtickmax=10,
-        ytickmin=10,
-        ]
-        \addplot {1/sqrt(x)};
-      \end{axis}
-    \end{tikzpicture}
+    \includegraphics[width=3in]{continuous/integration/1sqrtx}
   \end{center}
-  \caption{An example of a function that can produce improper integrals.}
+  \caption{$\frac{1}{\sqrt{x}}$ is an example of a function that can produce improper integrals.}
 \end{figure}
 For most integrals of this type, we can usually rewrite the integral in terms of something we know how to evaluate.
 For example, in

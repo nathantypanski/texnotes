@@ -5,14 +5,14 @@ A \textbf{set} is an unordered collection of objects, called its \emph{elements}
 We write $a \in A$ to state that $a$ is an element of the set $A$.
 
 The most basic way to define a set is to write out all of its elements
-\[ A : : = \{ n, z, k, d \} \]
+\[ A : : = \set{ n, z, k, d } \]
 or to write out a few of them, creating a pattern which is obvious
-\[ B : : = \{ 1, 2, 3, 4, \ldots 999 \} \]
+\[ B : : = \set{ 1, 2, 3, 4, \ldots 999 } \]
 
 However, in mathematics, we often use \textbf{set builder notation}\index{set builder notation}.
 This associates all elements of a set with a certain propositional function, which is true for all elements of the set.
 We construct sets using this method as follows:
-\[ S : : = \big\{ x\in\mathbb R \big| P(x)\big\} \]
+\[ S : : = \set{ x\in\mathbb R \big| P(x)} \]
 This constructs a set $S$ which contains all real numbers $x$ for which $P(x)$ is true.
 
 Some important sets in mathematics are listed in Table \ref{tab:sets}.
@@ -43,7 +43,7 @@ These are the questions that are answered in this section.
 
 Two sets are \textbf{equal}\index{equality of sets} iff\footnote{``If and only if,'' see Section \ref{sec:propintro}.} they have the same elements.
 Therefore, if $A$ and $B$ are sets, then they are equal iff
-\[ \forall (x \in A \iff x \in B). \]
+\[ \forall \big(x \in A \iff x \in B\big). \]
 In English, two sets $A$ and $B$ are equal if and only if every element in a implies it also exists in B, and vice versa.
 We then write $A=B$ to show that they are equal sets.
 \begin{figure}[H]

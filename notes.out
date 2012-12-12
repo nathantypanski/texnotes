@@ -78,7 +78,7 @@
 \BOOKMARK [1][-]{section.10.3}{Notation Used with Derivatives}{chapter.10}% 78
 \BOOKMARK [1][-]{section.10.4}{Tangent Lines}{chapter.10}% 79
 \BOOKMARK [2][-]{subsection.10.4.1}{Derivative Rules}{section.10.4}% 80
-\BOOKMARK [3][-]{section*.3}{Trigonometric Derivative Rules}{subsection.10.4.1}% 81
+\BOOKMARK [3][-]{section*.54}{Trigonometric Derivative Rules}{subsection.10.4.1}% 81
 \BOOKMARK [2][-]{subsection.10.4.2}{Differentiability}{section.10.4}% 82
 \BOOKMARK [2][-]{subsection.10.4.3}{Linearization of Functions}{section.10.4}% 83
 \BOOKMARK [2][-]{subsection.10.4.4}{Graphing Functions}{section.10.4}% 84
@@ -126,27 +126,28 @@
 \BOOKMARK [1][-]{section.14.11}{Power Series}{chapter.14}% 126
 \BOOKMARK [1][-]{section.14.12}{Taylor and Maclauren Series}{chapter.14}% 127
 \BOOKMARK [0][-]{chapter.15}{Ordinary Differential Equations}{part.2}% 128
-\BOOKMARK [-1][-]{part.3}{III Physics}{}% 129
-\BOOKMARK [0][-]{chapter.16}{Newton's Laws of Motion}{part.3}% 130
-\BOOKMARK [0][-]{chapter.17}{Circuits}{part.3}% 131
-\BOOKMARK [1][-]{section.17.1}{Capcacitors}{chapter.17}% 132
-\BOOKMARK [2][-]{subsection.17.1.1}{Equivalent Capacitors in Parallel}{section.17.1}% 133
-\BOOKMARK [2][-]{subsection.17.1.2}{Equivalent Capacitors in Series}{section.17.1}% 134
-\BOOKMARK [-1][-]{part.4}{IV Appendix}{}% 135
-\BOOKMARK [0][-]{chapter.18}{Important Concepts}{part.4}% 136
-\BOOKMARK [1][-]{section.18.1}{Quadratic Formula}{chapter.18}% 137
-\BOOKMARK [1][-]{section.18.2}{Point-slope Formula}{chapter.18}% 138
-\BOOKMARK [1][-]{section.18.3}{Conjugate}{chapter.18}% 139
-\BOOKMARK [0][-]{chapter.19}{Proofs}{part.4}% 140
-\BOOKMARK [1][-]{section.19.1}{Power Rule for Derivatives}{chapter.19}% 141
-\BOOKMARK [1][-]{section.19.2}{Sandwich Theorem for Sequences}{chapter.19}% 142
-\BOOKMARK [1][-]{section.19.3}{L'Hospital's Rule}{chapter.19}% 143
-\BOOKMARK [0][-]{chapter.20}{Logic Circuits}{part.4}% 144
-\BOOKMARK [0][-]{chapter.21}{The Fibonacci Sequence and the Golden Ratio}{part.4}% 145
-\BOOKMARK [1][-]{section.21.1}{The Fibonacci Sequence}{chapter.21}% 146
-\BOOKMARK [2][-]{subsection.21.1.1}{History}{section.21.1}% 147
-\BOOKMARK [2][-]{subsection.21.1.2}{Mathematics}{section.21.1}% 148
-\BOOKMARK [1][-]{section.21.2}{The Golden Ratio}{chapter.21}% 149
-\BOOKMARK [1][-]{section.21.3}{Culture}{chapter.21}% 150
-\BOOKMARK [2][-]{subsection.21.3.1}{Lateralus}{section.21.3}% 151
-\BOOKMARK [0][-]{chapter.22}{Algorithms}{part.4}% 152
+\BOOKMARK [1][-]{section.15.1}{Laplace Transform}{chapter.15}% 129
+\BOOKMARK [-1][-]{part.3}{III Physics}{}% 130
+\BOOKMARK [0][-]{chapter.16}{Newton's Laws of Motion}{part.3}% 131
+\BOOKMARK [0][-]{chapter.17}{Circuits}{part.3}% 132
+\BOOKMARK [1][-]{section.17.1}{Capcacitors}{chapter.17}% 133
+\BOOKMARK [2][-]{subsection.17.1.1}{Equivalent Capacitors in Parallel}{section.17.1}% 134
+\BOOKMARK [2][-]{subsection.17.1.2}{Equivalent Capacitors in Series}{section.17.1}% 135
+\BOOKMARK [-1][-]{part.4}{IV Appendix}{}% 136
+\BOOKMARK [0][-]{chapter.18}{Important Concepts}{part.4}% 137
+\BOOKMARK [1][-]{section.18.1}{Quadratic Formula}{chapter.18}% 138
+\BOOKMARK [1][-]{section.18.2}{Point-slope Formula}{chapter.18}% 139
+\BOOKMARK [1][-]{section.18.3}{Conjugate}{chapter.18}% 140
+\BOOKMARK [0][-]{chapter.19}{Proofs}{part.4}% 141
+\BOOKMARK [1][-]{section.19.1}{Power Rule for Derivatives}{chapter.19}% 142
+\BOOKMARK [1][-]{section.19.2}{Sandwich Theorem for Sequences}{chapter.19}% 143
+\BOOKMARK [1][-]{section.19.3}{L'Hospital's Rule}{chapter.19}% 144
+\BOOKMARK [0][-]{chapter.20}{Logic Circuits}{part.4}% 145
+\BOOKMARK [0][-]{chapter.21}{The Fibonacci Sequence and the Golden Ratio}{part.4}% 146
+\BOOKMARK [1][-]{section.21.1}{The Fibonacci Sequence}{chapter.21}% 147
+\BOOKMARK [2][-]{subsection.21.1.1}{History}{section.21.1}% 148
+\BOOKMARK [2][-]{subsection.21.1.2}{Mathematics}{section.21.1}% 149
+\BOOKMARK [1][-]{section.21.2}{The Golden Ratio}{chapter.21}% 150
+\BOOKMARK [1][-]{section.21.3}{Culture}{chapter.21}% 151
+\BOOKMARK [2][-]{subsection.21.3.1}{Lateralus}{section.21.3}% 152
+\BOOKMARK [0][-]{chapter.22}{Algorithms}{part.4}% 153

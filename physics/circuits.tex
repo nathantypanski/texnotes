@@ -82,9 +82,8 @@ negative terminal of the battery. \emph{Ergo}, they have the same voltages.
   \Delta V_1 = \Delta V_2 = \Delta V
   \label{eq:potentialcapacitor}
 \end{equation}
-\begin{figure}[h]
-  \begin{center}
-    \subfigure[The voltages on the capacitors are the same.]{
+    \begin{figure}[h]
+    \begin{center}
       \begin{circuitikz}[scale=1.3]\draw
         (0,0) to [C, v^<=$\Delta V$] (2, 0)
         (0,0) -- (0,4)
@@ -92,8 +91,11 @@ negative terminal of the battery. \emph{Ergo}, they have the same voltages.
         (0,2) to [C, v^<=$\Delta V$] (2,2)
         (0,4) to [battery, v^>=$\Delta V$] (2,4)
         ;\end{circuitikz}
-      }
-      \subfigure[The charges on the capacitors differ.]{
+       \end{center}
+    \caption{The voltages on the capacitors are the same.}
+\end{figure}
+\begin{figure}[h]
+  \begin{center}
       \begin{circuitikz}[scale=1.3]\draw
         (0,0) to [C, l^=$Q_2$] (2, 0)
         (0,0) -- (0,4)
@@ -101,8 +103,8 @@ negative terminal of the battery. \emph{Ergo}, they have the same voltages.
         (0,2) to [C, l^=$Q_1$] (2,2)
         (0,4) to [battery, v^>=$\Delta V$] (2,4)
         ;\end{circuitikz}
-      }
-  \end{center}
+        \end{center}
+      \caption{The charges on the capacitors differ.}
   \label{ckt:parcap}
 \end{figure}
 The \textbf{total charge on capacitors connected in parallel is the sum of the

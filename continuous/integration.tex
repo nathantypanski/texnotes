@@ -293,7 +293,11 @@ This is just a guideline, however, and one we will frequently have to bend.
     \end{align*}
   \end{sol}
 \end{ex}
-\begin{ex} A tough integration by parts problem.\footnote{Solved by Dr. James Martin, CNU Department of Mathematics. \url{http://www.pcs.cnu.edu/~jamie/}}
+\begin{ex}
+  A tough integration by parts problem.
+  I originally could not integrate this myself, and presented the problem to Dr. James Martin\footnote{\url{www.pcs.cnu.edu/~jamie/}}, Ph.D. in Applied Mathematics from Brown University, and my professor at CNU of the time.
+  Not surprisingly, he managed to perform the integration.
+  I have chosen to include the problem here, for the surprising beauty of the cancellation of terms that resulted.
 	\[ \int \frac{xe^{2x}}{(2x+1)^2}\ud x \]
   \begin{sol}
       We use integration by parts as follows:
@@ -1592,9 +1596,11 @@ The integral diverges.
 \end{sol}
 \end{ex}
 \begin{ex}
-  This is one of the classics:
-	\[ \int^\infty_1 \frac{1}{x}\ud x \]
-	\begin{sol}
+  According to James E. Martin, ``this is one of the classics:''
+  \begin{equation}
+    \int^\infty_1 \frac{1}{x}\ud x
+  \end{equation}
+\begin{sol}
 	  Consider:
     \[ \int^\infty_1 \frac{1}{x^{1.000000001}}\ud x = x^{-0.000000001}\bigg|^\infty_1=0-\frac{1}{1^{0.000000001}}\]
     Therefore:
@@ -1603,7 +1609,7 @@ The integral diverges.
 	  	&=\lim_{t \to \infty} \ln{|x|}\bigg|^t_1=\lim_{t \to \infty} \ln{|t|}-\ln{|1|} \\
 	  	& =\lim_{t \to \infty} \ln{|t|}
 	  \end{align*}
-	  Diverges.
+	  The integral diverges.
   \end{sol}
 \end{ex}
 \begin{ex}
@@ -1611,8 +1617,7 @@ The integral diverges.
     \frac{x^{-1}}{-1}\bigg|^t_1 \]
   This integral converges.
 \end{ex}
-
-\section{Test Review}
+%\section{Test Review}
 \begin{ex}
   \[ \int x^2 e^x \ud x \]
   \begin{sol}

@@ -1068,7 +1068,7 @@ We can get a feeling that \( p>1 \) leads to convergence, and \(p \leq 1\) leads
 \begin{ex}
   \[ \sum^\infty_{n=1} (-1)^{n+1} \left( \frac{3n+2}{4n^2+3} \right) \]
   \begin{sol}
-    Check with \ref{th:nthtermdiv}, which proves inconclusive.
+    Check with \thref{th:nthtermdiv}, which proves inconclusive.
 
     Take the derivative of $f(x)=(-1)^n \frac{3n}{4n-1}$. We find $f'(x)$ is
     negative everywhere.
@@ -1076,7 +1076,7 @@ We can get a feeling that \( p>1 \) leads to convergence, and \(p \leq 1\) leads
       f'(x)&=12x^2-9-24x^2-16x \\
       f'(x)&=-12x^2-16x-9
     \end{align*}
-    By Theorem \ref{th:alternatingseries}, this series converges.
+    By \thref{th:alternatingseries}, this series converges.
   \end{sol}
 \end{ex}
 
@@ -1092,13 +1092,12 @@ This error is given by
   \pm | L - S_n |
 \end{equation}
 
-\begin{homework}
-  Read section 10.8
-
-  pg 588 odd 1-9, 11, 13, 23, 25, 27
-\end{homework}
-
-\section{Power Series}\index{Power Series}[Thomas' Calculus pg 575]
+% \begin{homework}
+%   Read section 10.8
+%
+%   pg 588 odd 1-9, 11, 13, 23, 25, 27
+% \end{homework}
+\section{Power Series}\index{Power Series}
 A \textbf{power series} about $x=0$ is the form
 \[ \sum_{n=0}^\infty c_n x^n = c_0 + c_1 x + c_2 x + \cdots. + c_n x^n + \cdots
   \]
@@ -1111,13 +1110,14 @@ A \textbf{power series} about $x=0$ is the form
     Taking all the coefficients to be $1$ in equation \eqref{eq:powerxa}
     gives us the \textbf{geometric series}\index{geometric series}
     \begin{equation}\label{eq:geopower}
-      \szinfty x^n = 1 + x + x^2 + x^3 + x^4 + x^5 + \cdots + x^n  + \cdots
+      \szinfty x^n = 1 + x + x^2 + x^3 + x^4 + x^5 + \cdots + x^n  + \cdots.
     \end{equation}
+    \cite[p. 575]{thomas}
     \begin{figure}[H]
       \begin{center}
         \includegraphics{continuous/series/geopower}
       \end{center}
-      \caption{A plot of equation \eqref{eq:geopower}.\label{fig:geopower}}
+      \caption{A plot of \eref{eq:geopower}.\label{fig:geopower}}
     \end{figure}
     This is the geometric series with the first term $1$ and the ratio $x$.
     It converges to $1/(1-x)$ for $|x|<1.$ As shown in Figure

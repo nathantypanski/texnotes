@@ -193,8 +193,8 @@ terms, as follows:
     To find that, we will need to take the following limit:
     \[ \lim_{n\to\infty} a_n \]
     How do we evaluate limits for sequences? As it turns out, we usually treat
-    them exactly the same as limits as functions.
-    \begin{theorem}\label{inftyanlimit}\index{limits of sequences}
+    them exactly the same as limits of functions, which are described in \chref{ch:limits}.
+    \begin{theorem}\label{th:inftyanlimit}\index{limits of sequences}
       Suppose that \(f(x)\) is a function defined for all \( x \geq n_0\) and
       that \( \{a_n\} \) is a sequence of real numbers such that \(a_n = f(n)\)
       for \(n \geq n_0\). Then
@@ -203,16 +203,16 @@ terms, as follows:
         Suppose that \( \lim_{x \to \infty} f(x) = L \). Then for each positive
         number \( \varepsilon \) there is a number \( M \) such that for all
         \(x\),
-        \[ x > M \implies \big| f(x) - L \big| < \varepsilon \]
+        \[ x > M \implies \big| f(x) - L \big| < \varepsilon. \]
         Let \(N\) be an integer greater than \(M\) and greater than or equal to
         \(n_0\). Then
-        \[ n > N \implies a_n = f(n)\]
+        \[ n > N \implies a_n = f(n),\]
         and
-        \[\big|a_n -L \big| = \big|f(n) - L\big| < \varepsilon\text{.} \qedhere\]
+        \[\big|a_n -L \big| = \big|f(n) - L\big| < \varepsilon. \qedhere\]
         \cite[p. 537]{thomas}%Thomas' Calculus, p. 537
       \end{proof}
     \end{theorem}
-    This allows us to use \emph{l'Hospital's Rule} to find the limits of some
+    \thref{th:inftyanlimit} allows us to use \emph{l'Hospital's Rule} to find the limits of some
     sequences. We can state that
     \[\lim_{n\to\infty} a_n =\lim_{n\to\infty}f(x)\]
     assuming

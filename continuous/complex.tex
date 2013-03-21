@@ -45,3 +45,38 @@ Finally, we have an additive inverse for complex numbers
 \end{equation}
 For additional information on these properties as they apply to the set of real numbers, I will direct the reader to Michael Spivak's \emph{Calculus, Third Edition}, perhaps the single greatest introduction to ``real mathematics'' ever written.
 These properties, and their importance with regard to real numbers, is detailed extensively in the first chapter.
+\begin{defn}
+  The \keyword{difference}{difference}, $z_1-z_2$, is defined by
+  \begin{equation}
+    z_1-z_2 = z_1 + (-z_2).
+  \end{equation}
+\end{defn}
+\begin{defn}
+  The \keyword{product}{product} $z_1z_2$ is defined by
+  \begin{equation}
+    z_1z_2 = (x_1x_2 - y_1y_2, x_1 y_2 + x_2 y_1).
+    \label{eq:complex_product}
+  \end{equation}
+\end{defn}
+\begin{remark}
+  \eref{eq:complex_product} can be found by performing basic multiplication on the following form of the numbers:
+  \begin{align*}
+    z_1 &= x_1 + \iu y_1 \\
+    z_2 &= x_2 + \iu y_2 \\
+    z_1z_2 &= (x_1+\iu y_1)(x_2 + \iu y_2)
+  \end{align*}
+  In order to use this, however, we must define the following units:
+\end{remark}
+\begin{defn}
+  The \keyword{unit}{unit} complex number is the number $(1,0)$.
+  This may be multiplied by any complex number $z=(x,y)$ and the product will always be $z$.
+\end{defn}
+\begin{defn}
+  The \keyword{imaginary unit}{imaginary unit} is defined to be the number \[\iu = (0,1).\]
+\end{defn}
+From those definitions, we see that if $z=(x,y)$ we can write it in terms of its real and imaginary parts as follows:
+\begin{align}
+  z&=x(1,0)+y(0,1),
+  \intertext{which is equivalent to stating}
+  z&=x+\iu y.
+\end{align}

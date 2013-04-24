@@ -2,9 +2,9 @@
 \section{Definition of a Function}
 
 A \textbf{function} \(f\) from a set \(D\) to a set \(R\) is an assignment of exactly one element \(f(x) \in R\) to each element \(x \in D\).
-if $f$ is a function from $D$ to $R$, we write\footnote{Sets and set builder notation are explained in more detail in \ref{ch:sets}.}
-\[f:D \to R\]
-and say that $f$ \emph{maps} $D$ to $R$.
+if $f$ is a function from $D$ to $R$, we write
+\[f:D \to R\],
+and say that $f$ \emph{maps} $D$ to $R$.\footnote{Sets and set builder notation are explained in more detail in \chref{ch:sets}.}
 \index{function}
 
   One technique that can help us understand functions is by describing them with words,
@@ -263,7 +263,8 @@ An example of an even function is the function $f(x)=x^2$.
   If \(f\) is a function with a domain \(D\), then its \textbf{graph} is the set
   \[ \Big\{ \big( x,f(x) \big) \Big | x \in D \Big\}\text{.}\]
 \end{defn}
-That is, it is the set of all points $(x, f(x))$ where $x$ is in the domain of the function.
+That is, it is the set of all points $(x, f(x))$ where $x$ is in the domain of the function.%
+\footnote{Here, the difference between the words \emph{graph} and \emph{plot} is sometimes confusing. Technically speaking, a \emph{graph} is the set defined explicitly here, while a function's \emph{plot} refers to any pictorial representation of a data set. However, since the usage is inconsistent in this text, these formal definitions will usually not apply. It can be safely assumed that as long as we are within the realm of real numbers, all uses of either \emph{graph} or \emph{plot} hereafter simply refer to the pictorial representation of a function's graph in the form of a curve on the cartesian plane.}
 
 If \( (x,y) \) is a point on \(f\), then \(y=f(x)\) is the height of the graph above point \(x\).
 This height might be positive or negative, depending on the sign of \(f(x)\).
@@ -284,7 +285,7 @@ We use this height relationship to plot functions.
             \addplot[smooth,red]{x+2};
           \end{axis}
         \end{tikzpicture}
-      \caption{A graph of the function \(f(x)=x+2\)}
+      \caption{A plot of the function \(f(x)=x+2\)}
     \end{center}
   \end{figure}
 

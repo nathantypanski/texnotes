@@ -1,5 +1,18 @@
-I use texlive to compile this document.
+In order to compile this document, you will need a LaTeX distribution. I use
+texlive, so that's the best supported. On Arch Linux, this is provided by
+the package texlive-most. Other Linux distros will require different setups.
 
-I do so by hitting \ll in vim-latexsuite.
+If any packages are not included when you attempt to compile, they should be
+available at CTAN. I don't use anything too obscure in this document.
 
-There's probably a better way to do this, but the point is this document should always compile and all required LaTeX files and figures should be included.
+To compile, I simply run the command
+
+    pdflatex notes.tex
+
+in the root folder. In order to get figure labels and related things working
+properly, you'll probably need to run this three times.
+
+All figures should be included by default. Also, since I use natbib instead
+of some of the nicer bibliography managers like biblatex, there is no need to
+run a separate bibliography builder when compiling. It should all happen
+automatically.

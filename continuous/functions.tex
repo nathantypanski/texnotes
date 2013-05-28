@@ -3,7 +3,10 @@
 
 A \textbf{function} \(f\) from a set \(D\) to a set \(R\) is an assignment of exactly one element \(f(x) \in R\) to each element \(x \in D\).
 if $f$ is a function from $D$ to $R$, we write
-\[f:D \to R\],
+\begin{equation}
+  f:D \to R,
+  \label{eq:function_definition}
+\end{equation}
 and say that $f$ \emph{maps} $D$ to $R$.\footnote{Sets and set builder notation are explained in more detail in \chref{ch:sets}.}
 \index{function}
 
@@ -25,6 +28,9 @@ We will combine these techniques in an effort to paint a complete picture of its
 
 \section{Properties of Functions}
 
+Here, we will discuss a number of the properties that will be of interest when we are describing functions.
+Not all of these properties will exist for every type of function.
+For example, not all functions will have an inverse (described in \secref{sec:inverse}), but the nonexistence of an inverse then becomes an important property of the function. % WHEN????? Tell the reader where this is useful.
 
 \subsection{Domain and Range}
 
@@ -261,9 +267,9 @@ An example of an even function is the function $f(x)=x^2$.
 \begin{defn}
   \index{graph}
   If \(f\) is a function with a domain \(D\), then its \textbf{graph} is the set
-  \[ \Big\{ \big( x,f(x) \big) \Big | x \in D \Big\}\text{.}\]
+  \[ \Big\{ \big( x,f(x) \big) \Big | x \in D \Big\},\]
 \end{defn}
-That is, it is the set of all points $(x, f(x))$ where $x$ is in the domain of the function.%
+that is, it is the set of all points $(x, f(x))$ where $x$ is in the domain of the function.%
 \footnote{Here, the difference between the words \emph{graph} and \emph{plot} is sometimes confusing. Technically speaking, a \emph{graph} is the set defined explicitly here, while a function's \emph{plot} refers to any pictorial representation of a data set. However, since the usage is inconsistent in this text, these formal definitions will usually not apply. It can be safely assumed that as long as we are within the realm of real numbers, all uses of either \emph{graph} or \emph{plot} hereafter simply refer to the pictorial representation of a function's graph in the form of a curve on the cartesian plane.}
 
 If \( (x,y) \) is a point on \(f\), then \(y=f(x)\) is the height of the graph above point \(x\).
@@ -321,8 +327,7 @@ We use this height relationship to plot functions.
   \end{sol}
 \end{ex}
 
-\section{Inverse Functions}\index{inverse functions}
-
+\section{Inverse Functions}\index{inverse functions}\label{sec:inverse}
 An inverse function undoes, or inverts, the effects of an original function.
 % Old gibberish from when this was in the transcendental section.
 %While inverse functions are not, by definition, transcendental, we will look at them in this chapter because they are useful for producing inverse trigonometric functions--functions that are transcendental.
@@ -330,7 +335,7 @@ They are useful for producing inverse trigonometric functions--functions that ar
 
 \begin{defn}
   Suppose that \(f\) is a one-to-one function on a domain $D$ with range $R$. The \textbf{inverse function} $f^{-1}$ is defined by
-  \[ f^{-1}(b)=a \text{ if } f(a)=b \]
+  \[ f^{-1}(b)=a \text{ if } f(a)=b. \]
   The domain of $f^{-1}$ is $R$ and the range of $f^{-1}$ is $D$.
   \index{inverse functions}
 \end{defn}
@@ -348,7 +353,7 @@ In order for an inverse function $f^{-1}(x)$ to exist for a function $f(x)$, the
 \end{figure}
 \begin{remark} \index{composition}\index{inverse functions}
   By definition, either composite of a function and its inverse will return the identity function, where $y=x$. For example:
-  \[ (f \circ f^{-1})(x)=f(f^{-1}(x))=x \]
+  \[ (f \circ f^{-1})(x)=f(f^{-1}(x))=x, \]
   or
   \[ (f^{-1} \circ f)(x)=f^{-1}(f(x))=x. \]
 \end{remark}

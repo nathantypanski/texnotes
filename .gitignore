@@ -40,7 +40,6 @@ Thumbs.db
 
 # LaTeX #
 #########
-*.out
 *.bbl
 *.blg
 *.ilg

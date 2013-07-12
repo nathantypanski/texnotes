@@ -1,3 +1,6 @@
+texnotes
+--------
+
 In order to compile this document, you will need a LaTeX distribution. I use
 texlive, so that's the best supported. On Arch Linux, this is provided by
 the package texlive-most. Other Linux distros will require different setups.

@@ -1,0 +1,59 @@
+% book example for classicthesis.sty
+\documentclass[
+  % Replace twoside with oneside if you are printing your thesis on a single side
+  % of the paper, or for viewing on screen.
+  %oneside,
+  twoside,
+  11pt, a4paper,
+  footinclude=true,
+  headinclude=true,
+  cleardoublepage=empty
+]{scrbook}
+
+\usepackage{lipsum}
+\usepackage[linedheaders,parts,pdfspacing]{classicthesis}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{acronym}
+
+\title{Thesis Title}
+\author{John Doe}
+
+\begin{document}
+
+\maketitle
+
+\include{FrontBackMatter/abstract}
+\include{FrontBackMatter/dedication}
+\include{FrontBackMatter/acknowledgements}
+\include{FrontBackMatter/declaration}
+\include{FrontBackMatter/contents}
+
+\part{First Part of My Thesis}
+
+\chapter{A Chapter}
+\lipsum[1] % This is just some filler text. Remove before you start writing
+
+\section{A Section}
+\lipsum[1] % This is just some filler text. Remove before you start writing
+
+\section{Another Section}
+\lipsum[1] % This is just some filler text. Remove before you start writing
+
+\chapter{Another Chapter}
+\lipsum[1] % This is just some filler text. Remove before you start writing
+
+\section{Yet Another Section}
+\lipsum[1] % This is just some filler text. Remove before you start writing
+
+\part{Another Part}
+
+\chapter{Yet Another Chapter}
+\lipsum[1] % This is just some filler text. Remove before you start writing
+  
+\appendix
+\part{Appendix}
+\chapter{Appendix Chapter}
+\lipsum[1]
+    
+\end{document}

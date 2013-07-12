@@ -8,8 +8,12 @@ the package texlive-most. Other Linux distros will require different setups.
 If any packages are not included when you attempt to compile, they should be
 available at CTAN. I don't use anything too obscure in this document.
 
-To compile, I simply run the command
+To compile, run these commands in order:
 
+    pdflatex notes.tex
+    biblatex notes
+    makeindex notes
+    pdflatex notes.tex
     pdflatex notes.tex
 
 in the root folder. In order to get figure labels and related things working

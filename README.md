@@ -16,10 +16,5 @@ To compile, run these commands in order:
     pdflatex notes.tex
     pdflatex notes.tex
 
-in the root folder. In order to get figure labels and related things working
-properly, you'll probably need to run this three times.
+in the root folder.
 
-All figures should be included by default. Also, since I use natbib instead
-of some of the nicer bibliography managers like biblatex, there is no need to
-run a separate bibliography builder when compiling. It should all happen
-automatically.

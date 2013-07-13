@@ -61,7 +61,7 @@ The entire idea of a derivative is based on the idea behind the slope of a graph
   \caption{The slope-intercept form equation for a line.}
   % Kyle Martin corrected this caption for me. Thanks Kyle!
 \end{figure}
-The slope, $m$, of a given straight line\footnote{$b$ is the $y$-{\em intercept} of the function.}
+The slope, $m$, of a given straight line\footnote{The variable $b$ represents the $y$-{\em intercept\/} of the function.}
 $f(x)=mx+b$ is given by its \emph{change in $y$ values divided by its change in $x$ values}
 \begin{align}
   \label{eq:slope}
@@ -139,7 +139,7 @@ Well, we use the derivative of the function, calculated at $x=1$, to determine t
 \begin{align*}
   f(x)&=x^3\\
   f'(x)&=\lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\
-  \intertext{Remembering back to Section \ref{sec:compositefunctions},}
+  \intertext{Remembering back to \secref{sec:compositefunctions},}
   f'(x)&=\lim_{h \to 0} \frac{(x+h)^3-x^3}{h} \\
   \intertext{Expand $(x+h)^3$.}
   f'(x)&=\lim_{h \to 0} \frac{(x+h)(x+h)(x+h)-x^3}{h} \\
@@ -162,7 +162,7 @@ So the slope of our tangent line is $3$.
   It is often seen referring to a function's derivative at a particular point, which is different from the function's derivative in general.
 \end{note}
 
-Now we use the point-slope formula (Section \ref{sec:pointslope}) with $m=3$ to find the equation for our tangent line.
+Now we use the point-slope formula (\secref{sec:pointslope}) with $m=3$ to find the equation for our tangent line.
 \begin{align*}
   y-y_1 &= m (x-x_1) \\
   y &= mx-mx_1 +y_1 \\
@@ -198,13 +198,13 @@ The \textbf{power rule}\index{power rule} states that
   The power rule also works for negative exponents.
   Let's try finding the derivative of $f(x)=\frac{1}{x}$ with respect to x.
   \begin{sol}
-    To find this derivative, we first recognize that $x^{-1} \equiv 1/x$.
+    To find this derivative, we first recognize that $x^{-1} \equiv 1/x$. Meaning
     \begin{align*}
-      f(x)&=\frac{1}{x}=x^{-1}
-      \intertext{And now simply use the power rule as normal.}
-      f'(x) &= -1 \cdot x^{-2} \\
-      \intertext{Simplify.}
-      f'(x)&= -\frac{1}{x^2}
+      f(x)&=\frac{1}{x}=x^{-1}.
+      \intertext{We may now simply use the power rule to find that}
+      f'(x) &= -1 \cdot x^{-2}, \\
+      \intertext{Which we may now simplify:}
+      f'(x)&= -\frac{1}{x^2}.
     \end{align*}
   \end{sol}
 \end{ex}
@@ -316,7 +316,7 @@ Unlike the with the product rule, there is no leniency offered with the quotient
 
 
 The \textbf{chain rule} is used to differentiate composite functions, which look like $(f \circ g)(x)$ and mean $f(g(x))$.
-This type of functions is introduced and further explained in Section \ref{sec:compositefunctions}.
+This type of functions is introduced and further explained in \secref{sec:compositefunctions}.
 \begin{theorem}[Chain Rule for Derivatives]
   The chain rule states that if $y=f(u)$ and $u=g(x)$, then
   \begin{equation}
@@ -410,7 +410,7 @@ The key is to treat the derivative of the function as the slope of a straight li
 and then to consider the $y$-values of that line \emph{good enough} approximations of the original function within a small enough interval.
 
 In order to linearize a function $f(x)$, we must be capable of calculating its derivative at some other, nearby value $x=a$.
-Then, we use the point-slope formula (see Section \ref{sec:pointslope}) to find the equation for a line that approximates our function around that value.
+Then, we use the point-slope formula (see \secref{sec:pointslope}) to find the equation for a line that approximates our function around that value.
 
 We then write the linearization of this function $f(x)$ at $x=a$ as $L_a (x)$, and state that
 \[ L_a (x) \approx f(x) \]
@@ -426,7 +426,8 @@ on some interval $I$.
     Great, but we still need the slope of our new line.
     To find it, we must take the derivative of our original function.
     Convert the square root into an exponent.
-    \begin{align*}
+    % Fix the numbering here: first and last eqs should be numbered.
+    \begin{align}
       f(x) &= \sqrt{x} = x^{1/2} \\
       \intertext{Use the power rule.}
       \ddx f(x) &= \frac{1}{2x^{1/2}} \\
@@ -435,10 +436,11 @@ on some interval $I$.
       \ddx f(x) \bigg|_{x=4}&= \frac{1}{2\sqrt{4}} \\
       &= \frac{1}{2\cdot 2} \\
       &= \frac{1}{4}
-    \end{align*}
+    \end{align}
+    % The below sentence should reference the bottom eqn by number.
     This is the slope of $f(x)$ at $x=a$.
 
-    Now, we use this slope in the point-slope fomula (Section \ref{sec:pointslope}) to write our linearized function.
+    Now, we use this slope in the point-slope fomula (\secref{sec:pointslope}) to write our linearized function.
     \begin{align*}
       y-y_1 &= m (x-x_1) \\
       L_a(x)-f(a) &= f'(a) (x-a) \\
@@ -455,7 +457,7 @@ on some interval $I$.
     This means that $f(4.001)$ either equals, or is extremely close to $2.00025$.
     In our case, it just so happens that our approximation was perfect: $f(4.001)=2.00025$.
     Not bad for what could've been a nasty calculation---we found it easily, entirely by hand!
-    \begin{figure}[H]
+    \begin{figure}[h]
       \begin{center}
         \includegraphics[width=0.5\textwidth]{continuous/derivatives/lin_ex1.eps}
       \end{center}
@@ -480,13 +482,16 @@ To graph a function:\footnote{This section is copied from my notes from Dr. Dobr
 
 \begin{theorem}[L'Hospital's Rule]\label{th:lhospital}
   Suppose that $f(a)=g(a)=0$, that $f$ and $g$ are differentiable on an open interval $I$ containing $a$, and that $g'(x) \neq 0$ on $I$ if $x \neq a$. Then
-  \[ \lim_{x \to a} \frac {f(x)}{g(x)} \=H \lim_{x \to a} \frac{f'(x)}{g'(x)} \]
+  \begin{equation}
+      \lim_{x \to a} \frac {f(x)}{g(x)} \=H \lim_{x \to a} \frac{f'(x)}{g'(x)}
+      \label{eq:lhospital}
+  \end{equation}
   assuming that the limit on the right side of this equation exists.
 \end{theorem}
 \begin{remark}
   L'Hopital's Rule does not apply when either the numerator or the denominator has a finite nonzero limit.
 \end{remark}
-The proof of this theorem is found in Section \ref{proof:lhospital}.
+The proof of this theorem is found in \secref{proof:lhospital}.
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.2\textwidth]{photos/cauchy.jpg}
@@ -495,7 +500,10 @@ The proof of this theorem is found in Section \ref{proof:lhospital}.
 \end{figure}
 \begin{theorem}[Cauchy's Mean Value Theorem]\label{th:caunchymv}\index{Cauchy's Mean Value Theorem}
 Suppose functions $f$ and $g$ are continuous on $[a, b]$ and differentiable throughout $(a, b)$ and also suppose $g'(x) \neq 0$ throughout $(a, b)$. Then there exists a number $c$ in $(a, b)$ at which
-  \[ \frac {f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)} \]
+\begin{equation}
+    \frac {f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)}.
+    \label{eq:cauchy}
+\end{equation}
 \end{theorem}
 \section{Derivatives of Inverses of Differentiable Functions}\index{inverse
 functions}
@@ -503,19 +511,19 @@ functions}
 \begin{theorem}[The Derivative Rule for Inverses]\label{th:invderiv}
   If $f$ has an interval $I$ as domain and $f'(x)$ exists and is never zero on $I$, then $f^{-1}$ is differentiable at every point in its domain (the range of $f$). The value of $\big(f^{-1}\big)'$ at a point $b$ in the domain of $f^{-1}$ is the reciprocal of the value of $f'$ at the point $a=f^{-1}(b)$:
   \begin{equation}
-    \big(f^{-1}\big)'(b)=\frac{1}{f'\big(f^{-1}(b)\big)}
+    \big(f^{-1}\big)'(b)=\frac{1}{f'\big(f^{-1}(b)\big)},
   \end{equation}
-  This can also be written
+  Which may also be written
   \begin{equation}
-    \cfrac{\ud f^{-1}}{\ud x}\bigg|_{x=b}=\cfrac{1}{\cfrac{\ud f}{\ud x}\bigg|_{x=f^{-1}(b)}}
+    \cfrac{\ud f^{-1}}{\ud x}\bigg|_{x=b}=\cfrac{1}{\cfrac{\ud f}{\ud x}\bigg|_{x=f^{-1}(b)}}.
   \end{equation}
   \begin{proof}
   Because a function applied to the inverse of itself should return its own input value, we can start with this relationship.
     \begin{align*}
       f \big( f^{-1}(x) \big) &= x \\
-      \intertext{From here, take the derivative of both sides. On the left, we do so in notation only. On the right, we know that the derivative of a variable representing a constant is always 1.}
-      \frac{\ud}{\ud x} f\big(f^{-1}(x)\big) &= 1\\
-      \intertext{Because the lefthand side includes the composition of functions, we must use the chain rule in calculating its derivative. Applying the chain rule to the lefthand side of the equation gives us}
+      \intertext{From here, take the derivative of both sides. Since the derivative of a variable representing a constant is always 1,}
+      \frac{\ud}{\ud x} f\big(f^{-1}(x)\big) &= 1. \\
+      \intertext{Applying the chain rule to the lefthand side of the equation gives us}
       f'\big(f^{-1}(x)\big)\cdot \cfrac{\ud}{\ud x}f^{-1}(x) &= 1  \\
       \intertext{Now, we divide each side of the equation by $f' \big( f^{-1}(x) \big)$ to solve for the derivative only.}
       \frac{\ud}{\ud x}f^{-1}(x) &= \cfrac{1}{f'\big(f^{-1}(x)\big)}\qedhere
@@ -525,35 +533,42 @@ functions}
 
 \section{Antiderivatives}
 \begin{defn}
-  A function $F$ is an \textbf{antiderivative} of $f$ on an interval $I$ if $\forall (x \in I) \big[F'(x)=f(x)\big]$.
+  A function $F$ is an \textbf{antiderivative} of $f$ on an interval $I$ if
+  \begin{equation}
+      \forall (x \in I) \big[F'(x)=f(x)\big].
+  \end{equation}
   \index{antiderivative}
 \end{defn}
 \begin{ex}
-  Find an antiderivative of $f(x)=3x^2$.
+  Find the antiderivative of $f(x)=3x^2$.
   \begin{sol}
     We should think of a function whose derivative yields the function $3x^2$.
     It seems clear that this function is related to the power rule, and reversing that rule would give us $x^3$.
-    Now let's take the derivative of this and see if it works.
+    Now let's take the derivative of this and see if it works:
     \begin{align*}
-      F(x)&=x^3 \\
-      F'(x) &= 3x^2
+      F(x)&=x^3, \\
+      F'(x) &= 3x^2.
     \end{align*}
     What's interesting here is that $3x^2$ is not the only function for which its derivative is $3x^2$.
-    We know from Theorem \ref{th:deriv:constantrule}, the constant rule for derivatives, that the derivative of any constant is zero.
+    We know from \thref{th:deriv:constantrule}, the constant rule for derivatives, that the derivative of any constant is zero.
     From this, we know that
-    \[ F(x)=3x^2+1 \]
+    \[ F(x)=3x^2+1, \]
     or
-    \[ F(x)=3x^2+20\]
+    \[ F(x)=3x^2+20,\]
     or even
-    \[ F(x)=3x^2+39250\]
+    \[ F(x)=3x^2+39250,\]
     all satisfy our definition for an antiderivative of $f(x)$.
     How do we write this?
 
-    The \textbf{generalized antiderivative} of $f(x)$ is written
-    \[ F(x)+c \]
-    where $c$ is an ``arbitrary constant''--that is, any number whatsoever that does not contain a variable.
-    This ``function,'' $F(x)+c$, therefore, does not actually refer to \emph{one} function in particular,
-    or even a \emph{handful} thereof, but rather a \textbf{family of functions}, all of which have a derivative equal to $f(x)$.
+    \begin{defn}
+        The \textbf{generalized antiderivative} of a function $f(x)$ is written
+        \begin{equation}
+            F(x)+c,
+        \end{equation}
+        where $c$ is an ``arbitrary constant''---that is, any number whatsoever that does not contain a variable.
+        This ``function,'' $F(x)+c$, therefore, does not actually refer to one function in particular,
+        or even a \emph{handful} thereof, but rather a \emph{family of functions}, all of which have a derivative equal to $f(x)$.
+    \end{defn}
 
     For our example, the generalized antiderivative of $f(x)=3x^2$ is $F(x)=x^3+c$.
   \end{sol}

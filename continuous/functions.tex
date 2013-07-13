@@ -1,14 +1,17 @@
 \chapter{Basics of Functions}
 \section{Definition of a Function}
 
-A \textbf{function} \(f\) from a set \(D\) to a set \(R\) is an assignment of exactly one element \(f(x) \in R\) to each element \(x \in D\).
-if $f$ is a function from $D$ to $R$, we write
-\begin{equation}
-  f:D \to R,
-  \label{eq:function_definition}
-\end{equation}
-and say that $f$ \emph{maps} $D$ to $R$.\footnote{Sets and set builder notation are explained in more detail in \chref{ch:sets}.}
-\index{function}
+
+\begin{defn}
+    A \textbf{function} \(f\) from a set \(D\) to a set \(R\) is an assignment of exactly one element \(f(x) \in R\) to each element \(x \in D\).
+    if $f$ is a function from $D$ to $R$, we write
+    \begin{equation}
+        f:D \to R,
+        \label{eq:function_definition}
+    \end{equation}
+    and say that $f$ \emph{maps} $D$ to $R$.\footnote{Sets and set builder notation are explained in more detail in \chref{ch:sets}.}
+    \index{function}
+\end{defn}
 
 One technique that can help us understand functions is by describing them with words,
 including mathematical language.
@@ -34,11 +37,16 @@ For example, not all functions will have an inverse (described in \secref{sec:in
 
 \subsection{Domain and Range}
 
-The set \(D\) of all possible input values is called the \textbf{domain} of the function.
-\index{domain}
+\begin{defn}
+    The set \(D\) of all possible input values is called the \textbf{domain} of the function.
+    \index{domain}
+\end{defn}
 
-The set of all values \(f(x)\) as \(x\) varies throughout \(D\) is called the \textbf{range} of the function, representing the output value of \(f\) at \(x\).
-\index{range}
+\begin{defn}
+    The set of all values \(f(x)\) as \(x\) varies throughout \(D\) is called the \textbf{range} of the function,
+    representing the output value of \(f\) at \(x\).
+    \index{range}
+\end{defn}
 
  The \textbf{natural domain} of a function is the largest set of real \(x\)-values for which a function returns real \(y\)-values.
 A function is said to be \textbf{real-valued} when \(D = \mathbb{R}\).
@@ -55,10 +63,10 @@ This means that we can put an arbitrary real number into the function and it wil
 
 \begin{figure}[H]
   \begin{center}
-    \subfigure[This passes the vertical line test]{
+    \subfigure[This passes the vertical line test]{\
       \includegraphics[width=0.4\textwidth]{continuous/functions/vlt1}
     }
-    \subfigure[This fails the vertical line test]{
+    \subfigure[This fails the vertical line test]{\
       \includegraphics[width=0.4\textwidth]{continuous/functions/vlt2}
     }
   \end{center}
@@ -138,7 +146,7 @@ An example of an even function is the function $f(x)=x^2$.
 \begin{figure}[H]
     \begin{center}
         \subfigure[The function \(f(x)=x^2\) is not \emph{one-to-one} because there are two possible \(x\)-values that can produce each given \(y\)-value.]
-        {
+        {\
           \begin{tikzpicture}
             \begin{axis}[
                 ylabel={\(f(x)=x^2\)},
@@ -155,7 +163,7 @@ An example of an even function is the function $f(x)=x^2$.
         }
         \hspace{0.2in}%
         \subfigure[The function \(f(x)=x^3\) is \emph{one-to-one} because every given \(y\)-value is mapped from a unique \(x\)-value.]
-        {
+        {\
           \begin{tikzpicture}
             \begin{axis}[
                 ylabel={\(f(x)=x^3\)},
@@ -182,7 +190,7 @@ An example of an even function is the function $f(x)=x^2$.
 \begin{figure}[H]
     \begin{center}
         \subfigure[The function \(f(x)=x^2\) is not \emph{surjective} because the values \((-\infty, 0)\) are never reached in its range.]
-        {
+        {\
           \begin{tikzpicture}
             \begin{axis}[
                 ylabel={\(f(x)=x^2\)},
@@ -199,7 +207,7 @@ An example of an even function is the function $f(x)=x^2$.
         }
         \hspace{0.2in}%
         \subfigure[The function \(f(x)=x^3\) is \emph{one-to-one} because all \(y\) values from \(-\infty, \infty)\) have corresponding \(x\)-values.]
-        {
+        {\
           \begin{tikzpicture}
             \begin{axis}[
                 ylabel={\(f(x)=x^3\)},
@@ -224,7 +232,7 @@ An example of an even function is the function $f(x)=x^2$.
 \begin{figure}[H]
     \begin{center}
         \subfigure[The function \(f(x)=x^2\) is not bijective.]
-        {
+        {\
           \begin{tikzpicture}
             \begin{axis}[
                 ylabel={\(f(x)=x^2\)},
@@ -242,7 +250,7 @@ An example of an even function is the function $f(x)=x^2$.
         }
         \hspace{0.2in}%
         \subfigure[The function \(f(x)=x^3\) is bijective.]
-        {
+        {\
           \begin{tikzpicture}
             \begin{axis}[
                 ylabel={\(f(x)=x^3\)},
@@ -302,7 +310,7 @@ We use this height relationship to plot functions.
   \[ (f \circ g)(x)=f\bigl(g(x)\bigr) \text{.} \]
   \begin{remark}
     The domain of \( f \circ g \) consists of the numbers \(x\) in the domain of \(g\) for which \(g(x)\) lies in the domain of \(f\).
-    See figure \ref{fig:p1sin1x} for an example of a function which produces indefinite $y$-values for real $x$-values around $x=0$.
+    See figure~\ref{fig:p1sin1x} for an example of a function which produces indefinite $y$-values for real $x$-values around $x=0$.
   \end{remark}
   \index{composition}
 \end{defn}
@@ -342,10 +350,10 @@ They are useful for producing inverse trigonometric functions--functions that ar
 In order for an inverse function $f^{-1}(x)$ to exist for a function $f(x)$, the original function $f(x)$ must be one-to-one. Otherwise, the resulting ``inverse function'' would not be a function: more than one output would be produced from only one input, and it would not pass the vertical line test.
 \begin{figure}[H]
   \begin{center}
-    \subfigure[A plot of $f(x)=\sqrt x$.]{
+    \subfigure[A plot of $f(x)=\sqrt x$.]{\
       \includegraphics[width=0.3\textwidth]{continuous/functions/sqrtx}
     }
-    \subfigure[A plot of $f^{-1}(\sqrt x)=x^2$.]{
+    \subfigure[A plot of $f^{-1}(\sqrt x)=x^2$.]{\
       \includegraphics[width=0.3\textwidth]{continuous/functions/x2inv}
     }
   \end{center}
@@ -377,14 +385,14 @@ To find the inverse of a function $f(x)$, replace $f(x)$ with $y$ and solve for 
     The inverse of the function $f(x)=\frac{1}{2}x+1$ is the function $f^{-1}(x)=2x-2$.
     \begin{figure}[H]
       \begin{center}
-        \subfigure[A plot of $f(x)=\frac{1}{2}x+1$.]{
+        \subfigure[A plot of $f(x)=\frac{1}{2}x+1$.]{\
           \includegraphics[width=0.45\textwidth]{continuous/functions/halfxeg}
         }
-        \subfigure[A plot of $f^{-1}(x)=2x-2$.]{
+        \subfigure[A plot of $f^{-1}(x)=2x-2$.]{\
           \includegraphics[width=0.45\textwidth]{continuous/functions/halfxeginv}
         }
       \end{center}
-      \caption{Plots of functions from Example \ref{ex:inverses}.}
+      \caption{Plots of functions from Example~\ref{ex:inverses}.}
       \label{fig:inverseg}
     \end{figure}
   \end{sol}

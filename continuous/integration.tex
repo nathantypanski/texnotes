@@ -1,7 +1,7 @@
 \chapter{Integration}
-If we have a function, $f(x)$, whose graph is shown in Figure \ref{fig:curve}.
+If we have a function, $f(x)$, whose graph is shown in \figref{fig:curve}.
 and we wish to find the area under its curve, we can do so using a technique called \emph{integration}.
-As in Chapter \ref{ch:derivatives}, where we approximated the slope of a curve using straight lines,
+As in \chref{ch:derivatives}, where we approximated the slope of a curve using straight lines,
 we are going to approximate the area of this irregular shape using simple rectangles.
 \setlength{\parindent}{0pt}
 \begin{figure}[H]
@@ -47,7 +47,7 @@ This way we are just measuring different heights, and our width is always consta
   If $f$ is continuous on $[a,b]$, then $F(x)=\int^x_a f(t)dt$ is continuous on $[a,b]$ and
   differentiable on $(a,b)$ and its derivative is $f(x)$:
   \begin{equation}
-    F'(x) = \ddx \int^x_a f(t)\ud t=f(x)
+    F'(x) = \ddx \int^x_a f(t)\ud t=f(x).
     \label{eq:ftc1}
   \end{equation}
   \cite[p. 276]{thomas}
@@ -156,12 +156,12 @@ Some are more important than others. For a more complete understanding of these 
 %
 \section{Integration by Substitution}
 Integration by substitution is our simplest technique for evaluating integrals that don't seem to fit into one of our basic rules.
-To do these, we must have a grasp on usage of the fundamental integrals from Section \ref{sec:basicints}.
+To do these, we must have a grasp on usage of the fundamental integrals from \secref{sec:basicints}.
 Let's look at an example.
 \begin{ex}
   Integrate
   \[
-    \int 2e^{2x} \ud x
+    \int 2e^{2x} \ud x.
     \]
   Initially, we don't know how to solve this.
   We know that $\int e^x \ud x$ is just $e^x +C$, but the constant multiplier in the exponent throws us off.
@@ -176,7 +176,7 @@ Let's look at an example.
   \begin{align*}
     \int 2e^{2x} \ud x &= \int e^u \ud u \\
     &= e^u +C
-    \intertext{ Now we just write this in terms of our original variables.}
+    \intertext{Now we just write this in terms of our original variables.}
     &= e^{2x}+C
   \end{align*}
   And we're done.
@@ -193,8 +193,8 @@ Oftentimes, we won't be lucky enough to see the \emph{exact} derivative in our i
 If we're lucky, however, we can usually get within a constant of it, and then we can tweak the integrand to suit our needs.
 Let's see what this means.
 \begin{ex}
-  Integrate.
-  \[ \int x (x^2+3/2)^9 \ud x \]
+  Integrate
+  \[ \int x (x^2+3/2)^9 \ud x. \]
   \begin{sol}
     We can try $u=x^2$, $\ud u=2x$. Unfortunately, we still don't know how to evaluate $(u+3/2)^9$ if we do that.
     It was a good guess, though, and got us closer to an answer.
@@ -235,21 +235,21 @@ Let's see what this means.
 
 Integration by parts is a method of separating out elements of integrals that we don't know how to evaluate, and taking their derivative instead.
 
-Its formula comes from our definition for the derivative product rule:
-  \begin{align*}
+Its formula comes from our definition for the derivative product rule, \eref{eq:productrule}:
+  \begin{align}
     \frac{\ud}{\ud x}\big[ f(x) g(x) \big] &= f'(x)g(x)+f(x)g'(x) \\
     \intertext{If we take the indefinite integral of each side,}
-    \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int \big[f'(x)g(x)+f(x)g'(x)\big] \ud x\\
+    \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int \big[f'(x)g(x)+f(x)g'(x)\big] \ud x \nonumber\\
     \intertext{Now separate out the terms in the righthand side.}
-    \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \\
+    \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \nonumber\\
     \intertext{From here, we note that the integral and deriviative in the lefthand side cancel each other out, if we use the fundamental theorem of calculus.}
-    f(x)g(x) &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \\
+    f(x)g(x) &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \nonumber\\
     \intertext{Now, subtract the first integral from both sides.}
-    f(x)g(x) -\int f'(x)g(x) \ud x &= \int f(x)g'(x) \ud x \\
+    f(x)g(x) -\int f'(x)g(x) \ud x &= \int f(x)g'(x) \ud x \nonumber\\
     \intertext{Swap the left and righthand sides, and we have the formula for integration by parts!}
-     \int f(x)g'(x) \ud x&=f(x)g(x) -\int f'(x)g(x) \ud x \\
-  \end{align*}
-  For convenience, we can rewrite this formula in terms of $u$, $\ud u$, $\ud v$, and $v$ as follows:
+     \int f(x)g'(x) \ud x&=f(x)g(x) -\int f'(x)g(x) \ud x \\\nonumber
+  \end{align}
+  For convenience, we often rewrite this formula in terms of $u$, $\ud u$, $\ud v$, and $v$ as follows:
 \begin{equation}
   \int u \ud v =  uv - \int v \ud u
   \label{equation:intbyparts}
@@ -1039,7 +1039,7 @@ Now:
   (F)^3-(L)^3=(F-L)(F^2+FL+L^2)
 \end{equation}
 Note: you cannot factor a sum of perfect squares.
-\begin{remark} When factoring quadratics, consider the discriminant (from the quadratic formula at \ref{app:eq:quadratic}):
+\begin{remark} When factoring quadratics, consider the discriminant (from the quadratic formula at \eref{app:eq:quadratic}):
   \begin{align*}
     &10x^2-x-2 \\
     &b^2-4ac \\

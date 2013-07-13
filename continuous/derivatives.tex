@@ -298,7 +298,9 @@ We will use both of these new rules in the following example.
   The \textbf{product rule}\index{derivatives, product rule} tells us that for two differentiable functions $f(x)$ and $g(x)$,
   \begin{equation}
     \ddx f(x) \cdot g(x) = f(x) \frac{\ud g(x)}{\ud x}+g(x)\frac{\ud f(x)}{\ud x}
+    \label{eq:productrule}
   \end{equation}
+  \label{thm:productrule}
 \end{theorem}
   It's worth noting that because of the commutative law for addition, it doesn't matter which derivative we place first.
 
@@ -526,8 +528,9 @@ functions}
       \intertext{Applying the chain rule to the lefthand side of the equation gives us}
       f'\big(f^{-1}(x)\big)\cdot \cfrac{\ud}{\ud x}f^{-1}(x) &= 1  \\
       \intertext{Now, we divide each side of the equation by $f' \big( f^{-1}(x) \big)$ to solve for the derivative only.}
-      \frac{\ud}{\ud x}f^{-1}(x) &= \cfrac{1}{f'\big(f^{-1}(x)\big)}\qedhere
+      \frac{\ud}{\ud x}f^{-1}(x) &= \cfrac{1}{f'\big(f^{-1}(x)\big)}.\qedhere
     \end{align*}
+    % figure out how to lower the period on the last line of the above block.
   \end{proof}
 \end{theorem}
 

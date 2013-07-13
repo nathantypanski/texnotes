@@ -2,7 +2,7 @@
 \section{Understanding Limits}
 If we have a function \(f\), defined such that
 \begin{equation}
-  f(x)=\frac{x^2-1}{x-1} \qquad (x \neq 1)
+  f(x)=\frac{x^2-1}{x-1} \qquad (x \neq 1),
   \label{eq:firstlimit}
 \end{equation}
 this function is not defined at \(x=1\), so we cannot directly discuss its behavior at \(x=1\).
@@ -19,14 +19,14 @@ To find the behavior of \(f\) around \(x=1\), we take the limit of \(f\) as \(x\
 \begin{defn}\label{defn:limit}\index{limit definition}
   \( \lim_{x \to a} f(x) = L \) if and only if \(f(x)\) gets \emph{arbitrarily} close to \( L \) as \(x\) gets \emph{sufficiently} close to \(a\).
 \end{defn}
-  In this case, \textbf{arbitrarily close}\index{arbitrarily close} implies that we can make the number as close as we could possibly request it. \textbf{sufficiently close}\index{sufficiently close} means that we can find a number $x$ where, for every number after (or before) it, we are past our arbitrary value of closeness.
+  In this case, \textbf{arbitrarily close}\index{arbitrarily close} implies that we can make the number as close as we could possibly request it. \textbf{Sufficiently close}\index{sufficiently close} means that we can find a number $x$ where, for every number after (or before) it, we are past our arbitrary value of closeness.
 We would write this as:
 \[ \lim_{x \to 1} \frac{x^2-1}{x-1} \]
 In this case, we can evaluate this using basic algebra to simplify the original function,
 \begin{align*}
-   f(x)&=\frac{x^2-1}{x-1} && x \neq 1 \\
-   &=\frac{(x+1)(x-1)}{x-1}&& x \neq 1 \\
-   &=x+1 && x \neq 1
+   f(x)&=\frac{x^2-1}{x-1},     && x \neq 1 \\
+   &=\frac{(x+1)(x-1)}{x-1},    && x \neq 1 \\
+   &=x+140,                     && x \neq 1
 \end{align*}
 \begin{remark}
   We must make the statement that $x \neq 1$ whenever $x+1$ is in the denominator of a function,
@@ -39,7 +39,7 @@ Which gives us
 \begin{align*}
   \lim_{x \to 1} \frac{x^2-1}{x-1}
   &=g(1)
-  \\&=2.
+  \\&=3.
 \end{align*}
 
 It turns out we have a number of rules that describe how we can go about
@@ -68,7 +68,7 @@ evaluating a limit.
 \end{theorem}
 
 Not all functions have limits defined everywhere on their domain.
-For example, $h(x)=\sin \frac{1}{x}$ oscillates indefinitely as \(x \to 0\), as shown in Figure \ref{fig:p1sin1x}.
+For example, $h(x)=\sin \frac{1}{x}$ oscillates indefinitely as \(x \to 0\), as shown in \figref{fig:p1sin1x}.
 \begin{figure}[H]
   \begin{center}
     \includegraphics{graphs/p1sin1x.pdf}
@@ -132,8 +132,8 @@ where at \(x=0\), \(g(x) \leq f(x) \leq h(x)\) at 0.
   \caption{A plot of \(h(x)\), \(f(x)\), and \(g(x)\)}
 \end{figure}
 We can conclude, intuitively, that the limit of \(f(x)\) as \(x \to 0\) must be
-0 even though we cannot evaluate \(f(x)\) at 0, as seen in Figure
-\ref{fig:p1sin1x}. We can generalize this kind of behavior as a theorem, the
+0 even though we cannot evaluate \(f(x)\) at 0, as seen in
+\figref{fig:p1sin1x}. We can generalize this kind of behavior as a theorem, the
 \emph{sandwich theorem}.
 \begin{theorem}[The Sandwich Theorem]
   If \[g(x) \leq f(x) \leq h(x)\] holds for all \(x \neq c\) in some open interval containing a number \(c\),
@@ -156,8 +156,7 @@ is the statement
   \label{eq:e_d_limit}
 \end{equation}
 where the domain for the variables for $\delta$ and $\varepsilon$ consists of
-all positive real numbers and for $x$ consists of all real
-numbers.
+all positive real numbers and for $x$ consists of all real numbers.
 
 \section{Evaluating Limits}
 Let's look at a really complicated example of a limit,\footnote{Credit for this example goes to Dr. Dobrescu's Math 140 class at CNU, Spring 2011.} to make sure we truly understand them.
@@ -170,7 +169,7 @@ For piecewise-defined functions, limits can get especially interesting. Here's a
       -x &\text{if } x \in \left (0,1 \right),  \\
       x-1 &\text{if } x \in \left[1, 2\right].
     \end{dcases}
-    \]
+  \]
   \begin{figure}[h]
     \begin{center}
       \includegraphics{graphs/pwlimex1}
@@ -210,7 +209,7 @@ For piecewise-defined functions, limits can get especially interesting. Here's a
   \end{enumerate}
 \end{ex}
 \begin{ex}
-  Find
+  Find the value of
   \[ \lim_{x \to 4} \frac{4x-x^2}{2-\sqrt x} \text{.} \]
   \begin{sol}
     \begin{figure}[h]
@@ -219,7 +218,7 @@ For piecewise-defined functions, limits can get especially interesting. Here's a
       \end{center}
       \caption{A plot of $f(x)=\frac{4x-x^2}{2-\sqrt x}$.}
     \end{figure}
-    First we multiply by the conjugate of the denominator to remove the radical from it. For more detail on conjugates, see Section \ref{app:def:conjugate}.
+    First we multiply by the conjugate of the denominator to remove the radical from it. For more detail on conjugates, see \secref{app:def:conjugate}.
     \begin{align*}
       \lim_{x \to 4} \frac{4x-x^2}{2-\sqrt x}
       &= \lim_{x \to 4} \frac{4x-x^2}{2-\sqrt x} \cdot \frac{2+\sqrt x}{2+\sqrt x}\\
@@ -261,17 +260,27 @@ For piecewise-defined functions, limits can get especially interesting. Here's a
   But dividing by larger and larger values is going to make this function's \textbf{amplitude}\index{amplitude},
   its distance from the $y$-value of $0$, much smaller.
 
-  Using Theorem \ref{th:sandwich},\footnote{How?} we can see that this limit approaches $1$.
+  Using \thref{th:sandwich},\footnote{How?} we can see that this limit approaches $1$.
 \end{ex}
 
 \section{Indeterminate Forms}
 If we want to know how the function
-\[F(x)=\frac{x-\sin x}{x^3}\]
-behaves \emph{near} $x=0$ (where it is undefined), we can examine the limit of $F(x)$ as $x \to 0$. We cannot apply the Quotient Rule for limits because the limit of the denominator is $0$. Moreover, in this case, \emph{both} the numerator and denominator approach $0$, and $0/0$ is undefined. Such limits may or may not exist in general, but the limit does exist for the function $F(x)$ under discussion by applying l'Hospital's Rule, which is detailed further in Section \ref{sec:lhospital}.
+\begin{equation}
+    F(x)=\frac{x-\sin x}{x^3}
+    \label{eq:indeterminate_form}
+\end{equation}
+behaves \emph{near} $x=0$ (where it is undefined), we can examine the limit of $F(x)$ as $x \to 0$. We cannot apply the Quotient Rule for limits because the limit of the denominator is $0$. Moreover, in this case, \emph{both} the numerator and denominator approach $0$, and $0/0$ is undefined. Such limits may or may not exist in general, but the limit does exist for the function $F(x)$ under discussion by applying l'Hospital's Rule, which is detailed further in \secref{sec:lhospital}.
 
 If the continuous functions $f(x)$ and $g(x)$ are both zero at $x=a$, then
 \[\lim_{x \to a} \frac{f(x)}{g(x)}\]
 cannot be found by substituting $x=a$. The substitution produces $0/0$, a meaningless expression, which we cannot evaluate. We use $0/0$ as a notation for an expression known as an \textbf{indeterminate form}. Other meaningless expressions often occur, such as $\infty / \infty$, $\infty \cdot 0$, $\infty - \infty$, $0^0$, and $1^{\infty}$, which cannot be evaluated in a consistent way; these are called indeterminate forms as well.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{continuous/limits/indeterminate_form}
+    \caption{A plot of \eref{eq:indeterminate_form}.}
+    \label{fig:indeterminate_form}
+\end{figure}
 
 \section{Continuity of Functions}
 \begin{defn}

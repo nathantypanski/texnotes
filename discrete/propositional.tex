@@ -71,7 +71,7 @@ A \textbf{proposition}\index{proposition} just a sentence that makes a statement
   \index{conditional statement}
   The \textbf{conditional statement} \[p \implies q\] is the propsition ``if p, then q.''
   The conditional statement \(p \implies q\) is false when \(p\) is true and \(q\) is false, and true otherwise.
-  Other ways of writing the conditional statement can be found in table \ref{tab:conditionals}.
+  Other ways of writing the conditional statement can be found in \tabref{tab:conditionals}.
   \index{hypothesis}\index{antecedent}\index{premise}
   \(p\) is called the \textbf{hypothesis} (or antecedent or premise).
   \index{conclusion}\index{consequence}
@@ -128,7 +128,7 @@ A \textbf{proposition}\index{proposition} just a sentence that makes a statement
 
   This property of contrapositives is especially useful when we are trying to prove a statement,
   as its contrapositive is often easier to prove than the statement itself.
-  This subject is detailed further in \ref{sec:contrapositive}.
+  This subject is detailed further in \secref{sec:contrapositive}.
 
 \index{inverse}
   The \textbf{inverse} of \(p \implies q\) is \(\neg p \implies \neg q\).
@@ -164,7 +164,7 @@ In mathematical theorems, definitions, and related elements later in this text, 
 \end{ex}
 \begin{table}
   \centering
-  \boxed{
+  \boxed{\
     \begin{tabular}{>{\(}l<{\)} >{\(}r<{\)}|>{\(}c<{\)}|>\(c<\)|>\(c<\)|>\(c<\)}
       p & q & \neg q & p \lor \neg q & p \land q & (p \lor \neg q) \implies (p \land q) \\ \hline
       1 & 1 & 0 & 1 & 1 & 1 \\
@@ -209,7 +209,7 @@ Then conditional, and finally bi-conditional operators.
   \( ( p \land q ) \lor r\)
   or \( p \land (q \lor r)\)?
   \begin{sol}
-    Let's look at Table \ref{tab:precedence}.
+    Let's look at \tabref{tab:precedence}.
     It states that $\land$ (``and'') operators come before $\lor$ (``or'') operators.
     Therefore,
     \[ p \land q \lor r \equiv (p \land q) \lor r \text{.}\]
@@ -244,7 +244,7 @@ Intermediary steps may aid one's understanding, though they are not necessary in
 \end{table}
 \begin{table}[H]
   \centering
-  \boxed{
+  \boxed{\
     \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
       p & q & \neg(p \lor q) & \neg p \land \neg q \\ \hline
       0 & 0 & 1 & 1 \\
@@ -256,7 +256,7 @@ Intermediary steps may aid one's understanding, though they are not necessary in
   \caption{A proof of DeMorgan's second law.}
 \end{table}
 
-Extending DeMorgan's laws by the association laws for disjunction and conjunction, shown in Table \ref{tab:logequiv}, they become:
+Extending DeMorgan's laws by the association laws for disjunction and conjunction, shown in \tabref{tab:logequiv}, they become:
 \begin{equation}
  \neg\left(\bigwedge^n_{n=1} p_n\right)=\bigvee^n_{n=1} \neg p_n
 \end{equation}
@@ -288,10 +288,10 @@ We can convert $p\implies q$ to a proposition using only the $\neg$ and $\lor$ o
 \begin{equation}
   p \implies q \equiv \neg p \lor q,
 \end{equation}
-which we will prove using a truth table in Table \ref{tab:conditionalproof}.
+which we will prove using a truth table in \tabref{tab:conditionalproof}.
 \begin{table}[H]
   \centering
-  \boxed{
+  \boxed{\
     \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
       p & q & p \implies q & \neg p \lor q \\ \hline
       1 & 1 & 1 & 1 \\
@@ -333,7 +333,7 @@ which we will prove using a truth table in Table \ref{tab:conditionalproof}.
 
 \section{Proving Logical Equivalences}
 
-We can prove logical equivalences by using the rules in Table \ref{tab:logequiv}, and showing
+We can prove logical equivalences by using the rules in \tabref{tab:logequiv}, and showing
 how one step leads to another until we reach something we know to be true.
 Alternatively, we could start with a statement that we know to be true and work our way to the logical equivalence we are trying to prove.
 Both of these proof methods are valid, though not especially rigorous, as they rely upon rules that we may not have established the truth value of with the mathematical rigor required to consider them \emph{formal proofs}.
@@ -351,7 +351,7 @@ Both of these proof methods are valid, though not especially rigorous, as they r
   \end{sol}
 \end{ex}
 
-Alternatively, they can be proven using truth tables, as described in section \ref{def:contrapositive}.
+Alternatively, they can be proven using truth tables, as described in \secref{def:contrapositive}.
 
 % \section{Bit Operations}
 %

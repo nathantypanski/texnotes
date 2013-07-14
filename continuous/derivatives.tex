@@ -1,13 +1,13 @@
 \chapter{Derivatives}\label{ch:derivatives}
 %\epigraph{Some people will tell you that slow is good---but I'm here to tell you that fast is better.}{Hunter S. Thompson}%, Kingdom of Fear: Loathsome Secrets of a Star-crossed Child in the Final Days of the American Century}
 
-Say we are trying to find the rate of change of the function $x^3$.
+Say we are trying to find the rate of change of the function $f(x)=x^3$.
 That is, essentially, its slope.
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{continuous/derivatives/x3.eps}
   \end{center}
-  \caption{A plot of $x^3$.}
+  \caption{A plot of $f(x)=x^3$.}
 \end{figure}
 We'd like to be able to do this with just a straight line, but that's simply not possible.
 We could, however, draw a straight line that approximates this function around a specific value, say $x=1$.
@@ -61,8 +61,9 @@ The entire idea of a derivative is based on the idea behind the slope of a graph
   \caption{The slope-intercept form equation for a line.}
   % Kyle Martin corrected this caption for me. Thanks Kyle!
 \end{figure}
-The slope, $m$, of a given straight line\footnote{The variable $b$ represents the $y$-{\em intercept\/} of the function.}
-$f(x)=mx+b$ is given by its \emph{change in $y$ values divided by its change in $x$ values}
+The slope, $m$, of a given straight line
+$f(x)=mx+b$
+is given by its \emph{change in $y$ values divided by its change in $x$ values}
 \begin{align}
   \label{eq:slope}
   m&=\frac{\Delta y}{\Delta x,} \\
@@ -297,7 +298,7 @@ We will use both of these new rules in the following example.
 \begin{theorem}[Product Rule for Derivatives]
   The \textbf{product rule}\index{derivatives, product rule} tells us that for two differentiable functions $f(x)$ and $g(x)$,
   \begin{equation}
-    \ddx f(x) \cdot g(x) = f(x) \frac{\ud g(x)}{\ud x}+g(x)\frac{\ud f(x)}{\ud x}
+    \ddx f(x) \cdot g(x) = f(x) \frac{\ud g(x)}{\ud x}+g(x)\frac{\ud f(x)}{\ud x}.
     \label{eq:productrule}
   \end{equation}
   \label{thm:productrule}
@@ -317,20 +318,21 @@ Unlike the with the product rule, there is no leniency offered with the quotient
 \end{equation}
 
 
-The \textbf{chain rule} is used to differentiate composite functions, which look like $(f \circ g)(x)$ and mean $f(g(x))$.
+The \textbf{chain rule} is used to differentiate composite functions, which look like $(f \circ g)(x)$ and mean $f\big(g(x)\big)$.
 This type of functions is introduced and further explained in \secref{sec:compositefunctions}.
 \begin{theorem}[Chain Rule for Derivatives]
   The chain rule states that if $y=f(u)$ and $u=g(x)$, then
   \begin{equation}
-    \frac{\ud y}{\ud x}=\frac{\ud y}{\ud u} \cdot \frac{\ud u}{\ud x}
+    \frac{\ud y}{\ud x}=\frac{\ud y}{\ud u} \cdot \frac{\ud u}{\ud x}.
   \end{equation}
 \end{theorem}
 We will want to develop an intuitive understanding for when to use the chain rule.
 Some derivatives appear to require the chain rule, when in fact they can be differentiated in much simpler ways.
+
+Here is an example of such a problem:
 \begin{ex}
-  Here's an example of such a problem.
   Find the derivative of $f(x)$, where
-  \[ f(x)=\frac{1}{x^3} \]
+  \[ f(x)=\frac{1}{x^3}. \]
   \begin{figure}[h]
     \begin{center}
       \includegraphics{continuous/derivatives/chainrule_1.eps}
@@ -338,7 +340,9 @@ Some derivatives appear to require the chain rule, when in fact they can be diff
     \caption{A plot of $f(x)=\frac{1}{x^3}$.}
   \end{figure}
   \begin{sol}
-    This is not a chain rule problem. Although you could think of it as one with $f(x)=1/x$ and $g(x)=x^3$, it is easier to remember that factors can be moved from the numerator to the denominator simply by multiplying their exponents by $-1$.
+    This is not a chain rule problem.
+    Although you could think of it as one with $f(x)=1/x$ and $g(x)=x^3$,
+    it is easier to remember that factors can be moved from the numerator to the denominator simply by multiplying their exponents by $-1$.
     \begin{align*}
       f(x)&=\frac{1}{x^3}\\&=x^{-3} \\
       \ddx f(x)&=-3x^{-4}
@@ -406,7 +410,7 @@ Functions are not differentiable at breaks, immediate bends, cusps, or places wi
 \subsection{Linearization of Functions}
 \index{linearization}
 
-One application of derivatives is linearization of functions.
+One application of derivatives is \emph{linearization} of functions.
 This is handy for performing calculations that, otherwise, would be ridiculously difficult without a calculator.
 The key is to treat the derivative of the function as the slope of a straight line,
 and then to consider the $y$-values of that line \emph{good enough} approximations of the original function within a small enough interval.
@@ -543,7 +547,11 @@ functions}
   \index{antiderivative}
 \end{defn}
 \begin{ex}
-  Find the antiderivative of $f(x)=3x^2$.
+  Find the antiderivative of
+  \begin{equation}
+      f(x)=3x^2.
+      \label{eq:3x2antiderivative}
+  \end{equation}
   \begin{sol}
     We should think of a function whose derivative yields the function $3x^2$.
     It seems clear that this function is related to the power rule, and reversing that rule would give us $x^3$.
@@ -568,16 +576,19 @@ functions}
         \begin{equation}
             F(x)+c,
         \end{equation}
-        where $c$ is an ``arbitrary constant''---that is, any number whatsoever that does not contain a variable.
+        where $c$ is an \emph{arbitrary constant}---that is, any number whatsoever that does not contain a variable.
         This ``function,'' $F(x)+c$, therefore, does not actually refer to one function in particular,
         or even a \emph{handful} thereof, but rather a \emph{family of functions}, all of which have a derivative equal to $f(x)$.
     \end{defn}
 
-    For our example, the generalized antiderivative of $f(x)=3x^2$ is $F(x)=x^3+c$.
+    For our example, the generalized antiderivative of
+    \eref{eq:3x2antiderivative}
+    is
+    \[ F(x)=x^3+c. \]
   \end{sol}
 \end{ex}
 We would plot this using \textbf{integral curves}, which represent a variety of possible versions of the function for different values of $c$.
-\begin{figure}[<+htpb+>]
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=3in]{continuous/derivatives/intcurves.eps}
   \end{center}

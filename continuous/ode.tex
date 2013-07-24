@@ -5,6 +5,48 @@
 \begin{defn}
   A \textbf{direction field} tells us the slope of a function at any given place.
 \end{defn}
+\begin{ex}
+    In physics, we often define acceleration to be a vector relative to another vector, velocity.
+    Here, we will just consider them as scalars for the sake of argument.
+    Accleration is a change in velocity, so
+    \begin{equation}
+        a = \leib{v}{t},
+        \label{eq:acceleration}
+    \end{equation}
+    where $v$ represents velocity and $t$ represents time.
+    Now we integrate both sides of \eref{eq:acceleration} with respect to $t$,
+    \begin{equation}
+        \int a \ud t = \int \leib{v}{t} \ud t.
+        \label{eq:intaccel}
+    \end{equation}
+    To simplify things, let us assume $\ud t$ in the denominator of the right-hand side of \eref{intaccel} and the freestanding $\ud t$ are simply variables and may be cancelled as such.
+    We cannot actually do this (as ``$\ud$'' is an operator and not a variable, and it cannot be treated as one), but the results turn out to have interesting implications:
+    \begin{equation}
+        \int a \ud t = \int \ud v.
+        \label{eq:naughtint}
+    \end{equation}
+    From here we simplify, finding that
+    \begin{equation}
+        at + c_1 = v + c_2.
+        \label{eq:almostvelocity}
+    \end{equation}
+    The constants in \eref{eq:almostvelocity} are simply constants and may be combined into another constant, $C$.
+    Also, the equation may be rearranged to put it in more familiar form, yielding
+    \begin{equation}
+        v = at + C,
+        \label{eq:velocity}
+    \end{equation}
+    which we recognize as the classical mechanics equation for velocity.
+    Integrating once more, we find
+    \begin{align*}
+        \int v \ud t &= \int (at + C) \ud t, \\
+        \int v \ud t &= \int at \ud t + \int C \ud t, \\
+        vt + c_3  &= a \frac{t^2}{2} + Ct + c_4. \\
+        \intertext{Now we may simply combine the constants once more, defining $C_1$ to constitute the sum of $c_3$, and $c_4$.}
+        vt &= a \frac{t^2}{2} + Ct + C_1
+    \end{align*}
+\end{ex}
+
 \section{Integrating Factors}
 We will observe differential equations of the form
 \begin{equation}

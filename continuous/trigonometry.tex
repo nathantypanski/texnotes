@@ -5,18 +5,27 @@
   \begin{center}
     \includegraphics[width=0.4\textwidth]{continuous/trig/basictrig}
   \end{center}
+  \caption{A right triangle.}
+  \label{fig:right_triangle}
 \end{figure}
 
-For this example:
+In \figref{fig:right_triangle}:
   \[\displaystyle{\sin\theta=\frac{b}{c}}\qquad
   \displaystyle{\cos\theta=\frac{a}{c}}\qquad
   \displaystyle{\tan\theta=\frac{b}{a}}\]
-Gennerally speaking, for an angle $\theta$ on the inside of a right triangle,
-\begin{itemize}
-  \item$\sin\theta$ is equal to the \emph{length of the opposite side divided by the length of the hypotenuse\footnote{The hypotenuse is the side of a right triangle opposite the right angle.}}.
-  \item$\cos\theta$ is equal to the \emph{adjacent side divided by the hypotenuse}.
-  \item$\tan\theta$ is equal to the \emph{opposite over the adjacent side}.
-\end{itemize}
+
+\begin{defn}
+    The \textbf{hypotenuse}\index{hypotenuse} is the side opposite the right angle.
+\end{defn}
+\begin{defn}
+    The \textbf{sine}\index{sine} of $theta$, $\sin\theta$, is equal to the length of the opposite side divided by the length of the hypotenuse.
+\end{defn}
+\begin{defn}
+    The \textbf{cosine}\index{cosine} of $theta$, $\cos\theta$, is equal to the adjacent side divided by the hypotenuse.
+\end{defn}
+\begin{defn}
+    The \textbf{tangent}\index{tangent} of $theta$, $\tan\theta$, is equal to the opposite over the adjacent side.
+\end{defn}
 
 \input{continuous/unitcircle}
 
@@ -96,17 +105,60 @@ The other ones, we either have to memorize or learn to derive (described in \sec
   \cos{2x}=\cos^2x-\sin^2x
 \end{equation}
 
-\section{Useful Trigonometric Relationships}\index{trigonometric relationships}
-\begin{align}
-    \frac{1}{\sin\theta}&=\csc\theta \\
-    \frac{\cos\theta}{\sin\theta}&=\cot\theta \\
-    \frac{\sin\theta}{\cos\theta}&=\tan\theta \\
-    \frac{1}{\cos\theta}&=\sec\theta
-  \end{align}
+\section{Reciprocal functions}\index{reciprocal trigonometric functions}
+The reciprocals of $\sin$, $\cos$, and $\tan$ all have names as well:
+\begin{defn}
+    The \textbf{cosecant}, $\csc \theta$ is the reciprocal of $\sin \theta$:
+    \begin{equation}
+        \csc \theta = \frac{1}{\sin \theta}
+        \label{eq:cosecant}
+    \end{equation}
+\end{defn}
+\begin{defn}
+    The \textbf{secant}, $\sec \theta$ is the reciprocal of $\csc \theta$:
+    \begin{equation}
+        \sec \theta = \frac{1}{\cos \theta}
+        \label{eq:secant}
+    \end{equation}
+\end{defn}
+\begin{defn}
+    The \textbf{cotangent}, $\cot \theta$ is the reciprocal of $\tan \theta$:
+    \begin{equation}
+        \cot \theta = \frac{1}{\tan \theta}
+        \label{eq:cotangent}
+    \end{equation}
+\end{defn}
 
 \section{Deriving Trigonometric Identities}\index{deriving trigonometric identities}\label{sec:trigderiv}
+Recall in \figref{fig:right_triangle}, $\sin \theta = b/c$ and $\cos \theta = a/c$.
+Therefore,
+\begin{equation*}
+    \frac{\sin \theta}{\cos \theta} = \dfrac{b/c}{a/c},
+\end{equation*}
+which we may simplify into
+\begin{equation*}
+    \frac{\sin \theta}{\cos \theta} = \dfrac{bc}{ac},
+\end{equation*}
+and cancel like terms to get
+\begin{equation*}
+    \frac{\sin\theta}{\cos\theta}=\dfrac{b}{a}.
+\end{equation*}
+Recall that $\tan \theta = b/a$ and we see that
+\begin{equation}
+    \tan\theta = \frac{\sin \theta}{\cos \theta}.
+    \label{eq:found_tangent}
+\end{equation}
+Now, taking the reciprocal of both sides of \eref{eq:found_tangent}:
+\begin{equation*}
+    \frac{1}{\tan \theta} = \frac{\cos \theta}{\sin \theta}.
+\end{equation*}
+Finally, remembering \eref{eq:cotangent},
+\begin{equation}
+    \cot \theta = \frac{\cos \theta}{\sin \theta}.
+    \label{eq:found_cotangent}
+\end{equation}
 
-We recall that using the pythagorean theorem and a triangle with a hypotenuse of length $1$, we can obtain our first trigonometric identity:
+We recall that using the pythagorean theorem and a triangle with a hypotenuse of length $1$, we can obtain \eref{eq:pythtrig}:
 \begin{equation}
 	\sin^2x+\cos^2x=1
   \label{eq:pyth}

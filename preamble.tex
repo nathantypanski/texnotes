@@ -230,12 +230,18 @@
 %   {headspec}% Manually specify head                                    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\definecolor{ScarletRed}{HTML}{cc0000}
+\definecolor{ScarletRedDark}{HTML}{a40000}
+\definecolor{Chameleon}{HTML}{73d216}
+\definecolor{ChameleonDark}{HTML}{4e9a06}
+\definecolor{SkyBlue}{HTML}{3465a4}
+\definecolor{SkyBlueDark}{HTML}{204a87}
 \newtheoremstyle{example}% name of the style to be used
   {2ex}% measure of space to leave above the theorem. E.g.: 3pt
   {2ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
-  {\bfseries}% name of head font
+  {\scshape\color{SkyBlue}}% name of head font
   {} % punctuation between head and body
   {1em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
@@ -244,7 +250,7 @@
   {1ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
-  {\itshape}% name of head font
+  {\itshape\color{ChameleonDark}}% name of head font
   {.\\}% punctuation between head and body
   {1em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
@@ -253,7 +259,7 @@
   {2ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
-  {\bfseries} % name of head font
+  {\scshape\color{ScarletRed}} % name of head font
   {:}% punctuation between head and body
   {0.5em}% space after theorem head; " " = normal interword space
   {}% Manually specify head

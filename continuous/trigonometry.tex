@@ -160,37 +160,38 @@ Finally, remembering \eref{eq:cotangent},
 
 We recall that using the pythagorean theorem and a triangle with a hypotenuse of length $1$, we can obtain \eref{eq:pythtrig}:
 \begin{equation*}
-	\sin^2x+\cos^2x=1
+	\sin^2x+\cos^2x=1.
 \end{equation*}
 Dividing by $\sin^2x$ gives us:
+\begin{align*}
+    \frac{\sin^2x}{\sin^2x}+\frac{\cos^2x}{\sin^2x} &= \frac{1}{\sin^2x}, \\
+    1+\cot^2x &= \csc^2x,
+\end{align*}
+and dividing by $\cos^2x$, we see that
 \begin{align}
-\frac{\sin^2x}{\sin^2x}+\frac{\cos^2x}{\sin^2x}&=\frac{1}{\sin^2x} \nonumber \\
-	1+\cot^2x&=\csc^2x
-\end{align}
-Dividing by $\cos^2x$ produces:
-\begin{align}
-  \frac{\sin^2x}{\cos^2x}+\frac{\cos^2x}{\cos^2x}+=&\frac{1}{\cos^2x} \nonumber \\
-	\tan^2x+1=&\sec^2x
+    \frac{\sin^2x}{\cos^2x}+\frac{\cos^2x}{\cos^2x}+=&\frac{1}{\cos^2x}, \nonumber \\
+    \tan^2x+1=&\sec^2x.
 \end{align}
 
 We should memorize the following two identities:
 \begin{equation}
-  \sin{a+b}=\sin a \cos a + \sin b \cos b
+  \sin{a+b}=\sin a \cos a + \sin b \cos b,
   \label{eq:sinab}
 \end{equation}
+and
 \begin{equation}
-  \cos{a+b}=\cos a \cos b + \sin a \sin b
+  \cos{a+b}=\cos a \cos b + \sin a \sin b.
   \label{eq:cosab}
 \end{equation}
-From equation \eqref{eq:sinab} we can infer that, if both $a$ and $b$ are the same,
+From equation \eqref{eq:sinab} we can infer that if both $a$ and $b$ are the same then
 \begin{equation}
-  \sin{2\theta}=2 \sin \theta \cos \theta
+  \sin{2\theta}=2 \sin \theta \cos \theta,
   \label{eq:sin2q}
 \end{equation}
-using the same reasoning, \eqref{eq:cosab} gives us
+and using the same reasoning, \eqref{eq:cosab} gives us
 \begin{align}
-  \cos{2\theta}&=\cos \theta \cos \theta- \sin\theta \sin\theta \nonumber\\
-  \cos{2\theta}&=\cos^2 \theta - \sin^2\theta
+  \cos{2\theta}&=\cos \theta \cos \theta- \sin\theta \sin\theta, \nonumber\\
+  \cos{2\theta}&=\cos^2 \theta - \sin^2\theta.
   \label{eq:cos2q}
 \end{align}
 
@@ -223,7 +224,7 @@ In the above figure, we use the distance formula
 \end{align}
 This is the \emph{law of cosines}, a general form of the pythagorean theorem that doesn't only work with right triangles.
 
-By rearranging \eqref{eq:cos2q} and substituting from \eqref{eq:pyth} we can derive power reduction identities for $\cos^2 \theta$
+By rearranging \eqref{eq:cos2q} and substituting from \eqref{eq:pythtrig} we can derive power reduction identities for $\cos^2 \theta$
 \begin{align}
   \cos{2\theta} &= \cos^2 \theta - \sin^2\theta \nonumber \\
   \cos{2\theta} + \sin^2\theta &= \cos^2\theta \nonumber \\

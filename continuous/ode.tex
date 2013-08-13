@@ -41,14 +41,19 @@
         \label{eq:velocity}
     \end{equation}
     which we recognize as the classical mechanics equation for velocity.
-    Integrating once more, we find
-    \begin{align*}
-        \int v \ud t &= \int (at + C) \ud t, \\
-        \int v \ud t &= \int at \ud t + \int C \ud t, \\
-        vt + c_3  &= a \frac{t^2}{2} + Ct + c_4. \\
-        \intertext{Now we may simply combine the constants once more, defining $C_1$ to constitute the sum of $c_3$, and $c_4$.}
-        vt &= a \frac{t^2}{2} + Ct + C_1
-    \end{align*}
+    Integrating once more, and replacing $v$ with the definition of velocity as change in position, we find
+    \begin{align}
+        \int \leib{x}{t} \ud t &= \int (at + C) \ud t, \nonumber \\
+        \int \leib{x}{t} \ud t &= \int at \ud t + \int C \ud t, \nonumber \\
+        x + c_3  &= a \frac{t^2}{2} + Ct + c_4. \nonumber \\
+        \intertext{Now we may simply combine the constants once more, defining $C_1$ to constitute the difference of $c_4$, and $c_3$,}
+        x &= a \frac{t^2}{2} + Ct + C_1. \label{eq:phys_const}
+    \end{align}
+    \eref{eq:phys_const} may be rewritten in its more common form:
+    \begin{equation}
+        x(t) = \frac{1}{2} a t^2 + v_0 t + x_0.
+        \label{eq:position}
+    \end{equation}
 \end{ex}
 
 \section{Integrating Factors}

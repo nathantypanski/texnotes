@@ -1,24 +1,28 @@
 \chapter{Sets}
 \label{ch:sets}
-A \textbf{set} is an unordered collection of objects, called its \emph{elements}. We generally write sets in capital letters, such as $A$, to contrast them from the elements contained in them.
+A \textbf{set} is an unordered collection of objects, called its 
+\emph{elements}. We generally write sets in capital letters, such as $A$, to 
+contrast them from the elements contained in them.
 
 We write $a \in A$ to state that $a$ is an element of the set $A$.
 
-The most basic way to define a set is to write out all of its elements
-\[ A : : = \set{ n, z, k, d } \]
-or to write out a few of them, creating a pattern which is obvious
-\[ B : : = \set{ 1, 2, 3, 4, \ldots 999 } \]
+The most basic way to define a set is to write out all of its elements, like:
+\[ A : : = \set{ n, z, k, d }, \]
+or to write out a few of them, creating a pattern which is obvious:
+\[ B : : = \set{ 1, 2, 3, 4, \ldots 999 }. \]
 
-However, in mathematics, we often use \textbf{set builder notation}\index{set builder notation}.
-This associates all elements of a set with a certain propositional function, which is true for all elements of the set.
+However, in mathematics, we often use \textbf{set builder notation}
+\index{set builder notation}.
+This associates all elements of a set with a certain propositional function, 
+which is true for all elements of the set.
 We construct sets using this method as follows:
 \[ S : : = \set{ x\in\mathbb R \big| P(x)} \]
 This constructs a set $S$ which contains all real numbers $x$ for which $P(x)$ is true.
 
-Some important sets in mathematics are listed in Table \ref{tab:sets}.
+Some important sets in mathematics are listed in \tabref{tab:sets}.
 \begin{table}
   \centering
-  \boxed{
+  \boxed{\
     \begin{tabular}{>$l<$ l}
       \mathbb{N}     & the set of \emph{natural numbers} \\
       \mathbb{Z}     & the set of \emph{integers} \\
@@ -41,10 +45,14 @@ How do we write about these relationships?
 These are the questions that are answered in this section.
 
 
-Two sets are \textbf{equal}\index{equality of sets} iff\footnote{``If and only if,'' see Section \ref{sec:propintro}.} they have the same elements.
+Two sets are \textbf{equal}\index{equality of sets} 
+iff\footnote{\
+    ``If and only if,'' see \secref{sec:propintro}.
+} they have the same elements.
 Therefore, if $A$ and $B$ are sets, then they are equal iff
 \[ \forall \big(x \in A \iff x \in B\big). \]
-In English, two sets $A$ and $B$ are equal if and only if every element in a implies it also exists in B, and vice versa.
+In English, two sets $A$ and $B$ are equal if and only if every element in a imp
+lies it also exists in B, and vice versa.
 We then write $A=B$ to show that they are equal sets.
 \begin{figure}[H]
   \begin{center}
@@ -55,30 +63,37 @@ We then write $A=B$ to show that they are equal sets.
 We have two ways to write an \textbf{empty set}.
 We could write $\emptyset$ or $\{ \}$.
 
-A set with only one element is called a \textbf{singleton set}.\index{singleton set}
+A set with only one element is called a \textbf{singleton set}.
+\index{singleton set}
 
 The set $A$ is a \textbf{subset}\index{subset} of set $B$ iff
 \[ \forall x (x \in A \implies x \in B) \]
 We then write $A \subseteq B$ to show that $A$ is a subset of $B$.
-To demonstrate that $A$ is a subset of $B$, show that if $x$ belongs to $A$ then it also belongs to $B$.
-To show that $A$ is not a subset of $B$, that is, $A \not \subseteq B$, find a single element $x \in A$ such that $x \not \in B$.
-\footnote{The symbol $\not \in$ means \emph{not in}.}
+To demonstrate that $A$ is a subset of $B$, show that if $x$ belongs to $A$ then
+it also belongs to $B$.
+To show that $A$ is not a subset of $B$, that is, $A \not \subseteq B$, find a 
+single element $x \in A$ such that $x \not \in B$.\footnote{\
+    The symbol $\not \in$ means \emph{not in}.
+}
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.2\textwidth]{discrete/sets/subset.eps}
   \end{center}
   \caption{$A\subseteq B$}
 \end{figure}
-If the set $A$ is a subset of the set $B$ but $A \neq B$, we write $A \subset B$ and say that $A$ is a \textbf{proper subset} of $B$.
+If the set $A$ is a subset of the set $B$ but $A \neq B$, we write $A \subset B$ 
+and say that $A$ is a \textbf{proper subset} of $B$.
 That is, $A$ is a proper subset of $B$ iff
 \[ \forall x (x \in A \implies x \in B) \land \exists x (x \in B \and x \not \in A). \]
-This means, if the element $x$ exists in set $A$, then it also exists in set $B$, but there is at least one element $x$ in $B$ that is not in $A$.
+This means, if the element $x$ exists in set $A$, then it also exists in set 
+$B$, but there is at least one element $x$ in $B$ that is not in $A$.
 
 \subsection{Set Operations}
 
 For a set $A$ and a set $B$, the following operations apply:
 
-The \textbf{cartesian product} of $A$ and $B$, denoted $A \times B$, is the set of all ordered pairs $(a, b)$ where $a \in A$ and $b \in B$. Hence,
+The \textbf{cartesian product} of $A$ and $B$, denoted $A \times B$, is the set of
+all ordered pairs $(a, b)$ where $a \in A$ and $b \in B$. Hence,
 \[ A \times B = \big\{ (a,b) | a \in A \land b \in B \big\} \]
 
 \begin{ex}
@@ -89,9 +104,11 @@ The \textbf{cartesian product} of $A$ and $B$, denoted $A \times B$, is the set 
   \end{sol}
 \end{ex}
 
-The \textbf{intersection}\index{intersection} of $A$ and $B$, denoted $A \cap B$,
+The \textbf{intersection}\index{intersection} of $A$ and $B$, denoted 
+$A \cap B$,
 is the set containing those elements in both $A$ and $B$, but not just one.
-If the intersection of $A$ and $B$ is $\emptyset$, we say the two sets are \textbf{disjoint}.\index{disjoint}
+If the intersection of $A$ and $B$ is $\emptyset$, we say the two sets are 
+\textbf{disjoint}.\index{disjoint}
 \[ A \cap B = \big\{ x \in A | x \in B \big\}\]
 \begin{figure}[H]
   \begin{center}

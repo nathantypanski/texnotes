@@ -94,13 +94,13 @@ For a set $A$ and a set $B$, the following operations apply:
 
 The \textbf{cartesian product} of $A$ and $B$, denoted $A \times B$, is the set of
 all ordered pairs $(a, b)$ where $a \in A$ and $b \in B$. Hence,
-\[ A \times B = \big\{ (a,b) | a \in A \land b \in B \big\} \]
+\[ A \times B = \big\{ (a,b) | a \in A \land b \in B \big\}. \]
 
 \begin{ex}
   Find $A \times B$ when $A = \{ 1,2 \} $ and $B = \{ a, b, c\} $.
   \begin{sol}
     \[A \times B = \big\{(1,a),(1,b),(1,c),
-    (2,a),(2,b),(2,c)\big\}\]
+    (2,a),(2,b),(2,c)\big\}.\]
   \end{sol}
 \end{ex}
 
@@ -108,16 +108,16 @@ The \textbf{intersection}\index{intersection} of $A$ and $B$, denoted
 $A \cap B$,
 is the set containing those elements in both $A$ and $B$, but not just one.
 If the intersection of $A$ and $B$ is $\emptyset$, we say the two sets are 
-\textbf{disjoint}.\index{disjoint}
-\[ A \cap B = \big\{ x \in A | x \in B \big\}\]
+\textbf{disjoint}:\index{disjoint}
+\[ A \cap B = \big\{ x \in A | x \in B \big\}.\]
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.2\textwidth]{discrete/sets/intersection.eps}
   \end{center}
   \caption{$A\cap B$}
 \end{figure}The \textbf{union}\index{union} of $A$ and $B$, denoted $A \cup B$,
-is the set containing all elements in either or both $A$ and $B$.
-\[ A \cup B = \big\{ x | x \in A \lor x \in B \big\}\]
+is the set containing all elements in either or both $A$ and $B$:
+\[ A \cup B = \big\{ x | x \in A \lor x \in B \big\}.\]
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.2\textwidth]{discrete/sets/union.eps}
@@ -125,10 +125,11 @@ is the set containing all elements in either or both $A$ and $B$.
   \caption{$A \cup B$}
 \end{figure}
 The \textbf{complement}\index{complement} of $A$ and $B$, denoted $A \setminus B$,
-is the set containing those elements in $A$ but not in $B$.
+is the set containing those elements in $A$ but not in $B$:
+\[ A \setminus B = \big\{ x \in A \big| x \not\in B \big\}. \]
 It is sometimes called the \emph{component of $B$ with respect to $A$}.
-This phrasing is used because the difference of $A$ and $B$ is different from the difference of $B$ and $A$.
-\[ A \setminus B = \big\{ x \in A \big| x \not\in B \big\} \]
+This phrasing is used because the difference of $A$ and $B$ is different from the 
+difference of $B$ and $A$.
 
 The \textbf{absolute complement}\index{absolute complement}
 of $A$ is denoted $A^c$, and exists only if a universal set\footnote{A set containing all sets, including itself.}
@@ -170,17 +171,21 @@ The \textbf{well-ordering principle} states that
 Every nonempty set of nonnegative integers has a smallest element.
 \label{thm:wellordered}
 \end{theorem}
-We can use this to prove propositional statements associated with universal quantifiers.
+We can use this to prove propositional statements associated with universal 
+quantifiers.
 
 To prove that
 \[ \forall n \in \mathbb N \big( P(n)\big) \]
 First, we define a set $C$ such that
 \[ C : : = \big\{ n \in \mathbb N^+ \big| \neg P(n) \big\} \]
-That is, we define the set $C$ to be the set of integers for which $P(n)$ is false.
-We assume that this set is nonempty---that is, there is at least one nonnegative integer for which $P(n)$ is false.
+That is, we define the set $C$ to be the set of integers for which $P(n)$ is 
+false.
+We assume that this set is nonempty---that is, there is at least one nonnegative 
+integer for which $P(n)$ is false.
 By the well-ordering principle, there is a smallest element, $n$, in $C$.
 From this, we reach a contradiction.
-For example, we could show that $n$ can be used to find an element smaller than itself.
+For example, we could show that $n$ can be used to find an element smaller than 
+itself.
 Now, we conclude that the set $C$ must be empty.
 
 \begin{ex}
@@ -188,13 +193,17 @@ Now, we conclude that the set $C$ must be empty.
 
   In basic algebraic notation, we could write this sum as
   \[1 + 2 + 3 + \cdots + n \]
-  But we have a way of simplifying this using something called \textbf{sigma notation}\index{sigma notation}.
+  But we have a way of simplifying this using something called 
+  \textbf{sigma notation}\index{sigma notation}.
   We would write it as follows:
   \[1+2+3+\cdots+n  \sum_{1}^n \frac{n(n+1)}{2} \]
   \begin{proof}
     Now, we define a set $C$ such that
-    \[ C : : = \bigg\{ n \in \mathbb N \big| \sum_{i=1}^n i \neq \frac{n(n+1)}{2}\bigg\}\]
-    By the \emph{well-ordering principle}, $C$ has a smallest element, which we will call $c$.
+    \[ C : : = \bigg\{ n \in \mathbb N \big| \sum_{i=1}^n i \neq 
+        \frac{n(n+1)}{2}\bigg\}
+    \]
+    By the \emph{well-ordering principle}, $C$ has a smallest element, which we 
+    will call $c$.
     Since $c$ is the smallest counterexample,
     \[\sum_{i=1}^n = \frac{n(n+1)}{2}\]
     holds for all $n<c$ but not for $n=c$. So, that sum should hold for $c-1$:
@@ -213,7 +222,8 @@ Now, we conclude that the set $C$ must be empty.
     \end{align*}
     Which means that
     \[\sum_{i=1}^n = \frac{n(n+1)}{2}\]
-    holds for $c$, which contradicts our definition of $C$. Therefore $P(n)$ holds for all  $n \in \mathbb N$.
+    holds for $c$, which contradicts our definition of $C$. Therefore $P(n)$ 
+    holds for all  $n \in \mathbb N$.
   \end{proof}
 \cite{mcsfull}
 \end{ex}

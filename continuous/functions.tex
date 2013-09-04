@@ -341,11 +341,14 @@ We use this height relationship to plot functions.
 \section{Composition of Functions}
 \label{sec:compositefunctions}
 \begin{defn}
-  If $f$ and $g$ are functions, then the \textbf{composite} function $f \circ g$, ``$f$ composed with $g$'', is defined by
+  If $f$ and $g$ are functions, then the \textbf{composite} function 
+  $f \circ g$, ``$f$ composed with $g$'', is defined by
   \[ (f \circ g)(x)=f\bigl(g(x)\bigr) \text{.} \]
   \begin{remark}
-    The domain of $ f \circ g $ consists of the numbers $x$ in the domain of $g$ for which $g(x)$ lies in the domain of $f$.
-    See figure~\ref{fig:p1sin1x} for an example of a function which produces indefinite $y$-values for real $x$-values around $x=0$.
+    The domain of $ f \circ g $ consists of the numbers $x$ in the domain of 
+    $g$ for which $g(x)$ lies in the domain of $f$.
+    See figure~\ref{fig:p1sin1x} for an example of a function which produces 
+    indefinite $y$-values for real $x$-values around $x=0$.
   \end{remark}
   \index{composition}
 \end{defn}
@@ -353,20 +356,13 @@ We use this height relationship to plot functions.
   If
   $f(x)=x^2$
   and
-  $g(x)=1-\sqrt{x}\text{,}$
+  $g(x)=1-\sqrt{x}$,
   find $ (f \circ g)(x) $ and $ (g \circ f)(x)$.
   \begin{sol}
-    \begin{align*}
-      (f \circ g)(x)
-      &=f\big(g(x)\big)
-      &&&
-      (g \circ f)(x)
-      &=g\big(f(x)\big)=1-\sqrt{x^2}
-      \\
-      &=(1-\sqrt{x})^2
-      &&&
-      &= 1-|x|
-    \end{align*}
+      We know that $(f \circ g)(x)$ is just $f(g(x))$ so
+      \[ f(g(x)) = (1 - \sqrt x )^2. \] For $(g \circ f)(x)$ it is the opposite
+      and \[ g(f(x)) = 1 - \sqrt{x^2} ,\]
+      which is equivalent to saying \[ g(f(x)) = 1 - \abs{x}. \]
   \end{sol}
 \end{ex}
 

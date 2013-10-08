@@ -169,16 +169,14 @@ In mathematical theorems, definitions, and related elements later in this text, 
 \end{ex}
 \begin{table}
   \centering
-  \boxed{\
     \begin{tabular}{>{\(}l<{\)} >{\(}r<{\)}|>{\(}c<{\)}|>\(c<\)|>\(c<\)|>\(c<\)}
       p & q & \neg q & p \lor \neg q & p \land q & (p \lor \neg q) \implies (p \land q) \\ \hline
-      1 & 1 & 0 & 1 & 1 & 1 \\
-      1 & 0 & 1 & 1 & 0 & 0 \\
-      0 & 1 & 0 & 0 & 0 & 1 \\
-      0 & 0 & 1 & 1 & 0 & 0
+      1 & 1 & 0      & 1             & 1         & 1 \\
+      1 & 0 & 1      & 1             & 0         & 0 \\
+      0 & 1 & 0      & 0             & 0         & 1 \\
+      0 & 0 & 1      & 1             & 0         & 0
     \end{tabular}
-  }
-  \caption{The truth table for \((p \lor \neg q) \implies (p \land q)\)}
+  \caption{The truth table for $(p \lor \neg q) \implies (p \land q)$}
 \end{table}
 \index{logical equivalence}
 The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \iff q\) is a tautology.

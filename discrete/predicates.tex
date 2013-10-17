@@ -2,7 +2,7 @@
 \label{ch:predicates}
 Predicates are based on the idea that we can replace parts of our propositions with variables in order to separate our discussion of logic from the irrelevant details of the problem.
 
-We saw in the previous chapter how the specifics of propositions seemed largely irrelavent; most examples were useless gibberish like ``my house is red'' with all of the focus on the theoretical relationships between these statements.
+We saw in the previous chapter how the specifics of propositions seemed largely irrelevant; most examples were useless gibberish like ``my house is red'' with all of the focus on the theoretical relationships between these statements.
 
 Predicate logic is a more powerful system of logic which allows us to state ``there exists'' and ``for all'' using logic.
 
@@ -13,7 +13,7 @@ Propositional logic is too simple for us to make many types of conclusions.
 Instead, we use \textbf{predicate logic}, which allows us to make general
 statements about objects and their properties.
 
-A \textbf{propositional function}\index{propositonal function}, $P(x)$, is a
+A \textbf{propositional function}\index{propositional function}, $P(x)$, is a
 type of \textbf{predicate}\index{predicate} in
 predicate logic. The important thing about propositional functions is that their truth value depends on the value of a variable, $x$.
 A propositional function becomes a proposition when a value is assigned to $x$, and then it has a truth value and we can evaluate it.
@@ -31,7 +31,7 @@ Just as values for a variable must be stated in order for a propositional functi
 This is often referred to as just the \emph{domain} of the function.
 
 
-For example, for porpostional functions talking about numbers, we often assume $D \to\mathbb{R}$.\footnote{We use $D$ as shorthand referring to the domain of discourse of a function.
+For example, for propositional functions talking about numbers, we often assume $D \to\mathbb{R}$.\footnote{We use $D$ as shorthand referring to the domain of discourse of a function.
 $\mathbb{R}$ means ``all real numbers.'' That is, all rational and irrational numbers. It does not include, for example, complex numbers which include $i$, the ``imaginary unit.''}
 
 
@@ -52,7 +52,7 @@ To show that the universal quantification of $P(x)$ is false for a domain, simpl
 
 If we wish to state that an element exists in a domain, we use the \emph{existential quantification} of a propositional function.
 
-The \textbf{existential quantificaiton}\index{existential quantification} of $P(x)$ is the proposition
+The \textbf{existential quantification}\index{existential quantification} of $P(x)$ is the proposition
   ``There exists an element $x$ in the domain such that $P(x)$.''
 We use the notation \[\exists x P(x)\] for the existential quantification of $P(x)$.
 
@@ -82,7 +82,7 @@ they must have the same truth value regardless of the values of their propositio
 and the domain of discourse used.
 
 DeMorgan's Laws are an important logical equivalence even when quantified propositions are discussed.
-As stated in our definition of logial equivalence, they hold regardless of the values of their variables.
+As stated in our definition of logical equivalence, they hold regardless of the values of their variables.
 
 %The following is a quote from Rosen's \emph{Discrete Mathematics and its Applications} on the issue:
 %
@@ -172,14 +172,14 @@ It turns out, in contrast to \emph{Euler's conjecture}, a solution to $P(a,b,c,d
 
 \section{Order of Quantifiers}\index{quantifiers, order of}
 
-Assuming a domain of discourse of all real numbers, the quantificaiton
+Assuming a domain of discourse of all real numbers, the quantification
 \begin{equation}
   \exists y \forall x Q(x, y)
 \end{equation}
-denotes the propositon
+denotes the proposition
 ``There is a real number $y$ such that for every real number $x$, $Q(x, y)$.''
 
-By contrast, the quantificaiton
+By contrast, the quantification
 \begin{equation}
   \forall x \exists y Q(x, y)
 \end{equation}

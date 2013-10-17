@@ -169,7 +169,7 @@ Let's look at an example.
   This allows us to use a handy trick to make the integrand resemble one that we know how to evaluate.
 
   Simply let $u=2x$.
-  Note that if we perform this subsitution, we would get half the equation in terms of $u$ and the other half in terms of $x$.
+  Note that if we perform this substitution, we would get half the equation in terms of $u$ and the other half in terms of $x$.
   We obviously don't know how to handle this, so we take the derivative of $u$, giving us $\ud u=2$.
 
   Now we may make our substitutions.
@@ -242,7 +242,7 @@ Its formula comes from our definition for the derivative product rule, \eref{eq:
     \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int \big[f'(x)g(x)+f(x)g'(x)\big] \ud x \nonumber\\
     \intertext{Now separate out the terms in the righthand side.}
     \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \nonumber\\
-    \intertext{From here, we note that the integral and deriviative in the lefthand side cancel each other out, if we use the fundamental theorem of calculus.}
+    \intertext{From here, we note that the integral and derivative in the lefthand side cancel each other out, if we use the fundamental theorem of calculus.}
     f(x)g(x) &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \nonumber\\
     \intertext{Now, subtract the first integral from both sides.}
     f(x)g(x) -\int f'(x)g(x) \ud x &= \int f(x)g'(x) \ud x \nonumber\\
@@ -356,7 +356,7 @@ This is just a guideline, however, and one we will frequently have to bend.
 \end{ex}
 
 \subsection{Integration by Parts Cheat Sheet}
-This is a set of guidlines\footnote{Proposed by Herbert Kasube of Bradley University.} advising whichever part of an integral comes first in this list should be assigned to $u$.
+This is a set of guidelines\footnote{Proposed by Herbert Kasube of Bradley University.} advising whichever part of an integral comes first in this list should be assigned to $u$.
 \begin{enumerate}
   \item Logarithms
   \item Inverse functions
@@ -732,7 +732,7 @@ We can also use trigonometric identities to eliminate square roots in integrals:
   \begin{itemize}
       \item $ \int tan^{\text{power}}x \, sec^{\text{even}}x\ud x$
       \item $ \int \underbrace{sin^{\text{power}x} \, cos^{\text{power}}x \ud x}_{\text{except where both are even}} $
-      \item $ \int cot^{\text{power}x} \, csc^{\text{even}}x \ud x $
+      \item $ \int cot^{\text{power}x} \, \csc^{\text{even}}x \ud x $
       \item $ \int sin(mx) \,  sin(nx) \ud x = \int \frac{1}{2}(cos(m-n)x-cos(m+n)x)$
       \item $ \int cos(mx) \,  cos(nx) \ud x = \int \frac{1}{2}(cos(m-n)x-cos(m+n)x)$
   \end{itemize}
@@ -879,7 +879,7 @@ and
   \label{eq:trigsub2}
 \end{equation}
 
-We may find \eref{eq:trigsub1} and \eref{eq:trigsub2} using the process \secref{sec:trigderiv} and simple algebraiac rearrangement of the terms.
+We may find \eref{eq:trigsub1} and \eref{eq:trigsub2} using the process \secref{sec:trigderiv} and simple algebraic rearrangement of the terms.
 
 We will find trigonometric substitution useful for problems that look this:
 
@@ -1026,7 +1026,7 @@ Now:
   \begin{tabular}{r|l}
     \(x^2\) terms & \( 2=D \) \\
     \(x\) terms & \( 1 = A + 4C  \) \\
-    const terms & \( 8 = B + 4D \)
+    constant terms & \( 8 = B + 4D \)
   \end{tabular}
 \end{table}
 

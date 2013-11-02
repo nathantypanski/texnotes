@@ -4,6 +4,7 @@
 %%%%%%%%%%%%
 % packages %
 %%%%%%%%%%%%
+\usepackage[T1]{fontenc}
 \usepackage[letterpaper, twoside]{geometry}  % set the margins to 1in on all sides usepackage
 \usepackage[bookmarks, hidelinks]{hyperref}  % generates pdf index
 \usepackage{cclicenses}
@@ -18,7 +19,14 @@
 \usepackage[usenames,dvipsnames]{xcolor} % more color
 \usepackage{verbatim}              % multiline comments
 \usepackage{array}                 % better table formatting
-\usepackage{microtype}             % sexier typesetting
+\usepackage[activate={true,nocompatibility},
+            final,
+            tracking=true,
+            kerning=true,
+            spacing=true,
+            factor=1100,
+            stretch=10,
+            shrink=10]{microtype}
 \usepackage{url}                   % urls
 \usepackage{pgfplots}              % sexier graphs
 \usepackage{fancyhdr}              % being fancy
@@ -203,6 +211,7 @@
 \newcommand{\szinfty}{\sum_{n=0}^{\infty}}
 \newcommand{\eref}[1]{Eq.$\,$\eqref{#1}}
 \newcommand{\leib}[2]{\frac{\ud #1}{\ud #2}}
+\newcommand{\wronk}[1]{\mathrm{W}\left(#1\right)}
 
 % Fourier series/fourier integral related commands
 \newcommand{\FF}{\,\mathscr{F}}

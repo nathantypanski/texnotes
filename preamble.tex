@@ -101,9 +101,6 @@
 
 %my abbreviations
 
-\newcommand{\ec}{\mathrm e}
-\newcommand{\iu}{\mathrm i}
-
 % someone else's abbreviations, from uknown source
 
 \newcommand{\pha}{{}_\bullet}
@@ -204,14 +201,16 @@
 %%%%%%%%%%%%%%%%%%%
 
 \newcommand{\margin}{\marginpar}
-\newcommand{\ud}{\,\mathrm{d}}
+\newcommand{\ud}{\ensuremath{\,\mathrm{d}}}
 \newcommand{\lets}{\text{let }}
-\DeclareMathOperator{\=H}{\stackrel{\text{H}}{=}}
-\newcommand{\ddx}{\frac{\ud}{\ud x}}
-\newcommand{\szinfty}{\sum_{n=0}^{\infty}}
+\DeclareMathOperator{\=H}{\ensuremath{\stackrel{\text{H}}{=}}}
+\newcommand{\ddx}{\ensuremath{\frac{\ud}{\ud x}}}
+\newcommand{\szinfty}{\ensuremath{\sum_{n=0}^{\infty}}}
 \newcommand{\eref}[1]{Eq.$\,$\eqref{#1}}
-\newcommand{\leib}[2]{\frac{\ud #1}{\ud #2}}
-\newcommand{\wronk}[1]{\mathrm{W}\left(#1\right)}
+\newcommand{\leib}[2]{\ensuremath{\frac{\ud #1}{\ud #2}}}
+\newcommand{\wronk}[1]{\ensuremath{\mathrm{W}\left(#1\right)}}
+\newcommand{\ec}{\mathrm e}
+\newcommand{\iu}{\mathrm i}
 
 % Fourier series/fourier integral related commands
 \newcommand{\FF}{\,\mathscr{F}}
@@ -250,7 +249,7 @@
   {2ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
-  {\scshape\color{SkyBlue}}% name of head font
+  {\scshape}% name of head font
   {} % punctuation between head and body
   {1em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
@@ -259,7 +258,7 @@
   {1ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
-  {\itshape\color{ChameleonDark}}% name of head font
+  {\itshape}% name of head font
   {.\\}% punctuation between head and body
   {1em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
@@ -268,7 +267,7 @@
   {2ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
-  {\scshape\color{ScarletRed}} % name of head font
+  {\scshape} % name of head font
   {:}% punctuation between head and body
   {0.5em}% space after theorem head; " " = normal interword space
   {}% Manually specify head

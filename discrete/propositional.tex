@@ -209,15 +209,18 @@ Then conditional, and finally bi-conditional operators.
   \label{tab:precedence}
 \end{table}
 \begin{ex}
-  Is the statement \[ p \land q \lor r \] equivalent to the statement
-  \( ( p \land q ) \lor r\)
-  or \( p \land (q \lor r)\)?
-  \begin{sol}
-    Let's look at \tabref{tab:precedence}.
-    It states that $\land$ (``and'') operators come before $\lor$ (``or'') operators.
-    Therefore,
-    \[ p \land q \lor r \equiv (p \land q) \lor r \text{.}\]
-  \end{sol}
+    Is the statement $ p \land q \lor r $ equivalent to the statement
+    \begin{enumerate}
+        \item[a.] $(p \land q ) \lor r$,
+        \item[b.] or rather, to $ p \land (q \lor r)$?
+    \end{enumerate}
+    \begin{sol}
+        Let's look at \tabref{tab:precedence}.
+        It states that $\land$ (``and'') operators come before $\lor$ (``or'') operators.
+        Therefore,
+        \[ p \land q \lor r \equiv (p \land q) \lor r,\]
+        and (a) is the correct answer.
+    \end{sol}
 \end{ex}
 
 \section{DeMorgan's Laws}

@@ -6,21 +6,22 @@ contrast them from the elements contained in them.
 
 We write $a \in A$ to state that $a$ is an element of the set $A$.
 
-The most basic way to define a set is to write out all of its elements, like:
-\[ A : : = \set{ n, z, k, d }, \]
+There are a couple ways we could define sets. 
+One of them is to write out all of the elements, like:
+\[ A = \set{ n, z, k, d }, \]
 or to write out a few of them, creating a pattern which is obvious:
-\[ B : : = \set{ 1, 2, 3, 4, \ldots 999 }. \]
+\[ B = \set{ 1, 2, 3, 4, \ldots 999 }. \]
 
-However, in mathematics, we often use \textbf{set builder notation}
-\index{set builder notation}.
+The more common way is to use \textbf{set builder notation}\index{set builder notation}.
 This associates all elements of a set with a certain propositional function, 
 which is true for all elements of the set.
 We construct sets using this method as follows:
-\[ S : : = \set{ x\in\mathbb R \big| P(x)} \]
+\[ S = \set{ x\in\mathbb R \big| P(x)} \]
 This constructs a set $S$ which contains all real numbers $x$ for which $P(x)$ is true.
-
+The set $\set{ x \big| P(x)}$ is called the \textbf{extension}\index{extension}
+of the predicate $P$.
 Some important sets in mathematics are listed in \tabref{tab:sets}.
-\begin{table}
+\begin{table}[h]
   \centering
   \boxed{\
     \begin{tabular}{>$l<$ l}

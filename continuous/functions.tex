@@ -1,14 +1,25 @@
 \chapter{Functions}
 \section{Definition of a Function}
 \begin{defn}
+    \index{function}
     A \textbf{function} $f$ from a set $D$ to a set $R$ is an assignment of exactly one element $f(x) \in R$ to each element $x \in D$.
     if $f$ is a function from $D$ to $R$, we write
     \begin{equation}
         f:D \to R,
         \label{eq:function_definition}
     \end{equation}
-    and say that $f$ \emph{maps} $D$ to $R$.\footnote{Sets and set builder notation are explained in more detail in \chref{ch:sets}.}
-    \index{function}
+    and say that $f$ \emph{maps} $D$ to $R$.\footnote{Sets and set builder notation are explained in more detail in \chref{ch:sets}.} Slightly more formally, functions require
+    four properties:
+    \begin{enumerate}
+        \item A \emph{domain}, $D$ and a \emph{codomain}, $R$, both sets,
+        \item $\forall x \in D\, \exists\, f(x) \in R$ which we call the 
+              \emph{value} of the function \emph{at} $x$,
+        \item $D$, $R$, and each value $f(x)$ for each element $x$ are
+              determined completely by $f$,
+        \item The data constituting $D$, $R$, and the value 
+              $f(x) \forall x \in D$
+              completely determine $f$.
+    \end{enumerate}
 \end{defn}
 \begin{figure}[h]
     \centering
@@ -57,9 +68,9 @@ function. % WHEN????? Tell the reader where this is useful.
 
 \begin{defn}
     The set of all values $f(x)$ as $x$ varies throughout $D$ is called 
-    the \textbf{range} of the function,
+    the \textbf{range} of the function, also called the \emph{codomain},
     representing the output value of $f$ at $x$.
-    \index{range}
+    \index{range}\index{codomain}
 \end{defn}
 
 \begin{defn}

@@ -41,9 +41,79 @@ This way we are just measuring different heights, and our width is always consta
   \caption{Approximating the area under the curve with two boxes.}
 \end{figure}
 
+\section{Antiderivatives}
+\begin{defn}
+  A function $F$ is an \textbf{antiderivative} of $f$ on an interval $I$ if
+  \begin{equation}
+      \forall (x \in I) \big[F'(x)=f(x)\big].
+  \end{equation}
+  \index{antiderivative}
+\end{defn}
+% Pulled this out of my notes on scrap sheets of paper. 
+% No idea what it's from. MIT lectures maybe?
+An antiderivative is related to a family  of functions, all of which have
+the same derivative, $f$. This is because when taking the derivative of a 
+function $F$ which includes a constant $C$ such as
+\[ F(x) = x + C \]
+the constant will disappear upon differentiation.
+Thus, for a function $f$ defined on an interval $I$, its most general
+antiderivative will be of the form
+\[ F(x) + C \]
+to account for the possibility of such a constant.
+
+This ``function,'' $F(x)+C$, therefore, does not actually refer to one
+function in particular, or even a \emph{handful} thereof, but rather a
+\emph{family of functions} all of which have a derivative equal to $f(x)$.
+
+This family of antiderivatives of $f$ is called the
+\textbf{indefinite integral}\index{integral!indefinite}
+of $f$ with respect to $x$, and written as
+\[ \int f(x) \ud x \]
+where $f$ is the \textbf{integrand}\index{integrand} and $x$ is the
+\textbf{variable of integration}\index{variable of integration}.
+\begin{ex}
+Find the antiderivative of
+\begin{equation}
+    f(x)=3x^2.
+    \label{eq:3x2antiderivative}
+\end{equation}
+\begin{sol}
+We should think of a function whose derivative yields the function $3x^2$.
+It seems clear that this function is related to the power rule, and reversing
+that rule would give us $x^3$.
+Now let's take the derivative of this and see if it works:
+\begin{align*}
+    F(x)&=x^3, \\
+    F'(x) &= 3x^2.
+\end{align*}
+What is interesting here is that $3x^2$ is not the only function for which its
+derivative is $3x^2$.  We know from \thref{th:deriv:constantrule}, the constant
+rule for derivatives, that the derivative of any constant is zero.  From this,
+we know that
+\[ F(x)=3x^2+1, \]
+or
+\[ F(x)=3x^2+20,\]
+or even
+\[ F(x)=3x^2+39250,\]
+all satisfy our definition for an antiderivative of $f(x)$.
+
+For our example, the generalized antiderivative of
+\eref{eq:3x2antiderivative}
+is
+\[ F(x)=x^3+c. \]
+\end{sol}
+\end{ex}
+We would plot this using \textbf{integral curves}, which represent a variety of possible versions of the function for different values of $c$.
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=3in]{continuous/derivatives/intcurves.eps}
+  \end{center}
+  \caption{A few possible integral curves for $F(x)=x^3+c$.}
+\end{figure}
+
 \section{Fundamental Theorem of Calculus}
 \index{fundamental theorem of calculus}
-\begin{theorem}[Fundamental Theorem of Calculus, part 1]
+\begin{theorem}[Fundamental Theorem of Calculus, pt. 1]
   If $f$ is continuous on $[a,b]$, then $F(x)=\int^x_a f(t)dt$ is continuous on $[a,b]$ and
   differentiable on $(a,b)$ and its derivative is $f(x)$:
   \begin{equation}
@@ -53,7 +123,7 @@ This way we are just measuring different heights, and our width is always consta
   \cite[p. 276]{thomas}
   \label{th:ftc1}
 \end{theorem}
-\begin{theorem}
+\begin{theorem}[Fundamental Theorem of Calculus, pt. 2]
   If $f$ is continuous at every point in $[a,b]$ and $F$ is any antiderivative of $f$ on $[a,b]$, then
   \begin{equation}
     \int^a_b f(x)\ud x=F(b)-F(a).
@@ -67,9 +137,11 @@ This way we are just measuring different heights, and our width is always consta
 \label{sec:basicints}
 The following are our basic integrals.
 We can use this table for reference from time to time,
-but as we develop our integration skills, we will become increasingly proficient at using them on-the-spot.
+but as we develop our integration skills, we will become increasingly
+proficient at using them on-the-spot.
 
-Some are more important than others. For a more complete understanding of these rules, refer to a calculus textbook.
+Some are more important than others. For a more complete understanding of these
+rules, refer to a calculus textbook.
 \begin{align*}
   &\int k\ud x=kx+c \qquad \text{(any number \emph{k})}
   &&\int x^n\ud x = \frac {x^{n+1}}{n+1}+c\qquad (n \neq -1) \\
@@ -94,7 +166,7 @@ Some are more important than others. For a more complete understanding of these 
   & \int\frac{\ud x}{\sqrt{a^2+x^2}}=\sinh^{-1}{\frac{x}{a}}+c \qquad (a>0)
   && \int\frac{\ud x}{\sqrt{x^2-a^2}}=\cosh^{-1}{\frac{x}{a}}+c \qquad (x>a>0)
 \end{align*}
-\cite[p. 435]{thomas}
+The above collection of integration formulae comes from \cite[p. 435]{thomas}.
 %% badly formatted
 %
 %\begin{equation}
@@ -996,11 +1068,12 @@ For integrands with $ \sqrt{x^2+a^2}$, let $x = a \tan \theta$ and $\ud x = \sec
   Integrate
     \[ \int \frac{1}{\sqrt{x^2+2x+5}}\ud x \]
   \begin{sol}
+      Begin by ``completing the square:''
     \begin{align*}
       \int \frac{1}{\sqrt{x^2+2x+5}}\ud x
       =& \int \frac{1}{\sqrt{x^2+2x+1+4}} \\
       =& \int \frac{1}{\sqrt{(x+1)^2+4}} \\
-      \intertext{Let $u=x+1$ and $\ud u=\ud x$.}
+      \intertext{Now let $u=x+1$ and $\ud u=\ud x$.}
       =& \int \frac{\ud u}{\sqrt{u^2+4}} \\
       =& \arcsin \frac{x+1}{4}+C
     \end{align*}
@@ -1244,8 +1317,7 @@ Note: you cannot factor a sum of perfect squares.
 %$$ 1 = A(x-4)+B(x+4) $$
 \begin{ex}
   Integrate
-  \[ \int \frac{1}{(x+1)(x-1)} \]
-
+  \[ \int \frac{1}{(x+1)(x-1)}. \]
   \begin{sol}
   \begin{align*}
     \int \frac{1}{(x+1)(x-1)}
@@ -1346,9 +1418,7 @@ Note: you cannot factor a sum of perfect squares.
 \end{sol}
 \end{ex}
 
-
 \section{Improper Integrals}
-
 \begin{defn}
 \emph{Improper integrals} occur in cases where you are integrating across an infinite domain or infinite range.
 \end{defn}

@@ -6,7 +6,7 @@
 %%%%%%%%%%%%
 \usepackage[T1]{fontenc}
 \usepackage[letterpaper, twoside]{geometry}  % set the margins to 1in on all sides usepackage
-\usepackage[bookmarks, hidelinks]{hyperref}  % generates pdf index
+\usepackage[bookmarks, backref, hidelinks]{hyperref}  % generates pdf index
 \usepackage{cclicenses}
 \usepackage{yfonts}                % fancy first letters
 \usepackage{graphicx}              % to include figures
@@ -58,6 +58,13 @@
 % settings %
 %%%%%%%%%%%%
 
+
+% Bibliography punctuation for Natbib, see:
+% <https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Natbib>
+\bibpunct{\small[}{]}{;}{n}{,}{,}
+
+\microtypecontext{spacing=nonfrench}
+
 % initialize indexing commands
 \makeindex
 
@@ -69,6 +76,8 @@
 
 % resize my tikz/pgf plots
 \pgfplotsset{scale=0.5}
+% better, explicit compat mode
+\pgfplotsset{compat=1.8}
 
 % get fancy
 \pagestyle{fancy}
@@ -91,7 +100,7 @@
 }
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{Commons}
+%\ProvidesPackage{Commons}
 
 % draw a thin border around figures
 %\floatstyle{boxed}

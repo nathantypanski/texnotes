@@ -1383,12 +1383,58 @@ this limit diverges to $\infty$, so our integral is undefined.
 \subsection{Infinite Range}
 
 \begin{ex}
-	\[ \int^{9}_1 \frac{1}{x-4}\ud x \]
-	Right and left approach problem spot.
+\label{ex:verbose-infinite-range}
+Integrate:
+\begin{equation}
+    \int^{9}_1 \frac{1}{x-4}\ud x 
+    \label{eq:verbose-infinite-range}
+\end{equation}
+\begin{sol}
+    This one is very similar to \eref{eq:improper01}.
+    Attempting to integrate ``toward'' 
+    either side of positive 4 results in an infinite range:
+    while $x \rightarrow 4^{-}$, the expression tends toward $-\infty$,
+    and while $x \rightarrow 4^{+}$, toward $+\infty$.
+    Approaching this explicitly, we first attempt the indefinite
+    integral:
+    \[ \int \frac{1}{x-4} \ud x. \]
+    Taking $u=x-4$, $\ud u = \ud x$, we get
+    \[ \int \frac{1}{x-4} \ud x = \ln {|x-4|} + C, \]
+    which diverges toward $-\infty$ as we approach either side of 4.
+    Regardless, to show this, we now evaluate the definite integral
+    in terms of limits,
+    \[ \lim_{t \to 4^{-}} \ln{|x-4|}\bigg|_{1}^{t}
+        + \lim_{s \to 4^{+}} \ln{|x-4|}\bigg|_{s}^{9} \]
+    This expands into:
+    \[ \lim_{t \to 4^{-}} \ln{|x-4|}\bigg|_{t} - \ln{|x-4|}\bigg|_{1}
+        + \lim_{s \to 4^{+}} \ln{|x-4|}\bigg|_{s}
+        - \ln{|x-4|}\bigg|_{9} \]
+    which is the same as:
+    \[ \lim_{t \to 4^{-}} \ln{|x-4|}\bigg|_{t} - \ln{3}
+        + \lim_{s \to 4^{+}} \ln{|x-4|}\bigg|_{s}
+        - \ln{5} \]
+    because $\log_a{u}+\log_a{v} = \log_a{uv}$,
+    \[ \lim_{t \to 4^{-}} \ln{|x-4|}\bigg|_{t}
+        + \lim_{s \to 4^{+}} \ln{|x-4|}\bigg|_{s}
+        - \ln{15} \]
+    however, $\ln{|x|}$ diverges toward $-\infty$ as $x \rightarrow 0$,
+    and hence \eref{eq:verbose-infinite-range} diverges.
+\end{sol}
 \end{ex}
 \begin{ex}
-	\[ \int^{39}_{4}\frac{1}{\sqrt{x-4}}\ud x \]
-	Right approach problem spot.
+    Integrate:
+    \begin{equation}
+        \int^{39}_{4}\frac{1}{\sqrt{x-4}}\ud x 
+        \label{eq:int:improper:sqrt}
+    \end{equation}
+    Unlike \exref{ex:verbose-infinite-range}, this integral is only a
+    problem as $x \to 4^{+}$, thanks to the square root in the denominator.
+    Of course, the value of $1/(4-4)$ is still undefined.
+
+    When we integrate \eref{eq:int:improper:sqrt}, however, it does not
+    diverge. Let $u=x-4$, $\ud u = \ud x$ and we find
+    \[ \int \frac{1}{\sqrt{x-4}} = 2 \sqrt{x-4} + C, \]
+    which we see would not be a problem to evaluate with definite integrals.
 \end{ex}
 \begin{ex}
 	\[ \int^0_{-4} \ln{|x|} \ud x \]

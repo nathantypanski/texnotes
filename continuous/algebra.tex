@@ -1,0 +1,152 @@
+\chapter{Algebra}
+
+\section{Laws}
+If $a$, $b$, and $c$ are any numbers,\footnote{%
+I am sure these all hold for real numbers, and presumably for complex as well,
+though other number systems may have different laws.
+I have not explored these possibilities.
+}then the following laws hold:\footnote{%
+Most of this is from the opening chapter of~\cite{spivak}, but bits and pieces
+are collected from elsewhere and cited as such.
+}
+\subsection{Associative law for additon}
+\index{addition!associative law}
+The associative law extends our ability to discuss the operation $(+)$ on any 
+two elements to three elements, without changing the order of these elements:
+\begin{equation}
+    a + ( b + c ) = (a + b) + c.
+\end{equation}
+It follows from this (though the proof is somewhat complicated, see~\cite[pg.~4]{spivak}),
+that we may write sums without regard for parentheses.
+This means that we may write, for instance
+\begin{equation*}
+    a_1 + a_2 + a_3 + a_4 + \cdots + a_n,
+\end{equation*}
+without any ambiguity as to what order the operation must be performed.
+
+\subsection{Existence of an additive identity}
+\index{addition!identity element}
+The identity element for addition is 0.
+This means that the sum of any element and 0 is always the original element.
+We write this:
+\begin{equation}
+    a + 0 = 0 + a = a.
+\end{equation}
+
+\subsection{Existence of additive inverses}
+\index{addition!inverse}
+\begin{equation}
+    a + (-a) = (-a) + a = 0.
+\end{equation}
+In this case, we mean that every element in the set $\mathbb{R}$ of real numbers
+has an inverse with respect to the operation $(+)$.\cite[pg.~14]{pinter}
+
+\subsection{Commutative law for addition}
+\index{addition!commutative law}
+\label{sec:comm:add}
+This states that the value of $a + b$ or $b + a$ is independent of the order
+in which $a$ and $b$ are taken.\cite[pg.~14]{pinter}
+\begin{equation}
+    a + b = b + a.
+\end{equation}
+
+\subsection{Associative law for multiplication}
+\index{multiplication!associative law}
+\begin{equation}
+    a \cdot (b \cdot c) = (a \cdot b) \cdot c.
+\end{equation}
+
+\subsection{Existence of a multiplicative identity}
+\index{multiplication!identity element}
+\label{sec:mult:id}
+Multiplication of real numbers has an identity element, $1$,
+such that multiplying any number by this element gives us the original number:
+\begin{equation}
+    a \cdot 1 = 1 \cdot a = a, \qquad \text{for } 1 \neq 0.
+    \label{eq:mult:id}
+\end{equation}
+The notation here is a little strange.
+We know that $1$ is the identity element for multiplication, but it also
+refers to the number $1$, so why do we state that $1 \neq 0$?
+Of course one is not equal to zero!
+
+The reason for this is that we are talking about the \emph{element} 1, this
+being the identity element for multiplication, and not simply the \emph{number}
+1. We may just as well have written:
+\begin{equation*}
+    a \cdot e = e \cdot a = a, \qquad \text{for } e \neq 0,
+\end{equation*}
+but writing 1 instead of $e$ as in \eref{eq:mult:id} here makes sense,
+since 1 is, in fact, both the number and the element in question.
+
+\subsection{Existence of multiplicative inverses}
+For every element $a$ in $\mathbb{R}$, there is an element $a^{-1}$ in 
+$\mathbb{R}$ such that $a \cdot a^{-1}$ gives us the identity element
+from \secref{sec:mult:id}.
+\begin{equation}
+    a \cdot a^{-1} = a^{-1} \cdot a = 1, \qquad \text{for } a \neq 0.
+\end{equation}
+
+\subsection{Commutative law for multiplication}
+As with the commutative law for addition (\secref{sec:comm:add}),
+this states that the value of $a * b$ or $b * a$ is independent of the order
+in which $a$ and $b$ are taken.\cite[pg.~14]{pinter}
+\begin{equation}
+    a \cdot b = b \cdot a.
+\end{equation}
+
+\subsection{Distributative law}
+\index{distributive law}
+The distributive law is a relationship between multiplication and addition.
+It allows us to manipulate the order of application when we are combining these
+two operations.
+\begin{equation}
+    a \cdot (b + c) = a \cdot b + a \cdot c.
+\end{equation}
+
+\section{Inequality}
+\index{inequalities}
+When we say $a$ is 
+\emph{less than}\index{inequalities!less than}
+$b$, we write $a < b$,
+and take it to mean the same thing as saying $b$ is 
+\emph{greater than}\index{inequalities!greater than}
+$a$ ($b > a$).\cite[pg.~9]{spivak}
+Thus the numbers $a$ satisfying $a > 0$ are called \emph{positive}, while
+those numbers $a$ satisfying $a < 0$ are called \emph{negative}.
+
+\section{More laws}
+\begin{theorem}[Trichotomy law]
+\index{trichotomy law}
+For every number $a$, one and only one of the following holds:
+\begin{enumerate}
+    \item $a = 0$,
+    \item $a$ is in the collection $P$,
+    \item $-a$ is in the collection $P$.
+\end{enumerate}
+\cite[pg.~9]{spivak}
+\end{theorem}
+
+\begin{theorem}[Closure under addition]
+\index{addition!closure}
+If $a$ and $b$ are in $P$, then $a + b$ is in $P$.
+\cite[pg.~9]{spivak}
+\end{theorem}
+
+\begin{theorem}[Closure under multiplication]
+\index{multiplication!closure}
+If $a$ and $b$ are in $P$, then $a \cdot b$ is in $P$.
+\cite[pg.~9]{spivak}
+\end{theorem}
+
+\begin{defn}
+\index{absolute value}
+    For any number $a$, we define the \emph{absolute value}\index{absolute value}
+    $|a|$ of $a$ to be:\cite[pg.~11]{spivak}
+    \begin{equation}
+        |a| = \begin{dcases}
+            a, &a \geq 0\\
+            -a, & a \leq 0.
+        \end{dcases}
+    \end{equation}
+\end{defn}

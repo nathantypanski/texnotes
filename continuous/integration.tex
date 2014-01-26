@@ -53,6 +53,9 @@ This way we are just measuring different heights, and our width is always consta
 \section{Antiderivatives}
 \begin{defn}
   A function $F$ is an \textbf{antiderivative} of $f$ on an interval $I$ if
+  for every $x$ in $I$, the derivative of $F$ at $x$ is equal to the value
+  of $f$ at $x$.
+  That is,
   \begin{equation}
       \forall (x \in I) \big[F'(x)=f(x)\big].
   \end{equation}
@@ -67,7 +70,9 @@ function $F$ which includes a constant $C$ such as
 the constant will disappear upon differentiation.
 Thus, for a function $f$ defined on an interval $I$, its most general
 antiderivative will be of the form
-\[ F(x) + C \]
+\begin{equation}
+    F(x) + C
+\end{equation}
 to account for the possibility of such a constant.
 
 This ``function,'' $F(x)+C$, therefore, does not actually refer to one
@@ -77,7 +82,9 @@ function in particular, or even a \emph{handful} thereof, but rather a
 This family of antiderivatives of $f$ is called the
 \textbf{indefinite integral}\index{integral!indefinite}
 of $f$ with respect to $x$, and written as
-\[ \int f(x) \ud x \]
+\begin{equation} 
+    \int f(x) \ud x
+\end{equation}
 where $f$ is the \textbf{integrand}\index{integrand} and $x$ is the
 \textbf{variable of integration}\index{variable of integration}.
 \begin{ex}

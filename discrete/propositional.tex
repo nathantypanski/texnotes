@@ -183,17 +183,15 @@ In mathematical theorems, definitions, and related elements later in this text, 
 The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \iff q\) is a tautology.
 The notation \(p \equiv q\) denotes that \(p\) and \(q\) are logically equivalent.
 \begin{remark}
-  The symbol \(\equiv\) is not a logical connection, and \(p\equiv q\) is not a compound proposition,
-  but rather it is the statement that \(p \iff q\) is a tautology.
-  The symbol \(\iff\) is sometimes used instead of \(\equiv\) to denote logical equivalence.
+  The symbol \(\equiv\) is not a logical connection, and \(p\equiv q\) is not a compound proposition, but rather it is the statement that \(p \iff q\) is a tautology. While $\iff$ is an operator applied to propositional variables, $\equiv$ is an operator on entire propositional statements.
 \end{remark}
 
 \section{Precedence}
 For more complex propositions, we need rules to tell which logical operators come first when we read them.
 
-The \emph{not} operator takes the highest precedence.
-Then conjunction, followed by disjunction.
-Then conditional, and finally bi-conditional operators.
+The \emph{not} operator ($\neg$) takes the highest precedence.
+Then conjunction ($\land$), followed by disjunction ($\lor$).
+Then conditional ($\implies$), and finally bi-conditional ($\iff$) operators.
 \begin{table}[H]
   \centering
   %\boxed{
@@ -431,3 +429,8 @@ Thus, reasoning is often more useful than truth tables in showing a compound pro
 %     So (c), a combination of (a) and (b), is unsatisfiable.
 %   \end{sol}
 % \end{exK
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../notes"
+%%% End: 

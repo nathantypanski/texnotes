@@ -281,11 +281,11 @@
   {:}% punctuation between head and body
   {0.5em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
-\theoremstyle{example} \newtheorem{ex}{Example}[section]
+\theoremstyle{example} \newtheorem{ex}{Example}[chapter]
 \theoremstyle{solution} \newtheorem*{sol}{Solution}
 \theoremstyle{plain} \newtheorem{theorem}{Theorem}
 \theoremstyle{plain} \newtheorem{corollary}{Corollary}
-\theoremstyle{defn} \newtheorem*{defn}{Definition}
+\theoremstyle{defn} \newtheorem{defn}{Definition}[chapter]
 \theoremstyle{definition} \newtheorem{homework}{Homework}
 \theoremstyle{remark} \newtheorem*{remark}{Remark}
 \theoremstyle{remark} \newtheorem*{note}{Note}
@@ -300,3 +300,8 @@
 
 %\includeonly{discrete/main}
 %\includeonly{continuous/main}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

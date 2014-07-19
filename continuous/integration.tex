@@ -267,17 +267,17 @@ Integration by parts is a method of separating out elements of integrals that we
 
 Its formula comes from our definition for the derivative product rule, \eref{eq:productrule}:
   \begin{align}
-    \frac{\ud}{\ud x}\big[ f(x) g(x) \big] &= f'(x)g(x)+f(x)g'(x) \\
+    \lleib{x} \big[ f(x) g(x) \big] &= f'(x)g(x)+f(x)g'(x) \\
     \intertext{If we take the indefinite integral of each side,}
-    \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int \big[f'(x)g(x)+f(x)g'(x)\big] \ud x \nonumber\\
+    \int \lleib{x} \big[ f(x) g(x) \big] \ud x &= \int \big[f'(x)g(x)+f(x)g'(x)\big] \ud x \nonumber\\
     \intertext{Now separate out the terms in the righthand side.}
-    \int \frac{\ud}{\ud x}\big[ f(x) g(x) \big] \ud x &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \nonumber\\
+    \int \lleib{x} \big[ f(x) g(x) \big] \ud x &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \nonumber\\
     \intertext{From here, we note that the integral and derivative in the lefthand side cancel each other out, if we use the fundamental theorem of calculus.}
     f(x)g(x) &= \int f'(x)g(x)\ud x +\int f(x)g'(x) \ud x \nonumber\\
     \intertext{Now, subtract the first integral from both sides.}
     f(x)g(x) -\int f'(x)g(x) \ud x &= \int f(x)g'(x) \ud x \nonumber\\
     \intertext{Swap the left and righthand sides, and we have the formula for integration by parts!}
-     \int f(x)g'(x) \ud x&=f(x)g(x) -\int f'(x)g(x) \ud x \\\nonumber
+    \int f(x)g'(x) \ud x&=f(x)g(x) -\int f'(x)g(x) \ud x \\\nonumber
   \end{align}
   For convenience, we often rewrite this formula in terms of $u$, $\ud u$, $\ud v$, and $v$ as follows:
 \begin{equation}
@@ -294,7 +294,7 @@ Generally, this takes a fair amount of examples, coupled with considerable pract
     \int x \cos x \ud x.
     \]
     \begin{sol}
-      We use integration by parts with
+      We use \etref{integration by parts}{equation:intbyparts} with
       \begin{align*}
         u&= x & \ud v &= \cos x \\
         \ud u &= \ud x & v &= \sin x
@@ -1774,3 +1774,8 @@ The integral diverges.
 % \begin{homework}
 %   Chapter 8 test on Friday, March 16, 2012.
 % \end{homework}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../notes"
+%%% End: 

@@ -2,33 +2,38 @@
 We use proofs to establish the truth of mathematical statements.
 There are a number of types of these statements, of varying importance.
 
-Before we prove our statement, it is called a \textbf{conjecture}\index{conjecture}.
+Before we prove our statement, it is called a
+\def{conjecture}.
 
-A \textbf{fact} or \textbf{result} is the simplest type of statement we might prove.
-Sometimes proofs are required, but more often they are simply demonstrated, implied, or obvious.
-\index{fact}\index{result}
+A \def{fact} or \def{result} is the simplest type of statement we might
+prove. Sometimes proofs are required, but more often they are simply
+demonstrated, implied, or obvious.
 
-\textbf{Theorems} are where proofs start to become important.
-They are the foundations of complex mathematical logic.
- \index{theorem}
- Some theorems are less important than others, and we call these lemmata.\index{lemmata}
- A \textbf{lemma}\index{lemma} is a less important theorem, often used in proving our main theorem.
- After our theorem is proven, we can often draw \textbf{corollaries}\index{corollary}, theorems that follow easily from our proven theorem.
+\def{Theorems}{theorem} are where proofs start to become important. They are the
+foundations of complex mathematical logic. Some theorems are
+less important than others, and we call these \emph{lemmata}.\index{lemmata} A
+\def{lemma} is a less important theorem, often used in proving
+our main theorem. After our theorem is proven, we can often draw
+\textbf{corollaries}\index{corollary}, theorems that follow
+easily from our proven theorem.
 
-Some proofs are \textbf{formal proofs}, which use the rules of inference to establish truth.
-These proofs are the ``simplest'' in that they involve the simplest forms of logic, though they can become incredibly complex as we attempt to write formal proofs for more and more complex theorems.
+Some proofs are \textbf{formal proofs}, which use the rules of inference to
+establish truth. These proofs are the ``simplest'' in that they involve the
+simplest forms of logic, though they can become incredibly complex as we attempt
+to write formal proofs for more and more complex theorems.
 
 Thus, we most often will encounter \textbf{informal proofs}.
 These proofs establish truth using language and logic that makes sense to humans.
 
-\section{Direct Proof}\index{direct proofs}
+\section{Direct Proof}
 
-A \textbf{direct proof} starts with known facts, and the statement we are trying to prove
-follows directly from them.
+A \def{direct proof} starts with known facts, and the statement we are trying
+to prove follows directly from them.
 
 In using a direct proof for proving an implication \[P \implies Q\]
-we start by assuming $P$ is true, then using the \emph{rules of inference}, reach the conclusion
-$Q$ through direct logical steps from $P$.
+we start by assuming $P$ is true, then using the \emph{rules of inference}
+(\chref{ch:rules-of-inference}),
+reach the conclusion $Q$ through direct logical steps from $P$.
 
 % I have become fairly convinced this is meant to be proven by induction.
 % \begin{ex}
@@ -38,8 +43,7 @@ $Q$ through direct logical steps from $P$.
 % \end{ex}
 \begin{ex}
   Give a direct proof of the theorem
-  \begin{quote}
-    ``If $n+1$ is an odd integer, then $n+3$ is an odd integer.''
+  \begin{quote} ``If $n+1$ is an odd integer, then $n+3$ is an odd integer.''
   \end{quote}
   \begin{proof}
     If $n+1$ is an odd integer, then we can write it in the form
@@ -69,9 +73,12 @@ proof for a given theorem would be.
 The first method of indirect proof we will discuss is the \textbf{proof by contrapositive}.
 It is often more useful to work with the contrapositive something than the original statement.
 
-Remembering our definition of the contrapositive from Section \ref{sec:propintro}, let's cover some examples.
+Remembering our definition of the contrapositive from \secref{sec:propintro},
+let's cover some examples.
+
 \begin{defn}
-  The \textbf{contrapositive} of the statement \(P \to Q \) is the statement \(\neg Q \to \neg P\).
+  The \textbf{contrapositive} of the statement $P \to Q$
+  is the statement $\neg Q \to \neg P$.
 \end{defn}
 
 \begin{ex}
@@ -401,3 +408,8 @@ Because $\neg P$ leads to a contradiction, we conclude that $P$ must be true.
 %\end{ex}
 
 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../notes"
+%%% End: 

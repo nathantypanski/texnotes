@@ -79,6 +79,7 @@ let's cover some examples.
 \begin{defn}
   The \textbf{contrapositive} of the statement $P \to Q$
   is the statement $\neg Q \to \neg P$.
+  \label{defn:contrapositive}
 \end{defn}
 
 \begin{ex}
@@ -106,7 +107,8 @@ let's cover some examples.
   ``If a number squared is odd, then the number itself is odd.''
   \end{quote}
   \begin{proof}
-    We will use proof by contraposition.
+    We will use proof by contraposition.\footnote{Same thing as proof by
+      contrapositive (\defnref{defn:contrapositive}).}
     \begin{quote}
       Let $S(x)$ be ``$x$ squared is odd.''
 
@@ -114,8 +116,8 @@ let's cover some examples.
     \end{quote}
     In mathematical language, this is\footnote{$2k+1$ is the simplest mathematical expression for a generic odd integer.}
     \begin{align*}
-      S(x) & : : = x^2 = 2k_2+1 \\
-      O(x) & : : = x = 2k_1+1
+      S(x) & = x^2 = 2k_2+1 \\
+      O(x) & = x = 2k_1+1
     \end{align*}
     where $k$ is any integer.
 
@@ -125,8 +127,8 @@ let's cover some examples.
     \[\neg O(x) \to \neg S(x).\]
     Now, remembering that all even integers can be expressed in the form $n=2k$, let's find the negations of each of our propositional functions.
     \begin{align*}
-      \neg S(x) &: : = x^2 = 2k_2 \\
-      \neg O(x) &: : = x = 2k_1
+      \neg S(x) &= x^2 = 2k_2 \\
+      \neg O(x) &= x = 2k_1
     \end{align*}
     So the statement we are trying to prove is
     \begin{align*}
@@ -194,7 +196,8 @@ let's cover some examples.
 %
 \section{Proof by Contradiction}\index{proof by contradiction}
 
-To use proof by contradiction to prove a proposition $P$, we start by assuming $P$ is false.
+To use proof by contradiction to prove a proposition $P$,
+we start by assuming $P$ is false.
 From this, we derive a logical contradiction.
 Because $\neg P$ leads to a contradiction, we conclude that $P$ must be true.
 %

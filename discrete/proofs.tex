@@ -199,7 +199,13 @@ let's cover some examples.
 To use proof by contradiction to prove a proposition $P$,
 we start by assuming $P$ is false.
 From this, we derive a logical contradiction.
-Because $\neg P$ leads to a contradiction, we conclude that $P$ must be true.
+
+This might sound strange, but it makes sense: if we can prove that something not
+being true is a violation of logical rules, then we have just proven that the
+thing must exist.
+
+In other words, if we can prove that $\neg P \implies R \wedge \neg R$, then
+since $R \wedge \neg R$ is obviously false, we conclude that $P$ must be true.
 %
 %To prove $P$ is true, assume the conclusion $P$ is false. Derive a contradiction, usually of the form $R \wedge \neg R$ which establishes $\neg P \to 0$. The contrapositive of this assertion is $1 \to P$ from which it follows that $P$ must be true.
 %
@@ -207,16 +213,20 @@ Because $\neg P$ leads to a contradiction, we conclude that $P$ must be true.
 %  \neg P \to \underbrace{(R \wedge \neg R)}_{\text{False.}}
 %\end{equation}
 %
-%\begin{ex}
-%	  There is no largest odd number.
-%	\begin{proof}
-%      $P$: There is no largest odd number. \\
-%      $\neg P$: There is a largest odd number $x$. \\
-%      $2x+1$ is odd, and $2x+1 > x \to \neg R$. \\
-%      $\neg P \to (R \wedge \neg R)$ \\
-%      $P$ is true.
-%	\end{proof}
-%\end{ex}
+\begin{ex}
+  Prove the following:
+  \begin{quote}
+    There is no largest odd number.
+  \end{quote}
+\begin{proof}
+Let $P$ be the statement ``There is no largest odd number.''
+Then $\neg P$ is the statement ``There is a largest odd number.''
+Call this largest odd number $x$.
+We know that odd numbers are of the form $2k+1$.
+Since $2x+1 > x$, and $2x+1$ is odd, $\neg P$ must be false.
+Therefore, $P$ is true: there is no largest odd number.
+\end{proof}
+\end{ex}
 %\begin{ex}
 %	  If $3n+2$ is odd, then $n$ is odd.
 %    \[ P_1 \to P_2 = \neg P_1 \vee P_2 \]

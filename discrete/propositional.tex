@@ -69,7 +69,7 @@ and has a truth value.
   of $p$ and $q$,
   is the proposition
   ``$p$ and $q$.''
-  The conjunction is true when both $p$ and $q$ are true and false otherwise.
+  The conjunction is \ltrue{} when both $p$ and $q$ are \ltrue{} and \lfalse{} otherwise.
 \end{defn}
 
 \begin{ex}
@@ -77,17 +77,17 @@ and has a truth value.
   Then $p \wedge q$ is
   ``Kevin likes Sarah and Sarah likes Kevin,''
   or ``Kevin and Sarah like each other.''
-  This statement would be false if either of the two did not like the other.
+  This statement would be \lfalse{} if either of the two did not like the other.
 \end{ex}
 
 \begin{defn}[disjunction]
-  Let \(p\) and \(q\) be propositions.
+  Let $p$ and $q$ be propositions.
   The \definition{disjunction}{disjunction}
-  of \(p\) and \(q\),
+  of $p$ and $q$,
   written $p \vee q$,
   is the proposition
-  ``\(p\) or \(q\).''
-  It is true when either \(p\) or \(q\) are true and false otherwise.
+  ``$p$ or $q$.''
+  It is \ltrue{} when either $p$ or $q$ are \ltrue{} and \lfalse{} otherwise.
 \end{defn}
 
 \begin{ex}
@@ -97,7 +97,7 @@ and has a truth value.
   \begin{remark}
     Note, here, that there is an implicit cue in the language that Kevin could,
     indeed, hate both bagels and poppy seeds.
-    The statement would be true if he were distasteful toward either one of them,
+    The statement would be \ltrue{} if he were distasteful toward either one of them,
     or both. In \exref{ex:prop:xordefn} we will see language cues toward the
     other usage of English \emph{or}.
   \end{remark}
@@ -107,14 +107,14 @@ and has a truth value.
   The \definition{exclusive or}{exclusive or}
   $p \oplus q$
   of propositional variables
-  $p$ and $q$ is true when exactly one of $p$ and $q$ is true,
-  and false otherwise.
+  $p$ and $q$ is \ltrue{} when exactly one of $p$ and $q$ is \ltrue{},
+  and \lfalse{} otherwise.
 \end{defn}
 
 \begin{ex}
   Let $p$ mean ``I could sleep in all day today''
   and $q$ mean ``I could go to work.''
-  Then the statement $p \oplus q$ is true when only one of $p$ or $q$ is true.
+  Then the statement $p \oplus q$ is \ltrue{} when only one of $p$ or $q$ is \ltrue{}.
   It is the sentence ``I could go to work, or I could sleep in all day today.''
   Since it does not make sense to do both at once,
   the \definitionintro{exclusive or} is implied by our choice of words.
@@ -130,7 +130,7 @@ and has a truth value.
   The \definition{conditional statement}{conditional statement}
   $p \implies q$
   is the proposition ``if p, then q.''
-  It is false when $p$ is true and $q$ is false, and true otherwise.
+  It is \lfalse{} when $p$ is \ltrue{} and $q$ is \lfalse{}, and \ltrue{} otherwise.
   \label{def:conditional}
 \end{defn}
 
@@ -152,9 +152,9 @@ and has a truth value.
 
   If one were to state that $p \implies q$, they mean
   ``If Joe broke his arm, then he will go to the hospital.''
-  This conditional is true if Joe only goes to the hospital,
+  This conditional is \ltrue{} if Joe only goes to the hospital,
   if he only breaks his arm, and if both events occur.
-  The only situation in which it is false is if Joe breaks his arm,
+  The only situation in which it is \lfalse{} is if Joe breaks his arm,
   but does not go to the hospital.
 \end{ex}
 
@@ -246,7 +246,7 @@ This subject is detailed further in \secref{sec:contrapositive}.
   \index{biconditional statement}
   The \textbf{biconditional statement}, also called \emph{bi-implication}, for $p$ and $q$ is \[p \iff q.\] This is the statement
   ``\(p\) if and only if \(q\).''
-  It is true when both \(p\) and \(q\) have the same truth value, and false otherwise.
+  It is \ltrue{} when both \(p\) and \(q\) have the same truth value, and \lfalse{} otherwise.
 \begin{table}[h]
   \centering
     \begin{tabular}{l}
@@ -261,12 +261,12 @@ In mathematical theorems, definitions, and related elements later in this text, 
 \section{Logical Equivalence}
 \index{logical equivalence}
 \index{tautology}
-  A \textbf{tautology} is a compound proposition that is always true, regardless of the truth values of the variables that occur in it.
+  A \textbf{tautology} is a compound proposition that is always \ltrue{}, regardless of the truth values of the variables that occur in it.
 \index{contradiction}
-  A \textbf{contradiction} is a compound proposition that is always false.
+  A \textbf{contradiction} is a compound proposition that is always \lfalse{}.
 \index{contingency}
   A \textbf{contingency} is a compound proposition that is neither a tautology nor a contradiction.
-  It can be either true or false.
+  It can be either \ltrue{} or \lfalse{}.
 \begin{ex}
     \( p \iff q \) is logically equivalent to \( (p \implies q) \wedge (q \implies p)\).
     We state this by writing
@@ -357,7 +357,6 @@ Intermediary steps may aid one's understanding, though they are not necessary in
 
 \begin{table}[H]
   \centering
-  \boxed{\
     \begin{tabular}{lrcc}
       \toprule
       $p$ & $q$ & $\neg(p \lor q)$ & $\neg p \land \neg q$ \\ \midrule
@@ -367,7 +366,6 @@ Intermediary steps may aid one's understanding, though they are not necessary in
       1 & 1 & 0 & 0 \\
       \bottomrule
     \end{tabular}
-  }
   \caption{A proof of DeMorgan's second law.}
 \end{table}
 
@@ -452,8 +450,8 @@ which we will prove using a truth table in \tabref{tab:conditionalproof}.
 \section{Proving Logical Equivalences}
 
 We can prove logical equivalences by using the rules in \tabref{tab:logequiv}, and showing
-how one step leads to another until we reach something we know to be true.
-Alternatively, we could start with a statement that we know to be true and work our way to the logical equivalence we are trying to prove.
+how one step leads to another until we reach something we know to be \ltrue{}.
+Alternatively, we could start with a statement that we know to be \ltrue{} and work our way to the logical equivalence we are trying to prove.
 Both of these proof methods are valid, though not especially rigorous, as they rely upon rules that we may not have established the truth value of with the mathematical rigor required to consider them \emph{formal proofs}.
 \begin{ex}
   Show that \(\neg (p \implies q)\) and \( p \land \neg q\) are logically equivalent.
@@ -473,7 +471,7 @@ Alternatively, they can be proven using truth tables, as described in \secref{de
 
 % \section{Bit Operations}
 %
-% These logical operators can also be performed on \textbf{bits} (0 is false, 1 is true).
+% These logical operators can also be performed on \textbf{bits} (0 is \lfalse{}, 1 is \ltrue{}).
 % These are called \textbf{bit operations}, and can even be performed on \textbf{bit strings}, sequences of zero or more bits.
 % The \textbf{length} of a bit string is the number of bits in the string.
 % \begin{ex}
@@ -499,7 +497,7 @@ Alternatively, they can be proven using truth tables, as described in \secref{de
 % % bad example, copied from a textbook.
 % % I need to write my own.
 % \begin{ex}\cite[p.~14]{rosen}
-%   Determine whether each of these conditional statements is true or false.
+%   Determine whether each of these conditional statements is \ltrue{} or \lfalse{}.
 %   \begin{itemize}
 %     \item[a) ] if \(1+1=2\), then \(2+2=5\)
 %     \item[b) ] if \(1+1=3\), then \(2+2=4\)
@@ -509,10 +507,10 @@ Alternatively, they can be proven using truth tables, as described in \secref{de
 %   \begin{sol}
 %     In each case, we simply determine the truth value of the hypothesis and the conclusion, then use the definition of the truth value of conditional statements to get our answer.
 %     \begin{itemize}
-%       \item[a) ] The hypothesis is true, and the conclusion is false, so the statement is false.
-%       \item[b) ] Since the hypothesis is false and the conclusion is true, the statement is true.
-%       \item[c) ] Since the hypothesis is false, regardless of the conclusion the conditional statement must be true.
-%       \item[d) ] Since the hypothesis is false, the conditional is true.
+%       \item[a) ] The hypothesis is \ltrue{}, and the conclusion is \lfalse{}, so the statement is \lfalse{}.
+%       \item[b) ] Since the hypothesis is \lfalse{} and the conclusion is \ltrue{}, the statement is \ltrue{}.
+%       \item[c) ] Since the hypothesis is \lfalse{}, regardless of the conclusion the conditional statement must be \ltrue{}.
+%       \item[d) ] Since the hypothesis is \lfalse{}, the conditional is \ltrue{}.
 %     \end{itemize}
 %   \end{sol}
 % \end{ex}
@@ -521,12 +519,12 @@ Alternatively, they can be proven using truth tables, as described in \secref{de
 % I'm pretty sure this section is ripped near-straight from a textbook too.
 % I really need to write my own.
 
-A compound proposition is \textbf{satisfiable} if there is an assignment of truth values to its variables that make it true.
+A compound proposition is \textbf{satisfiable} if there is an assignment of truth values to its variables that make it \ltrue{}.
 When no such assignments exists, it is \textbf{unsatisfiable}.
 A particular assignment of truth values that shows a compound proposition satisfiable is a \textbf{solution}.
 
 To show a compound proposition is satisfiable, we need only demonstrate one possible solution.
-However, to demonstrate it unsatisfiable, we would need to show every possible assignment of truth values and show why they make it false.
+However, to demonstrate it unsatisfiable, we would need to show every possible assignment of truth values and show why they make it \lfalse{}.
 Thus, reasoning is often more useful than truth tables in showing a compound proposition is unsatisfiable.
 
 % \begin{ex}
@@ -537,8 +535,8 @@ Thus, reasoning is often more useful than truth tables in showing a compound pro
 %     \item[c) ]  \( (p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p) \land (p \lor q \lor r) \land (\neg p \lor \neg q \lor \neg r)\)
 %   \end{itemize}
 %   \begin{sol}
-%     (a) is true when \(p\), \(q\) and \(r\) have the same truth value.
-%     (b) is true when at least one of \(p\), \(q\), or \(r\) is false and one is true.
+%     (a) is \ltrue{} when \(p\), \(q\) and \(r\) have the same truth value.
+%     (b) is \ltrue{} when at least one of \(p\), \(q\), or \(r\) is \lfalse{} and one is \ltrue{}.
 %     So (c), a combination of (a) and (b), is unsatisfiable.
 %   \end{sol}
 % \end{exK

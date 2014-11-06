@@ -8,12 +8,10 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
 The whole idea of propositional logic is that statements in mathematics have truth value and there is a logical process that we use to evaluate that truth value.
 Perhaps most importantly, this chapter will introduce us to \emph{DeMorgan's Laws}, which are relevant everywhere from computer science (in simplifying boolean operators) to the writings of Aristotle.
 
-\begin{remark}
-Propositional logic is also sometimes called
+\marginnote{Propositional logic is also sometimes called
 \altdefinition{propositional calculus}{propositional calculus},
 from the Latin \emph{calculus} meaning ``pebble'', since in early days pebbles
-were used for counting.\cite{wiktionary-calculus}
-\end{remark}
+were used for counting.\cite{wiktionary-calculus}}
 
 \section{Introduction to Propositional Logic}
 \label{sec:propintro}
@@ -137,6 +135,12 @@ and has a truth value.
   \label{def:conditional}
 \end{defn}
 
+In such a conditional statement,
+we say that $q$ is \definitionintro{necessary} for $p$,\index{necessary}
+and that $p$ is \definitionintro{sufficient} for $q$.\index{sufficient}
+The intuition here is that if $p$ is \ltrue{}, then $q$ is definitely \ltrue{},
+but the truth of $q$ does not imply the truth of $p$.
+
 \begin{defn}[hypothesis]
   In a conditional statement, $p$ is called the \definition{hypothesis}{hypothesis}
   (or \altdefinition{antecedent}{antecedent} or \altdefinition{premise}{premise}).
@@ -214,23 +218,20 @@ To this end, we will introduce the notion of \definitionintro{truth tables}.
 
   Truth tables can be used to demonstrate the logical relationships between
   statements and demonstrate some useful property about those relationships.
-
-  To simplify things, we will sometimes show truth tables with 0 representing
-  \lfalse{} and 1 representing \ltrue{}.
 \end{defn}
 
 \begin{proof}[\thproofref{thm:contrapositive-conditional}]
   We will prove \thref{thm:contrapositive-conditional} using a truth table.
   \begin{table}[H]
     \centering
-    \begin{tabular}{llcc}
+    \begin{tabular}{llrr}
       \toprule
       $p$ & $q$ & $p\implies q$ & $\neg q \implies \neg p$\\
       \midrule
-      0 & 0 & 1 & 1 \\
-      0 & 1 & 1 & 1 \\
-      1 & 0 & 0 & 0 \\
-      1 & 1 & 1 & 1 \\
+      \lfalse{} & \lfalse{} & \ltrue{} & \ltrue{} \\
+      \lfalse{} & \ltrue{} & \ltrue{} & \ltrue{} \\
+      \ltrue{} & \lfalse{} & \lfalse{} & \lfalse{} \\
+      \ltrue{} & \ltrue{} & \ltrue{} & \ltrue{} \\
       \bottomrule
     \end{tabular}
     \caption{A truth table for $p\implies q$ and $\neg q \implies \neg p$.}
@@ -260,7 +261,7 @@ This subject is detailed further in \secref{sec:contrapositive}.
 \end{defn}
 
 \begin{defn}
-  The \definition{biconditional statement},
+  The \definition{biconditional statement}{biconditional statement},
   (also called \altdefinition{bi-implication}{bi-implication})
   for $p$ and $q$ is the statement that is \ltrue{}
   when both $p$ and $q$ have the same truth value,
@@ -285,39 +286,100 @@ This subject is detailed further in \secref{sec:contrapositive}.
 \end{table}
 In mathematical theorems, definitions, and related elements later in this text, we will often see the biconditional operator written \emph{iff}.
 
-\section{Logical Equivalence}
-\index{logical equivalence}
-\index{tautology}
-  A \textbf{tautology} is a compound proposition that is always \ltrue{}, regardless of the truth values of the variables that occur in it.
-\index{contradiction}
-  A \textbf{contradiction} is a compound proposition that is always \lfalse{}.
-\index{contingency}
-  A \textbf{contingency} is a compound proposition that is neither a tautology nor a contradiction.
-  It can be either \ltrue{} or \lfalse{}.
-\begin{ex}
-    \( p \iff q \) is logically equivalent to \( (p \implies q) \wedge (q \implies p)\).
-    We state this by writing
-    \[ p \iff q \equiv (p \implies q) \wedge (q \implies p).\]
-    This is easiest to prove by truth table:
-\begin{table}[H]
-  \centering
-    \begin{tabular}{lrcccc}
-      \toprule
-      $p$ & $q$ & $\neg q$ & $p \lor \neg q$ & $p \land q$ & $(p \lor \neg q) \implies (p \land q)$ \\ \midrule
-      1 & 1 & 0      & 1             & 1         & 1 \\
-      1 & 0 & 1      & 1             & 0         & 0 \\
-      0 & 1 & 0      & 0             & 0         & 1 \\
-      0 & 0 & 1      & 1             & 0         & 0 \\
-      \bottomrule
-    \end{tabular}
-  \caption{The truth table for $(p \lor \neg q) \implies (p \land q)$}
-\end{table}
-\end{ex}
-The compound propositions \(p\) and \(q\) are \textbf{logically equivalent} if \(p \iff q\) is a tautology.
-The notation \(p \equiv q\) denotes that \(p\) and \(q\) are logically equivalent.
+\begin{defn}[compound proposition]
+A \definition{compound proposition}{compound proposition}
+is a proposition that can be broken down into simpler propositions.
+\end{defn}
+
+We will sometimes refer to compound propositions with a capital letter,
+like $P$ instead of $p$ or $Q$ instead of $q$, when we wish to emphasize
+that $P$ and $Q$ are compound propositions.
+However, this is just a general rule---the context will usually make it
+clear which form of proposition we are discussing.
+
+\begin{defn}[logical equivalence]
+The compound propositions $P$ and $Q$ are
+\definition{logically equivalent}{logical equivalence}
+if $P \iff Q$ is a tautology.
+We will write
+\begin{equation}
+  P \equiv Q
+\end{equation}
+to mean that $P$ and $Q$ are logically equivalent.
+\end{defn}
+
 \begin{remark}
   The symbol \(\equiv\) is not a logical connection, and \(p\equiv q\) is not a compound proposition, but rather it is the statement that \(p \iff q\) is a tautology. While $\iff$ is an operator applied to propositional variables, $\equiv$ is an operator on entire propositional statements.
 \end{remark}
+
+\begin{defn}[tautology]
+  A \definition{tautology}{tautology} is a compound proposition
+  that is always \ltrue{}, regardless of the truth values of the
+  variables that occur in it.
+\end{defn}
+
+\begin{defn}[contradiction]
+  A \definition{contradiction}{contradiction} is a compound proposition
+  that is always \lfalse{}.
+\end{defn}
+
+\begin{defn}[contingency]
+  A \definition{contingency}{contingency} is a compound proposition
+  that is neither a tautology nor a contradiction.
+  It can be either \ltrue{} or \lfalse{}.
+\end{defn}
+
+\begin{theorem}
+The biconditional statement \eqref{eq:propositional:biconditional}
+is logically equivalent to
+\begin{equation}
+(p \implies q) \wedge (q \implies p).
+\end{equation}
+
+That is,
+\begin{equation}
+p \iff q \equiv (p \implies q) \wedge (q \implies p).
+\label{eq:biconditional-equivalence}
+\end{equation}
+\label{th:biconditional-equivalence}
+\end{theorem}
+
+\begin{proof}[\thproofref{th:biconditional-equivalence}]
+We will prove this by truth table.
+\begin{table}[H]
+  \centering
+    \begin{tabular}{llrrrr}
+      \toprule
+      $p$ & $q$ & $p \implies q$ & $q \implies p $ & $(p \implies q) \land (q \implies p)$ & $p \iff q$ \\ \midrule
+      \lfalse{} & \lfalse{} & \ltrue{}      & \ltrue{}             & \ltrue{}  & \ltrue{}    \\
+      \lfalse{} & \ltrue{} & \ltrue{}      & \lfalse{}             & \lfalse{}  & \lfalse{}    \\
+      \ltrue{} & \lfalse{} & \lfalse{}      & \ltrue{}             & \lfalse{}  & \lfalse{}    \\
+      \ltrue{} & \ltrue{} & \ltrue{}      & \ltrue{}             & \ltrue{}  & \ltrue{}    \\
+      \bottomrule
+    \end{tabular}
+  \caption{Truth table proof of \thproofref{th:biconditional-equivalence}.}
+  \label{tab:propositional:proof:bicond-equiv}
+\end{table}
+Since the last two columns in
+\tabref{tab:propositional:proof:bicond-equiv}
+have the same truth value, we can be certain that
+\eqref{eq:biconditional-equivalence}
+holds.
+\end{proof}
+
+%\begin{table}[H]
+%  \centering
+%    \begin{tabular}{lrcccc}
+%      \toprule
+%      $p$ & $q$ & $\neg q$ & $p \lor \neg q$ & $p \land q$ & $(p \lor \neg q) \implies (p \land q)$ \\ \midrule
+%      1 & 1 & 0      & 1             & 1         & 1 \\
+%      1 & 0 & 1      & 1             & 0         & 0 \\
+%      0 & 1 & 0      & 0             & 0         & 1 \\
+%      0 & 0 & 1      & 1             & 0         & 0 \\
+%      \bottomrule
+%    \end{tabular}
+%  \caption{The truth table for $(p \lor \neg q) \implies (p \land q)$}
+%\end{table}
 
 \section{Precedence}
 For more complex propositions, we need rules to tell which logical operators come first when we read them.

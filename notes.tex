@@ -1,4 +1,4 @@
-\documentclass[letterpaper]{book}
+\documentclass[fontsize=10pt,twoside,BCOR=12mm,DIV=calc]{scrbook}
 \input{preamble}
 %%%%%%%%%%%%
 % document %
@@ -10,13 +10,21 @@
 % title %
 %%%%%%%%%
 
+
 \title{\textbf{\
 Mathematics
 }\\An undergraduate notebook}
 \author    {Nathan Typanski}
 \date      {\today}
 \maketitle
+
 \newpage
+
+\cleardoublepage
+
+\newpage
+
+\edef\marginnotetextwidth{\the\textwidth}
 
 \begin{center}
 This work is Copyright \copyright\ 2013 by Nathan Typanski.
@@ -71,9 +79,13 @@ This work is made available under the terms of the \emph{Creative Commons
 \setcounter{tocdepth}{3}
 \tableofcontents
 
+\listoftables
+
+\listoffigures
+
 \include{discrete/main}
 \include{continuous/main}
-\include{physics/main}
+%\include{physics/main}
 \part{Appendix}
 \include{appendix/main}
 %\input{discrete/algorithms}

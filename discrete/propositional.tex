@@ -8,70 +8,103 @@ I show you how deep the rabbit-hole goes.}{Morpheus, \emph{The Matrix}, 1999}
 The whole idea of propositional logic is that statements in mathematics have truth value and there is a logical process that we use to evaluate that truth value.
 Perhaps most importantly, this chapter will introduce us to \emph{DeMorgan's Laws}, which are relevant everywhere from computer science (in simplifying boolean operators) to the writings of Aristotle.
 
+\begin{remark}
 Propositional logic is also sometimes called \textbf{propositional calculus},
 \index{propositional calculus}
 from the Latin \emph{calculus} meaning ``pebble'', since in early days pebbles
 were used for counting.\cite{wiktionary-calculus}
+\end{remark}
 
 \section{Introduction to Propositional Logic}
 \label{sec:propintro}
 
 \index{proposition}
-A \textbf{proposition}\index{proposition} just a sentence that makes a statement.
+A \definition{proposition}{proposition} just a sentence that makes a statement.
 \begin{ex}
   ``My house is red.''
 \end{ex}
 
 \index{propositional calculus}
-  \textbf{Propositional calculus} (or \emph{propositional logic}) assigns propositions \emph{propositional variables}
-  (e.g. \(p, q, r, s, \ldots\)) and deals with their logic and \emph{truth value}.
+  \definition{Propositional calculus}{propositional calculus}
+  (or \altdefinition{propositional logic}{propositional logic})
+  assigns propositions \definition{propositional variables}{propositional variables}
+  (e.g. \(p, q, r, s, \ldots\))
+  and deals with their logic and \emph{truth value}.
   \begin{ex}
     Let $p$ be ``my house is red.''
   \end{ex}
 
-\index{negation}
-  Let \(p\) be a proposition. The \textbf{negation} of \(p\), denoted by \[\neg p\] is the statement
-  ``it is not the case that \(p\).''
-  The truth value of \(\neg p\) is the opposite of the truth value of \(p\).
-  \begin{ex}
-    Let $p$ be ``my house is red.''
+Let \(p\) be a proposition.
+The \definition{negation}{negation} of \(p\),
+$\neg p$,
+is the statement
+``it is not the case that \(p\).''
+The truth value of \(\neg p\) is the opposite of the truth value of \(p\).
 
-    Then $\neg p$ is ``it is not the case that my house is red,'' or simply ``my house is not red.''
-  \end{ex}
+\begin{ex}
+Let $p$ be ``my house is red.''
+Then $\neg p$ is
+``it is not the case that my house is red,''
+or simply
+``my house is not red.''
+\end{ex}
 
-\index{conjunction}
-  Let \(p\) and \(q\) be propositions. The \textbf{conjunction} of \(p\) and \(q\), denoted by \[ p \wedge q \] is the proposition
-  ``\(p\) and \(q\).'' It is true when both \(p\) and \(q\) are true and false otherwise.
-  \begin{ex}
-    Let $p$ be ``Kevin likes Sarah'' and let $q$ be ``Sarah likes Kevin.'
+Let \(p\) and \(q\) be propositions.
+The \definition{conjunction}{conjunction} of \(p\) and \(q\),
+written
+$p \wedge q$,
+is the proposition
+``\(p\) and \(q\).''
+It is true when both \(p\) and \(q\) are true and false otherwise.
 
-    Then $p \wedge q$ is ``Kevin likes Sarah and Sarah likes Kevin,'' or ``Kevin and Sarah like each other.''
-    This statement would be false if either of the two did not like the other.
-  \end{ex}
+\begin{ex}
+Let $p$ be ``Kevin likes Sarah'' and let $q$ be ``Sarah likes Kevin.'
+Then $p \wedge q$ is ``Kevin likes Sarah and Sarah likes Kevin,'' or ``Kevin and Sarah like each other.''
+This statement would be false if either of the two did not like the other.
+\end{ex}
 
-\index{disjunction}
-  Let \(p\) and \(q\) be propositions. The \textbf{disjunction} of \(p\) and \(q\), denoted by \[ p \vee q \] is the proposition
-  ``\(p\) and \(q\).'' It is true when either \(p\) or \(q\) are true and false otherwise.
-  \begin{ex}
-    Let $p$ denote ``Kevin hates bagels'' and $q$ denote ``Kevin hates poppy seeds.''
+Let \(p\) and \(q\) be propositions.
+The \definition{disjunction}{disjunction}
+of \(p\) and \(q\),
+written $p \vee q$,
+is the proposition
+``\(p\) or \(q\).''
+It is true when either \(p\) or \(q\) are true and false otherwise.
 
-    The proposition $p \vee q$ is the statement ``Kevin hates bagels or poppy seeds.''
-    Note, here, that there is an implicit cue in the language that Kevin could, indeed, hate both bagels and poppy seeds.
-    The statement would be true if he were distasteful toward either one of them, or both.
-  \end{ex}
+\begin{ex}
+Let $p$ denote ``Kevin hates bagels'' and $q$ denote ``Kevin hates poppy seeds.''
+The proposition $p \vee q$ is the statement ``Kevin hates bagels or poppy seeds.''
 
-\index{exclusive or}
-  The \textbf{exclusive or} of \(p\) and \(q\), denoted by \[p \oplus q\] is true when exactly one of \(p\) and \(q\) is true and false otherwise.
-  \begin{ex}
-    Let $p$ mean ``I could sleep in all day today'' and $q$ mean ``I could go to work.''
+\begin{remark}
+Note, here, that there is an implicit cue in the language that Kevin could,
+indeed, hate both bagels and poppy seeds.
+The statement would be true if he were distasteful toward either one of them,
+or both. In \exref{ex:prop:xordefn} we will see language cues toward the
+other usage of English \emph{or}.
+\end{remark}
+\end{ex}
 
-    The statement $p \oplus q$ is true when only one of $p$ or $q$ is true.
-    It is the sentence ``I could go to work, or I could sleep in all day today.''
-    Since it does not make sense to do both at once, the \emph{exclusive or} is implied in our use of the English language.
+\begin{defn}[exclusive or]
+The \definition{exclusive or}{exclusive or}
+$p \oplus q$
+of $p$ and $q$ is true when exactly one of $p$ and $q$ is true,
+and false otherwise.
+\end{defn}
 
-    We should keep an eye out for this distinction between disjunction and exclusive or, as it requires careful
-    attention to the subtleties in our use of language.
-  \end{ex}
+\begin{ex}\label{ex:prop:xordefn}
+Let $p$ mean ``I could sleep in all day today'' and $q$ mean ``I could go to work.''
+
+The statement $p \oplus q$ is true when only one of $p$ or $q$ is true.
+It is the sentence ``I could go to work, or I could sleep in all day today.''
+Since it does not make sense to do both at once, the \emph{exclusive or} is
+implied in our use of the English language.
+
+\begin{remark}
+  We should keep an eye out for this distinction between disjunction and
+  exclusive or, as it requires careful attention to the subtleties in our use of
+  language.
+\end{remark}
+\end{ex}
 
   \index{conditional statement}
   The \textbf{conditional statement} \[p \implies q\] is the proposition ``if p, then q.''

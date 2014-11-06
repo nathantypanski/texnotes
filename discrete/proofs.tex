@@ -3,31 +3,31 @@ We use proofs to establish the truth of mathematical statements.
 There are a number of types of these statements, of varying importance.
 
 Before we prove our statement, it is called a
-\textbf{conjecture}\index{conjecture}.
+\definition{conjecture}{conjecture}.
 
-A \textbf{fact}\index{fact} or \textbf{result}\index{result} is the simplest type of statement we might
+A \definition{fact}{fact} or \definition{result}{result} is the simplest type of statement we might
 prove. Sometimes proofs are required, but more often they are simply
 demonstrated, implied, or obvious.
 
-\textbf{Theorems}\index{theorem} are where proofs start to become important. They are the
+\definition{Theorems}{theorem} are where proofs start to become important. They are the
 foundations of complex mathematical logic. Some theorems are
-less important than others, and we call these \emph{lemmata}.\index{lemmata} A
-\textbf{lemma} is a less important theorem, often used in proving
+less important than others, and we call these \definition{lemmata}{lemmata}.
+A \definition{lemma}{lemma} is a less important theorem, often used in proving
 our main theorem. After our theorem is proven, we can often draw
-\textbf{corollaries}\index{corollary}, theorems that follow
+\definition{corollaries}{corollary}, theorems that follow
 easily from our proven theorem.
 
-Some proofs are \textbf{formal proofs}, which use the rules of inference to
+Some proofs are \definition{formal proofs}{proofs!formal}, which use the rules of inference to
 establish truth. These proofs are the ``simplest'' in that they involve the
 simplest forms of logic, though they can become incredibly complex as we attempt
 to write formal proofs for more and more complex theorems.
 
-Thus, we most often will encounter \textbf{informal proofs}.
+Thus, we most often will encounter \definition{informal proofs}{proofs!informal}.
 These proofs establish truth using language and logic that makes sense to humans.
 
 \section{Direct Proof}
 
-A \textbf{direct proof}\index{direct proof} starts with known facts, and the statement we are trying
+A \definition{direct proof}{proof!direct} starts with known facts, and the statement we are trying
 to prove follows directly from them.
 
 In using a direct proof for proving an implication \[P \implies Q\]
@@ -62,22 +62,22 @@ reach the conclusion $Q$ through direct logical steps from $P$.
   \end{proof}
 \end{ex}
 
-\section{Indirect Proof}\index{indirect proofs}
+\section{Indirect Proof}
 
-An \textbf{indirect proof} is, basically, any proof that is not a \emph{direct proof}.
+An \definition{indirect proof}{proof!indirect} is, basically, any proof that is not a \emph{direct proof}.
 There are a variety of ways of accomplishing a proof that are not direct proofs,
 and many of them are dramatically simpler or easier to understand than the direct
 proof for a given theorem would be.
 
 \subsection{Proof by Contrapositive}\label{sec:contrapositive}
-The first method of indirect proof we will discuss is the \textbf{proof by contrapositive}.
+The first method of indirect proof we will discuss is the \definition{proof by contrapositive}{proof!by contrapositive}.
 It is often more useful to work with the contrapositive something than the original statement.
 
 Remembering our definition of the contrapositive from \secref{sec:propintro},
 let's cover some examples.
 
 \begin{defn}
-  The \textbf{contrapositive} of the statement $P \to Q$
+  The \definition{contrapositive}{contrapositive} of the statement $P \to Q$
   is the statement $\neg Q \to \neg P$.
   \label{defn:contrapositive}
 \end{defn}
@@ -193,10 +193,10 @@ let's cover some examples.
 %	$3n+2$ is even.
 %	\end{proof}
 %\end{ex}
-%
-\section{Proof by Contradiction}\index{proof by contradiction}
 
-To use proof by contradiction to prove a proposition $P$,
+\section{Proof by Contradiction}
+
+To use \definition{proof by contradiction}{proof!by contradiction} to prove a proposition $P$,
 we start by assuming $P$ is false.
 From this, we derive a logical contradiction.
 

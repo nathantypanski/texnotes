@@ -1,21 +1,33 @@
 \chapter{Predicates and Quantifiers}
 \label{ch:predicates}
+
 Predicates are based on the idea that we can replace parts of our propositions with variables in order to separate our discussion of logic from the irrelevant details of the problem.
 
 We saw in the previous chapter how the specifics of propositions seemed largely irrelevant; most examples were useless gibberish like ``my house is red'' with all of the focus on the theoretical relationships between these statements.
 
 Predicate logic is a more powerful system of logic which allows us to state ``there exists'' and ``for all'' using logic.
 
-
 \section{Predicate Logic}
 
 Propositional logic is too simple for us to make many types of conclusions.
-Instead, we use \textbf{predicate logic}, which allows us to make general
+Instead, we use \definitionintro{predicate logic}, which allows us to make general
 statements about objects and their properties.
+Predicate logic is a generalization of propositional logic in which variables may
+be assigned to individual parts of statements, and then we can peroform
+analysis on the statements in general---instead of in just one specific instance.
 
-A \textbf{propositional function}\index{propositional function}, $P(x)$, is a
+\begin{defn}
+A \definition{term}{term} is a variable.
+\end{defn}
+
+\begin{defn}
+A \definition{propositional function}{propositional function},
+$P(x)$, is a
 type of \textbf{predicate}\index{predicate} in
-predicate logic. The important thing about propositional functions is that their truth value depends on the value of a variable, $x$.
+predicate logic.
+\end{defn}
+
+The important thing about propositional functions is that their truth value depends on the value of a variable, $x$.
 A propositional function becomes a proposition when a value is assigned to $x$, and then it has a truth value and we can evaluate it.
 \begin{ex}
   \[ P(n)=\text{``$n$ is prime''} \]

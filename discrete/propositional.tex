@@ -1,4 +1,4 @@
-\chapter{Propositional Logic}
+\chapter{Propositional Calculus}
 \epigraph{This is your last chance. After this, there is no turning back. You
 take the blue pill---the story ends, you wake up in your bed and believe
 whatever you want to believe. You take the red pill---you stay in Wonderland and
@@ -9,8 +9,8 @@ The whole idea of propositional logic is that statements in mathematics have tru
 Perhaps most importantly, this chapter will introduce us to \emph{DeMorgan's Laws}, which are relevant everywhere from computer science (in simplifying boolean operators) to the writings of Aristotle.
 
 \begin{remark}
-Propositional logic is also sometimes called \textbf{propositional calculus},
-\index{propositional calculus}
+Propositional logic is also sometimes called
+\altdefinition{propositional calculus}{propositional calculus},
 from the Latin \emph{calculus} meaning ``pebble'', since in early days pebbles
 were used for counting.\cite{wiktionary-calculus}
 \end{remark}
@@ -128,7 +128,10 @@ and has a truth value.
 
 \begin{defn}[conditional statement]
   The \definition{conditional statement}{conditional statement}
-  $p \implies q$
+  \begin{equation}
+    p \implies q
+    \label{eq:propositional:conditional}
+  \end{equation}
   is the proposition ``if p, then q.''
   It is \lfalse{} when $p$ is \ltrue{} and $q$ is \lfalse{}, and \ltrue{} otherwise.
   \label{def:conditional}
@@ -177,20 +180,22 @@ and has a truth value.
   The \definition{converse}{converse} of \(p \implies q\) is \(q \implies p\).
 \end{defn}
 
-\begin{defn}
+\begin{defn}[contrapositive]
   The \definition{contrapositive}{contrapositive} of
-  $p \implies q$ is $\neg q \implies \neg p$.
+  \eqref{eq:propositional:conditional}
+  is the propositional statement
+  \begin{equation}
+    \neg q \implies \neg p.
+    \label{eq:propositional:contrapositive}
+  \end{equation}
   \label{def:contrapositive}
 \end{defn}
 
 \begin{theorem}
-  Where $p$ and $q$ are propositional variables,
-  the contrapositive statement
-  $\neg q \implies \neg p$
-  \pdefnref{def:contrapositive}
+  The contrapositive statement
+  \eqref{eq:propositional:contrapositive}
   is logically equivalent to the conditional statement
-  $p \implies q$
-  \pdefnref{def:conditional}.
+  \eqref{eq:propositional:conditional}.
   \label{thm:contrapositive-conditional}
 \end{theorem}
 
@@ -209,6 +214,9 @@ To this end, we will introduce the notion of \definitionintro{truth tables}.
 
   Truth tables can be used to demonstrate the logical relationships between
   statements and demonstrate some useful property about those relationships.
+
+  To simplify things, we will sometimes show truth tables with 0 representing
+  \lfalse{} and 1 representing \ltrue{}.
 \end{defn}
 
 \begin{proof}[\thproofref{thm:contrapositive-conditional}]
@@ -239,14 +247,33 @@ This property of contrapositives is especially useful when we are trying to prov
 as its contrapositive is often easier to prove than the statement itself.
 This subject is detailed further in \secref{sec:contrapositive}.
 
-\index{inverse}
-  The \textbf{inverse} of \(p \implies q\) is \(\neg p \implies \neg q\).
-  It has the opposite truth value of the original statement.
+\begin{defn}[inverse]
+  The \definition{inverse}{inverse} of
+  the conditional statement
+  \eqref{eq:propositional:conditional}
+  is
+  \begin{equation}
+    \neg p \implies \neg q,
+    \label{eq:propositional:inverse}
+  \end{equation}
+  and it has the opposite truth value of the original statement.
+\end{defn}
 
-  \index{biconditional statement}
-  The \textbf{biconditional statement}, also called \emph{bi-implication}, for $p$ and $q$ is \[p \iff q.\] This is the statement
-  ``\(p\) if and only if \(q\).''
-  It is \ltrue{} when both \(p\) and \(q\) have the same truth value, and \lfalse{} otherwise.
+\begin{defn}
+  The \definition{biconditional statement},
+  (also called \altdefinition{bi-implication}{bi-implication})
+  for $p$ and $q$ is the statement that is \ltrue{}
+  when both $p$ and $q$ have the same truth value,
+  and \lfalse{} otherwise.
+  The biconditional is written
+  \begin{equation}
+    p \iff q
+    \label{eq:propositional:biconditional}
+  \end{equation}
+  and means
+  ``$p$ if and only if $q$.''
+\end{defn}
+
 \begin{table}[h]
   \centering
     \begin{tabular}{l}

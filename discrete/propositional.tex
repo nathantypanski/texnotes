@@ -18,13 +18,24 @@ were used for counting.\cite{wiktionary-calculus}
 \section{Introduction to Propositional Logic}
 \label{sec:propintro}
 
-\index{proposition}
-A \definition{proposition}{proposition} just a sentence that makes a statement.
+\begin{defn}[proposition]
+A \definition{proposition}{proposition} a sentence that makes a statement
+and has a truth value.
+\end{defn}
+
 \begin{ex}
-  ``My house is red.''
+  The following sentence is a proposition:
+  \begin{equation}
+    \text{``My house is red.''}
+    \label{eq:ex:proposition}
+  \end{equation}
+  The way we know that \eref{eq:ex:proposition} is a proposition is because
+  it has a theoretically knowable truth value.
+  We will write that \eref{eq:ex:proposition} is \ltrue{} when its author's
+  house is, indeed, red---and that \eref{eq:ex:proposition} is \lfalse{}
+  if that is not the case.
 \end{ex}
 
-\index{propositional calculus}
   \definition{Propositional calculus}{propositional calculus}
   (or \altdefinition{propositional logic}{propositional logic})
   assigns propositions \definition{propositional variables}{propositional variables}
@@ -34,139 +45,199 @@ A \definition{proposition}{proposition} just a sentence that makes a statement.
     Let $p$ be ``my house is red.''
   \end{ex}
 
-Let \(p\) be a proposition.
-The \definition{negation}{negation} of \(p\),
-$\neg p$,
-is the statement
-``it is not the case that \(p\).''
-The truth value of \(\neg p\) is the opposite of the truth value of \(p\).
+\begin{defn}[negation]
+  Let \(p\) be a proposition.
+  The \definition{negation}{negation} of \(p\),
+  $\neg p$,
+  is the statement
+  ``it is not the case that \(p\).''
+  The truth value of \(\neg p\) is the opposite of the truth value of \(p\).
+\end{defn}
 
 \begin{ex}
-Let $p$ be ``my house is red.''
-Then $\neg p$ is
-``it is not the case that my house is red,''
-or simply
-``my house is not red.''
+  Let $p$ be ``my house is red.''
+  Then $\neg p$ is
+  ``it is not the case that my house is red,''
+  or simply
+  ``my house is not red.''
 \end{ex}
 
-Let \(p\) and \(q\) be propositions.
-The \definition{conjunction}{conjunction} of \(p\) and \(q\),
-written
-$p \wedge q$,
-is the proposition
-``\(p\) and \(q\).''
-It is true when both \(p\) and \(q\) are true and false otherwise.
+\begin{defn}[conjunction]
+  Let $p$ and $q$ be propositions.
+  The \definition{conjunction}{conjunction}
+  $p \wedge q$
+  of $p$ and $q$,
+  is the proposition
+  ``$p$ and $q$.''
+  The conjunction is true when both $p$ and $q$ are true and false otherwise.
+\end{defn}
 
 \begin{ex}
-Let $p$ be ``Kevin likes Sarah'' and let $q$ be ``Sarah likes Kevin.'
-Then $p \wedge q$ is ``Kevin likes Sarah and Sarah likes Kevin,'' or ``Kevin and Sarah like each other.''
-This statement would be false if either of the two did not like the other.
+  Let $p$ be ``Kevin likes Sarah'' and let $q$ be ``Sarah likes Kevin.'
+  Then $p \wedge q$ is
+  ``Kevin likes Sarah and Sarah likes Kevin,''
+  or ``Kevin and Sarah like each other.''
+  This statement would be false if either of the two did not like the other.
 \end{ex}
 
-Let \(p\) and \(q\) be propositions.
-The \definition{disjunction}{disjunction}
-of \(p\) and \(q\),
-written $p \vee q$,
-is the proposition
-``\(p\) or \(q\).''
-It is true when either \(p\) or \(q\) are true and false otherwise.
+\begin{defn}[disjunction]
+  Let \(p\) and \(q\) be propositions.
+  The \definition{disjunction}{disjunction}
+  of \(p\) and \(q\),
+  written $p \vee q$,
+  is the proposition
+  ``\(p\) or \(q\).''
+  It is true when either \(p\) or \(q\) are true and false otherwise.
+\end{defn}
 
 \begin{ex}
-Let $p$ denote ``Kevin hates bagels'' and $q$ denote ``Kevin hates poppy seeds.''
-The proposition $p \vee q$ is the statement ``Kevin hates bagels or poppy seeds.''
-
-\begin{remark}
-Note, here, that there is an implicit cue in the language that Kevin could,
-indeed, hate both bagels and poppy seeds.
-The statement would be true if he were distasteful toward either one of them,
-or both. In \exref{ex:prop:xordefn} we will see language cues toward the
-other usage of English \emph{or}.
-\end{remark}
+  Let $p$ denote ``Kevin hates bagels'' and
+  $q$ be the assertion that ``Kevin hates poppy seeds.''
+  The proposition $p \vee q$ is the statement ``Kevin hates bagels or poppy seeds.''
+  \begin{remark}
+    Note, here, that there is an implicit cue in the language that Kevin could,
+    indeed, hate both bagels and poppy seeds.
+    The statement would be true if he were distasteful toward either one of them,
+    or both. In \exref{ex:prop:xordefn} we will see language cues toward the
+    other usage of English \emph{or}.
+  \end{remark}
 \end{ex}
 
 \begin{defn}[exclusive or]
-The \definition{exclusive or}{exclusive or}
-$p \oplus q$
-of $p$ and $q$ is true when exactly one of $p$ and $q$ is true,
-and false otherwise.
+  The \definition{exclusive or}{exclusive or}
+  $p \oplus q$
+  of propositional variables
+  $p$ and $q$ is true when exactly one of $p$ and $q$ is true,
+  and false otherwise.
 \end{defn}
 
-\begin{ex}\label{ex:prop:xordefn}
-Let $p$ mean ``I could sleep in all day today'' and $q$ mean ``I could go to work.''
-
-The statement $p \oplus q$ is true when only one of $p$ or $q$ is true.
-It is the sentence ``I could go to work, or I could sleep in all day today.''
-Since it does not make sense to do both at once, the \emph{exclusive or} is
-implied in our use of the English language.
-
-\begin{remark}
-  We should keep an eye out for this distinction between disjunction and
-  exclusive or, as it requires careful attention to the subtleties in our use of
-  language.
-\end{remark}
+\begin{ex}
+  Let $p$ mean ``I could sleep in all day today''
+  and $q$ mean ``I could go to work.''
+  Then the statement $p \oplus q$ is true when only one of $p$ or $q$ is true.
+  It is the sentence ``I could go to work, or I could sleep in all day today.''
+  Since it does not make sense to do both at once,
+  the \definitionintro{exclusive or} is implied by our choice of words.
+  \begin{remark}
+    We should keep an eye out for this distinction between disjunction and
+    exclusive or, as it requires careful attention to the subtleties in our use of
+    language.
+  \end{remark}
+  \label{ex:prop:xordefn}
 \end{ex}
 
-  \index{conditional statement}
-  The \textbf{conditional statement} \[p \implies q\] is the proposition ``if p, then q.''
-  The conditional statement \(p \implies q\) is false when \(p\) is true and \(q\) is false, and true otherwise.
-  Other ways of writing the conditional statement can be found in \tabref{tab:conditionals}.
-  \index{hypothesis}\index{antecedent}\index{premise}
-  \(p\) is called the \textbf{hypothesis} (or antecedent or premise).
-  \index{conclusion}\index{consequence}
-  \(q\) is called the \textbf{conclusion} (or consequence).
-  \begin{ex}
-    Let $p$ be ``Joe broke his arm'' and $q$ be ``Joe will go to the hospital.''
+\begin{defn}[conditional statement]
+  The \definition{conditional statement}{conditional statement}
+  $p \implies q$
+  is the proposition ``if p, then q.''
+  It is false when $p$ is true and $q$ is false, and true otherwise.
+  \label{def:conditional}
+\end{defn}
 
-    The statement $p \implies q$ is the statement ``If Joe broke his arm, then he will go to the hospital.''
-    It is true if Joe only goes to the hospital, if he only breaks his arm, and if both events occur.
-    The only situation in which it is false is if Joe breaks his arm, then does not go to the hospital.
-  \end{ex}
-  \begin{table}[H]
+\begin{defn}[hypothesis]
+  In a conditional statement, $p$ is called the \definition{hypothesis}{hypothesis}
+  (or \altdefinition{antecedent}{antecedent} or \altdefinition{premise}{premise}).
+\end{defn}
+
+\begin{defn}[conclusion]
+  In a conditional statement, the variable $q$ is called the \definition{conclusion}{conclusion}
+  or \altdefinition{consequence}{consequence}.
+
+  Other ways of writing the conditional statement are shown in \tabref{tab:conditionals}.
+\end{defn}
+
+\begin{ex}
+  Let $p$ be ``Joe broke his arm''
+  and let $q$ be ``Joe will go to the hospital.''
+
+  If one were to state that $p \implies q$, they mean
+  ``If Joe broke his arm, then he will go to the hospital.''
+  This conditional is true if Joe only goes to the hospital,
+  if he only breaks his arm, and if both events occur.
+  The only situation in which it is false is if Joe breaks his arm,
+  but does not go to the hospital.
+\end{ex}
+
+\begin{table}[H]
   \centering
-  %\boxed{
     \begin{tabular}{p{2in} p{2in}}
-      ``if \(p\), then \(q\)'' & ``\(p\) implies \(q\)'' \\
-      ``if \(p\), \(q\)'' & ``\(p\) only if \(q\)'' \\
-      ``\(p\) is sufficient for \(q\)'' & ``a sufficient condition for \(q\) is \(p\)'' \\
-      ``\(q\) if \(p\)'' & ``\(q\) whenever \(p\)`` \\
-      ``\(q\) when \(p\)'' & ``\(q\) is necessary for \(p\)'' \\
+      ``if \(p\), then \(q\)''                     & ``\(p\) implies \(q\)'' \\
+      ``if \(p\), \(q\)''                          & ``\(p\) only if \(q\)'' \\
+      ``\(p\) is sufficient for \(q\)''            & ``a sufficient condition for \(q\) is \(p\)'' \\
+      ``\(q\) if \(p\)''                           & ``\(q\) whenever \(p\)`` \\
+      ``\(q\) when \(p\)''                         & ``\(q\) is necessary for \(p\)'' \\
       ``a necessary condition for \(p\) is \(q\)'' & ``\(q\) follows from \(p\)'' \\
       ``\(q\) unless \(p\)''
     \end{tabular}
-  %}
   \caption{Other ways of writing the conditional statement \(p \implies q\).}
   \label{tab:conditionals}
 \end{table}
-\index{converse}
-  The \textbf{converse} of \(p \implies q\) is \(q \implies p\).
 
-\index{contrapositive}\label{def:contrapositive}
-  The \textbf{contrapositive} of
-  \(p \implies q\)
-  is
-  \(\neg q \implies \neg p\).
-  It is logically equivalent to
-  \(p \implies q\).
-  We can prove this with the following \emph{truth table}:
+\begin{defn}[converse]
+  The \definition{converse}{converse} of \(p \implies q\) is \(q \implies p\).
+\end{defn}
+
+\begin{defn}
+  The \definition{contrapositive}{contrapositive} of
+  $p \implies q$ is $\neg q \implies \neg p$.
+  \label{def:contrapositive}
+\end{defn}
+
+\begin{theorem}
+  Where $p$ and $q$ are propositional variables,
+  the contrapositive statement
+  $\neg q \implies \neg p$
+  \pdefnref{def:contrapositive}
+  is logically equivalent to the conditional statement
+  $p \implies q$
+  \pdefnref{def:conditional}.
+  \label{thm:contrapositive-conditional}
+\end{theorem}
+
+\thref{thm:contrapositive-conditional} is the first example we have seen
+of a mathematical statement that asserts something about the mathematical
+constructs we have presented thus far.
+When we make such an assertion, it is useful to demonstrate that our assertion
+holds some clout.
+To this end, we will introduce the notion of \definitionintro{truth tables}.
+
+\begin{defn}
+  A \definition{truth table}{truth table} shows all of the possible values
+  of the propositional variables in at least one propositional statement,
+  and the respective values of those propositional statements when those
+  variables take on such values.
+
+  Truth tables can be used to demonstrate the logical relationships between
+  statements and demonstrate some useful property about those relationships.
+\end{defn}
+
+\begin{proof}[\thproofref{thm:contrapositive-conditional}]
+  We will prove \thref{thm:contrapositive-conditional} using a truth table.
   \begin{table}[H]
     \centering
-    \begin{tabular}{|>$c<$|>$c<$|>$c<$|>$c<$|}
-      \hline
-      p & q & p\implies q & \neg q \implies \neg p\\
-      \hline
+    \begin{tabular}{llcc}
+      \toprule
+      $p$ & $q$ & $p\implies q$ & $\neg q \implies \neg p$\\
+      \midrule
       0 & 0 & 1 & 1 \\
       0 & 1 & 1 & 1 \\
       1 & 0 & 0 & 0 \\
-      1 & 1 & 1 & 1 \\\hline
+      1 & 1 & 1 & 1 \\
+      \bottomrule
     \end{tabular}
     \caption{A truth table for $p\implies q$ and $\neg q \implies \neg p$.}
     \label{tab:contrapositive}
   \end{table}
-  A \textbf{truth table} can be used to demonstrate the logical relationships between statements.
+  In \tabref{tab:contrapositive}, we have shown that for all
+  possible values of $p$ and $q$,
+  the conditional statement $p \implies q$
+  holds the same truth value as the contrapositive statement
+  $\neg q \implies \neg p$.
+\end{proof}
 
-  This property of contrapositives is especially useful when we are trying to prove a statement,
-  as its contrapositive is often easier to prove than the statement itself.
-  This subject is detailed further in \secref{sec:contrapositive}.
+This property of contrapositives is especially useful when we are trying to prove a statement,
+as its contrapositive is often easier to prove than the statement itself.
+This subject is detailed further in \secref{sec:contrapositive}.
 
 \index{inverse}
   The \textbf{inverse} of \(p \implies q\) is \(\neg p \implies \neg q\).
@@ -203,12 +274,14 @@ In mathematical theorems, definitions, and related elements later in this text, 
     This is easiest to prove by truth table:
 \begin{table}[H]
   \centering
-    \begin{tabular}{>$ l <$ >$ r <$ | >$ c <$ | >$ c <$ | >$ c <$ | >$ c <$}
-      p & q & \neg q & p \lor \neg q & p \land q & (p \lor \neg q) \implies (p \land q) \\ \hline
+    \begin{tabular}{lrcccc}
+      \toprule
+      $p$ & $q$ & $\neg q$ & $p \lor \neg q$ & $p \land q$ & $(p \lor \neg q) \implies (p \land q)$ \\ \midrule
       1 & 1 & 0      & 1             & 1         & 1 \\
       1 & 0 & 1      & 1             & 0         & 0 \\
       0 & 1 & 0      & 0             & 0         & 1 \\
-      0 & 0 & 1      & 1             & 0         & 0
+      0 & 0 & 1      & 1             & 0         & 0 \\
+      \bottomrule
     \end{tabular}
   \caption{The truth table for $(p \lor \neg q) \implies (p \land q)$}
 \end{table}
@@ -227,15 +300,16 @@ Then conjunction ($\land$), followed by disjunction ($\lor$).
 Then conditional ($\implies$), and finally bi-conditional ($\iff$) operators.
 \begin{table}[H]
   \centering
-  %\boxed{
-    \begin{tabular}{r|cl}
+    \begin{tabular}{lll}
+      \toprule
+      precedence & symbol & meaning \\ \midrule
       1 & $\neg$      &not\\
       2 & $\land$     &and \\
       3 & $\lor$      & or \\
       4 & $\implies$  & conditional \\
       5 & $\iff$      &biconditional
+      \\ \bottomrule
     \end{tabular}
-  %}
   \caption{Logical operator precedence.}
   \label{tab:precedence}
 \end{table}
@@ -269,26 +343,29 @@ and the corresponding values of the propositional statement for each combination
 Intermediary steps may aid one's understanding, though they are not necessary in the final result.
 \begin{table}[H]
   \centering
-  \boxed{
-    \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
-      p & q & \neg(p \land q) & \neg p \lor \neg q \\ \hline
+    \begin{tabular}{lrcc}
+      \toprule
+      $p$ & $q$ & $\neg(p \land q)$ & $\neg p \lor \neg q$ \\ \midrule
       0 & 0 & 1 & 1 \\
       0 & 1 & 1 & 1\\
       1 & 0 & 1 & 1\\
       1 & 1 & 0 & 0\\
+      \bottomrule
     \end{tabular}
-  }
   \caption{A proof of DeMorgan's first law.}
 \end{table}
+
 \begin{table}[H]
   \centering
   \boxed{\
-    \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
-      p & q & \neg(p \lor q) & \neg p \land \neg q \\ \hline
+    \begin{tabular}{lrcc}
+      \toprule
+      $p$ & $q$ & $\neg(p \lor q)$ & $\neg p \land \neg q$ \\ \midrule
       0 & 0 & 1 & 1 \\
       0 & 1 & 0 & 0 \\
       1 & 0 & 0 & 0 \\
       1 & 1 & 0 & 0 \\
+      \bottomrule
     \end{tabular}
   }
   \caption{A proof of DeMorgan's second law.}
@@ -322,6 +399,7 @@ In a proof or simplification of propositional logic statements, propositions lik
 are difficult for us to work with.
 We have very few laws or equivalences which work directly with them, so we often must convert them into an equivalent form using other operators.
 
+
 We can convert $p\implies q$ to a proposition using only the $\neg$ and $\lor$ operators using the logical equivalence
 \begin{equation}
   p \implies q \equiv \neg p \lor q,
@@ -329,41 +407,43 @@ We can convert $p\implies q$ to a proposition using only the $\neg$ and $\lor$ o
 which we will prove using a truth table in \tabref{tab:conditionalproof}.
 \begin{table}[H]
   \centering
-  \boxed{\
-    \begin{tabular}{>\( l <\) >\(r<\)|>\(c<\)|>\(c<\)}
-      p & q & p \implies q & \neg p \lor q \\ \hline
+    \begin{tabular}{lrcc}
+      \toprule
+      $p$ & $q$ & $p \implies q$ & $\neg p \lor q$ \\ \midrule
       1 & 1 & 1 & 1 \\
       1 & 0 & 0 & 0 \\
       0 & 1 & 1 & 1 \\
       0 & 0 & 1 & 1 \\
+      \bottomrule
     \end{tabular}
-  }
   \caption{A proof of \(p \implies q \equiv \neg p \lor q\).}
   \label{tab:conditionalproof}
 \end{table}
+
 \begin{table}[H]
   \centering
-    \begin{tabular}{>\(l<\) r}
-      \textbf{Proposition} & \textbf{Name} \\ \hline\noalign{\smallskip}
-      p \land T \equiv p & \multirow{2}{*}{identity laws} \\
-      p \lor f \equiv p \\\hline
-      p \lor T \equiv T & \multirow{2}{*}{domination laws} \\
-      p \land F \equiv F \\\hline
-      p \lor p \equiv p & \multirow{2}{*}{idempotent laws} \\
-      p \land p \equiv p \\\hline\noalign{\smallskip}
-      \neg (\neg p) & double negation law \\\noalign{\smallskip}\hline
-      p \lor q \equiv q \lor p & \multirow{2}{*}{commutative laws} \\
-      p \land q \equiv q \land p \\\hline
-      (p \lor q) \lor r \equiv p \lor (q \lor r) & \multirow{2}{*}{associative laws} \\
-      (p \land q) \land r \equiv p \land (q \land r) \\\hline
-      p \land (q \lor r) \equiv (p \land q) \lor (p \land r) & \multirow{2}{*}{distributive laws} \\
-      p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \\\hline
-      \neg (p \lor q) \equiv \neg p \lor \neg q & \multirow{2}{*}{DeMorgan's laws} \\
-      \neg (p \lor q) \equiv \neg p \land \neg q \\\hline
-      p \lor (p \land q) \equiv p & \multirow{2}{*}{absorbtion laws} \\
-      p \land (p \lor q) \equiv p \\\hline
-      p \lor \neg p \equiv T & \multirow{2}{*}{negation laws} \\
-      p \land \neg p \equiv F
+    \begin{tabular}{lr}
+      \toprule
+      \textbf{Proposition} & \textbf{Name} \\ \midrule
+      $p \land T \equiv p$ & \multirow{2}{*}{identity laws} \\
+      $p \lor f \equiv p $ \\\midrule
+      $p \lor T \equiv T $ & \multirow{2}{*}{domination laws} \\
+      $p \land F \equiv F $ \\\midrule
+      $p \lor p \equiv p $ & \multirow{2}{*}{idempotent laws} \\
+      $p \land p \equiv p $ \\\midrule
+      $\neg (\neg p) $ & double negation law \\ \midrule
+      $p \lor q \equiv q \lor p $ & \multirow{2}{*}{commutative laws} \\
+      $p \land q \equiv q \land p $ \\ \midrule
+      $(p \lor q) \lor r \equiv p \lor (q \lor r) $& \multirow{2}{*}{associative laws} \\
+      $(p \land q) \land r \equiv p \land (q \land r)$  \\\midrule
+      $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ & \multirow{2}{*}{distributive laws} \\
+      $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ \\\midrule
+      $\neg (p \lor q) \equiv \neg p \lor \neg q $ & \multirow{2}{*}{DeMorgan's laws} \\
+      $\neg (p \lor q) \equiv \neg p \land \neg q $ \\\midrule
+      $p \lor (p \land q) \equiv p $ & \multirow{2}{*}{absorbtion laws} \\
+      $p \land (p \lor q) \equiv p $ \\\midrule
+      $p \lor \neg p \equiv T $ & \multirow{2}{*}{negation laws} \\
+      $p \land \neg p \equiv F $
     \end{tabular}
   \caption{Useful logical equivalence laws.}
   \label{tab:logequiv}

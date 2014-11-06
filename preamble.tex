@@ -1,11 +1,6 @@
-%%%%%%%%%%%%
-% preamble %
-%%%%%%%%%%%%
-%%%%%%%%%%%%
-% packages %
-%%%%%%%%%%%%
+\usepackage{etex}
 \usepackage[T1]{fontenc}
-\usepackage[letterpaper, twoside]{geometry}  % set the margins to 1in on all sides usepackage
+\usepackage[a5paper, twoside]{geometry}  % set the margins to 1in on all sides usepackage
 \usepackage[bookmarks, backref, hidelinks]{hyperref}  % generates pdf index
 \usepackage{cclicenses}
 \usepackage{yfonts}                % fancy first letters
@@ -35,7 +30,7 @@
 \usepackage[small]{caption}
 \usepackage[europeancurrents, europeanvoltages, americanresistors, cuteinductors, americanports, nosiunitx, noarrowmos]{circuitikz}            % logic gates
 \usepackage{tikz}                  % stuff for circuits and more
-%\usepackage{booktabs}             % book-like tables
+\usepackage{booktabs}             % book-like tables
 \usepackage{multirow}
 \usepackage{cancel}
 \usepackage{fitch}                 % fitch-style proofs
@@ -49,6 +44,7 @@
 \usepackage{etoolbox}
 \usepackage{charter}
 \usepackage[expert]{mathdesign}
+\usepackage{marginnote}
 
 %%%%%%%%%%%%
 % settings %
@@ -221,6 +217,7 @@
 \newcommand{\iu}{\mathrm i}
 
 \newcommand{\definition}[2]{\textbf{#1}\index{#2}}
+\newcommand{\definitionintro}[1]{\emph{#1}}
 \newcommand{\altdefinition}[2]{\emph{#1}\index{#2}}
 \newcommand{\defi}[2]{\definition{#1}{#2}}
 
@@ -235,7 +232,15 @@
 \newcommand{\figref}[1]{Figure~\ref{#1}}
 \newcommand{\tabref}[1]{Table~\ref{#1}}
 \newcommand{\secref}[1]{Section~\ref{#1}}
-\newcommand{\defnref}[1]{Defn.~\ref{#1}}
+\newcommand{\defnref}[1]{definition~\ref{#1}}
+\newcommand{\pdefnref}[1]{(\defnref{#1})}
+
+\newcommand{\thproofref}[1]{Proof of \thref{#1}}
+
+\newenvironment{exemplify}{\begin{center}}{\end{center}}
+
+\newcommand{\ltrue}{\textsc{true}}
+\newcommand{\lfalse}{\textsc{true}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % theorems                                                               %
@@ -258,12 +263,12 @@
 \definecolor{SkyBlue}{HTML}{3465a4}
 \definecolor{SkyBlueDark}{HTML}{204a87}
 \newtheoremstyle{example}% name of the style to be used
-  {2ex}% measure of space to leave above the theorem. E.g.: 3pt
-  {2ex}% measure of space to leave below the theorem. E.g.: 3pt
+  {3ex}% measure of space to leave above the theorem. E.g.: 3pt
+  {1ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
   {\bfseries}% name of head font
-  {} % punctuation between head and body
+  {.} % punctuation between head and body
   {1em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
 \newtheoremstyle{solution}% name of the style to be used
@@ -276,27 +281,36 @@
   {1em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
 \newtheoremstyle{defn}% name of the style to be used
-  {2ex}% measure of space to leave above the theorem. E.g.: 3pt
-  {2ex}% measure of space to leave below the theorem. E.g.: 3pt
+  {3ex}% measure of space to leave above the theorem. E.g.: 3pt
+  {1ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
   {\bfseries} % name of head font
-  {}% punctuation between head and body
+  {.}% punctuation between head and body
   {0.75em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
 \newtheoremstyle{rmk}% name of the style to be used
-  {2ex}% measure of space to leave above the theorem. E.g.: 3pt
-  {2ex}% measure of space to leave below the theorem. E.g.: 3pt
+  {3ex}% measure of space to leave above the theorem. E.g.: 3pt
+  {1ex}% measure of space to leave below the theorem. E.g.: 3pt
   {}% name of font to use in the body of the theorem
   {}% measure of space to indent
   {\itshape} % name of head font
   {.}% punctuation between head and body
   {0.75em}% space after theorem head; " " = normal interword space
   {}% Manually specify head
+\newtheoremstyle{thm}% name of the style to be used
+  {3ex}% measure of space to leave above the theorem. E.g.: 3pt
+  {1ex}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries} % name of head font
+  {.}% punctuation between head and body
+  {0.75em}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
 \theoremstyle{example} \newtheorem{ex}{Example}[chapter]
 \theoremstyle{solution} \newtheorem*{sol}{Solution}
-\theoremstyle{plain} \newtheorem{theorem}{Theorem}
-\theoremstyle{plain} \newtheorem{corollary}{Corollary}
+\theoremstyle{thm} \newtheorem{theorem}{Theorem}
+\theoremstyle{thm} \newtheorem{corollary}{Corollary}
 \theoremstyle{defn} \newtheorem{defn}{Definition}[chapter]
 \theoremstyle{definition} \newtheorem{homework}{Homework}
 \theoremstyle{rmk} \newtheorem*{remark}{Remark}
@@ -309,7 +323,7 @@
 \newcommand{\II}{\begin{center}[$\bigstar$ INCOMPLETE $\bigstar$]\end{center}}
 \newcommand{\us}[1]{u_{#1}(t)\,}
 
-\setstretch{1.2}
+\setstretch{1.1}
 
 %\includeonly{discrete/main}
 %\includeonly{continuous/main}

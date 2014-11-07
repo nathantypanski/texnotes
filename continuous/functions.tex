@@ -1,33 +1,38 @@
 \chapter{Functions}
-\section{Definition of a Function}
-\begin{defn}
+
+\begin{defn}[function]
     \index{function}
-    A \textbf{function} $f$ from a set $D$ to a set $R$ is an assignment of exactly one element $f(x) \in R$ to each element $x \in D$.
-    if $f$ is a function from $D$ to $R$, we write
+    A \definition{function}{function} $f$
+    from a set $D$ to a set $R$
+    is an assignment of exactly one element
+    $f(x) \in R$ to each element $x \in D$.
+    If $f$ is a function from $D$ to $R$, we write
     \begin{equation}
         f:D \to R,
         \label{eq:function_definition}
     \end{equation}
-    and say that $f$ \emph{maps} $D$ to $R$.\footnote{Sets and set builder notation are explained in more detail in \chref{ch:sets}.} Slightly more formally, functions require
-    four properties:
+    and say that $f$ \emph{maps} $D$ to $R$.
+    A function has four properties:
     \begin{enumerate}
-        \item A \emph{domain}, $D$ and a \emph{codomain}, $R$, both sets,
-        \item $\forall x \in D\, \exists\, f(x) \in R$ which we call the 
-              \emph{value} of the function \emph{at} $x$,
+        \item A \definitionintro{domain} $D$ and a \emph{codomain} $R$, both sets,
+        \item $\forall x \in D\, \exists\, f(x) \in R$
+          which we call the
+          \emph{value} of the function \emph{at} $x$,
         \item $D$, $R$, and each value $f(x)$ for each element $x$ are
               determined completely by $f$,
         \item The data constituting $D$, $R$, and the value 
               $f(x) \forall x \in D$
               completely determine $f$.
     \end{enumerate}
-\end{defn}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.4\textwidth]{continuous/functions/function.eps}
-    \caption{A function $f$ mapping from $D$ to $R$. Note how multiple $x$ 
-        values share the same $f(x)$ value.}
-    \label{fig:function}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{continuous/functions/function.eps}
+  \caption{A function $f$ mapping from $D$ to $R$.
+    Note how multiple $x$ values share the same $f(x)$ value.}
+  \label{fig:function}
 \end{figure}
+
+\end{defn}
 
 One technique that can help us understand functions is by describing them with words,
 including mathematical language.
@@ -37,7 +42,7 @@ like when we evaluate a function at a certain value.
 
 We can also talk about functions using visual language,
 by way of plots,
-arrow diagrams,
+arrow diagrams (\figref{fig:function}),
 and tables.
 % There are, of course, many ways to visually represent a function, but for our purposes these will prove the most useful.
 % This includes some numerical displays of functions, like with a table of values.
@@ -62,24 +67,41 @@ function. % WHEN????? Tell the reader where this is useful.
 
 \subsection{Domain and Range}
 
-\begin{defn}
-    The set $D$ of all possible input values is called the \textbf{domain} of 
-    the function.
-    \index{domain}
+\begin{defn}[domain]
+  The set $D$ of all possible input values on which a function $f$ is defined
+  is called the \definition{domain}{domain} of $f$.
 \end{defn}
 
-\begin{defn}
-    The set of all values $f(x)$ as $x$ varies throughout $D$ is called 
-    the \textbf{range} of the function, also called the \emph{codomain},
-    representing the output value of $f$ at $x$.
-    \index{range}\index{codomain}
+\begin{defn}[range]
+  Given a function $f$ defined on a domain $D$,
+  the set of all values of $f(x)$
+  as $x$ varies throughout $D$ is called
+  the \definition{range}{range} or
+  \altdefinition{codomain}{codomain} $R$ of $f$.
 \end{defn}
 
-\begin{defn}
-    The \textbf{natural domain} of a function is the largest set of real 
-    $x$-values for which a function returns real $y$-values.
-    A function is said to be \textbf{real-valued} when $D = \mathbb{R}$.
+In certain areas of mathematics, including calculus,
+it is common to define functions without supplying an explicit domain.
+Instead, we will implicitly use the
+\definitionintro{natural domain}
+in these cases.
+
+\begin{defn}[natural domain]
+  For a function $f: D \rightarrow R$,
+  where $f(x)$ is the value of $f$ at $x$,
+  the \definition{natural domain}{natural domain}
+  is the set of all values
+  \begin{equation}
+    \setbuilder{x}{f(x) \in \realnumbers \land  x \in D \cap \realnumbers}.
+    \label{eq:functions:naturaldomain}
+  \end{equation}
 \end{defn}
+
+\begin{defn}[real-valued]
+  A function is said to be \definition{real-valued}{real-valued} when
+  its domain is exactly equal to the set of $\realnumbers$ of real numbers.
+\end{defn}
+
 That is, the domain is equal to to the set of real numbers.
 This means that we can put an arbitrary real number into the function and it 
 will return a real $y$-value.
@@ -91,18 +113,42 @@ will return a real $y$-value.
    \end{remark}
    \index{natural domain}
 
-  The \textbf{vertical line test} for a function is based on the idea that if 
-  $a$ is in the domain of the function $f$ then the vertical line $x=a$ will 
-  intersect the graph of $f$ at a single point $ \big(a,f(a)\big)$.
-  \index{vertical line test}
+The \definition{vertical line test}{vertical line test}
+for a function is based on the idea that if
+$a$ is in the domain of the function $f$ then the vertical line $x=a$ will 
+intersect the graph of $f$ at a single point $ \big(a,f(a)\big)$.
+\index{vertical line test}
 
-\begin{figure}[H]
+\begin{figure}
   \begin{center}
     \subfigure[This passes the vertical line test]{\
-      \includegraphics[width=0.4\textwidth]{continuous/functions/vlt1}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis lines = left,
+        xlabel = $x$,
+        ylabel = {$f(x)$},
+        axis y line = center,
+        axis x line = middle,
+      ]
+      \addplot[domain=-5:5, samples=100,]{x^2};
+      \addplot[color=blue,thick,dashed] coordinates {(3,0) (3,25) };
+      \end{axis}
+    \end{tikzpicture}
     }
     \subfigure[This fails the vertical line test]{\
-      \includegraphics[width=0.4\textwidth]{continuous/functions/vlt2}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis lines = left,
+        xlabel = $x$,
+        ylabel = {$f(x)$},
+        axis y line = center,
+        axis x line = middle,
+      ]
+      \addplot[domain=-5:5, samples=100,]{sqrt(x)};
+      \addplot[domain=-5:5, samples=100,]{-sqrt(x)};
+      \addplot[color=blue,thick,dashed] coordinates {(3,-3) (3,3) };
+      \end{axis}
+    \end{tikzpicture}
     }
   \end{center}
   \caption{Examples of the vertical line test.}
@@ -132,30 +178,27 @@ calling the function \textbf{even}\index{even functions} or
 \end{defn}
 
 \begin{ex}
-An example of an even function is the function $f$,
-where $f(x)=x^2$.
-A plot of this function is shown in \figref{fig:functions:even}.
+  An example of an even function is the function $f$,
+  where $f(x)=x^2$.
+  A plot of this function is shown in \figref{fig:functions:even}.
 
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[
-    axis lines = left,
-    xlabel = $x$,
-    ylabel = {$x^2$},
-    axis y line = center,
-    axis x line = middle,
-]
-\addplot[
-    domain=-5:5,
-    samples=100,
-]{x^2};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{$f(x) = x^2$ is an even function.}
-\label{fig:functions:even}
-\end{figure}
+  \begin{figure}
+    \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis lines = left,
+        xlabel = $x$,
+        ylabel = {$x^2$},
+        axis y line = center,
+        axis x line = middle,
+      ]
+        \addplot[domain=-5:5, samples=100,]{x^2};
+      \end{axis}
+    \end{tikzpicture}
+    \end{center}
+    \caption{$f(x) = x^2$ is an even function.}
+    \label{fig:functions:even}
+  \end{figure}
 \end{ex}
 
 \begin{defn}[odd function]
@@ -203,23 +246,22 @@ A plot of this function is shown in \figref{fig:functions:even}.
     $ x_1 \neq x_2 \to f(x_1) \neq f(x_2)$.
   \end{remark}
 \end{defn}
-\begin{figure}[H]
+
+\begin{figure}
     \begin{center}
-        \subfigure[The function $f(x)=x^2$ is not \emph{one-to-one} because 
-        there are two possible $x$-values that can produce each given 
+        \subfigure[The function $f(x)=x^2$ is not \emph{one-to-one} because
+        there are two possible $x$-values that can produce each given
         $y$-value.]
         {\
           \begin{tikzpicture}
             \begin{axis}[
-                ylabel={$f(x)=x^2$},
-                axis x line=bottom,
-                axis y line=center,
-                tick align=outside,
-                yticklabels={,,}
-                xticklabels={,,}
-                xtickmax=10,
-              ]
-              \addplot[smooth,red]{x^2};
+              axis lines = left,
+              xlabel = $x$,
+              ylabel = {$x^2$},
+              axis y line = center,
+              axis x line = middle,
+            ]
+              \addplot[domain=-5:5, samples=100,]{x^2};
             \end{axis}
           \end{tikzpicture}
         }
@@ -229,15 +271,13 @@ A plot of this function is shown in \figref{fig:functions:even}.
         {\
           \begin{tikzpicture}
             \begin{axis}[
-                ylabel={$f(x)=x^3$},
-                axis x line=bottom,
-                axis y line=center,
-                tick align=outside,
-                yticklabels={,,}
-                xticklabels={,,}
-                xtickmax=10,
-              ]
-              \addplot[smooth,blue]{x^3};
+              axis lines = left,
+              xlabel = $x$,
+              ylabel = {$x^3$},
+              axis y line = center,
+              axis x line = middle,
+            ]
+              \addplot[domain=-5:5, samples=100,]{x^3};
             \end{axis}
           \end{tikzpicture}
         }

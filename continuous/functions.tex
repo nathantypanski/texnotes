@@ -35,15 +35,17 @@ We can discuss the behavior of a function in general,
 describing its properties, or we can discuss its behavior in more specific terms,
 like when we evaluate a function at a certain value.
 
-We can also talk about functions using visual language, as in graphs, arrow 
-diagrams, and tables.
+We can also talk about functions using visual language,
+by way of plots,
+arrow diagrams,
+and tables.
 % There are, of course, many ways to visually represent a function, but for our purposes these will prove the most useful.
 % This includes some numerical displays of functions, like with a table of values.
 % We can consider tables to be a visual description of a function because they combines visual formatting with descriptive data to produce a figural representation of a function's properties.
 
-We will find graphs, in conjunction with the respective mathematical language, 
-to be the most cohesive way to represent functions.
-We should therefore attempt to be able to graph our functions whenever we wish to achieve the best possible understanding of them.
+%We will find graphs, in conjunction with the respective mathematical language, 
+%to be the most cohesive way to represent functions.
+%We should therefore attempt to be able to graph our functions whenever we wish to achieve the best possible understanding of them.
 
 We will combine these techniques in an effort to paint a complete picture of its 
 behavior.
@@ -124,54 +126,71 @@ For a function $f$ in the form $y=f(x)$, we describe its type of symmetry by
 calling the function \textbf{even}\index{even functions} or 
 \textbf{odd}\index{odd functions}.
 
-An \textbf{even function} means $f(-x)=f(x)$.
-An example of an even function is the function $f(x)=x^2$.
+\begin{defn}[even function]
+  An \definition{even function}{even function} $f$
+  is one where the property $f(-x)=f(x)$ holds for all values in the domain.
+\end{defn}
+
+\begin{ex}
+An example of an even function is the function $f$,
+where $f(x)=x^2$.
+A plot of this function is shown in \figref{fig:functions:even}.
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$x^2$},
+    axis y line = center,
+    axis x line = middle,
+]
+\addplot[
+    domain=-5:5,
+    samples=100,
+]{x^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{$f(x) = x^2$ is an even function.}
+\label{fig:functions:even}
+\end{figure}
+\end{ex}
+
+\begin{defn}[odd function]
+  An \definition{odd function}{odd function} $f$
+  is one where the property $f(-x)=-f(x)$ holds for all values in its domain.
+\end{defn}
+
+\begin{ex}
+  An example of an odd function is $f(x)=x^3$.
+  A plot of this function is shown in \figref{fig:functions:odd}.
   \begin{figure}[H]
     \begin{center}
       \begin{tikzpicture}
         \begin{axis}[
-            ylabel={$f(x)=x^2$},
-            axis x line=bottom,
-            axis y line=center,
-            tick align=outside,
-            yticklabels={,,}
-            xticklabels={,,}
-            xtickmax=10,
-          ]
-          \addplot[smooth,red]{x^2};
+          axis lines = left,
+          xlabel = $x$,
+          ylabel = {$x^3$},
+          axis y line = center,
+          axis x line = middle,
+        ]
+          \addplot[domain=-5:5, samples=100,]{x^3};
         \end{axis}
       \end{tikzpicture}
     \end{center}
-    \caption{$f(x)=x^2$ is an \emph{even function}.}
+    \caption{$f(x)=x^3$ is an odd function.}
+    \label{fig:functions:odd}
   \end{figure}
-  An \textbf{odd function} means $f(-x)=-f(x)$. An example of this is the 
-  function $f(x)=x^3$.
-  \begin{figure}[H]
-    \begin{center}
-      \begin{tikzpicture}
-        \begin{axis}[
-            ylabel={$f(x)=x^3$},
-            axis x line=bottom,
-            axis y line=center,
-            tick align=outside,
-            yticklabels={,,}
-            xticklabels={,,}
-            xtickmax=10,
-          ]
-          \addplot[smooth,red]{x^3};
-        \end{axis}
-      \end{tikzpicture}
-    \end{center}
-    \caption{$f(x)=x^3$ is an \emph{odd function}.}
-  \end{figure}
+\end{ex}
+
 \subsection{Surjective, Injective, and Bijective Functions}
 
-\begin{defn}
-  \index{one-to-one}
-  \index{injective}
+\begin{defn}[injective]
   If each $f(x)$ value produced by a function $f$ can only be obtained by one 
-  unique $x$ value, then we say $f$ is \textbf{injective}, or 
-  \textbf{one-to-one}.
+  unique $x$ value, then we say $f$ is \definition{injective}{injective}, or 
+  \altdefinition{one-to-one}{one-to-one}.
 
   $ f: D \to R $ is injective or one-to-one iff
   \[

@@ -1,5 +1,5 @@
 \usepackage{etex}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \usepackage[letterpaper,text={5in,8in},inner=1.5in,outer=2.5in,twoside]{geometry}
 \usepackage[bookmarks, backref, hidelinks]{hyperref}  % generates pdf index
 \usepackage{cclicenses}
@@ -40,6 +40,8 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{epigraph}
+\usepackage{pstricks}
+\usepackage{pst-all}
 \usepackage{xr} %Allows us to cross-reference in external files
 \usepackage{etoolbox}
 \usepackage{charter}
@@ -52,7 +54,6 @@
 %%%%%%%%%%%%
 % settings %
 %%%%%%%%%%%%
-
 
 % Bibliography punctuation for Natbib, see:
 % <https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Natbib>
@@ -72,7 +73,6 @@
 % resize my tikz/pgf plots
 \pgfplotsset{scale=0.5}
 % better, explicit compat mode
-\pgfplotsset{compat=1.8}
 \NeedsTeXFormat{LaTeX2e}
 
 % draw a thin border around figures
@@ -221,6 +221,9 @@
 
 \newcommand{\ltrue}{\textsc{true}}
 \newcommand{\lfalse}{\textsc{false}}
+
+\newcommand{\initialletter}[1]{%
+  {\frakfamily\Large\fraklines\textcolor{Maroon}{\textinit{#1}}}\,}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % theorems                                                               %

@@ -202,7 +202,7 @@ calling the function \textbf{even}\index{even functions} or
 \begin{ex}
   An example of an odd function is $f(x)=x^3$.
   A plot of this function is shown in \figref{fig:functions:odd}.
-  \begin{figure}[H]
+  \begin{figure}
     \begin{center}
       \begin{tikzpicture}
         \begin{axis}[
@@ -278,13 +278,20 @@ calling the function \textbf{even}\index{even functions} or
   \end{figure}
   A function $y=f(x)$ is one-to-one iff its graph intersects each horizontal 
   line at most once.\index{horizontal line test}
-\begin{defn}
-  \index{onto}
-  \index{surjective}
-  $f: D \to R $ is \textbf{surjective} or \textbf{onto} iff
-    \[\forall (y \in R) \exists  (x \in D) \big[f(x)=y\big]. \]
+
+\begin{defn}[surjective]
+  $f: D \to R $ is \definition{surjective}{surjective} or
+  \altdefinition{onto}{onto} iff
+  \begin{equation}
+    \forall y \in R \exists  x \in D \big[f(x)=y\big].
+    \label{eq:functions:surjective}
+  \end{equation}
 \end{defn}
-\begin{figure}[H]
+
+Examples of the surjective property of functions are shown in
+\figref{fig:functions:surjective}.
+
+\begin{figure}
     \begin{center}
         \subfigure[The function $f(x)=x^2$ is not \emph{surjective} because 
         the values $(-\infty, 0)$ are never reached in its range.]
@@ -304,7 +311,7 @@ calling the function \textbf{even}\index{even functions} or
           \end{tikzpicture}
         }
         \hspace{0.2in}%
-        \subfigure[The function $f(x)=x^3$ is \emph{one-to-one} because all $y$ values from $-\infty, \infty)$ have corresponding $x$-values.]
+        \subfigure[The function $f(x)=x^3$ is surjective because all $y$ values from $(-\infty, \infty)$ have corresponding $x$-values.]
         {\
           \begin{tikzpicture}
             \begin{axis}[
@@ -321,6 +328,7 @@ calling the function \textbf{even}\index{even functions} or
           \end{tikzpicture}
         }
     \end{center}
+    \label{fig:functions:surjective}
   \end{figure}
 
   \begin{defn}

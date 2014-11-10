@@ -56,5 +56,14 @@ Thumbs.db
 *.eps_tex
 *.dvi
 
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.xdv
+*.d
+*.brf
+
 # other
 *.old
+tags

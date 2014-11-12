@@ -1,33 +1,12 @@
 \documentclass[fontsize=10pt,twoside,BCOR=12mm,DIV=calc]{scrbook}
 \input{preamble}
-%%%%%%%%%%%%
-% document %
-%%%%%%%%%%%%
 
 \begin{document}
 
-%%%%%%%%%
-% title %
-%%%%%%%%%
-
-
-\title{\textbf{\
-Mathematics
-}\\An undergraduate notebook}
-\author    {Nathan Typanski}
-\date      {\today}
-\maketitle
-
-\newpage
-
-\cleardoublepage
-
-\newpage
-
 \edef\marginnotetextwidth{\the\textwidth}
-
+\input{titlepage}
 \input{frontmatter/main}
-\include{discrete/main}
+\input{discrete/main}
 \include{continuous/main}
 %\include{physics/main}
 \part{Appendix}

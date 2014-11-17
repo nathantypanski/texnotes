@@ -1,22 +1,51 @@
-\setchapterpreamble[u]{%
-\dictum[Morpheus, \emph{The Matrix}]{This is your last chance. After this, there is no turning back. You take the blue pill---the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill---you stay in Wonderland and I show you how deep the rabbit-hole goes.}}
-\chapter{Propositional Calculus}
+%\setchapterpreamble[u]{%
+%}
+\chapter{Propositional calculus}
 \label{ch:propositional}
 
-\marginnote{The word ``calculus,'' here, comes from the Latin
-\emph{calculus} meaning ``pebble'', since in early days pebbles
-were used for counting.\cite{wiktionary-calculus}}
+In this chapter we will encounter a system,
+called \definitionintro{propositional calculus},
+\marginnote{This isn't the same ``calculus'' as in common usage.
+  Here, ``calculus'' comes from the Latin word for ``pebble'',
+  which was once used for counting.\cite{wiktionary-calculus}}
+for reasoning about things and determining whether they are true or false.
 
-The whole idea of propositional logic is that statements in mathematics have truth value and there is a logical process that we use to evaluate that truth value.
-Perhaps most importantly, this chapter will introduce us to \emph{DeMorgan's Laws}, which are relevant everywhere from computer science (in simplifying boolean operators) to the writings of Aristotle.
-
-\section{Introduction to Propositional Logic}
+\section{Propositions and truth}
 \label{sec:propintro}
+
+Not every conceivable sentence has a definite truth value.
+For example, consider:
+\begin{center}
+  Shakespeare was a great playwright.
+\end{center}
+You might disagree with the sentiment---and certainly, for all his fame,
+Shakespeare's ``greatness'' is a matter of some subjectivity.
+On the other hand, we may assert the truth value of certain things:
+\begin{center}
+  This sentence is composed of words.
+\end{center}
+Those sentences to which we can assign a truth value will be called
+\definitionintro{propositions}.
+Such that our reason is not muddied by the details of language and subjectivity,
+we will introduce \definitionintro{variables} to which we may assign these propositions.
+This will be our first dealing with the tool of mathematical abstraction---the ability
+to separate the process of reason from the objects of reason,
+and this will greatly expand our power of thought.
+We will see that through reason we can find truths far greater and more
+universal than any individual happening, once sufficient abstraction
+and logic have laid the groundwork for thought.
+
+It helps to be systematic about things.
+While intuition is a powerful trick, it only carries us so far:
+rigor is needed to go the rest of the way.
+As such, many definitions I will label explicitly.
 
 \begin{defn}[proposition]
 A \definition{proposition}{proposition} a sentence that makes a statement
 and has a truth value.
 \end{defn}
+
+Sometimes it helps to see an example.
 
 \begin{ex}
   The following sentence is a proposition:
@@ -26,28 +55,59 @@ and has a truth value.
   \end{equation}
   The way we know that \eref{eq:ex:proposition} is a proposition is because
   it has a theoretically knowable truth value.
-  We will write that \eref{eq:ex:proposition} is \ltrue{} when its author's
-  house is, indeed, red---and that \eref{eq:ex:proposition} is \lfalse{}
-  if that is not the case.
+
+  If we agree that we may assign a symbol to mean the same thing as
+  \eref{eq:ex:proposition},
+  such that everywhere we write
+  \begin{equation*}
+    \text{``My house is red.''}
+  \end{equation*}
+  we could have just as well written that symbol, then that symbol is called
+  a \definitionintro{propositional variable}.
+  The most formal way we may assert such an assignment is by writing
+  a sentence like the following:
+  \begin{equation}
+    \text{Let $p$ be ``My house is red.''}
+    \label{eq:propostional-symbolic-notation}
+  \end{equation}
+  Given an assignment like \eref{eq:propostional-symbolic-notation},
+  we call the symbol $p$ a \definition{propositional variable}{propositional variable},
+  and the sentence ``My house is red'' its \definition{value}{value}.
+  We will then write that $p$ is \ltrue{} if my house is, indeed,
+  red---or that $p$ is \lfalse{} if that is not the case.
 \end{ex}
 
-  \definition{Propositional calculus}{propositional calculus}
-  (or \altdefinition{propositional logic}{propositional logic})
-  assigns propositions \definition{propositional variables}{propositional variables}
-  (e.g. \(p, q, r, s, \ldots\))
-  and deals with their logic and \emph{truth value}.
-  \begin{ex}
-    Let $p$ be ``my house is red.''
-  \end{ex}
+In most systems of mathematics, there are certain conventions for variables.
+In propositional calculus, the first variable we will often use is $p$, followed
+by $q$, then $r$, $s$, and then whatever feels convenient if we have used up
+all of those.
+\marginnote{Generally speaking, smaller letters mean ``lesser'' abstraction, so $P$ is
+more abstract than $p$, and fancier fonts like $\mathscr{P}$ are more abstract
+than even $P$.
+This is just a rule of thumb, of course, so don't take it for granted.}
 
+The simplest thing we can do next is \definitionintro{negation}.
+If we can propose the truth of some propositional variable $p$,
+we just as well may propose the alternative!
 \begin{defn}[negation]
-  Let \(p\) be a proposition.
-  The \definition{negation}{negation} of \(p\),
+  Let $p$ be a proposition.
+  The \definition{negation}{negation} of $p$,
   $\neg p$,
   is the statement
   ``it is not the case that \(p\).''
   The truth value of \(\neg p\) is the opposite of the truth value of \(p\).
+  \label{defn:propositional-negation}
 \end{defn}
+
+\newcommand{\lawofmiddle}{Law of Excluded Middle}
+Before we go further, it's worth mentioning something we're taking for granted:
+the \axiomintro{\lawofmiddle{}}:
+\begin{quote}
+  For the proposition `it may be' implies a twofold possibility, while, if either of the two former propositions is true, the twofold possibility vanishes. For if a thing may be, it may also not be, but if it is necessary that it should be or that it should not be, one of the two alternatives will be excluded. It remains, therefore, that the proposition `it is not necessary that it should not be' follows from the proposition `it may be'. For this is true also of that which must necessarily be.\cite{aris-interp}
+\end{quote}
+This axiom, proposed by Aristotle, is still taken to be valid by most mathematicians today---though there is a ``minority school of mathematicians,'' called Intuitionists, who ``do precisely that.''\cite{trudeau}
+
+Regardless, we will take it to be self-evident that the \lawofmiddle{} holds, and move on with more interesting things.
 
 \begin{ex}
   Let $p$ be ``my house is red.''
@@ -57,6 +117,9 @@ and has a truth value.
   ``my house is not red.''
 \end{ex}
 
+The symbol $\neg$ in \defnref{defn:propositional-negation} is called a \definitionintro{unary operator}. Operators are things that act on variables or other symbols, called their \definition{operands}{operand}. A \definition{unary operator}{unary operator} is an operator that has only one operand.
+
+We also have \definition{binary operators}{binary operator}, like \definitionintro{conjunction}, which work on two operands:
 \begin{defn}[conjunction]
   Let $p$ and $q$ be propositions.
   The \definition{conjunction}{conjunction}
@@ -66,7 +129,8 @@ and has a truth value.
   ``$p$ and $q$.''
   The conjunction is \ltrue{} when both $p$ and $q$ are \ltrue{} and \lfalse{} otherwise.
 \end{defn}
-
+The conjunction operator $\wedge$ is an example of a binary operator.
+The number of operands for an operator is call its \definition{arity}{arity}.
 \begin{ex}
   Let $p$ be ``Kevin likes Sarah'' and let $q$ be ``Sarah likes Kevin.'
   Then $p \wedge q$ is
